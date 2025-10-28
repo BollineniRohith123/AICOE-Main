@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Restaurant Booking System</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "San Francisco", sans-serif;
+            color: #1d1d1f;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #0066cc;
+        }
+
+        main {
+            background-color: #ffffff;
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #6e6e73;
+            font-size: 18px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .feature {
+            background-color: #f7f7f9;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s;
+            border: 1px solid #ececee;
+        }
+
+        .feature:hover {
+            transform: scale(1.02);
+        }
+
+        .feature h3 {
+            color: #0066cc;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #1d1d1f;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #0066cc;
+            color: #ffffff;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        @media print {
+            header, footer {
+                display: none;
+            }
+
+            body {
+                color: #000000;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Digital Restaurant Booking System</h1>
+</header>
+
+<main>
+    <section class="hero">
+        <h2>Welcome to the Future of Dining Reservations</h2>
+        <p>Effortlessly book your table at your favorite restaurant with our seamless online booking platform.</p>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <h3>Customer Book a Table</h3>
+            <p>Select a restaurant, choose the date and time, specify guests, and finalize your booking, receiving instant confirmations.</p>
+        </div>
+        <div class="feature">
+            <h3>Admin Manage Reservations</h3>
+            <p>Easily manage booking statuses, view customer details, and communicate updates efficiently.</p>
+        </div>
+        <div class="feature">
+            <h3>Integration with POS Systems</h3>
+            <p>Synchronize reservation data with your POS for seamless table management and operations.</p>
+        </div>
+        <div class="feature">
+            <h3>Data Security and Compliance</h3>
+            <p>Our system encrypts all customer data to ensure privacy and compliance with GDPR standards.</p>
+        </div>
+        <div class="feature">
+            <h3>Send Notifications</h3>
+            <p>Receive real-time updates via SMS, email, and WhatsApp, ensuring you are always informed.</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Digital Restaurant Booking System &copy; 2025 - Transforming dining experiences through technology.</p>
+</footer>
+
+</body>
+</html>
