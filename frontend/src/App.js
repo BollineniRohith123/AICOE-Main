@@ -27,7 +27,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeEnhanced />} />
           <Route path="/home-old" element={<Home />} />
-          <Route path="/input" element={<TranscriptInput />} />
+          <Route path="/input" element={<TranscriptInputEnhanced />} />
+          <Route path="/input-old" element={<TranscriptInput />} />
           <Route path="/processing" element={<ProcessingView />} />
           <Route path="/results" element={<ResultsNew />} />
           <Route path="/results-old" element={<Results />} />
