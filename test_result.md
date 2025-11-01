@@ -241,7 +241,7 @@ test_plan:
     - "LLM Integration"
   stuck_tasks:
     - "LLM Integration"
-  test_all: false
+  test_all: true
   test_priority: "high_first"
 
 agent_communication:
