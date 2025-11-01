@@ -3,7 +3,7 @@
     "test": "Health Check",
     "success": true,
     "details": "API is running and responsive",
-    "timestamp": "2025-11-01T20:07:35.069002",
+    "timestamp": "2025-11-01T20:18:08.942608",
     "response_data": {
       "message": "AICOE Automation Platform API",
       "version": "1.0.0",
@@ -14,40 +14,40 @@
     "test": "Database Connection",
     "success": true,
     "details": "Database read/write operations successful",
-    "timestamp": "2025-11-01T20:07:35.108541",
+    "timestamp": "2025-11-01T20:18:08.967011",
     "response_data": {
-      "test_id": "c92e1678-d4b6-4f2e-8648-e5d2af719857",
-      "total_entries": 5
+      "test_id": "a606c88f-8e70-4e61-a072-2ef762af97a9",
+      "total_entries": 7
     }
   },
   {
     "test": "Status Creation",
     "success": true,
     "details": "Status check created successfully",
-    "timestamp": "2025-11-01T20:07:35.121089",
+    "timestamp": "2025-11-01T20:18:08.973921",
     "response_data": {
-      "id": "26ac5295-6b54-4644-b317-3b3fc55634a9",
+      "id": "48fdc4bb-caa1-4e04-ab69-b04cfd80134b",
       "client_name": "backend_test_client",
-      "timestamp": "2025-11-01T20:07:35.117574Z"
+      "timestamp": "2025-11-01T20:18:08.971278Z"
     }
   },
   {
     "test": "Status Retrieval",
     "success": true,
-    "details": "Retrieved 6 status checks",
-    "timestamp": "2025-11-01T20:07:35.134006",
+    "details": "Retrieved 8 status checks",
+    "timestamp": "2025-11-01T20:18:08.984060",
     "response_data": {
-      "count": 6
+      "count": 8
     }
   },
   {
     "test": "Process Transcript",
     "success": true,
     "details": "Workflow started successfully",
-    "timestamp": "2025-11-01T20:07:35.142099",
+    "timestamp": "2025-11-01T20:18:08.989765",
     "response_data": {
-      "project_id": "7496a4b6-b71e-4d8c-b2ca-247532baf383",
-      "workflow_id": "workflow_20251101_200735_7496a4b6",
+      "project_id": "e23cb483-9073-46d1-be93-2609b8de5dd1",
+      "workflow_id": "workflow_20251101_201808_e23cb483",
       "status": "started"
     }
   },
@@ -55,9 +55,9 @@
     "test": "Workflow Status",
     "success": true,
     "details": "Status: not_found",
-    "timestamp": "2025-11-01T20:07:35.149587",
+    "timestamp": "2025-11-01T20:18:09.000732",
     "response_data": {
-      "workflow_id": "workflow_20251101_200735_7496a4b6",
+      "workflow_id": "workflow_20251101_201808_e23cb483",
       "status": "not_found",
       "project_name": null
     }
@@ -65,17 +65,17 @@
   {
     "test": "List Projects",
     "success": true,
-    "details": "Found 7 projects",
-    "timestamp": "2025-11-01T20:07:35.169355",
+    "details": "Found 10 projects",
+    "timestamp": "2025-11-01T20:18:09.024919",
     "response_data": {
-      "count": 7
+      "count": 10
     }
   },
   {
     "test": "Get Project",
     "success": true,
     "details": "Project not found (expected for new workflow)",
-    "timestamp": "2025-11-01T20:07:35.177769",
+    "timestamp": "2025-11-01T20:18:09.033809",
     "response_data": {
       "status": 404
     }
@@ -84,7 +84,7 @@
     "test": "Download Artifacts",
     "success": true,
     "details": "Artifact not found (expected for new workflow)",
-    "timestamp": "2025-11-01T20:07:35.185642",
+    "timestamp": "2025-11-01T20:18:09.045256",
     "response_data": {
       "status": 404
     }
