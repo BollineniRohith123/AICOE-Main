@@ -24,7 +24,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomeEnhanced />} />
+          <Route path="/home-old" element={<Home />} />
           <Route path="/input" element={<TranscriptInput />} />
           <Route path="/processing" element={<ProcessingView />} />
           <Route path="/results" element={<ResultsNew />} />
