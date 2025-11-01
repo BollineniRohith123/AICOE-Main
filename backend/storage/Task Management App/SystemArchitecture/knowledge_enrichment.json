@@ -4,52 +4,47 @@
       {
         "category": "AI Design Patterns",
         "pattern": "Microservices Architecture",
-        "description": "Applying microservices architecture can improve scalability and maintainability of the task management app",
+        "description": "Recommended for scalability and flexibility in task management app",
         "priority": "high"
       },
       {
         "category": "Compliance Rules",
-        "pattern": "GDPR Compliance",
-        "description": "Implementing GDPR compliance can ensure the app meets data protection standards",
+        "pattern": "Data Protection Regulations",
+        "description": "Ensure compliance with GDPR and CCPA regulations for data protection and user privacy",
         "priority": "medium"
       },
       {
         "category": "Best Practices",
-        "pattern": "User-Centered Design",
-        "description": "Applying user-centered design principles can improve user experience and engagement",
+        "pattern": "API-first Development",
+        "description": "Recommended for efficient development and integration with other tools",
         "priority": "high"
       },
       {
         "category": "Integration Patterns",
-        "pattern": "API-Based Integration",
-        "description": "Using API-based integration can improve scalability and maintainability of the app",
+        "pattern": "Event-driven Architecture",
+        "description": "Recommended for real-time collaboration and task assignment",
         "priority": "medium"
       }
     ],
     "suggestions": [
       {
         "area": "User Experience",
-        "suggestion": "Implement real-time task updates and notifications",
-        "rationale": "Users expect real-time updates and notifications to improve productivity and engagement"
+        "suggestion": "Implement real-time collaboration and customizable workflows",
+        "rationale": "Aligns with user expectations and industry trends"
       },
       {
-        "area": "Security",
-        "suggestion": "Implement two-factor authentication",
-        "rationale": "Two-factor authentication can improve security and protect user data"
-      },
-      {
-        "area": "Scalability",
-        "suggestion": "Use load balancing and caching to improve scalability",
-        "rationale": "Load balancing and caching can improve performance and scalability of the app"
+        "area": "Task Management",
+        "suggestion": "Prioritize tasks with AI-powered algorithms and Kanban boards",
+        "rationale": "Aligns with industry best practices and user expectations"
       }
     ],
     "compliance_notes": [
-      "Ensure compliance with GDPR regulations regarding data protection and user consent",
-      "Implement data encryption and secure authentication protocols"
+      "Ensure compliance with data protection regulations for user data storage and processing",
+      "Implement security measures for task assignment and collaboration"
     ],
     "integration_recommendations": [
-      "Integrate with popular productivity tools such as Google Calendar and Slack",
-      "Use API-based integration to improve scalability and maintainability"
+      "Integrate with popular project management tools for seamless collaboration",
+      "Implement automation tools for efficient task assignment and prioritization"
     ]
   },
   "project_name": "Task Management App",
