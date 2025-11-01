@@ -4,6 +4,7 @@ import Home from "@/pages/Home";
 import TranscriptInput from "@/pages/TranscriptInput";
 import ProcessingView from "@/pages/ProcessingView";
 import Results from "@/pages/Results";
+import ResultsNew from "@/pages/ResultsNew";
 
 // AICOE Logo Component
 const AICOELogo = () => {
