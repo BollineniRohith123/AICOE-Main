@@ -75,12 +75,13 @@ class LLMClient:
             if session_id:
                 payload["metadata"] = {"session_id": session_id}
             
-            # Prepare headers
+            # Prepare headers according to OpenRouter API documentation
             headers = {
                 "Authorization": f"Bearer {self.api_key}",
                 "Content-Type": "application/json",
                 "HTTP-Referer": "https://aicoe-platform.local",
-                "X-Title": "AICOE Automation Platform"
+                "X-Title": "AICOE Automation Platform",
+                "User-Agent": "AICOE-Platform/1.0"
             }
             
             # Make API request
