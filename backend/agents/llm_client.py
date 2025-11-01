@@ -68,6 +68,116 @@ class LLMClient:
         # Check if JSON response is expected
         return self._generate_json_or_text("prd")
     
+    def _generate_requirements_json(self) -> str:
+        """Generate mock requirements in JSON format"""
+        import json
+        data = {
+            "use_cases": [
+                {
+                    "id": "UC-001",
+                    "title": "User Registration",
+                    "description": "Allow new users to register with email and password",
+                    "actors": ["New User", "System"],
+                    "preconditions": ["User has valid email address"],
+                    "main_flow": [
+                        "User navigates to registration page",
+                        "User enters email and password",
+                        "System validates input",
+                        "System creates user account",
+                        "System sends confirmation email"
+                    ],
+                    "alternate_flows": ["Email already exists: System shows error"],
+                    "postconditions": ["User account is created", "User can login"],
+                    "priority": "high",
+                    "business_value": "Essential for user management"
+                },
+                {
+                    "id": "UC-002",
+                    "title": "Create Task",
+                    "description": "Users can create new tasks with details",
+                    "actors": ["Registered User", "System"],
+                    "preconditions": ["User is logged in"],
+                    "main_flow": [
+                        "User clicks 'New Task' button",
+                        "User enters task details",
+                        "User sets priority and due date",
+                        "System saves task",
+                        "System displays success message"
+                    ],
+                    "alternate_flows": ["Invalid data: System shows validation errors"],
+                    "postconditions": ["Task is created in database"],
+                    "priority": "high",
+                    "business_value": "Core feature for task management"
+                },
+                {
+                    "id": "UC-003",
+                    "title": "View Dashboard",
+                    "description": "Users can view task statistics and overview",
+                    "actors": ["Registered User", "System"],
+                    "preconditions": ["User is logged in"],
+                    "main_flow": [
+                        "User navigates to dashboard",
+                        "System loads user's tasks",
+                        "System calculates statistics",
+                        "System displays dashboard"
+                    ],
+                    "alternate_flows": [],
+                    "postconditions": ["Dashboard is displayed"],
+                    "priority": "high",
+                    "business_value": "Provides quick overview of tasks"
+                },
+                {
+                    "id": "UC-004",
+                    "title": "Filter Tasks",
+                    "description": "Users can filter tasks by status and priority",
+                    "actors": ["Registered User", "System"],
+                    "preconditions": ["User is logged in", "Tasks exist"],
+                    "main_flow": [
+                        "User selects filter criteria",
+                        "System applies filters",
+                        "System displays filtered results"
+                    ],
+                    "alternate_flows": ["No results: System shows empty state"],
+                    "postconditions": ["Filtered tasks are displayed"],
+                    "priority": "medium",
+                    "business_value": "Improves task discovery and organization"
+                }
+            ],
+            "business_requirements": {
+                "overview": "A modern task management application designed for individual productivity",
+                "business_goals": [
+                    "Increase user productivity",
+                    "Provide simple task organization",
+                    "Enable task tracking and completion"
+                ],
+                "success_criteria": [
+                    "90% user satisfaction rate",
+                    "50% increase in task completion",
+                    "10,000 active users in first year"
+                ],
+                "constraints": [
+                    "Must work on mobile and desktop",
+                    "Budget: $50,000",
+                    "Timeline: 12 weeks"
+                ],
+                "assumptions": [
+                    "Users have internet access",
+                    "Users prefer simple over complex features"
+                ],
+                "risks": [
+                    {
+                        "risk": "Low user adoption",
+                        "mitigation": "Launch beta program and gather feedback"
+                    },
+                    {
+                        "risk": "Technical complexity",
+                        "mitigation": "Use proven technology stack"
+                    }
+                ]
+            }
+        }
+        return json.dumps(data, indent=2)
+    
     def _generate_mock_mockup(self) -> str:
         """Generate mock mockup HTML"""
         return """<!DOCTYPE html>
