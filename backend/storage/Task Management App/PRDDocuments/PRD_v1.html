@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-Here is the transformed PRD XML into a beautiful, professional HTML document:
+Here is the transformed PRD XML document into a beautiful, professional HTML document:
 
 ```html
 <!DOCTYPE html>
@@ -7,125 +7,219 @@ Here is the transformed PRD XML into a beautiful, professional HTML document:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Management App PRD</title>
+    <title>PRD for Task Management App</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#executive-summary">Executive Summary</a></li>
-                <li><a href="#scope">Scope</a></li>
-                <li><a href="#business-goals">Business Goals</a></li>
-                <li><a href="#use-cases">Use Cases</a></li>
-                <li><a href="#non-functional-requirements">Non-Functional Requirements</a></li>
-            </ul>
-        </nav>
+        <h1>PRD for Task Management App</h1>
+        <p>Executive Summary:</p>
+        <p>A comprehensive task management system for teams, enabling collaboration, task delegation, and task prioritization.</p>
     </header>
-    <main>
-        <section id="executive-summary">
-            <h1>Executive Summary</h1>
-            <p>A comprehensive platform for users to create, assign, view, update, and delete tasks.</p>
-        </section>
-        <section id="scope">
-            <h1>Scope</h1>
-            <h2>In-Scopes</h2>
-            <ul>
-                <li>Create Task</li>
-                <li>Assign Task</li>
-                <li>View Task List</li>
-                <li>Update Task</li>
-                <li>Delete Task</li>
-            </ul>
-            <h2>Out-Of-Scopes</h2>
-            <ul>
-                <li>Task Management for Multiple Users</li>
-                <li>Integrations with Third-Party Services</li>
-                <li>Customizable Task Templates</li>
-            </ul>
-        </section>
-        <section id="business-goals">
-            <h1>Business Goals</h1>
-            <ul>
-                <li>Increase user productivity and efficiency</li>
-                <li>Enhance task management capabilities</li>
-                <li>Provide a user-friendly interface</li>
-            </ul>
-        </section>
-        <section id="use-cases">
-            <h1>Use Cases</h1>
-            <h2>Create Task</h2>
-            <div class="use-case">
+    <section class="scope">
+        <h2>Scope</h2>
+        <p>In Scope:</p>
+        <ul>
+            <li>Task creation</li>
+            <li>Task assignment</li>
+            <li>Task prioritization</li>
+            <li>Task deletion</li>
+        </ul>
+        <p>Out of Scope:</p>
+        <ul>
+            <li>Advanced reporting and analytics</li>
+        </ul>
+    </section>
+    <section class="business-goals">
+        <h2>Business Goals</h2>
+        <ul>
+            <li>Improve team productivity and efficiency</li>
+            <li>Enhance collaboration and communication among team members</li>
+            <li>Reduce task complexity and improve task management</li>
+        </ul>
+    </section>
+    <section class="use-cases">
+        <h2>Use Cases</h2>
+        <ul>
+            <li id="uc-001">
                 <h3>Create Task</h3>
-                <p>A user creates a new task, providing task details such as title, description, and due date.</p>
+                <p>A user creates a new task in the task management app, including task details such as title, description, and due date.</p>
+                <p>Actors:</p>
                 <ul>
-                    <li>User clicks the 'Create Task' button</li>
-                    <li>User enters task details</li>
-                    <li>User submits the task</li>
+                    <li>User</li>
                 </ul>
-                <p>Task is created and displayed on the task list.</p>
-            </div>
-            <div class="use-case">
+                <p>Preconditions:</p>
+                <ul>
+                    <li>User is logged in and has permission to create tasks</li>
+                </ul>
+                <p>Main Flow:</p>
+                <ol>
+                    <li>User enters task title and description</li>
+                    <li>User selects due date</li>
+                    <li>User saves task</li>
+                </ol>
+                <p>Alternate Flows:</p>
+                <ul>
+                    <!-- Alternate flows will be added here -->
+                </ul>
+                <p>Postconditions:</p>
+                <ul>
+                    <li>Task is created and displayed in the task list</li>
+                </ul>
+                <p>Priority:</p>
+                <p>High</p>
+                <p>Business Value:</p>
+                <p>Allows users to create new tasks and prioritize their work</p>
+            </li>
+            <li id="uc-002">
                 <h3>Assign Task</h3>
-                <p>A user assigns a task to another user, specifying the assignee and any relevant comments.</p>
+                <p>A user assigns a task to another user in the task management app, including assigning task details such as due date and responsible user.</p>
+                <p>Actors:</p>
                 <ul>
-                    <li>User selects the task to assign</li>
-                    <li>User selects the assignee</li>
-                    <li>User adds comments (optional)</li>
-                    <li>User submits the assignment</li>
+                    <li>User</li>
                 </ul>
-                <p>Task is assigned and displayed on the task list.</p>
-            </div>
-            <div class="use-case">
-                <h3>View Task List</h3>
-                <p>A user views their task list, including all tasks assigned to them.</p>
+                <p>Preconditions:</p>
                 <ul>
-                    <li>User navigates to the task list page</li>
-                    <li>User filters tasks (optional)</li>
-                    <li>User views task details</li>
+                    <li>User is logged in and has permission to assign tasks</li>
                 </ul>
-                <p>User has a comprehensive view of their task list.</p>
-            </div>
-            <div class="use-case">
-                <h3>Update Task</h3>
-                <p>A user updates the status or details of an existing task.</p>
+                <p>Main Flow:</p>
+                <ol>
+                    <li>User selects task to assign</li>
+                    <li>User enters responsible user and due date</li>
+                    <li>User saves assignment</li>
+                </ol>
+                <p>Alternate Flows:</p>
                 <ul>
-                    <li>User selects the task to update</li>
-                    <li>User updates task details</li>
-                    <li>User submits the update</li>
+                    <!-- Alternate flows will be added here -->
                 </ul>
-                <p>Task is updated and displayed on the task list.</p>
-            </div>
-            <div class="use-case">
+                <p>Postconditions:</p>
+                <ul>
+                    <li>Task is assigned to the responsible user and displayed in their task list</li>
+                </ul>
+                <p>Priority:</p>
+                <p>High</p>
+                <p>Business Value:</p>
+                <p>Enables collaboration and task delegation among team members</p>
+            </li>
+            <li id="uc-003">
+                <h3>Prioritize Task</h3>
+                <p>A user prioritizes a task in the task management app using AI-powered algorithms, including selecting task priority and due date.</p>
+                <p>Actors:</p>
+                <ul>
+                    <li>User</li>
+                </ul>
+                <p>Preconditions:</p>
+                <ul>
+                    <li>User is logged in and has permission to prioritize tasks</li>
+                </ul>
+                <p>Main Flow:</p>
+                <ol>
+                    <li>User selects task to prioritize</li>
+                    <li>User selects priority and due date</li>
+                    <li>User saves priority</li>
+                </ol>
+                <p>Alternate Flows:</p>
+                <ul>
+                    <!-- Alternate flows will be added here -->
+                </ul>
+                <p>Postconditions:</p>
+                <ul>
+                    <li>Task is prioritized and displayed in the task list with updated priority</li>
+                </ul>
+                <p>Priority:</p>
+                <p>High</p>
+                <p>Business Value:</p>
+                <p>Improves task management and reduces task complexity</p>
+            </li>
+            <li id="uc-004">
+                <h3>View Task Details</h3>
+                <p>A user views task details in the task management app, including task title, description, and due date.</p>
+                <p>Actors:</p>
+                <ul>
+                    <li>User</li>
+                </ul>
+                <p>Preconditions:</p>
+                <ul>
+                    <li>User is logged in and has permission to view task details</li>
+                </ul>
+                <p>Main Flow:</p>
+                <ol>
+                    <li>User selects task to view</li>
+                    <li>Task details are displayed</li>
+                </ol>
+                <p>Alternate Flows:</p>
+                <ul>
+                    <!-- Alternate flows will be added here -->
+                </ul>
+                <p>Postconditions:</p>
+                <ul>
+                    <li>Task details are displayed and user can take actions</li>
+                </ul>
+                <p>Priority:</p>
+                <p>Medium</p>
+                <p>Business Value:</p>
+                <p>Provides users with task information and enables them to take actions</p>
+            </li>
+            <li id="uc-005">
                 <h3>Delete Task</h3>
-                <p>A user deletes an existing task.</p>
+                <p>A user deletes a task in the task management app, including deleting task details such as title and due date.</p>
+                <p>Actors:</p>
                 <ul>
-                    <li>User selects the task to delete</li>
+                    <li>User</li>
+                </ul>
+                <p>Preconditions:</p>
+                <ul>
+                    <li>User is logged in and has permission to delete tasks</li>
+                </ul>
+                <p>Main Flow:</p>
+                <ol>
+                    <li>User selects task to delete</li>
                     <li>User confirms deletion</li>
                     <li>Task is deleted</li>
+                </ol>
+                <p>Alternate Flows:</p>
+                <ul>
+                    <!-- Alternate flows will be added here -->
                 </ul>
-                <p>Task is deleted and no longer displayed on the task list.</p>
-            </div>
-        </section>
-        <section id="non-functional-requirements">
-            <h1>Non-Functional Requirements</h1>
-            <h2>Security</h2>
-            <p>All sensitive data must be encrypted at rest and in transit using industry-standard protocols.</p>
-            <h2>Performance</h2>
-            <p>The system must respond to 95% of user queries in under 2 seconds.</p>
-        </section>
-    </main>
+                <p>Postconditions:</p>
+                <ul>
+                    <li>Task is deleted and displayed as deleted</li>
+                </ul>
+                <p>Priority:</p>
+                <p>High</p>
+                <p>Business Value:</p>
+                <p>Removes unnecessary tasks and improves task management</p>
+            </li>
+        </ul>
+    </section>
+    <section class="non-functional-requirements">
+        <h2>Non-Functional Requirements</h2>
+        <ul>
+            <li>
+                <h3>Security</h3>
+                <p>All sensitive data must be encrypted at rest and in transit using industry-standard protocols.</p>
+            </li>
+            <li>
+                <h3>Performance</h3>
+                <p>The system must respond to 95% of user queries in under 2 seconds.</p>
+            </li>
+        </ul>
+    </section>
     <footer>
         <p>&copy; 2023 Task Management App</p>
-        <script src="script.js"></script>
+        <p>AICOE Logo:</p>
+        <img src="aicoe-logo.png" alt="AICOE Logo">
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
 ```
 
-And here is the CSS code:
+Note that this HTML code is just a starting point, and you will need to add more content, styles, and functionality to make it fully functional. Additionally, you will need to create the necessary CSS and JavaScript files to style and animate the HTML elements.
 
+Here is an example of what the CSS and JavaScript files might look like:
+
+**styles.css**
 ```css
 body {
     font-family: Arial, sans-serif;
@@ -136,79 +230,83 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 1em;
+    padding: 20px;
     text-align: center;
 }
 
-nav ul {
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+ul {
     list-style: none;
-    margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: space-between;
+    margin: 0;
 }
 
-nav a {
-    color: #fff;
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+a {
     text-decoration: none;
+    color: #337ab7;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2em;
-}
-
-section {
-    background-color: #f7f7f7;
-    padding: 1em;
-    margin-bottom: 1em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2, h3 {
-    margin-top: 0;
-}
-
-.use-case {
-    background-color: #fff;
-    padding: 1em;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.use-case h3 {
-    margin-top: 0;
+a:hover {
+    color: #23527c;
 }
 
 footer {
     background-color: #333;
     color: #fff;
-    padding: 1em;
+    padding: 20px;
     text-align: center;
-    clear: both;
 }
 
-footer script {
-    display: none;
+img {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
 }
 ```
 
-And here is the JavaScript code:
-
+**script.js**
 ```javascript
-// Add event listeners to navigation links
-const navLinks = document.querySelectorAll('nav a');
-navLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const id = link.getAttribute('href').slice(1);
-        const section = document.getElementById(id);
-        section.scrollIntoView({ behavior: 'smooth' });
+// Add event listeners to the use cases
+document.querySelectorAll('.use-case').forEach((useCase) => {
+    useCase.addEventListener('click', () => {
+        // Get the use case ID
+        const useCaseId = useCase.getAttribute('id');
+
+        // Get the use case details
+        const useCaseDetails = document.querySelector(`#uc-${useCaseId}`);
+
+        // Show the use case details
+        useCaseDetails.style.display = 'block';
+    });
+});
+
+// Add event listeners to the non-functional requirements
+document.querySelectorAll('.non-functional-requirement').forEach((requirement) => {
+    requirement.addEventListener('click', () => {
+        // Get the requirement ID
+        const requirementId = requirement.getAttribute('id');
+
+        // Get the requirement details
+        const requirementDetails = document.querySelector(`#nr-${requirementId}`);
+
+        // Show the requirement details
+        requirementDetails.style.display = 'block';
     });
 });
 ```
 
-This code creates a basic HTML structure with a navigation menu, sections for each use case, non-functional requirements, and a footer. It also adds some basic styling and animations to make the page look more visually appealing. The JavaScript code adds event listeners to the navigation links to make the sections scroll smoothly into view when clicked.
+This is just a basic example, and you will need to add more functionality and styles to make the HTML document fully functional.

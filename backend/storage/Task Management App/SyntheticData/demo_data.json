@@ -1,7 +1,149 @@
 {
   "synthetic_data": {
-    "raw_response": "Based on the meeting transcript analysis:\n\nKey points identified:\n1. User requirements clearly defined\n2. Technical approach outlined\n3. Timeline and deliverables established\n\nRecommendations:\n- Proceed with proposed architecture\n- Implement in phases\n- Regular testing and feedback\n\nThis is a mock response for testing purposes."
+    "data_sets": [
+      {
+        "name": "Task Management App User Data",
+        "description": "A dataset containing user information for demonstration purposes",
+        "use_case_id": "UC-001",
+        "format": "json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "username": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "username",
+            "email"
+          ]
+        },
+        "sample_data": [
+          {
+            "id": "user-001",
+            "username": "johnDoe",
+            "email": "johndoe@example.com"
+          },
+          {
+            "id": "user-002",
+            "username": "janeDoe",
+            "email": "janedoe@example.com"
+          },
+          {
+            "id": "user-003",
+            "username": "bobSmith",
+            "email": "bobsmith@example.com"
+          }
+        ]
+      },
+      {
+        "name": "Task Data",
+        "description": "A dataset containing task information for demonstration purposes",
+        "use_case_id": "UC-001",
+        "format": "json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "due_date": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "description",
+            "due_date"
+          ]
+        },
+        "sample_data": [
+          {
+            "id": "task-001",
+            "title": "Task 1",
+            "description": "This is task 1",
+            "due_date": "2025-11-15"
+          },
+          {
+            "id": "task-002",
+            "title": "Task 2",
+            "description": "This is task 2",
+            "due_date": "2025-11-20"
+          },
+          {
+            "id": "task-003",
+            "title": "Task 3",
+            "description": "This is task 3",
+            "due_date": "2025-11-10"
+          }
+        ]
+      },
+      {
+        "name": "Task Assignment Data",
+        "description": "A dataset containing task assignment information for demonstration purposes",
+        "use_case_id": "UC-002",
+        "format": "json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "task_id": {
+              "type": "string"
+            },
+            "user_id": {
+              "type": "string"
+            },
+            "due_date": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "task_id",
+            "user_id",
+            "due_date"
+          ]
+        },
+        "sample_data": [
+          {
+            "id": "assignment-001",
+            "task_id": "task-001",
+            "user_id": "user-001",
+            "due_date": "2025-11-15"
+          },
+          {
+            "id": "assignment-002",
+            "task_id": "task-002",
+            "user_id": "user-002",
+            "due_date": "2025-11-20"
+          },
+          {
+            "id": "assignment-003",
+            "task_id": "task-003",
+            "user_id": "user-003",
+            "due_date": "2025-11-10"
+          }
+        ]
+      }
+    ],
+    "summary": "Generated synthetic data for Task Management App use cases"
   },
   "project_name": "Task Management App",
-  "warning": "Could not parse as JSON"
+  "num_datasets": 3
 }
