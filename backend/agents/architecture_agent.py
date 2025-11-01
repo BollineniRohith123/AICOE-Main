@@ -194,10 +194,10 @@ You MUST produce a single, complete HTML string as your response. DO NOT include
   * Include Mermaid.js via CDN: `<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>`
   * Initialize Mermaid with custom theme in a `<script>` tag at the end of `<body>`:
     ```javascript
-    mermaid.initialize({
+    mermaid.initialize({{
         startOnLoad: true,
         theme: 'base',
-        themeVariables: {
+        themeVariables: {{
             primaryColor: '#1a1a2e',
             primaryTextColor: '#ffffff',
             primaryBorderColor: '#00ffcc',
@@ -205,8 +205,8 @@ You MUST produce a single, complete HTML string as your response. DO NOT include
             secondaryColor: '#2a2a3e',
             tertiaryColor: '#3a2a4e',
             fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif'
-        }
-    });
+        }}
+    }});
     ```
   * Place Mermaid diagram code inside a `<div class="mermaid">` element
   * Ensure the diagram container has proper styling (white background, padding, border-radius)

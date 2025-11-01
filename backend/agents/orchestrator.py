@@ -71,7 +71,7 @@ class OrchestratorAgent:
             "data": DataAgent(llm_client),
             "knowledge_base": KnowledgeBaseAgent(llm_client),
             "reviewer": ReviewerAgent(llm_client),
-            "storage": StorageAgent(llm_client, base_storage_path="backend/storage"),
+            "storage": StorageAgent(llm_client, base_storage_path="storage"),
             "proposal": ProposalAgent(llm_client),
             "bom": BOMAgent(llm_client),
             "architecture": ArchitectureAgent(llm_client),
