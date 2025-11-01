@@ -1,0 +1,28 @@
+[
+  {
+    "timestamp": "2025-11-01T14:36:50.681366",
+    "action": "project_created",
+    "project_name": "E2E Test Project",
+    "user": "system"
+  },
+  {
+    "timestamp": "2025-11-01T14:36:50.682069",
+    "action": "file_saved",
+    "details": {
+      "folder": "notes",
+      "filename": "structured_notes.json",
+      "size": 967
+    },
+    "user": "system"
+  },
+  {
+    "timestamp": "2025-11-01T14:36:56.418328",
+    "action": "file_saved",
+    "details": {
+      "folder": "research",
+      "filename": "research_insights.json",
+      "size": 1190
+    },
+    "user": "system"
+  }
+]
