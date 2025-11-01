@@ -1,157 +1,17 @@
 [
   {
-    "timestamp": "2025-11-01T14:59:48.494402",
+    "timestamp": "2025-11-01T20:20:15.947649",
     "action": "project_created",
     "project_name": "Task Management App",
     "user": "system"
   },
   {
-    "timestamp": "2025-11-01T14:59:48.495025",
+    "timestamp": "2025-11-01T20:20:24.671687",
     "action": "file_saved",
     "details": {
       "folder": "notes",
       "filename": "structured_notes.json",
-      "size": 442
-    },
-    "user": "system"
-  },
-  {
-    "timestamp": "2025-11-01T14:59:54.177475",
-    "action": "file_saved",
-    "details": {
-      "folder": "research",
-      "filename": "research_insights.json",
-      "size": 1193
-    },
-    "user": "system"
-  },
-  {
-    "timestamp": "2025-11-01T14:59:54.178550",
-    "action": "file_saved",
-    "details": {
-      "folder": "use_cases",
-      "filename": "use_cases.json",
-      "size": 3816
-    },
-    "user": "system"
-  },
-  {
-    "timestamp": "2025-11-01T14:59:54.179380",
-    "action": "file_saved",
-    "details": {
-      "folder": "architecture",
-      "filename": "knowledge_enrichment.json",
-      "size": 528
-    },
-    "user": "system"
-  },
-  {
-    "timestamp": "2025-11-01T14:59:54.180159",
-    "action": "file_saved",
-    "details": {
-      "folder": "prd",
-      "filename": "PRD_v1.xml",
-      "size": 325
-    },
-    "user": "system"
-  },
-  {
-    "timestamp": "2025-11-01T14:59:54.180400",
-    "action": "file_saved",
-    "details": {
-      "folder": "prd",
-      "filename": "PRD_v1.html",
-      "size": 341
-    },
-    "user": "system"
-  },
-  {
-    "timestamp": "2025-11-01T14:59:54.181764",
-    "action": "file_saved",
-    "details": {
-      "folder": "mockups",
-      "filename": "index.html",
-      "size": 1260
-    },
-    "user": "system"
-  },
-  {
-    "timestamp": "2025-11-01T14:59:54.182044",
-    "action": "file_saved",
-    "details": {
-      "folder": "case_studies",
-      "filename": "index.html",
-      "size": 329
-    },
-    "user": "system"
-  },
-  {
-    "timestamp": "2025-11-01T14:59:54.182585",
-    "action": "file_saved",
-    "details": {
-      "folder": "case_studies",
-      "filename": "UC-001_mockup.html",
-      "size": 94
-    },
-    "user": "system"
-  },
-  {
-    "timestamp": "2025-11-01T14:59:54.183018",
-    "action": "file_saved",
-    "details": {
-      "folder": "case_studies",
-      "filename": "UC-002_mockup.html",
-      "size": 94
-    },
-    "user": "system"
-  },
-  {
-    "timestamp": "2025-11-01T14:59:54.183435",
-    "action": "file_saved",
-    "details": {
-      "folder": "case_studies",
-      "filename": "UC-003_mockup.html",
-      "size": 94
-    },
-    "user": "system"
-  },
-  {
-    "timestamp": "2025-11-01T14:59:54.183831",
-    "action": "file_saved",
-    "details": {
-      "folder": "case_studies",
-      "filename": "UC-004_mockup.html",
-      "size": 94
-    },
-    "user": "system"
-  },
-  {
-    "timestamp": "2025-11-01T14:59:54.184786",
-    "action": "file_saved",
-    "details": {
-      "folder": "synthetic_data",
-      "filename": "demo_data.json",
-      "size": 474
-    },
-    "user": "system"
-  },
-  {
-    "timestamp": "2025-11-01T14:59:54.186119",
-    "action": "file_saved",
-    "details": {
-      "folder": "bom",
-      "filename": "bom_v1.xml",
-      "size": 355
-    },
-    "user": "system"
-  },
-  {
-    "timestamp": "2025-11-01T14:59:54.186423",
-    "action": "file_saved",
-    "details": {
-      "folder": "bom",
-      "filename": "bom_v1.html",
-      "size": 8251
+      "size": 3057
     },
     "user": "system"
   }
