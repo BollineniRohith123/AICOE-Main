@@ -1,0 +1,92 @@
+{
+  "project_name": "Task Management App Analysis",
+  "workflow_id": "workflow_20251101_195434",
+  "status": "failed",
+  "error": "Critical stage requirements failed: JSON parsing failed after 2 attempts: Expecting value: line 1 column 1 (char 0)",
+  "context": {
+    "project_name": "Task Management App Analysis",
+    "workflow_id": "workflow_20251101_195434",
+    "workflow_type": "full",
+    "start_time": "2025-11-01T19:54:34.323461",
+    "end_time": "2025-11-01T19:54:39.987659",
+    "status": "failed",
+    "error": "Critical stage requirements failed: JSON parsing failed after 2 attempts: Expecting value: line 1 column 1 (char 0)"
+  },
+  "results": {
+    "storage": {
+      "project_name": "Task Management App Analysis",
+      "project_root": "storage/Task Management App Analysis",
+      "folders_created": [
+        "root",
+        "transcripts",
+        "notes",
+        "research",
+        "use_cases",
+        "synthetic_data",
+        "case_studies",
+        "prd",
+        "architecture",
+        "commercial_proposals",
+        "bom",
+        "feedback",
+        "audit"
+      ],
+      "audit_log": {
+        "timestamp": "2025-11-01T19:54:34.324052",
+        "action": "project_created",
+        "project_name": "Task Management App Analysis",
+        "user": "system"
+      }
+    },
+    "transcript": {
+      "structured_notes_xml": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Task Manager Mockup</title>\n    <style>\n        body { font-family: Arial, sans-serif; }\n        .dashboard { max-width: 1200px; margin: 0 auto; padding: 20px; }\n        .header { background: #007bff; color: white; padding: 20px; }\n        .task-list { display: grid; gap: 15px; margin-top: 20px; }\n        .task-card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; }\n    </style>\n</head>\n<body>\n    <div class=\"dashboard\">\n        <div class=\"header\">\n            <h1>Task Management Dashboard</h1>\n        </div>\n        <div class=\"task-list\">\n            <div class=\"task-card\">\n                <h3>Sample Task 1</h3>\n                <p>Complete project documentation</p>\n                <span>Priority: High</span>\n            </div>\n        </div>\n    </div>\n</body>\n</html>",
+      "project_name": "Task Management App Analysis",
+      "transcript_length": 2514
+    },
+    "researcher": {
+      "research_insights": {
+        "company_name": "Task Management App Analysis",
+        "product_type": "task management",
+        "search_queries_used": [
+          "task management industry trends 2025 best practices",
+          "best task management applications competitors market leaders",
+          "task management technical standards architecture patterns",
+          "task management user experience expectations features",
+          "task management development best practices design patterns"
+        ],
+        "industry_trends": [
+          "Modern cloud-native architecture",
+          "Mobile-first design",
+          "AI/ML integration"
+        ],
+        "competitor_insights": [
+          "Focus on user experience",
+          "Scalable infrastructure",
+          "Real-time capabilities"
+        ],
+        "best_practices": [
+          "Follow industry-standard design patterns",
+          "Implement comprehensive security measures",
+          "Ensure scalability and performance",
+          "Prioritize user experience and accessibility",
+          "Use modern technology stack"
+        ],
+        "technical_standards": [
+          "RESTful API design",
+          "Responsive web design",
+          "Cloud deployment"
+        ],
+        "user_expectations": [
+          "Intuitive interface",
+          "Fast performance",
+          "Mobile accessibility"
+        ],
+        "regulatory_requirements": [],
+        "sources": []
+      },
+      "company_name": "Task Management App Analysis",
+      "product_type": "task management",
+      "sources_count": 0
+    }
+  }
+}
