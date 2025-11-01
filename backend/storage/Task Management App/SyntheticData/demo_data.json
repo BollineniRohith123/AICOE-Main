@@ -1,0 +1,7 @@
+{
+  "synthetic_data": {
+    "raw_response": "Based on the meeting transcript analysis:\n\nKey points identified:\n1. User requirements clearly defined\n2. Technical approach outlined\n3. Timeline and deliverables established\n\nRecommendations:\n- Proceed with proposed architecture\n- Implement in phases\n- Regular testing and feedback\n\nThis is a mock response for testing purposes."
+  },
+  "project_name": "Task Management App",
+  "warning": "Could not parse as JSON"
+}

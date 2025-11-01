@@ -1,0 +1,26 @@
+# Bill of Materials
+
+## Technical Stack
+
+### Frontend
+- React.js 18.x
+- Tailwind CSS
+- Axios for API calls
+
+### Backend
+- Node.js 20.x
+- Express.js
+- JWT authentication
+
+### Database
+- MongoDB Atlas
+- Mongoose ODM
+
+### Hosting
+- Frontend: Vercel
+- Backend: AWS EC2
+- Database: MongoDB Atlas
+
+### Third-party Services
+- SendGrid (Email)
+- Stripe (Payments)

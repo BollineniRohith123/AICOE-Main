@@ -1,0 +1,25 @@
+{
+  "enrichment": {
+    "architecture": {
+      "type": "Three-tier architecture",
+      "layers": {
+        "frontend": "React SPA",
+        "backend": "REST API with Node.js",
+        "database": "MongoDB"
+      },
+      "security": [
+        "HTTPS",
+        "JWT",
+        "Input validation"
+      ]
+    }
+  },
+  "project_name": "Task Management App",
+  "document_type": "requirements",
+  "knowledge_base_categories": [
+    "ai_design_patterns",
+    "compliance_rules",
+    "best_practices",
+    "integration_patterns"
+  ]
+}

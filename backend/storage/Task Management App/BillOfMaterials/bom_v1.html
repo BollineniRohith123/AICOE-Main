@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Interactive Mockup</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .dashboard { 
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 16px; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .stat-number { font-size: 36px; font-weight: 700; color: #667eea; }
+        .stat-label { color: #666; margin-top: 8px; font-size: 14px; }
+        .content { padding: 30px; }
+        .section-title { font-size: 24px; font-weight: 600; margin-bottom: 20px; color: #333; }
+        .task-list { display: grid; gap: 15px; }
+        .task-card { 
+            border: 2px solid #e9ecef;
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .task-card:hover { 
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+        }
+        .task-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px; }
+        .task-title { font-size: 18px; font-weight: 600; color: #333; }
+        .priority-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .priority-high { background: #fee; color: #c00; }
+        .priority-medium { background: #ffeaa7; color: #d63031; }
+        .priority-low { background: #e3f2fd; color: #1565c0; }
+        .task-description { color: #666; margin-bottom: 12px; line-height: 1.6; }
+        .task-footer { display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .task-status { 
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .status-todo { background: #e3f2fd; color: #1565c0; }
+        .status-progress { background: #fff3e0; color: #e65100; }
+        .status-done { background: #e8f5e9; color: #2e7d32; }
+        .add-task-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+        .add-task-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>📋 Task Management Dashboard</h1>
+            <p>Organize, track, and complete your tasks efficiently</p>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Total Tasks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5</div>
+                <div class="stat-label">In Progress</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">High Priority</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2 class="section-title">Your Tasks</h2>
+            <div class="task-list">
+                <div class="task-card">
+                    <div class="task-header">
+                        <div class="task-title">Complete Project Documentation</div>
+                        <span class="priority-badge priority-high">High Priority</span>
+                    </div>
+                    <div class="task-description">
+                        Finalize all project documentation including technical specs, user guides, and API documentation.
+                    </div>
+                    <div class="task-footer">
+                        <span>Due: Today</span>
+                        <span class="task-status status-progress">In Progress</span>
+                    </div>
+                </div>
+                
+                <div class="task-card">
+                    <div class="task-header">
+                        <div class="task-title">Review Pull Requests</div>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <div class="task-description">
+                        Review and approve pending pull requests from team members.
+                    </div>
+                    <div class="task-footer">
+                        <span>Due: Tomorrow</span>
+                        <span class="task-status status-todo">To Do</span>
+                    </div>
+                </div>
+                
+                <div class="task-card">
+                    <div class="task-header">
+                        <div class="task-title">Deploy to Production</div>
+                        <span class="priority-badge priority-high">High Priority</span>
+                    </div>
+                    <div class="task-description">
+                        Deploy the latest version to production environment after testing.
+                    </div>
+                    <div class="task-footer">
+                        <span>Due: Next Week</span>
+                        <span class="task-status status-todo">To Do</span>
+                    </div>
+                </div>
+                
+                <div class="task-card">
+                    <div class="task-header">
+                        <div class="task-title">Update Dependencies</div>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <div class="task-description">
+                        Update all project dependencies to latest stable versions.
+                    </div>
+                    <div class="task-footer">
+                        <span>Due: 2 weeks</span>
+                        <span class="task-status status-done">Done</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button class="add-task-btn" onclick="alert('Add Task functionality would open a modal here')">+</button>
+    
+    <script>
+        // Add click handlers for interactivity
+        document.querySelectorAll('.task-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.background = this.style.background === 'rgb(248, 249, 250)' ? 'white' : '#f8f9fa';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+{
+  "project_name": "Task Management App",
+  "workflow_id": "workflow_20251101_145948",
+  "status": "success",
+  "context": {
+    "project_name": "Task Management App",
+    "workflow_id": "workflow_20251101_145948",
+    "workflow_type": "full",
+    "start_time": "2025-11-01T14:59:48.493831",
+    "end_time": "2025-11-01T14:59:54.189889",
+    "status": "completed"
+  },
+  "results": {
+    "storage": {
+      "project_name": "Task Management App",
+      "project_root": "storage/Task Management App",
+      "folders_created": [
+        "root",
+        "transcripts",
+        "notes",
+        "research",
+        "use_cases",
+        "synthetic_data",
+        "case_studies",
+        "prd",
+        "architecture",
+        "commercial_proposals",
+        "bom",
+        "feedback",
+        "audit"
+      ],
+      "audit_log": {
+        "timestamp": "2025-11-01T14:59:48.494402",
+        "action": "project_created",
+        "project_name": "Task Management App",
+        "user": "system"
+      }
+    },
+    "transcript": {
+      "structured_notes_xml": "Based on the meeting transcript analysis:\n\nKey points identified:\n1. User requirements clearly defined\n2. Technical approach outlined\n3. Timeline and deliverables established\n\nRecommendations:\n- Proceed with proposed architecture\n- Implement in phases\n- Regular testing and feedback\n\nThis is a mock response for testing purposes.",
+      "project_name": "Task Management App",
+      "transcript_length": 566
+    },
+    "researcher": {
+      "research_insights": {
+        "company_name": "Task Management App",
+        "product_type": "task management",
+        "search_queries_used": [
+          "task management industry trends 2025 best practices",
+          "best task management applications competitors market leaders",
+          "task management technical standards architecture patterns",
+          "task management user experience expectations features",
+          "task management development best practices design patterns"
+        ],
+        "industry_trends": [
+          "Modern cloud-native architecture",
+          "Mobile-first design",
+          "AI/ML integration"
+        ],
+        "competitor_insights": [
+          "Focus on user experience",
+          "Scalable infrastructure",
+          "Real-time capabilities"
+        ],
+        "best_practices": [
+          "Follow industry-standard design patterns",
+          "Implement comprehensive security measures",
+          "Ensure scalability and performance",
+          "Prioritize user experience and accessibility",
+          "Use modern technology stack"
+        ],
+        "technical_standards": [
+          "RESTful API design",
+          "Responsive web design",
+          "Cloud deployment"
+        ],
+        "user_expectations": [
+          "Intuitive interface",
+          "Fast performance",
+          "Mobile accessibility"
+        ],
+        "regulatory_requirements": [],
+        "sources": []
+      },
+      "company_name": "Task Management App",
+      "product_type": "task management",
+      "sources_count": 0
+    },
+    "requirements": {
+      "use_cases": [
+        {
+          "id": "UC-001",
+          "title": "User Registration",
+          "description": "Allow new users to register with email and password",
+          "actors": [
+            "New User",
+            "System"
+          ],
+          "preconditions": [
+            "User has valid email address"
+          ],
+          "main_flow": [
+            "User navigates to registration page",
+            "User enters email and password",
+            "System validates input",
+            "System creates user account",
+            "System sends confirmation email"
+          ],
+          "alternate_flows": [
+            "Email already exists: System shows error"
+          ],
+          "postconditions": [
+            "User account is created",
+            "User can login"
+          ],
+          "priority": "high",
+          "business_value": "Essential for user management"
+        },
+        {
+          "id": "UC-002",
+          "title": "Create Task",
+          "description": "Users can create new tasks with details",
+          "actors": [
+            "Registered User",
+            "System"
+          ],
+          "preconditions": [
+            "User is logged in"
+          ],
+          "main_flow": [
+            "User clicks 'New Task' button",
+            "User enters task details",
+            "User sets priority and due date",
+            "System saves task",
+            "System displays success message"
+          ],
+          "alternate_flows": [
+            "Invalid data: System shows validation errors"
+          ],
+          "postconditions": [
+            "Task is created in database"
+          ],
+          "priority": "high",
+          "business_value": "Core feature for task management"
+        },
+        {
+          "id": "UC-003",
+          "title": "View Dashboard",
+          "description": "Users can view task statistics and overview",
+          "actors": [
+            "Registered User",
+            "System"
+          ],
+          "preconditions": [
+            "User is logged in"
+          ],
+          "main_flow": [
+            "User navigates to dashboard",
+            "System loads user's tasks",
+            "System calculates statistics",
+            "System displays dashboard"
+          ],
+          "alternate_flows": [],
+          "postconditions": [
+            "Dashboard is displayed"
+          ],
+          "priority": "high",
+          "business_value": "Provides quick overview of tasks"
+        },
+        {
+          "id": "UC-004",
+          "title": "Filter Tasks",
+          "description": "Users can filter tasks by status and priority",
+          "actors": [
+            "Registered User",
+            "System"
+          ],
+          "preconditions": [
+            "User is logged in",
+            "Tasks exist"
+          ],
+          "main_flow": [
+            "User selects filter criteria",
+            "System applies filters",
+            "System displays filtered results"
+          ],
+          "alternate_flows": [
+            "No results: System shows empty state"
+          ],
+          "postconditions": [
+            "Filtered tasks are displayed"
+          ],
+          "priority": "medium",
+          "business_value": "Improves task discovery and organization"
+        }
+      ],
+      "business_requirements": {
+        "overview": "A modern task management application designed for individual productivity",
+        "business_goals": [
+          "Increase user productivity",
+          "Provide simple task organization",
+          "Enable task tracking and completion"
+        ],
+        "success_criteria": [
+          "90% user satisfaction rate",
+          "50% increase in task completion",
+          "10,000 active users in first year"
+        ],
+        "constraints": [
+          "Must work on mobile and desktop",
+          "Budget: $50,000",
+          "Timeline: 12 weeks"
+        ],
+        "assumptions": [
+          "Users have internet access",
+          "Users prefer simple over complex features"
+        ],
+        "risks": [
+          {
+            "risk": "Low user adoption",
+            "mitigation": "Launch beta program and gather feedback"
+          },
+          {
+            "risk": "Technical complexity",
+            "mitigation": "Use proven technology stack"
+          }
+        ]
+      },
+      "project_name": "Task Management App"
+    },
+    "knowledge_base": {
+      "enrichment": {
+        "architecture": {
+          "type": "Three-tier architecture",
+          "layers": {
+            "frontend": "React SPA",
+            "backend": "REST API with Node.js",
+            "database": "MongoDB"
+          },
+          "security": [
+            "HTTPS",
+            "JWT",
+            "Input validation"
+          ]
+        }
+      },
+      "project_name": "Task Management App",
+      "document_type": "requirements",
+      "knowledge_base_categories": [
+        "ai_design_patterns",
+        "compliance_rules",
+        "best_practices",
+        "integration_patterns"
+      ]
+    },
+    "prd": {
+      "prd_xml": "# Product Requirements Document\n\n## Project Overview\nTask Management Application - A modern productivity tool\n\n## Core Features\n1. User Authentication (email/password)\n2. Task CRUD operations\n3. Dashboard with statistics\n4. Filtering and sorting\n\n## Technical Stack\n- Frontend: React.js\n- Backend: Node.js\n- Database: MongoDB",
+      "prd_html": "<!DOCTYPE html>\n# Product Requirements Document\n\n## Project Overview\nTask Management Application - A modern productivity tool\n\n## Core Features\n1. User Authentication (email/password)\n2. Task CRUD operations\n3. Dashboard with statistics\n4. Filtering and sorting\n\n## Technical Stack\n- Frontend: React.js\n- Backend: Node.js\n- Database: MongoDB",
+      "project_name": "Task Management App"
+    },
+    "mockup": {
+      "mockup_pages": {
+        "index.html": "Based on the meeting transcript analysis:\n\nKey points identified:\n1. User requirements clearly defined\n2. Technical approach outlined\n3. Timeline and deliverables established\n\nRecommendations:\n- Proceed with proposed architecture\n- Implement in phases\n- Regular testing and feedback\n\nThis is a mock response for testing purposes.",
+        "UC-001_mockup.html": "<!DOCTYPE html><html><body><h1>Error generating mockup for Unnamed Use Case</h1></body></html>",
+        "UC-002_mockup.html": "<!DOCTYPE html><html><body><h1>Error generating mockup for Unnamed Use Case</h1></body></html>",
+        "UC-003_mockup.html": "<!DOCTYPE html><html><body><h1>Error generating mockup for Unnamed Use Case</h1></body></html>",
+        "UC-004_mockup.html": "<!DOCTYPE html><html><body><h1>Error generating mockup for Unnamed Use Case</h1></body></html>"
+      },
+      "use_case_structure": {
+        "total_pages": 5,
+        "has_index": true,
+        "use_cases": {
+          "UC-001": {
+            "type": "single-page",
+            "pages": [
+              "UC-001_mockup.html"
+            ]
+          },
+          "UC-002": {
+            "type": "single-page",
+            "pages": [
+              "UC-002_mockup.html"
+            ]
+          },
+          "UC-003": {
+            "type": "single-page",
+            "pages": [
+              "UC-003_mockup.html"
+            ]
+          },
+          "UC-004": {
+            "type": "single-page",
+            "pages": [
+              "UC-004_mockup.html"
+            ]
+          }
+        }
+      },
+      "project_name": "Task Management App",
+      "num_pages": 5
+    },
+    "synthetic_data": {
+      "synthetic_data": {
+        "raw_response": "Based on the meeting transcript analysis:\n\nKey points identified:\n1. User requirements clearly defined\n2. Technical approach outlined\n3. Timeline and deliverables established\n\nRecommendations:\n- Proceed with proposed architecture\n- Implement in phases\n- Regular testing and feedback\n\nThis is a mock response for testing purposes."
+      },
+      "project_name": "Task Management App",
+      "warning": "Could not parse as JSON"
+    },
+    "commercial_proposal": {
+      "proposal_xml": "# Product Requirements Document\n\n## Project Overview\nTask Management Application - A modern productivity tool\n\n## Core Features\n1. User Authentication (email/password)\n2. Task CRUD operations\n3. Dashboard with statistics\n4. Filtering and sorting\n\n## Technical Stack\n- Frontend: React.js\n- Backend: Node.js\n- Database: MongoDB",
+      "proposal_html": "<!DOCTYPE html>\n# Product Requirements Document\n\n## Project Overview\nTask Management Application - A modern productivity tool\n\n## Core Features\n1. User Authentication (email/password)\n2. Task CRUD operations\n3. Dashboard with statistics\n4. Filtering and sorting\n\n## Technical Stack\n- Frontend: React.js\n- Backend: Node.js\n- Database: MongoDB",
+      "project_name": "Task Management App"
+    },
+    "bom": {
+      "bom_xml": "# Bill of Materials\n\n## Technical Stack\n\n### Frontend\n- React.js 18.x\n- Tailwind CSS\n- Axios for API calls\n\n### Backend\n- Node.js 20.x\n- Express.js\n- JWT authentication\n\n### Database\n- MongoDB Atlas\n- Mongoose ODM\n\n### Hosting\n- Frontend: Vercel\n- Backend: AWS EC2\n- Database: MongoDB Atlas\n\n### Third-party Services\n- SendGrid (Email)\n- Stripe (Payments)",
+      "bom_html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Task Manager - Interactive Mockup</title>\n    <style>\n        * { margin: 0; padding: 0; box-sizing: border-box; }\n        body { \n            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            min-height: 100vh;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            padding: 20px;\n        }\n        .dashboard { \n            max-width: 1200px;\n            width: 100%;\n            background: white;\n            border-radius: 20px;\n            box-shadow: 0 20px 60px rgba(0,0,0,0.3);\n            overflow: hidden;\n        }\n        .header { \n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            color: white;\n            padding: 30px;\n            text-align: center;\n        }\n        .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 10px; }\n        .header p { opacity: 0.9; font-size: 16px; }\n        .stats {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n            gap: 20px;\n            padding: 30px;\n            background: #f8f9fa;\n        }\n        .stat-card {\n            background: white;\n            padding: 20px;\n            border-radius: 12px;\n            box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n            text-align: center;\n        }\n        .stat-number { font-size: 36px; font-weight: 700; color: #667eea; }\n        .stat-label { color: #666; margin-top: 8px; font-size: 14px; }\n        .content { padding: 30px; }\n        .section-title { font-size: 24px; font-weight: 600; margin-bottom: 20px; color: #333; }\n        .task-list { display: grid; gap: 15px; }\n        .task-card { \n            border: 2px solid #e9ecef;\n            padding: 20px;\n            border-radius: 12px;\n            transition: all 0.3s ease;\n            cursor: pointer;\n        }\n        .task-card:hover { \n            border-color: #667eea;\n            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);\n            transform: translateY(-2px);\n        }\n        .task-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px; }\n        .task-title { font-size: 18px; font-weight: 600; color: #333; }\n        .priority-badge {\n            padding: 4px 12px;\n            border-radius: 20px;\n            font-size: 12px;\n            font-weight: 600;\n        }\n        .priority-high { background: #fee; color: #c00; }\n        .priority-medium { background: #ffeaa7; color: #d63031; }\n        .priority-low { background: #e3f2fd; color: #1565c0; }\n        .task-description { color: #666; margin-bottom: 12px; line-height: 1.6; }\n        .task-footer { display: flex; justify-content: space-between; align-items: center; font-size: 14px; }\n        .task-status { \n            padding: 4px 12px;\n            border-radius: 20px;\n            font-weight: 500;\n        }\n        .status-todo { background: #e3f2fd; color: #1565c0; }\n        .status-progress { background: #fff3e0; color: #e65100; }\n        .status-done { background: #e8f5e9; color: #2e7d32; }\n        .add-task-btn {\n            position: fixed;\n            bottom: 30px;\n            right: 30px;\n            width: 60px;\n            height: 60px;\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            border: none;\n            border-radius: 50%;\n            color: white;\n            font-size: 32px;\n            cursor: pointer;\n            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);\n            transition: all 0.3s ease;\n        }\n        .add-task-btn:hover {\n            transform: scale(1.1);\n            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);\n        }\n    </style>\n</head>\n<body>\n    <div class=\"dashboard\">\n        <div class=\"header\">\n            <h1>\ud83d\udccb Task Management Dashboard</h1>\n            <p>Organize, track, and complete your tasks efficiently</p>\n        </div>\n        \n        <div class=\"stats\">\n            <div class=\"stat-card\">\n                <div class=\"stat-number\">12</div>\n                <div class=\"stat-label\">Total Tasks</div>\n            </div>\n            <div class=\"stat-card\">\n                <div class=\"stat-number\">5</div>\n                <div class=\"stat-label\">In Progress</div>\n            </div>\n            <div class=\"stat-card\">\n                <div class=\"stat-number\">7</div>\n                <div class=\"stat-label\">Completed</div>\n            </div>\n            <div class=\"stat-card\">\n                <div class=\"stat-number\">3</div>\n                <div class=\"stat-label\">High Priority</div>\n            </div>\n        </div>\n        \n        <div class=\"content\">\n            <h2 class=\"section-title\">Your Tasks</h2>\n            <div class=\"task-list\">\n                <div class=\"task-card\">\n                    <div class=\"task-header\">\n                        <div class=\"task-title\">Complete Project Documentation</div>\n                        <span class=\"priority-badge priority-high\">High Priority</span>\n                    </div>\n                    <div class=\"task-description\">\n                        Finalize all project documentation including technical specs, user guides, and API documentation.\n                    </div>\n                    <div class=\"task-footer\">\n                        <span>Due: Today</span>\n                        <span class=\"task-status status-progress\">In Progress</span>\n                    </div>\n                </div>\n                \n                <div class=\"task-card\">\n                    <div class=\"task-header\">\n                        <div class=\"task-title\">Review Pull Requests</div>\n                        <span class=\"priority-badge priority-medium\">Medium</span>\n                    </div>\n                    <div class=\"task-description\">\n                        Review and approve pending pull requests from team members.\n                    </div>\n                    <div class=\"task-footer\">\n                        <span>Due: Tomorrow</span>\n                        <span class=\"task-status status-todo\">To Do</span>\n                    </div>\n                </div>\n                \n                <div class=\"task-card\">\n                    <div class=\"task-header\">\n                        <div class=\"task-title\">Deploy to Production</div>\n                        <span class=\"priority-badge priority-high\">High Priority</span>\n                    </div>\n                    <div class=\"task-description\">\n                        Deploy the latest version to production environment after testing.\n                    </div>\n                    <div class=\"task-footer\">\n                        <span>Due: Next Week</span>\n                        <span class=\"task-status status-todo\">To Do</span>\n                    </div>\n                </div>\n                \n                <div class=\"task-card\">\n                    <div class=\"task-header\">\n                        <div class=\"task-title\">Update Dependencies</div>\n                        <span class=\"priority-badge priority-low\">Low</span>\n                    </div>\n                    <div class=\"task-description\">\n                        Update all project dependencies to latest stable versions.\n                    </div>\n                    <div class=\"task-footer\">\n                        <span>Due: 2 weeks</span>\n                        <span class=\"task-status status-done\">Done</span>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n    <button class=\"add-task-btn\" onclick=\"alert('Add Task functionality would open a modal here')\">+</button>\n    \n    <script>\n        // Add click handlers for interactivity\n        document.querySelectorAll('.task-card').forEach(card => {\n            card.addEventListener('click', function() {\n                this.style.background = this.style.background === 'rgb(248, 249, 250)' ? 'white' : '#f8f9fa';\n            });\n        });\n    </script>\n</body>\n</html>",
+      "project_name": "Task Management App"
+    },
+    "architecture_diagram": {
+      "architecture_xml": "# System Architecture\n\n## Architecture Overview\nThree-tier architecture with React frontend, Node.js backend, and MongoDB database.\n\n## Components\n\n### Frontend Layer\n- React SPA\n- State management with Context API\n- Responsive design\n\n### Backend Layer\n- RESTful API\n- JWT authentication\n- Business logic\n\n### Data Layer\n- MongoDB for persistence\n- Redis for caching\n\n## Security\n- HTTPS encryption\n- JWT tokens\n- Input validation",
+      "architecture_html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Task Manager - Interactive Mockup</title>\n    <style>\n        * { margin: 0; padding: 0; box-sizing: border-box; }\n        body { \n            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            min-height: 100vh;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            padding: 20px;\n        }\n        .dashboard { \n            max-width: 1200px;\n            width: 100%;\n            background: white;\n            border-radius: 20px;\n            box-shadow: 0 20px 60px rgba(0,0,0,0.3);\n            overflow: hidden;\n        }\n        .header { \n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            color: white;\n            padding: 30px;\n            text-align: center;\n        }\n        .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 10px; }\n        .header p { opacity: 0.9; font-size: 16px; }\n        .stats {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n            gap: 20px;\n            padding: 30px;\n            background: #f8f9fa;\n        }\n        .stat-card {\n            background: white;\n            padding: 20px;\n            border-radius: 12px;\n            box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n            text-align: center;\n        }\n        .stat-number { font-size: 36px; font-weight: 700; color: #667eea; }\n        .stat-label { color: #666; margin-top: 8px; font-size: 14px; }\n        .content { padding: 30px; }\n        .section-title { font-size: 24px; font-weight: 600; margin-bottom: 20px; color: #333; }\n        .task-list { display: grid; gap: 15px; }\n        .task-card { \n            border: 2px solid #e9ecef;\n            padding: 20px;\n            border-radius: 12px;\n            transition: all 0.3s ease;\n            cursor: pointer;\n        }\n        .task-card:hover { \n            border-color: #667eea;\n            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);\n            transform: translateY(-2px);\n        }\n        .task-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px; }\n        .task-title { font-size: 18px; font-weight: 600; color: #333; }\n        .priority-badge {\n            padding: 4px 12px;\n            border-radius: 20px;\n            font-size: 12px;\n            font-weight: 600;\n        }\n        .priority-high { background: #fee; color: #c00; }\n        .priority-medium { background: #ffeaa7; color: #d63031; }\n        .priority-low { background: #e3f2fd; color: #1565c0; }\n        .task-description { color: #666; margin-bottom: 12px; line-height: 1.6; }\n        .task-footer { display: flex; justify-content: space-between; align-items: center; font-size: 14px; }\n        .task-status { \n            padding: 4px 12px;\n            border-radius: 20px;\n            font-weight: 500;\n        }\n        .status-todo { background: #e3f2fd; color: #1565c0; }\n        .status-progress { background: #fff3e0; color: #e65100; }\n        .status-done { background: #e8f5e9; color: #2e7d32; }\n        .add-task-btn {\n            position: fixed;\n            bottom: 30px;\n            right: 30px;\n            width: 60px;\n            height: 60px;\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            border: none;\n            border-radius: 50%;\n            color: white;\n            font-size: 32px;\n            cursor: pointer;\n            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);\n            transition: all 0.3s ease;\n        }\n        .add-task-btn:hover {\n            transform: scale(1.1);\n            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);\n        }\n    </style>\n</head>\n<body>\n    <div class=\"dashboard\">\n        <div class=\"header\">\n            <h1>\ud83d\udccb Task Management Dashboard</h1>\n            <p>Organize, track, and complete your tasks efficiently</p>\n        </div>\n        \n        <div class=\"stats\">\n            <div class=\"stat-card\">\n                <div class=\"stat-number\">12</div>\n                <div class=\"stat-label\">Total Tasks</div>\n            </div>\n            <div class=\"stat-card\">\n                <div class=\"stat-number\">5</div>\n                <div class=\"stat-label\">In Progress</div>\n            </div>\n            <div class=\"stat-card\">\n                <div class=\"stat-number\">7</div>\n                <div class=\"stat-label\">Completed</div>\n            </div>\n            <div class=\"stat-card\">\n                <div class=\"stat-number\">3</div>\n                <div class=\"stat-label\">High Priority</div>\n            </div>\n        </div>\n        \n        <div class=\"content\">\n            <h2 class=\"section-title\">Your Tasks</h2>\n            <div class=\"task-list\">\n                <div class=\"task-card\">\n                    <div class=\"task-header\">\n                        <div class=\"task-title\">Complete Project Documentation</div>\n                        <span class=\"priority-badge priority-high\">High Priority</span>\n                    </div>\n                    <div class=\"task-description\">\n                        Finalize all project documentation including technical specs, user guides, and API documentation.\n                    </div>\n                    <div class=\"task-footer\">\n                        <span>Due: Today</span>\n                        <span class=\"task-status status-progress\">In Progress</span>\n                    </div>\n                </div>\n                \n                <div class=\"task-card\">\n                    <div class=\"task-header\">\n                        <div class=\"task-title\">Review Pull Requests</div>\n                        <span class=\"priority-badge priority-medium\">Medium</span>\n                    </div>\n                    <div class=\"task-description\">\n                        Review and approve pending pull requests from team members.\n                    </div>\n                    <div class=\"task-footer\">\n                        <span>Due: Tomorrow</span>\n                        <span class=\"task-status status-todo\">To Do</span>\n                    </div>\n                </div>\n                \n                <div class=\"task-card\">\n                    <div class=\"task-header\">\n                        <div class=\"task-title\">Deploy to Production</div>\n                        <span class=\"priority-badge priority-high\">High Priority</span>\n                    </div>\n                    <div class=\"task-description\">\n                        Deploy the latest version to production environment after testing.\n                    </div>\n                    <div class=\"task-footer\">\n                        <span>Due: Next Week</span>\n                        <span class=\"task-status status-todo\">To Do</span>\n                    </div>\n                </div>\n                \n                <div class=\"task-card\">\n                    <div class=\"task-header\">\n                        <div class=\"task-title\">Update Dependencies</div>\n                        <span class=\"priority-badge priority-low\">Low</span>\n                    </div>\n                    <div class=\"task-description\">\n                        Update all project dependencies to latest stable versions.\n                    </div>\n                    <div class=\"task-footer\">\n                        <span>Due: 2 weeks</span>\n                        <span class=\"task-status status-done\">Done</span>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n    <button class=\"add-task-btn\" onclick=\"alert('Add Task functionality would open a modal here')\">+</button>\n    \n    <script>\n        // Add click handlers for interactivity\n        document.querySelectorAll('.task-card').forEach(card => {\n            card.addEventListener('click', function() {\n                this.style.background = this.style.background === 'rgb(248, 249, 250)' ? 'white' : '#f8f9fa';\n            });\n        });\n    </script>\n</body>\n</html>",
+      "project_name": "Task Management App"
+    },
+    "gallery": {
+      "gallery_html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>AICOE Case Study Gallery</title>\n    <script src=\"https://unpkg.com/lucide@latest\"></script>\n    <style>\n        :root {\n            --aicoe-primary: #0066cc;\n            --aicoe-accent: #00d9ff;\n            --aicoe-dark: #1d1d1f;\n            --aicoe-gray: #6e6e73;\n            --aicoe-light-gray: #f5f5f7;\n            --aicoe-white: #ffffff;\n            --aicoe-success: #34c759;\n            --aicoe-warning: #ff9500;\n        }\n\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n            background-color: var(--aicoe-light-gray);\n            color: var(--aicoe-dark);\n            line-height: 1.6;\n        }\n\n        /* Navigation */\n        nav {\n            background: var(--aicoe-white);\n            padding: 1rem 2rem;\n            box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n            position: sticky;\n            top: 0;\n            z-index: 100;\n        }\n\n        .nav-container {\n            max-width: 1400px;\n            margin: 0 auto;\n            display: flex;\n            justify-content: space-between;\n            align-items: center;\n        }\n\n        .nav-brand {\n            font-size: 1.5rem;\n            font-weight: 700;\n            color: var(--aicoe-primary);\n        }\n\n        /* Hero Section */\n        .hero {\n            background: linear-gradient(135deg, var(--aicoe-primary), var(--aicoe-accent));\n            color: var(--aicoe-white);\n            padding: 4rem 2rem;\n            text-align: center;\n        }\n\n        .hero h1 {\n            font-size: 3rem;\n            font-weight: 700;\n            margin-bottom: 1rem;\n        }\n\n        .hero p {\n            font-size: 1.25rem;\n            opacity: 0.9;\n        }\n\n        /* Filters */\n        .filters {\n            max-width: 1400px;\n            margin: 2rem auto;\n            padding: 0 2rem;\n            display: flex;\n            gap: 1rem;\n            flex-wrap: wrap;\n            align-items: flex-end;\n        }\n\n        .filter-group {\n            flex: 1;\n            min-width: 200px;\n        }\n\n        .filter-group label {\n            display: block;\n            margin-bottom: 0.5rem;\n            font-weight: 600;\n            color: var(--aicoe-gray);\n            font-size: 0.875rem;\n        }\n\n        .filter-group select,\n        .filter-group input {\n            width: 100%;\n            padding: 0.75rem;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            font-size: 1rem;\n            background: var(--aicoe-white);\n        }\n\n        .filter-group select:focus,\n        .filter-group input:focus {\n            outline: none;\n            border-color: var(--aicoe-primary);\n        }\n\n        .clear-filters {\n            padding: 0.75rem 1.5rem;\n            background: var(--aicoe-gray);\n            color: var(--aicoe-white);\n            border: none;\n            border-radius: 8px;\n            font-weight: 600;\n            cursor: pointer;\n            transition: background 0.3s ease;\n        }\n\n        .clear-filters:hover {\n            background: #5a5a5f;\n        }\n\n        /* Results Count */\n        .results-count {\n            max-width: 1400px;\n            margin: 0 auto 1rem;\n            padding: 0 2rem;\n            color: var(--aicoe-gray);\n            font-size: 0.875rem;\n        }\n\n        /* Gallery Grid */\n        .gallery {\n            max-width: 1400px;\n            margin: 2rem auto;\n            padding: 0 2rem 4rem;\n            display: grid;\n            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n            gap: 2rem;\n        }\n\n        /* Case Study Card */\n        .case-study-card {\n            background: var(--aicoe-white);\n            border-radius: 12px;\n            padding: 2rem;\n            box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n            transition: all 0.3s ease;\n            cursor: pointer;\n            display: flex;\n            flex-direction: column;\n        }\n\n        .case-study-card:hover {\n            transform: translateY(-4px);\n            box-shadow: 0 8px 16px rgba(0,0,0,0.15);\n        }\n\n        .case-study-card.hidden {\n            display: none;\n        }\n\n        .industry-badge {\n            display: inline-block;\n            padding: 0.5rem 1rem;\n            background: var(--aicoe-primary);\n            color: var(--aicoe-white);\n            border-radius: 20px;\n            font-size: 0.875rem;\n            font-weight: 600;\n            margin-bottom: 1rem;\n            align-self: flex-start;\n        }\n\n        .card-title {\n            font-size: 1.5rem;\n            font-weight: 700;\n            margin-bottom: 0.5rem;\n            color: var(--aicoe-dark);\n        }\n\n        .card-description {\n            color: var(--aicoe-gray);\n            margin-bottom: 1rem;\n            line-height: 1.6;\n            flex-grow: 1;\n        }\n\n        .tech-stack {\n            display: flex;\n            flex-wrap: wrap;\n            gap: 0.5rem;\n            margin-bottom: 1rem;\n        }\n\n        .tech-tag {\n            padding: 0.25rem 0.75rem;\n            background: var(--aicoe-light-gray);\n            color: var(--aicoe-gray);\n            border-radius: 12px;\n            font-size: 0.875rem;\n        }\n\n        .card-meta {\n            display: flex;\n            justify-content: space-between;\n            align-items: center;\n            margin-top: 1rem;\n            padding-top: 1rem;\n            border-top: 1px solid #eee;\n        }\n\n        .meta-info {\n            display: flex;\n            gap: 1rem;\n            font-size: 0.875rem;\n            color: var(--aicoe-gray);\n        }\n\n        .meta-item {\n            display: flex;\n            align-items: center;\n            gap: 0.25rem;\n        }\n\n        .view-button {\n            padding: 0.75rem 1.5rem;\n            background: var(--aicoe-primary);\n            color: var(--aicoe-white);\n            border: none;\n            border-radius: 8px;\n            font-weight: 600;\n            cursor: pointer;\n            transition: background 0.3s ease;\n        }\n\n        .view-button:hover {\n            background: #0052a3;\n        }\n\n        .view-button:disabled {\n            background: var(--aicoe-gray);\n            cursor: not-allowed;\n        }\n\n        /* Empty State */\n        .empty-state {\n            text-align: center;\n            padding: 4rem 2rem;\n            color: var(--aicoe-gray);\n        }\n\n        .empty-state i {\n            font-size: 4rem;\n            margin-bottom: 1rem;\n            opacity: 0.5;\n        }\n\n        /* Responsive */\n        @media (max-width: 768px) {\n            .hero h1 {\n                font-size: 2rem;\n            }\n\n            .filters {\n                flex-direction: column;\n            }\n\n            .filter-group {\n                width: 100%;\n            }\n\n            .gallery {\n                grid-template-columns: 1fr;\n            }\n        }\n    </style>\n</head>\n<body>\n    <nav>\n        <div class=\"nav-container\">\n            <div class=\"nav-brand\">\ud83c\udfa8 AICOE Case Study Gallery</div>\n        </div>\n    </nav>\n\n    <div class=\"hero\">\n        <h1>Case Study Gallery</h1>\n        <p>Explore our collection of AI-powered project mockups and prototypes</p>\n    </div>\n\n    <div class=\"filters\">\n        <div class=\"filter-group\">\n            <label>Industry</label>\n            <select id=\"industryFilter\">\n                <option value=\"\">All Industries</option>\n            </select>\n        </div>\n        <div class=\"filter-group\">\n            <label>Technology</label>\n            <select id=\"techFilter\">\n                <option value=\"\">All Technologies</option>\n            </select>\n        </div>\n        <div class=\"filter-group\">\n            <label>Search</label>\n            <input type=\"text\" id=\"searchInput\" placeholder=\"Search projects...\">\n        </div>\n        <div class=\"filter-group\">\n            <label>Sort By</label>\n            <select id=\"sortFilter\">\n                <option value=\"date-desc\">Newest First</option>\n                <option value=\"date-asc\">Oldest First</option>\n                <option value=\"name-asc\">Name (A-Z)</option>\n                <option value=\"name-desc\">Name (Z-A)</option>\n                <option value=\"usecases-desc\">Most Use Cases</option>\n                <option value=\"usecases-asc\">Least Use Cases</option>\n            </select>\n        </div>\n        <button class=\"clear-filters\" onclick=\"clearFilters()\">Clear Filters</button>\n    </div>\n\n    <div class=\"results-count\" id=\"resultsCount\"></div>\n\n    <div class=\"gallery\" id=\"gallery\"></div>\n\n    <div class=\"empty-state\" id=\"emptyState\" style=\"display: none;\">\n        <div style=\"font-size: 4rem; margin-bottom: 1rem;\">\ud83d\udd0d</div>\n        <h2>No case studies found</h2>\n        <p>Try adjusting your filters or search terms</p>\n    </div>\n\n    <script>\n        // Embedded case studies data\n        const caseStudies = [];\n\n        let filteredStudies = [...caseStudies];\n\n        // Initialize on page load\n        document.addEventListener('DOMContentLoaded', () => {\n            populateFilters();\n            renderGallery();\n\n            // Add event listeners\n            document.getElementById('industryFilter').addEventListener('change', applyFilters);\n            document.getElementById('techFilter').addEventListener('change', applyFilters);\n            document.getElementById('searchInput').addEventListener('input', applyFilters);\n            document.getElementById('sortFilter').addEventListener('change', applyFilters);\n        });\n\n        function populateFilters() {\n            // Get unique industries\n            const industries = [...new Set(caseStudies.map(s => s.industry))].sort();\n            const industryFilter = document.getElementById('industryFilter');\n            industries.forEach(industry => {\n                const option = document.createElement('option');\n                option.value = industry;\n                option.textContent = industry;\n                industryFilter.appendChild(option);\n            });\n\n            // Get unique technologies\n            const technologies = [...new Set(caseStudies.flatMap(s => s.tech_stack || []))].sort();\n            const techFilter = document.getElementById('techFilter');\n            technologies.forEach(tech => {\n                const option = document.createElement('option');\n                option.value = tech;\n                option.textContent = tech;\n                techFilter.appendChild(option);\n            });\n        }\n\n        function applyFilters() {\n            const industryFilter = document.getElementById('industryFilter').value;\n            const techFilter = document.getElementById('techFilter').value;\n            const searchQuery = document.getElementById('searchInput').value.toLowerCase();\n            const sortFilter = document.getElementById('sortFilter').value;\n\n            // Filter\n            filteredStudies = caseStudies.filter(study => {\n                // Industry filter\n                if (industryFilter && study.industry !== industryFilter) return false;\n\n                // Technology filter\n                if (techFilter && (!study.tech_stack || !study.tech_stack.includes(techFilter))) return false;\n\n                // Search filter\n                if (searchQuery) {\n                    const searchText = `${study.project_name} ${study.description} ${study.industry}`.toLowerCase();\n                    if (!searchText.includes(searchQuery)) return false;\n                }\n\n                return true;\n            });\n\n            // Sort\n            filteredStudies.sort((a, b) => {\n                switch(sortFilter) {\n                    case 'date-desc':\n                        return new Date(b.date_created) - new Date(a.date_created);\n                    case 'date-asc':\n                        return new Date(a.date_created) - new Date(b.date_created);\n                    case 'name-asc':\n                        return a.project_name.localeCompare(b.project_name);\n                    case 'name-desc':\n                        return b.project_name.localeCompare(a.project_name);\n                    case 'usecases-desc':\n                        return b.use_case_count - a.use_case_count;\n                    case 'usecases-asc':\n                        return a.use_case_count - b.use_case_count;\n                    default:\n                        return 0;\n                }\n            });\n\n            renderGallery();\n        }\n\n        function clearFilters() {\n            document.getElementById('industryFilter').value = '';\n            document.getElementById('techFilter').value = '';\n            document.getElementById('searchInput').value = '';\n            document.getElementById('sortFilter').value = 'date-desc';\n            applyFilters();\n        }\n\n        function renderGallery() {\n            const gallery = document.getElementById('gallery');\n            const emptyState = document.getElementById('emptyState');\n            const resultsCount = document.getElementById('resultsCount');\n\n            // Update results count\n            resultsCount.textContent = `Showing ${filteredStudies.length} of ${caseStudies.length} case studies`;\n\n            if (filteredStudies.length === 0) {\n                gallery.style.display = 'none';\n                emptyState.style.display = 'block';\n                return;\n            }\n\n            gallery.style.display = 'grid';\n            emptyState.style.display = 'none';\n            gallery.innerHTML = '';\n\n            filteredStudies.forEach(study => {\n                const card = createCaseStudyCard(study);\n                gallery.appendChild(card);\n            });\n        }\n\n        function createCaseStudyCard(study) {\n            const card = document.createElement('div');\n            card.className = 'case-study-card';\n\n            // Format date\n            const date = new Date(study.date_created);\n            const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });\n\n            // Tech stack HTML\n            const techStackHTML = (study.tech_stack || []).map(tech =>\n                `<span class=\"tech-tag\">${tech}</span>`\n            ).join('');\n\n            card.innerHTML = `\n                <div class=\"industry-badge\">${study.industry}</div>\n                <h3 class=\"card-title\">${study.project_name}</h3>\n                <p class=\"card-description\">${study.description || 'No description available'}</p>\n                ${techStackHTML ? `<div class=\"tech-stack\">${techStackHTML}</div>` : ''}\n                <div class=\"card-meta\">\n                    <div class=\"meta-info\">\n                        <div class=\"meta-item\">\n                            <span>\ud83d\udcc5</span>\n                            <span>${formattedDate}</span>\n                        </div>\n                        <div class=\"meta-item\">\n                            <span>\ud83d\udccb</span>\n                            <span>${study.use_case_count} use cases</span>\n                        </div>\n                    </div>\n                </div>\n                <button class=\"view-button\" onclick=\"viewMockup('${study.mockup_url}')\" ${!study.has_mockup ? 'disabled' : ''}>\n                    ${study.has_mockup ? 'View Mockup \u2192' : 'No Mockup'}\n                </button>\n            `;\n\n            return card;\n        }\n\n        function viewMockup(url) {\n            if (url) {\n                window.location.href = url;\n            }\n        }\n    </script>\n</body>\n</html>",
+      "gallery_data": {},
+      "case_study_count": 0,
+      "gallery_path": "backend/storage/case-study-gallery/index.html"
+    }
+  },
+  "stages": [
+    {
+      "name": "storage",
+      "status": "completed",
+      "duration": 0.000617
+    },
+    {
+      "name": "transcript",
+      "status": "completed",
+      "duration": 0.000222
+    },
+    {
+      "name": "researcher",
+      "status": "completed",
+      "duration": 5.681919
+    },
+    {
+      "name": "requirements",
+      "status": "completed",
+      "duration": 0.000397
+    },
+    {
+      "name": "knowledge_base",
+      "status": "completed",
+      "duration": 0.000394
+    },
+    {
+      "name": "prd",
+      "status": "completed",
+      "duration": 0.00042
+    },
+    {
+      "name": "mockup",
+      "status": "completed",
+      "duration": 0.000664
+    },
+    {
+      "name": "synthetic_data",
+      "status": "completed",
+      "duration": 0.00033
+    },
+    {
+      "name": "commercial_proposal",
+      "status": "completed",
+      "duration": 0.000317
+    },
+    {
+      "name": "bom",
+      "status": "completed",
+      "duration": 0.000314
+    },
+    {
+      "name": "architecture_diagram",
+      "status": "completed",
+      "duration": 0.000361
+    },
+    {
+      "name": "reviewer",
+      "status": "failed",
+      "duration": 0.000158
+    },
+    {
+      "name": "gallery",
+      "status": "completed",
+      "duration": 0.000473
+    }
+  ]
+}
