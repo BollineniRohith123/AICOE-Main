@@ -36,7 +36,7 @@ async def test_llm_connection():
         test_prompt = "Hello, this is a test. Please respond with 'LLM connection successful'."
         
         print("📤 Sending test prompt...")
-        response = await llm_client.complete(test_prompt)
+        response = await llm_client.send_message_async(test_prompt)
         
         if response and len(response.strip()) > 0:
             print(f"✅ LLM Response received: {response[:100]}...")
