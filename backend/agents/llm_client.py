@@ -39,17 +39,24 @@ class LLMClient:
         """
         self.logger.info(f"🔵 MOCK API CALL | msg_length={len(user_message)}")
         
+        import json
+        
+        # Detect if JSON output is expected
+        needs_json = "json" in user_message.lower() or "JSON" in user_message
+        
         # Generate mock responses based on message content
-        if "PRD" in user_message or "product requirements" in user_message.lower():
-            response = self._generate_mock_prd()
-        elif "mockup" in user_message.lower() or "design" in user_message.lower():
+        if "use_cases" in user_message and "business_requirements" in user_message:
+            response = self._generate_requirements_json()
+        elif "PRD" in user_message or "product requirements" in user_message.lower():
+            response = self._generate_prd_json() if needs_json else self._generate_mock_prd()
+        elif "mockup" in user_message.lower() or "HTML" in user_message:
             response = self._generate_mock_mockup()
         elif "commercial proposal" in user_message.lower() or "proposal" in user_message.lower():
-            response = self._generate_mock_proposal()
+            response = self._generate_proposal_json() if needs_json else self._generate_mock_proposal()
         elif "BOM" in user_message or "bill of materials" in user_message.lower():
-            response = self._generate_mock_bom()
-        elif "architecture" in user_message.lower() or "technical" in user_message.lower():
-            response = self._generate_mock_architecture()
+            response = self._generate_bom_json() if needs_json else self._generate_mock_bom()
+        elif "architecture" in user_message.lower() or "system diagram" in user_message.lower():
+            response = self._generate_architecture_json() if needs_json else self._generate_mock_architecture()
         else:
             response = self._generate_generic_response(user_message)
         
