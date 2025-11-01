@@ -17,7 +17,7 @@ class AgentConfig:
         self,
         name: str,
         description: str,
-        model: str = "z-ai/glm-4.6",  # GLM-4.6 via OpenRouter
+        model: str = "x-ai/grok-code-fast-1",  # GLM-4.6 via OpenRouter
         temperature: float = 0.7,
         max_tokens: int = 4000,
         timeout: int = 120

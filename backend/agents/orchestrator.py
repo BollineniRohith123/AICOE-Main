@@ -17,7 +17,6 @@ from .proposal_agent import ProposalAgent
 from .bom_agent import BOMAgent
 from .architecture_agent import ArchitectureAgent
 from .gallery_agent import CaseStudyGalleryAgent
-from .html_transformer import AICOEHTMLGenerator
 from .agent_communication import AgentCommunicationHub, Message
 import logging
 import asyncio
@@ -61,9 +60,6 @@ class OrchestratorAgent:
 
         # Initialize communication hub for inter-agent communication
         self.comm_hub = AgentCommunicationHub()
-
-        # Initialize HTML generator for XML to HTML transformation
-        self.html_generator = AICOEHTMLGenerator()
 
         # Initialize all 13 agents (including 4 new specialized agents)
         self.agents = {
@@ -588,7 +584,7 @@ class OrchestratorAgent:
             # Validate all generated HTML files for UC001 styling compliance
             base_input["action"] = "validate_all_files"
             base_input["project_name"] = project_name
-            base_input["project_path"] = os.path.join("backend", "projects", project_name)
+            base_input["project_path"] = os.path.join("backend", "storage", project_name)
 
             # CRITICAL FIX: Add required fields for ReviewerAgent
             base_input["document_id"] = project_name  # Use project_name as document_id
@@ -744,47 +740,99 @@ class OrchestratorAgent:
                 else:
                     self.logger.warning(f"Failed to save {agent_name} XML: {result.error}")
 
-                # Transform XML to HTML if required
+                # Save HTML file if agent generated it (new LLM-driven architecture)
                 if mapping.get("transform_to_html", False):
-                    try:
-                        xml_content = mapping["content"]
-                        document_type = agent_name  # prd, proposal, bom, architecture
-                        html_content = self.html_generator.generate_html_from_xml_xslt(
-                            xml_content, document_type, project_name
-                        )
+                    # Agents now generate HTML directly, so we just need to save it
+                    html_key = f"{agent_name}_html"
+                    html_content = data.get(html_key)
 
-                        # Save HTML file
-                        html_save_input = {
-                            "action": "save_file",
-                            "project_name": project_name,
-                            "folder": mapping["folder"],
-                            "filename": mapping["html_filename"],
-                            "content": html_content
-                        }
-                        html_result = await storage_agent.execute(html_save_input, {})
-                        if html_result.success:
-                            self.logger.info(f"Saved {agent_name} HTML to {mapping['folder']}/{mapping['html_filename']}")
-                        else:
-                            self.logger.warning(f"Failed to save {agent_name} HTML: {html_result.error}")
-                    except Exception as e:
-                        self.logger.error(f"Failed to transform {agent_name} XML to HTML: {str(e)}")
-
-            # Save additional mockup pages (multi-page prototypes)
-            if agent_name == "mockup" and "mockup_pages" in data:
-                mockup_pages = data.get("mockup_pages", {})
-                if isinstance(mockup_pages, dict):
-                    for page_name, page_content in mockup_pages.items():
-                        if page_name != "index.html":  # index.html already saved
-                            page_save_input = {
+                    if html_content:
+                        try:
+                            # Save HTML file
+                            html_save_input = {
                                 "action": "save_file",
                                 "project_name": project_name,
-                                "folder": "mockups",
-                                "filename": page_name,
-                                "content": page_content
+                                "folder": mapping["folder"],
+                                "filename": mapping["html_filename"],
+                                "content": html_content
                             }
+                            html_result = await storage_agent.execute(html_save_input, {})
+                            if html_result.success:
+                                self.logger.info(f"Saved {agent_name} HTML to {mapping['folder']}/{mapping['html_filename']}")
+                            else:
+                                self.logger.warning(f"Failed to save {agent_name} HTML: {html_result.error}")
+                        except Exception as e:
+                            self.logger.error(f"Failed to save {agent_name} HTML: {str(e)}")
+                    else:
+                        self.logger.warning(f"Agent {agent_name} did not generate HTML content (expected key: {html_key})")
+
+            # Save all mockup pages (multi-page prototypes) to CaseStudies folder
+            if agent_name == "mockup" and "mockup_pages" in data:
+                mockup_pages = data.get("mockup_pages", {})
+                use_case_structure = data.get("use_case_structure", {})
+
+                if isinstance(mockup_pages, dict):
+                    # First, save index.html to root of CaseStudies
+                    if "index.html" in mockup_pages:
+                        index_save_input = {
+                            "action": "save_file",
+                            "project_name": project_name,
+                            "folder": "case_studies",
+                            "filename": "index.html",
+                            "content": mockup_pages["index.html"]
+                        }
+                        index_result = await storage_agent.execute(index_save_input, {})
+                        if index_result.success:
+                            self.logger.info(f"Saved case studies index: CaseStudies/index.html")
+                        else:
+                            self.logger.warning(f"Failed to save index.html: {index_result.error}")
+
+                    # Then, save use case pages to appropriate folders
+                    for page_name, page_content in mockup_pages.items():
+                        if page_name == "index.html":
+                            continue  # Already saved above
+
+                        # Extract use case ID from filename (e.g., "UC-001" from "UC-001_mockup.html")
+                        if "_" in page_name:
+                            uc_id = page_name.split("_")[0]  # e.g., "UC-001"
+
+                            # Determine if this is a multi-screen use case
+                            uc_info = use_case_structure.get("use_cases", {}).get(uc_id, {})
+                            is_multi_screen = uc_info.get("type") == "multi-screen"
+
+                            if is_multi_screen:
+                                # Save to use case subfolder: CaseStudies/UC-001/screen-01.html
+                                # Create use case folder first
+                                folder_create_input = {
+                                    "action": "create_use_case_folder",
+                                    "project_name": project_name,
+                                    "use_case_id": uc_id,
+                                    "use_case_name": uc_id  # Use ID as name for now
+                                }
+                                folder_result = await storage_agent.execute(folder_create_input, {})
+
+                                # Save file to subfolder
+                                page_save_input = {
+                                    "action": "save_file",
+                                    "project_name": project_name,
+                                    "folder": "case_studies",
+                                    "subfolder": uc_id,  # Save to UC-001 subfolder
+                                    "filename": page_name.replace(f"{uc_id}_", ""),  # Remove UC-001_ prefix
+                                    "content": page_content
+                                }
+                            else:
+                                # Single-page mockup: save directly to CaseStudies folder
+                                page_save_input = {
+                                    "action": "save_file",
+                                    "project_name": project_name,
+                                    "folder": "case_studies",
+                                    "filename": page_name,
+                                    "content": page_content
+                                }
+
                             page_result = await storage_agent.execute(page_save_input, {})
                             if page_result.success:
-                                self.logger.info(f"Saved mockup page: mockups/{page_name}")
+                                self.logger.info(f"Saved mockup page: CaseStudies/{page_name}")
                             else:
                                 self.logger.warning(f"Failed to save mockup page {page_name}: {page_result.error}")
 

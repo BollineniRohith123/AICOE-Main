@@ -16,7 +16,7 @@ class DataAgent(BaseAgent):
         config = AgentConfig(
             name="DataAgent",
             description="Generates realistic demo data sets for mockups and visualizations",
-            model="z-ai/glm-4.6",  # GLM-4.6 via OpenRouter
+            model="x-ai/grok-code-fast-1",  # GLM-4.6 via OpenRouter
             temperature=0.7,
             max_tokens=12000  # Increased from 4000 to handle complex data sets
         )

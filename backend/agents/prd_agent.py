@@ -1,46 +1,51 @@
 """
 PRD Agent - Assembles comprehensive Product Requirements Document
+Generates HTML directly from XML using LLM transformation
 """
 from typing import Dict, Any
 from .base_agent import BaseAgent, AgentConfig, AgentResult
+from .design_system import get_design_system_prompt
 import json
-import markdown
 
 
 class PRDAgent(BaseAgent):
     """
     Agent responsible for creating comprehensive PRD documents
-    Combines all previous agent outputs into a structured PRD
+    Takes XML input and generates beautiful HTML output using LLM
     """
-    
+
     def __init__(self, llm_client):
         config = AgentConfig(
             name="PRDAgent",
             description="Creates comprehensive Product Requirements Documents",
-            model="z-ai/glm-4.6",  # GLM-4.6 via OpenRouter
+            model="x-ai/grok-code-fast-1",  # GLM-4.6 via OpenRouter
             temperature=0.4,
-            max_tokens=12000  # Increased from 6000 to handle complex PRDs
+            max_tokens=12000  # Increased to handle complex HTML generation
         )
         super().__init__(config, llm_client)
     
     async def execute(self, input_data: Dict[str, Any], context: Dict[str, Any]) -> AgentResult:
         """
-        Generate comprehensive PRD document
-        
+        Generate comprehensive PRD document as HTML
+
+        This is a TWO-STAGE process:
+        Stage 1: Generate structured XML (for data storage and IP)
+        Stage 2: Transform XML to beautiful HTML using LLM
+
         Input:
             - structured_notes: From TranscriptAgent
             - use_cases: From RequirementsAgent
             - business_requirements: From RequirementsAgent
             - project_name: Name of the project
-            
+
         Output:
-            - prd_markdown: Complete PRD in Markdown format
-            - prd_sections: Structured sections of the PRD
+            - prd_xml: Structured XML document
+            - prd_html: Beautiful HTML document
         """
         try:
             self.log_execution("start", "Generating PRD document")
             self.validate_input(input_data, ["project_name"])
-            
+
             project_name = input_data["project_name"]
             structured_notes = input_data.get("structured_notes", {})
             use_cases = input_data.get("use_cases", [])
@@ -66,22 +71,23 @@ Research Insights (CRITICAL - Use this extensively):
 {research_text}
 """
 
-            system_message = """## ROLE AND GOAL
+            # STAGE 1: Generate XML for data storage
+            xml_system_message = """## ROLE AND GOAL
 You are an expert Technical Writer who creates comprehensive Product Requirements Documents (PRDs). Your goal is to assemble the vision, requirements, and use cases into a single, formal XML document.
 
 ## CONTEXT
-You will receive the XML outputs from the Intake Agent and the Blueprint Agent.
+You will receive structured data from previous agents.
 
 ## STEP-BY-STEP PROCESS
-1. Extract the `<projectVision>`, `<businessRequirements>`, and `<stakeholders>` from the Intake Agent's output.
-2. Extract the full `<useCaseModel>` from the Blueprint Agent's output.
+1. Extract the project vision, business requirements, and stakeholders from the input.
+2. Extract the full use case model from the input.
 3. Synthesize this information to define what is in scope and out of scope for the project.
 4. Formulate key business goals based on the requirements.
 5. Define at least two critical non-functional requirements (e.g., Security, Performance).
 6. Assemble all sections into the strict XML format defined below.
 
 ## OUTPUT FORMAT (CRITICAL)
-You MUST produce a single, valid XML document that exactly matches the XSLT template structure. Your entire response MUST be only this XML.
+You MUST produce a single, valid XML document. Your entire response MUST be only this XML.
 
 <productRequirementsDocument>
     <title>PRD for [Project Name]</title>
@@ -96,7 +102,6 @@ You MUST produce a single, valid XML document that exactly matches the XSLT temp
     </businessGoals>
     <useCases>
         <useCaseModel>
-            <!-- The full use case model from input data must be embedded here exactly as provided -->
             <useCase>
                 <title>Use Case Title</title>
                 <primaryActor>Primary Actor</primaryActor>
@@ -129,78 +134,97 @@ You MUST produce a single, valid XML document that exactly matches the XSLT temp
 
 ## GUIDELINES & CONSTRAINTS
 - The PRD must be professional, well-structured, and comprehensive.
-- The `<useCases>` section must be a direct, unmodified copy of the XML from the Blueprint Agent.
 - NEVER output anything other than the specified XML structure."""
 
-            user_message = f"""Generate a PRD XML document for project: {project_name}
+            self.log_execution("llm_call", "Generating PRD XML")
+
+            xml_response = await self._call_llm(
+                xml_system_message,
+                f"""Generate a PRD XML document for project: {project_name}
 
 Input Data:
-{context_text}"""
+{context_text}""",
+                max_tokens=8000
+            )
 
-            self.log_execution("llm_call", "Generating PRD document")
+            # Clean XML response
+            prd_xml = xml_response.strip()
+            if prd_xml.startswith("```xml"):
+                prd_xml = prd_xml.split("```xml")[1].split("```")[0].strip()
+            elif prd_xml.startswith("```"):
+                prd_xml = prd_xml.split("```")[1].split("```")[0].strip()
 
-            # Retry logic for handling LLM failures
-            max_retries = 2
-            prd_content = None
+            self.log_execution("success", f"Generated PRD XML ({len(prd_xml)} characters)")
 
-            for attempt in range(max_retries):
-                try:
-                    response = await self._call_llm(
-                        system_message,
-                        user_message,
-                        max_tokens=8000  # Increased from 6000 to handle complex PRDs
-                    )
+            # STAGE 2: Transform XML to HTML using LLM
+            design_system = get_design_system_prompt()
 
-                    # Clean XML response
-                    prd_content = response.strip()
-                    if prd_content.startswith("```xml"):
-                        prd_content = prd_content.split("```xml")[1].split("```")[0].strip()
-                    elif prd_content.startswith("```"):
-                        prd_content = prd_content.split("```")[1].split("```")[0].strip()
+            html_system_message = f"""## ROLE AND GOAL
+You are an expert Technical Writer and Information Designer. Your goal is to transform a raw PRD in XML format into a professional, client-ready, and interactive HTML document.
 
-                    # If we got here, the call succeeded
-                    break
+{design_system}
 
-                except Exception as e:
-                    if attempt < max_retries - 1:
-                        self.log_execution("warning", f"LLM call failed (attempt {attempt + 1}/{max_retries}): {str(e)}")
-                        # Retry with a simpler prompt
-                        user_message = f"""Based on the following information, generate a comprehensive PRD document:
+## CONTEXT
+You will be given a single input: an XML string containing a `<productRequirementsDocument>`.
 
-Project: {project_name}
+## STEP-BY-STEP PROCESS
+1. Parse the input XML to identify all sections (Executive Summary, Scope, Use Cases, etc.).
+2. Generate a clean HTML structure that represents this document.
+3. Create an interactive, smooth-scrolling Table of Contents at the top of the document that links to each major section.
+4. Style the entire document with absolute precision according to the AICOE design system above.
+5. Return the final, single HTML file as a string.
 
-Structured Notes:
-{json.dumps(structured_notes, indent=2)}
+## OUTPUT FORMAT (CRITICAL)
+You MUST produce a single, complete HTML string as your response. DO NOT include any other text, explanation, or formatting like markdown code fences. Your response should start with `<!DOCTYPE html>` and end with `</html>`.
 
-Use Cases:
-{json.dumps(use_cases, indent=2)}
+## ADDITIONAL REQUIREMENTS
+- Use CSS variables from the design system
+- Include Lucide icons for visual enhancement
+- Add smooth transitions and micro-interactions
+- Ensure responsive design for all devices
+- Include AICOE logo in footer with gradient effect
+- Make the document visually stunning and professional
+- **Interactivity:** The Table of Contents links MUST be functional and scroll smoothly to the corresponding sections.
+- **Responsive:** The design must work perfectly on desktop, tablet, and mobile.
+- **Print-friendly:** Include print styles for professional PDF generation."""
 
-Business Requirements:
-{json.dumps(business_reqs, indent=2)}
+            self.log_execution("llm_call", "Transforming XML to HTML")
 
-Generate a complete PRD document following the AICOE template structure."""
-                        continue
-                    else:
-                        # Last attempt failed, re-raise the exception
-                        raise
+            html_response = await self._call_llm(
+                html_system_message,
+                f"""Transform this PRD XML into a beautiful, professional HTML document:
 
-            if prd_content is None:
-                raise Exception("Failed to generate PRD after all retry attempts")
+{prd_xml}""",
+                max_tokens=12000
+            )
 
-            self.log_execution("success", f"Generated PRD XML ({len(prd_content)} characters)")
+            # Clean HTML response
+            prd_html = html_response.strip()
+            if prd_html.startswith("```html"):
+                prd_html = prd_html.split("```html")[1].split("```")[0].strip()
+            elif prd_html.startswith("```"):
+                prd_html = prd_html.split("```")[1].split("```")[0].strip()
+
+            # Validate HTML starts correctly
+            if not prd_html.startswith("<!DOCTYPE"):
+                self.logger.warning("Generated HTML doesn't start with DOCTYPE, prepending it")
+                prd_html = "<!DOCTYPE html>\n" + prd_html
+
+            self.log_execution("success", f"Generated PRD HTML ({len(prd_html)} characters)")
 
             return AgentResult(
                 success=True,
                 data={
-                    "prd_xml": prd_content,
+                    "prd_xml": prd_xml,
+                    "prd_html": prd_html,
                     "project_name": project_name
                 },
                 metadata={
                     "agent": self.config.name,
-                    "format": "xml"
+                    "format": "xml+html"
                 }
             )
-            
+
         except Exception as e:
             self.logger.error(f"Error in PRDAgent: {str(e)}")
             return AgentResult(
@@ -209,387 +233,3 @@ Generate a complete PRD document following the AICOE template structure."""
                 error=str(e),
                 metadata={"agent": self.config.name}
             )
-    
-    def _extract_sections(self, markdown_text: str) -> list:
-        """Extract section headings from markdown"""
-        sections = []
-        for line in markdown_text.split('\n'):
-            if line.startswith('## '):
-                sections.append(line.replace('## ', '').strip())
-        return sections
-
-    def _generate_html(self, markdown_content: str, project_name: str) -> str:
-        """
-        Generate comprehensive HTML from Markdown content with AICOE branding
-
-        Args:
-            markdown_content: PRD content in Markdown format
-            project_name: Name of the project
-
-        Returns:
-            Complete HTML document as string
-        """
-        # Convert Markdown to HTML
-        html_content = markdown.markdown(markdown_content, extensions=['tables', 'fenced_code', 'toc'])
-
-        # Extract sections for table of contents
-        sections = self._extract_sections(markdown_content)
-
-        # AICOE-branded HTML template with UC001 styling
-        html_template = f"""
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{project_name} - Product Requirements Document</title>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        * {{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }}
-
-        :root {{
-            /* AICOE Primary Colors */
-            --primary-navy: #1a1a2e;
-            --midnight-blue: #2a2a3e;
-            --deep-purple: #3a2a4e;
-
-            /* AICOE Accent Colors */
-            --accent-pink: #ff69b4;
-            --accent-cyan: #00ffcc;
-            --accent-turquoise: #00e5b3;
-            --accent-mint: #00cc99;
-
-            /* Supporting Colors */
-            --text-primary: #1a1a1a;
-            --text-secondary: #666666;
-            --bg-white: #ffffff;
-            --bg-gray: #f5f5f7;
-            --border-gray: #d2d2d7;
-
-            /* Shadows */
-            --shadow: 0 2px 16px rgba(26, 26, 46, 0.08);
-            --shadow-hover: 0 4px 24px rgba(26, 26, 46, 0.12);
-        }}
-
-        body {{
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', sans-serif;
-            background: var(--bg-gray);
-            color: var(--text-primary);
-            line-height: 1.6;
-            font-size: 17px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }}
-
-        .container {{
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }}
-
-        header {{
-            background: var(--bg-white);
-            padding: 60px 0;
-            text-align: center;
-            margin-bottom: 40px;
-            border-radius: 24px;
-            box-shadow: var(--shadow);
-        }}
-
-        .header-content {{
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }}
-
-        h1 {{
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--deep-purple) 50%, var(--accent-pink) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }}
-
-        .subtitle {{
-            font-size: 21px;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            line-height: 1.5;
-        }}
-
-        .metadata {{
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            flex-wrap: wrap;
-            margin-top: 32px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border-gray);
-        }}
-
-        .metadata-item {{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }}
-
-        .metadata-label {{
-            font-size: 13px;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
-        }}
-
-        .metadata-value {{
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }}
-
-        .prd-document {{
-            background: var(--bg-white);
-            border-radius: 24px;
-            padding: 48px;
-            margin-bottom: 32px;
-            box-shadow: var(--shadow);
-        }}
-
-        .content h2 {{
-            font-size: 32px;
-            font-weight: 700;
-            margin: 40px 0 20px 0;
-            color: var(--primary-navy);
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--bg-gray);
-        }}
-
-        .content h3 {{
-            font-size: 24px;
-            font-weight: 600;
-            margin: 32px 0 16px 0;
-            color: var(--text-primary);
-        }}
-
-        .content h4 {{
-            font-size: 20px;
-            font-weight: 600;
-            margin: 24px 0 12px 0;
-            color: var(--text-primary);
-        }}
-
-        .content p {{
-            margin-bottom: 16px;
-            line-height: 1.7;
-            color: var(--text-primary);
-        }}
-
-        .content ul, .content ol {{
-            margin-bottom: 16px;
-            padding-left: 24px;
-        }}
-
-        .content li {{
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }}
-
-        .content table {{
-            width: 100%;
-            border-collapse: collapse;
-            margin: 24px 0;
-            background: var(--bg-white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }}
-
-        .content th {{
-            background: var(--primary-navy);
-            color: white;
-            padding: 12px;
-            text-align: left;
-            font-weight: 600;
-        }}
-
-        .content td {{
-            padding: 12px;
-            border-bottom: 1px solid var(--border-gray);
-        }}
-
-        .content tr:hover {{
-            background: var(--bg-gray);
-        }}
-
-        .content code {{
-            background: var(--bg-gray);
-            padding: 2px 8px;
-            border-radius: 4px;
-            color: var(--accent-pink);
-            font-family: 'SF Mono', Monaco, monospace;
-            font-size: 15px;
-        }}
-
-        .content pre {{
-            background: var(--bg-gray);
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent-cyan);
-            overflow-x: auto;
-            margin: 20px 0;
-        }}
-
-        .content pre code {{
-            background: transparent;
-            padding: 0;
-        }}
-
-        .content blockquote {{
-            border-left: 4px solid var(--accent-cyan);
-            padding-left: 20px;
-            margin: 20px 0;
-            color: var(--text-secondary);
-            font-style: italic;
-        }}
-
-        .content strong {{
-            font-weight: 600;
-            color: var(--text-primary);
-        }}
-
-        .content em {{
-            font-style: italic;
-            color: var(--text-secondary);
-        }}
-
-        footer {{
-            text-align: center;
-            padding: 60px 20px 40px;
-            color: var(--text-secondary);
-            font-size: 15px;
-        }}
-
-        .footer-logo {{
-            font-size: 24px;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--accent-pink) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 12px;
-        }}
-
-        @media (max-width: 768px) {{
-            h1 {{
-                font-size: 36px;
-            }}
-
-            .subtitle {{
-                font-size: 19px;
-            }}
-
-            .prd-document {{
-                padding: 32px 24px;
-            }}
-
-            .metadata {{
-                gap: 20px;
-            }}
-        }}
-
-        @media print {{
-            * {{
-                print-color-adjust: exact;
-                -webkit-print-color-adjust: exact;
-            }}
-
-            body {{
-                background: white;
-            }}
-
-            .container {{
-                max-width: 100%;
-                padding: 20px;
-            }}
-
-            header {{
-                margin-bottom: 30px;
-                page-break-after: avoid;
-            }}
-
-            h1 {{
-                font-size: 36px;
-                color: var(--text-primary) !important;
-                -webkit-text-fill-color: var(--text-primary) !important;
-            }}
-
-            .prd-document {{
-                break-inside: avoid;
-                page-break-inside: avoid;
-                box-shadow: none;
-                border: 1px solid var(--border-gray);
-                margin-bottom: 20px;
-                padding: 32px;
-            }}
-
-            footer {{
-                page-break-before: always;
-            }}
-        }}
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <div class="header-content">
-                <h1>📋 Product Requirements Document</h1>
-                <p class="subtitle">{project_name}</p>
-                <div class="metadata">
-                    <div class="metadata-item">
-                        <span class="metadata-label">Project</span>
-                        <span class="metadata-value">{project_name}</span>
-                    </div>
-                    <div class="metadata-item">
-                        <span class="metadata-label">Version</span>
-                        <span class="metadata-value">1.0</span>
-                    </div>
-                    <div class="metadata-item">
-                        <span class="metadata-label">Generated by</span>
-                        <span class="metadata-value">AICOE Platform</span>
-                    </div>
-                    <div class="metadata-item">
-                        <span class="metadata-label">Classification</span>
-                        <span class="metadata-value">Internal - Confidential</span>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="prd-document">
-            <div class="content">
-                {html_content}
-            </div>
-        </div>
-
-        <footer>
-            <div class="footer-logo">AICOE</div>
-            <p>© 2025 AICOE - AI Center of Excellence</p>
-            <p style="margin-top: 8px;">Transforming Ideas into Intelligent Solutions</p>
-        </footer>
-    </div>
-
-    <script>
-        lucide.createIcons();
-    </script>
-</body>
-</html>
-"""
-
-        return html_template

@@ -1,0 +1,171 @@
+{
+  "validation_results": {
+    "PRD": {
+      "passed": false,
+      "issues": [
+        "Missing UC001 color variables: --bg-white, --bg-gray",
+        "Missing Lucide Icons CDN or initialization",
+        "Missing font smoothing (-webkit-font-smoothing)",
+        "Missing UC001 shadow variables (--shadow, --shadow-hover)"
+      ],
+      "file_path": "backend/storage/Fitnesssssssss/PRDDocuments/PRD_v1.html",
+      "file_size": 20786
+    },
+    "Commercial Proposal": {
+      "passed": false,
+      "issues": [
+        "File not found: backend/storage/Fitnesssssssss/CommercialProposals/proposal_v1.html"
+      ],
+      "file_path": "backend/storage/Fitnesssssssss/CommercialProposals/proposal_v1.html"
+    },
+    "BOM": {
+      "passed": false,
+      "issues": [
+        "Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+        "Missing font smoothing (-webkit-font-smoothing)",
+        "Missing UC001 shadow variables (--shadow, --shadow-hover)"
+      ],
+      "file_path": "backend/storage/Fitnesssssssss/BillOfMaterials/bom_v1.html",
+      "file_size": 8888
+    },
+    "Architecture Diagram": {
+      "passed": false,
+      "issues": [
+        "File not found: backend/storage/Fitnesssssssss/ArchitectureDiagrams/architecture_v1.html"
+      ],
+      "file_path": "backend/storage/Fitnesssssssss/ArchitectureDiagrams/architecture_v1.html"
+    },
+    "Mockup: UC-005_mockup.html": {
+      "passed": false,
+      "issues": [
+        "Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+        "Missing print-friendly CSS (@media print)",
+        "Missing font smoothing (-webkit-font-smoothing)",
+        "Missing UC001 shadow variables (--shadow, --shadow-hover)"
+      ],
+      "file_path": "backend/storage/Fitnesssssssss/HTML/Version1/Mockups/UC-005_mockup.html",
+      "file_size": 2712
+    },
+    "Mockup: index.html": {
+      "passed": false,
+      "issues": [
+        "Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+        "Missing print-friendly CSS (@media print)",
+        "Missing font smoothing (-webkit-font-smoothing)",
+        "Missing UC001 shadow variables (--shadow, --shadow-hover)"
+      ],
+      "file_path": "backend/storage/Fitnesssssssss/HTML/Version1/Mockups/index.html",
+      "file_size": 5155
+    },
+    "Mockup: UC-003_mockup.html": {
+      "passed": false,
+      "issues": [
+        "Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+        "Missing print-friendly CSS (@media print)",
+        "Missing font smoothing (-webkit-font-smoothing)",
+        "Missing UC001 shadow variables (--shadow, --shadow-hover)"
+      ],
+      "file_path": "backend/storage/Fitnesssssssss/HTML/Version1/Mockups/UC-003_mockup.html",
+      "file_size": 2580
+    },
+    "Mockup: UC-006_mockup.html": {
+      "passed": false,
+      "issues": [
+        "Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+        "Missing print-friendly CSS (@media print)",
+        "Missing font smoothing (-webkit-font-smoothing)",
+        "Missing UC001 shadow variables (--shadow, --shadow-hover)"
+      ],
+      "file_path": "backend/storage/Fitnesssssssss/HTML/Version1/Mockups/UC-006_mockup.html",
+      "file_size": 3044
+    },
+    "Mockup: UC-001_mockup.html": {
+      "passed": false,
+      "issues": [
+        "Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+        "Missing print-friendly CSS (@media print)",
+        "Missing font smoothing (-webkit-font-smoothing)",
+        "Missing UC001 shadow variables (--shadow, --shadow-hover)"
+      ],
+      "file_path": "backend/storage/Fitnesssssssss/HTML/Version1/Mockups/UC-001_mockup.html",
+      "file_size": 3214
+    },
+    "Mockup: UC-004_mockup.html": {
+      "passed": false,
+      "issues": [
+        "Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+        "Missing print-friendly CSS (@media print)",
+        "Missing font smoothing (-webkit-font-smoothing)",
+        "Missing UC001 shadow variables (--shadow, --shadow-hover)"
+      ],
+      "file_path": "backend/storage/Fitnesssssssss/HTML/Version1/Mockups/UC-004_mockup.html",
+      "file_size": 2783
+    },
+    "Mockup: UC-002_mockup.html": {
+      "passed": false,
+      "issues": [
+        "Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+        "Missing print-friendly CSS (@media print)",
+        "Missing font smoothing (-webkit-font-smoothing)",
+        "Missing UC001 shadow variables (--shadow, --shadow-hover)"
+      ],
+      "file_path": "backend/storage/Fitnesssssssss/HTML/Version1/Mockups/UC-002_mockup.html",
+      "file_size": 2849
+    }
+  },
+  "all_passed": false,
+  "failed_files": [
+    "PRD",
+    "Commercial Proposal",
+    "BOM",
+    "Architecture Diagram",
+    "Mockup: UC-005_mockup.html",
+    "Mockup: index.html",
+    "Mockup: UC-003_mockup.html",
+    "Mockup: UC-006_mockup.html",
+    "Mockup: UC-001_mockup.html",
+    "Mockup: UC-004_mockup.html",
+    "Mockup: UC-002_mockup.html"
+  ],
+  "issues": [
+    "PRD: Missing UC001 color variables: --bg-white, --bg-gray",
+    "PRD: Missing Lucide Icons CDN or initialization",
+    "PRD: Missing font smoothing (-webkit-font-smoothing)",
+    "PRD: Missing UC001 shadow variables (--shadow, --shadow-hover)",
+    "Commercial Proposal: File not found",
+    "BOM: Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+    "BOM: Missing font smoothing (-webkit-font-smoothing)",
+    "BOM: Missing UC001 shadow variables (--shadow, --shadow-hover)",
+    "Architecture Diagram: File not found",
+    "Mockup: UC-005_mockup.html: Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+    "Mockup: UC-005_mockup.html: Missing print-friendly CSS (@media print)",
+    "Mockup: UC-005_mockup.html: Missing font smoothing (-webkit-font-smoothing)",
+    "Mockup: UC-005_mockup.html: Missing UC001 shadow variables (--shadow, --shadow-hover)",
+    "Mockup: index.html: Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+    "Mockup: index.html: Missing print-friendly CSS (@media print)",
+    "Mockup: index.html: Missing font smoothing (-webkit-font-smoothing)",
+    "Mockup: index.html: Missing UC001 shadow variables (--shadow, --shadow-hover)",
+    "Mockup: UC-003_mockup.html: Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+    "Mockup: UC-003_mockup.html: Missing print-friendly CSS (@media print)",
+    "Mockup: UC-003_mockup.html: Missing font smoothing (-webkit-font-smoothing)",
+    "Mockup: UC-003_mockup.html: Missing UC001 shadow variables (--shadow, --shadow-hover)",
+    "Mockup: UC-006_mockup.html: Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+    "Mockup: UC-006_mockup.html: Missing print-friendly CSS (@media print)",
+    "Mockup: UC-006_mockup.html: Missing font smoothing (-webkit-font-smoothing)",
+    "Mockup: UC-006_mockup.html: Missing UC001 shadow variables (--shadow, --shadow-hover)",
+    "Mockup: UC-001_mockup.html: Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+    "Mockup: UC-001_mockup.html: Missing print-friendly CSS (@media print)",
+    "Mockup: UC-001_mockup.html: Missing font smoothing (-webkit-font-smoothing)",
+    "Mockup: UC-001_mockup.html: Missing UC001 shadow variables (--shadow, --shadow-hover)",
+    "Mockup: UC-004_mockup.html: Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+    "Mockup: UC-004_mockup.html: Missing print-friendly CSS (@media print)",
+    "Mockup: UC-004_mockup.html: Missing font smoothing (-webkit-font-smoothing)",
+    "Mockup: UC-004_mockup.html: Missing UC001 shadow variables (--shadow, --shadow-hover)",
+    "Mockup: UC-002_mockup.html: Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+    "Mockup: UC-002_mockup.html: Missing print-friendly CSS (@media print)",
+    "Mockup: UC-002_mockup.html: Missing font smoothing (-webkit-font-smoothing)",
+    "Mockup: UC-002_mockup.html: Missing UC001 shadow variables (--shadow, --shadow-hover)"
+  ],
+  "total_files": 11,
+  "passed_files": 0
+}

@@ -40,7 +40,7 @@ class ReviewerAgent(BaseAgent):
         config = AgentConfig(
             name="ReviewerAgent",
             description="Manages feedback loops, document review cycles, and HTML validation",
-            model="openai/gpt-oss-120b",  # OpenAI GPT-OSS-120B via OpenRouter
+            model="x-ai/grok-code-fast-1",  # OpenAI GPT-OSS-120B via OpenRouter
             temperature=0.5,
             max_tokens=12000
         )

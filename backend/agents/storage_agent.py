@@ -24,15 +24,19 @@ class ProjectStructure:
             "research": self.project_root / "ResearchFindings",
             "use_cases": self.project_root / "UseCases",
             "synthetic_data": self.project_root / "SyntheticData",
-            "html": self.project_root / "HTML",
-            "html_v1": self.project_root / "HTML" / "Version1",
-            "mockups": self.project_root / "HTML" / "Version1" / "Mockups",
+
+            # NEW: Case Studies folder structure (replaces old HTML/Version1/Mockups)
+            "case_studies": self.project_root / "CaseStudies",
+
+            # Document folders
             "prd": self.project_root / "PRDDocuments",
             "architecture": self.project_root / "SystemArchitecture",
+            "commercial_proposals": self.project_root / "CommercialProposals",
+            "bom": self.project_root / "BillOfMaterials",
+
+            # Other folders
             "feedback": self.project_root / "ReviewerFeedback",
-            "audit": self.project_root / "AuditLogs",
-            "commercial_proposals": self.project_root / "CommercialProposals",  # NEW
-            "bom": self.project_root / "BillOfMaterials"  # NEW
+            "audit": self.project_root / "AuditLogs"
         }
     
     def _sanitize_name(self, name: str) -> str:
@@ -49,6 +53,50 @@ class ProjectStructure:
         """Get path for a specific folder"""
         return self.folders.get(folder_key, self.project_root)
 
+    def create_use_case_folder(self, use_case_id: str, use_case_name: str) -> Path:
+        """
+        Create a folder for a specific use case within CaseStudies
+
+        Args:
+            use_case_id: Use case ID (e.g., "UC-001")
+            use_case_name: Use case name (e.g., "Secure User Registration")
+
+        Returns:
+            Path to the created use case folder
+        """
+        # Sanitize use case name for folder
+        sanitized_name = self._sanitize_name(use_case_name)
+        folder_name = f"{use_case_id}_{sanitized_name}"
+
+        # Create folder path
+        use_case_folder = self.folders["case_studies"] / folder_name
+        use_case_folder.mkdir(parents=True, exist_ok=True)
+
+        return use_case_folder
+
+    async def _create_use_case_folder_action(
+        self,
+        project_name: str,
+        use_case_id: str,
+        use_case_name: str
+    ) -> AgentResult:
+        """Action handler for creating use case folder"""
+        if project_name not in self.projects:
+            await self._create_project(project_name)
+
+        project = self.projects[project_name]
+        use_case_folder = project.create_use_case_folder(use_case_id, use_case_name)
+
+        return AgentResult(
+            success=True,
+            data={
+                "project_name": project_name,
+                "use_case_id": use_case_id,
+                "folder_path": str(use_case_folder)
+            },
+            metadata={"agent": self.config.name, "action": "create_use_case_folder"}
+        )
+
 
 class StorageAgent(BaseAgent):
     """
@@ -60,7 +108,7 @@ class StorageAgent(BaseAgent):
         config = AgentConfig(
             name="StorageAgent",
             description="Manages project folders, versioning, and file storage",
-            model="z-ai/glm-4.6",  # GLM-4.6 via OpenRouter
+            model="x-ai/grok-code-fast-1",  # GLM-4.6 via OpenRouter
             temperature=0.3,
             max_tokens=12000
         )
@@ -95,7 +143,8 @@ class StorageAgent(BaseAgent):
                     project_name,
                     input_data["folder"],
                     input_data["filename"],
-                    input_data["content"]
+                    input_data["content"],
+                    input_data.get("subfolder")  # Optional subfolder parameter
                 )
             elif action == "get_file":
                 result = await self._get_file(
@@ -115,6 +164,12 @@ class StorageAgent(BaseAgent):
                 )
             elif action == "get_structure":
                 result = await self._get_project_structure(project_name)
+            elif action == "create_use_case_folder":
+                result = await self._create_use_case_folder_action(
+                    project_name,
+                    input_data["use_case_id"],
+                    input_data["use_case_name"]
+                )
             else:
                 raise ValueError(f"Unknown action: {action}")
             
@@ -173,14 +228,21 @@ class StorageAgent(BaseAgent):
         project_name: str,
         folder: str,
         filename: str,
-        content: Any
+        content: Any,
+        subfolder: str = None
     ) -> AgentResult:
-        """Save a file to the project structure"""
+        """Save a file to the project structure (optionally in a subfolder)"""
         if project_name not in self.projects:
             await self._create_project(project_name)
-        
+
         project = self.projects[project_name]
         folder_path = project.get_path(folder)
+
+        # If subfolder is specified, create it and use it
+        if subfolder:
+            folder_path = folder_path / subfolder
+            folder_path.mkdir(parents=True, exist_ok=True)
+
         file_path = folder_path / filename
         
         # Determine file type and save accordingly

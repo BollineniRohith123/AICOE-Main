@@ -38,7 +38,7 @@ db = client[os.environ['DB_NAME']]
 llm_client = LLMClient(
     api_key=os.getenv("OPENROUTER_API_KEY"),
     provider="openrouter",
-    model="z-ai/glm-4.6"
+    model="x-ai/grok-code-fast-1"
 )
 orchestrator = OrchestratorAgent(llm_client, db)
 
@@ -407,100 +407,93 @@ async def websocket_endpoint(websocket: WebSocket, workflow_id: str):
                 if workflow_id in active_workflow_tasks:
                     del active_workflow_tasks[workflow_id]
 
-                # Generate project ID
-                project_id = workflow_id.split("_")[-1]
+                # Use project name for folder (sanitized)
+                # This matches what StorageAgent does
+                def sanitize_name(name: str) -> str:
+                    return "".join(c if c.isalnum() or c in (' ', '-', '_') else '_' for c in name)
 
-                # Create project directory
+                project_id = sanitize_name(project_name)
+
+                # Project directory is already created by StorageAgent
                 project_dir = STORAGE_DIR / project_id
-                project_dir.mkdir(exist_ok=True)
 
                 # Save artifacts
                 artifacts = {}
 
-                # Save PRD if available
+                # PRD files are already saved by orchestrator to PRDDocuments folder
+                # Just reference them in artifacts
                 if "prd" in workflow_result.get("results", {}):
-                    prd_data = workflow_result["results"]["prd"]
-                    prd_content = prd_data.get("prd_markdown", "")
-                    prd_file = project_dir / "PRD.md"
-                    async with aiofiles.open(prd_file, 'w') as f:
-                        await f.write(prd_content)
-                    artifacts["prd"] = str(prd_file)
+                    prd_html_file = project_dir / "PRDDocuments" / "PRD_v1.html"
+                    prd_xml_file = project_dir / "PRDDocuments" / "PRD_v1.xml"
+                    if prd_html_file.exists():
+                        artifacts["prd"] = str(prd_html_file)
+                    if prd_xml_file.exists():
+                        artifacts["prd_xml"] = str(prd_xml_file)
 
-                    # Save PDF if available
-                    if "prd_pdf" in prd_data:
-                        prd_pdf_content = prd_data.get("prd_pdf", b"")
-                        prd_pdf_file = project_dir / "PRD.pdf"
-                        async with aiofiles.open(prd_pdf_file, 'wb') as f:
-                            await f.write(prd_pdf_content)
-                        artifacts["prd_pdf"] = str(prd_pdf_file)
-
-                # Save Mockup if available (multi-page support)
+                # Mockup files are already saved by orchestrator to CaseStudies folder
+                # Just reference them in artifacts
                 if "mockup" in workflow_result.get("results", {}):
+                    case_studies_dir = project_dir / "CaseStudies"
+                    mockup_index = case_studies_dir / "index.html"
+                    if mockup_index.exists():
+                        artifacts["mockup"] = str(mockup_index)
+                        artifacts["case_studies_index"] = str(mockup_index)
+
+                    # Reference all mockup pages (both single-page and multi-screen)
                     mockup_data = workflow_result["results"]["mockup"]
-
-                    # Create HTML/Version1/Mockups folder structure
-                    mockup_dir = project_dir / "HTML" / "Version1" / "Mockups"
-                    mockup_dir.mkdir(parents=True, exist_ok=True)
-
-                    # Save main index.html to Mockups folder
-                    mockup_content = mockup_data.get("mockup_html", "")
-                    mockup_file = mockup_dir / "index.html"
-                    async with aiofiles.open(mockup_file, 'w') as f:
-                        await f.write(mockup_content)
-                    artifacts["mockup"] = str(mockup_file)
-
-                    # Save additional pages if available (all use case pages)
                     mockup_pages = mockup_data.get("mockup_pages", {})
+                    use_case_structure = mockup_data.get("use_case_structure", {})
+
                     if isinstance(mockup_pages, dict):
-                        for page_name, page_content in mockup_pages.items():
-                            if page_name != "index.html":  # index.html already saved
-                                page_file = mockup_dir / page_name
-                                async with aiofiles.open(page_file, 'w') as f:
-                                    await f.write(page_content)
-                                artifacts[f"mockup_{page_name}"] = str(page_file)
+                        for page_name in mockup_pages.keys():
+                            if page_name == "index.html":
+                                continue  # Already referenced above
 
-                # Save Commercial Proposal if available
+                            # Check if this is a multi-screen use case
+                            if "_" in page_name:
+                                uc_id = page_name.split("_")[0]
+                                uc_info = use_case_structure.get("use_cases", {}).get(uc_id, {})
+                                is_multi_screen = uc_info.get("type") == "multi-screen"
+
+                                if is_multi_screen:
+                                    # File is in subfolder: CaseStudies/UC-001/screen-01.html
+                                    page_file = case_studies_dir / uc_id / page_name.replace(f"{uc_id}_", "")
+                                else:
+                                    # File is in root: CaseStudies/UC-001_mockup.html
+                                    page_file = case_studies_dir / page_name
+
+                                if page_file.exists():
+                                    artifacts[f"mockup_{page_name}"] = str(page_file)
+
+                # Commercial Proposal files are already saved by orchestrator to CommercialProposals folder
+                # Just reference them in artifacts
                 if "commercial_proposal" in workflow_result.get("results", {}):
-                    proposal_data = workflow_result["results"]["commercial_proposal"]
-                    proposal_content = proposal_data.get("proposal_markdown", "")
-                    proposal_file = project_dir / "Proposal.md"
-                    async with aiofiles.open(proposal_file, 'w') as f:
-                        await f.write(proposal_content)
-                    artifacts["commercial_proposal"] = str(proposal_file)
+                    proposal_html_file = project_dir / "CommercialProposals" / "proposal_v1.html"
+                    proposal_xml_file = project_dir / "CommercialProposals" / "proposal_v1.xml"
+                    if proposal_html_file.exists():
+                        artifacts["commercial_proposal"] = str(proposal_html_file)
+                    if proposal_xml_file.exists():
+                        artifacts["commercial_proposal_xml"] = str(proposal_xml_file)
 
-                    # Save Proposal PDF if available
-                    if "proposal_pdf" in proposal_data:
-                        proposal_pdf_content = proposal_data.get("proposal_pdf", b"")
-                        proposal_pdf_file = project_dir / "Proposal.pdf"
-                        async with aiofiles.open(proposal_pdf_file, 'wb') as f:
-                            await f.write(proposal_pdf_content)
-                        artifacts["commercial_proposal_pdf"] = str(proposal_pdf_file)
-
-                # Save BOM if available
+                # BOM files are already saved by orchestrator to BillOfMaterials folder
+                # Just reference them in artifacts
                 if "bom" in workflow_result.get("results", {}):
-                    bom_data = workflow_result["results"]["bom"]
-                    bom_json = bom_data.get("bom_json", {})
-                    bom_json_file = project_dir / "BOM.json"
-                    async with aiofiles.open(bom_json_file, 'w') as f:
-                        await f.write(json.dumps(bom_json, indent=2))
-                    artifacts["bom_json"] = str(bom_json_file)
+                    bom_html_file = project_dir / "BillOfMaterials" / "bom_v1.html"
+                    bom_xml_file = project_dir / "BillOfMaterials" / "bom_v1.xml"
+                    if bom_html_file.exists():
+                        artifacts["bom"] = str(bom_html_file)
+                    if bom_xml_file.exists():
+                        artifacts["bom_xml"] = str(bom_xml_file)
 
-                    # Save BOM PDF if available
-                    if "bom_pdf" in bom_data:
-                        bom_pdf_content = bom_data.get("bom_pdf", b"")
-                        bom_pdf_file = project_dir / "BOM.pdf"
-                        async with aiofiles.open(bom_pdf_file, 'wb') as f:
-                            await f.write(bom_pdf_content)
-                        artifacts["bom_pdf"] = str(bom_pdf_file)
-
-                # Save Architecture Diagram if available
+                # Architecture files are already saved by orchestrator to SystemArchitecture folder
+                # Just reference them in artifacts
                 if "architecture_diagram" in workflow_result.get("results", {}):
-                    arch_data = workflow_result["results"]["architecture_diagram"]
-                    arch_content = arch_data.get("architecture_html", "")
-                    arch_file = project_dir / "Architecture.html"
-                    async with aiofiles.open(arch_file, 'w') as f:
-                        await f.write(arch_content)
-                    artifacts["architecture_diagram"] = str(arch_file)
+                    arch_html_file = project_dir / "SystemArchitecture" / "architecture_v1.html"
+                    arch_xml_file = project_dir / "SystemArchitecture" / "architecture_v1.xml"
+                    if arch_html_file.exists():
+                        artifacts["architecture_diagram"] = str(arch_html_file)
+                    if arch_xml_file.exists():
+                        artifacts["architecture_xml"] = str(arch_xml_file)
 
                 # Save complete workflow results
                 results_file = project_dir / "workflow_results.json"
@@ -765,29 +758,32 @@ async def download_artifact(project_id: str, artifact_type: str):
         
         # Determine filename and media type
         if artifact_type == "prd":
-            filename = f"{project['project_name']}-PRD.md"
-            media_type = "text/markdown"
-        elif artifact_type == "prd_pdf":
-            filename = f"{project['project_name']}-PRD.pdf"
-            media_type = "application/pdf"
+            filename = f"{project['project_name']}-PRD.html"
+            media_type = "text/html"
+        elif artifact_type == "prd_xml":
+            filename = f"{project['project_name']}-PRD.xml"
+            media_type = "application/xml"
         elif artifact_type == "mockup":
             filename = f"{project['project_name']}-Mockup.html"
             media_type = "text/html"
         elif artifact_type == "commercial_proposal":
-            filename = f"{project['project_name']}-Proposal.md"
-            media_type = "text/markdown"
-        elif artifact_type == "commercial_proposal_pdf":
-            filename = f"{project['project_name']}-Proposal.pdf"
-            media_type = "application/pdf"
-        elif artifact_type == "bom_json":
-            filename = f"{project['project_name']}-BOM.json"
-            media_type = "application/json"
-        elif artifact_type == "bom_pdf":
-            filename = f"{project['project_name']}-BOM.pdf"
-            media_type = "application/pdf"
+            filename = f"{project['project_name']}-Proposal.html"
+            media_type = "text/html"
+        elif artifact_type == "commercial_proposal_xml":
+            filename = f"{project['project_name']}-Proposal.xml"
+            media_type = "application/xml"
+        elif artifact_type == "bom":
+            filename = f"{project['project_name']}-BOM.html"
+            media_type = "text/html"
+        elif artifact_type == "bom_xml":
+            filename = f"{project['project_name']}-BOM.xml"
+            media_type = "application/xml"
         elif artifact_type == "architecture_diagram":
             filename = f"{project['project_name']}-Architecture.html"
             media_type = "text/html"
+        elif artifact_type == "architecture_xml":
+            filename = f"{project['project_name']}-Architecture.xml"
+            media_type = "application/xml"
         else:
             filename = file_path.name
             media_type = "application/octet-stream"

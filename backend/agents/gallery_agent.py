@@ -3,6 +3,7 @@ Case Study Gallery Agent - Generates master gallery index for all projects
 """
 from typing import Dict, Any, List, Optional
 from .base_agent import BaseAgent, AgentConfig, AgentResult
+from .design_system import get_design_system_prompt
 from pathlib import Path
 import json
 import os
@@ -20,7 +21,7 @@ class CaseStudyGalleryAgent(BaseAgent):
         config = AgentConfig(
             name="CaseStudyGalleryAgent",
             description="Generates master gallery index for all case studies with AICOE branding",
-            model="openai/gpt-oss-120b",  # OpenAI GPT-OSS-120B via OpenRouter
+            model="x-ai/grok-code-fast-1",  # OpenAI GPT-OSS-120B via OpenRouter
             temperature=0.6,
             max_tokens=16000
         )

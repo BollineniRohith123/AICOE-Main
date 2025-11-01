@@ -1,0 +1,53 @@
+{
+  "validation_results": {
+    "PRD": {
+      "passed": false,
+      "issues": [
+        "Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+        "Missing font smoothing (-webkit-font-smoothing)"
+      ],
+      "file_path": "backend/storage/Fitness application discussion/PRDDocuments/PRD_v1.html",
+      "file_size": 24053
+    },
+    "Commercial Proposal": {
+      "passed": false,
+      "issues": [
+        "File not found: backend/storage/Fitness application discussion/CommercialProposals/proposal_v1.html"
+      ],
+      "file_path": "backend/storage/Fitness application discussion/CommercialProposals/proposal_v1.html"
+    },
+    "BOM": {
+      "passed": false,
+      "issues": [
+        "Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+        "Missing font smoothing (-webkit-font-smoothing)"
+      ],
+      "file_path": "backend/storage/Fitness application discussion/BillOfMaterials/bom_v1.html",
+      "file_size": 16030
+    },
+    "Architecture Diagram": {
+      "passed": false,
+      "issues": [
+        "File not found: backend/storage/Fitness application discussion/ArchitectureDiagrams/architecture_v1.html"
+      ],
+      "file_path": "backend/storage/Fitness application discussion/ArchitectureDiagrams/architecture_v1.html"
+    }
+  },
+  "all_passed": false,
+  "failed_files": [
+    "PRD",
+    "Commercial Proposal",
+    "BOM",
+    "Architecture Diagram"
+  ],
+  "issues": [
+    "PRD: Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+    "PRD: Missing font smoothing (-webkit-font-smoothing)",
+    "Commercial Proposal: File not found",
+    "BOM: Missing UC001 color variables: --primary-navy, --accent-pink, --accent-cyan, --text-primary, --bg-white, --bg-gray",
+    "BOM: Missing font smoothing (-webkit-font-smoothing)",
+    "Architecture Diagram: File not found"
+  ],
+  "total_files": 4,
+  "passed_files": 0
+}

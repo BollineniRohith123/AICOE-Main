@@ -16,7 +16,7 @@ class IntakeAgent(BaseAgent):
         config = AgentConfig(
             name="IntakeAgent",
             description="Processes raw meeting transcripts into structured notes",
-            model="z-ai/glm-4.6",  # GLM-4.6 via OpenRouter
+            model="x-ai/grok-code-fast-1",  # GLM-4.6 via OpenRouter
             temperature=0.3,  # Lower temperature for factual extraction
             max_tokens=12000
         )
@@ -51,46 +51,74 @@ Project Name: {project_name}
 Transcript:
 {transcript}
 
-Please extract and structure the following information in JSON format:
-1. company_overview: Brief description of the company/organization (if mentioned)
-2. attendees: List of people who attended the meeting (if mentioned)
-3. meeting_date: Date of meeting (if mentioned, or "Not specified")
-4. meeting_objective: Main purpose/goal of the meeting
-5. key_discussion_points: List of main topics discussed (at least 5-7 points)
-6. pain_points: List of challenges or problems identified
-7. requirements: List of key requirements or needs mentioned
-8. decisions_made: List of decisions or conclusions reached
-9. action_items: List of follow-up actions (if any)
-10. technical_constraints: Any technical limitations or constraints mentioned
-11. stakeholders: Key stakeholders mentioned
+Please extract and structure the following information in XML format:
 
-Return ONLY valid JSON without any markdown formatting or explanations. The JSON should be parseable directly."""
+<structured_notes>
+    <project_name>{project_name}</project_name>
+    <company_overview>Brief description of the company/organization (if mentioned, or "Not specified")</company_overview>
+    <attendees>
+        <attendee>Name and role</attendee>
+        <!-- Add more attendee elements as needed -->
+    </attendees>
+    <meeting_date>Date of meeting (if mentioned, or "Not specified")</meeting_date>
+    <meeting_objective>Main purpose/goal of the meeting</meeting_objective>
+    <key_discussion_points>
+        <point>Discussion point 1</point>
+        <!-- Add at least 5-7 key discussion points -->
+    </key_discussion_points>
+    <pain_points>
+        <pain_point>Challenge or problem 1</pain_point>
+        <!-- Add more pain points as identified -->
+    </pain_points>
+    <requirements>
+        <requirement>Requirement 1</requirement>
+        <!-- Add more requirements as mentioned -->
+    </requirements>
+    <decisions_made>
+        <decision>Decision 1</decision>
+        <!-- Add more decisions as reached -->
+    </decisions_made>
+    <action_items>
+        <action_item>Follow-up action 1</action_item>
+        <!-- Add more action items if any -->
+    </action_items>
+    <technical_constraints>
+        <constraint>Technical limitation 1</constraint>
+        <!-- Add more constraints as mentioned -->
+    </technical_constraints>
+    <stakeholders>
+        <stakeholder>Stakeholder name and role</stakeholder>
+        <!-- Add more stakeholders as mentioned -->
+    </stakeholders>
+</structured_notes>
+
+Return ONLY valid XML without any markdown formatting or explanations. The XML should be well-formed and parseable."""
 
             self.log_execution("llm_call", "Extracting structured information")
             response = await self._call_llm(system_message, user_message, max_retries=3)
 
-            # Parse JSON response using robust parser
-            structured_notes = self.parse_json_response(response, fallback_key="raw_response")
-
-            # Check if parsing was successful
-            has_parse_error = "parse_error" in structured_notes
+            # Parse XML response
+            structured_notes_xml = response.strip()
+            if structured_notes_xml.startswith("```xml"):
+                structured_notes_xml = structured_notes_xml.split("```xml")[1].split("```")[0].strip()
+            elif structured_notes_xml.startswith("```"):
+                structured_notes_xml = structured_notes_xml.split("```")[1].split("```")[0].strip()
 
             self.log_execution(
-                "success" if not has_parse_error else "warning",
-                f"Extracted {len(structured_notes)} fields" + (" (with parse warnings)" if has_parse_error else "")
+                "success",
+                f"Extracted structured notes XML ({len(structured_notes_xml)} characters)"
             )
 
             return AgentResult(
                 success=True,
                 data={
-                    "structured_notes": structured_notes,
+                    "structured_notes_xml": structured_notes_xml,
                     "project_name": project_name,
                     "transcript_length": len(transcript)
                 },
                 metadata={
                     "agent": self.config.name,
-                    "fields_extracted": list(structured_notes.keys()),
-                    "parse_warning": has_parse_error
+                    "output_format": "xml"
                 }
             )
                 

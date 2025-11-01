@@ -3,6 +3,7 @@ System Architecture Diagram Agent - Generates visual system architecture diagram
 """
 from typing import Dict, Any
 from .base_agent import BaseAgent, AgentConfig, AgentResult
+from .design_system import get_design_system_prompt
 import json
 
 
@@ -16,7 +17,7 @@ class ArchitectureAgent(BaseAgent):
         config = AgentConfig(
             name="ArchitectureAgent",
             description="Creates interactive system architecture diagrams",
-            model="z-ai/glm-4.6",  # GLM-4.6 via OpenRouter
+            model="x-ai/grok-code-fast-1",  # GLM-4.6 via OpenRouter
             temperature=0.3,
             max_tokens=12000
         )
@@ -24,29 +25,34 @@ class ArchitectureAgent(BaseAgent):
     
     async def execute(self, input_data: Dict[str, Any], context: Dict[str, Any]) -> AgentResult:
         """
-        Generate system architecture diagram
-        
+        Generate system architecture diagram as HTML
+
+        This is a TWO-STAGE process:
+        Stage 1: Generate structured XML with Mermaid diagram (for data storage and IP)
+        Stage 2: Transform XML to beautiful HTML with interactive Mermaid rendering using LLM
+
         Input:
             - project_name: Name of the project
             - enrichment: Technical architecture from knowledge base
             - use_cases: Use cases for understanding system flows
             - research_insights: Technical patterns and best practices
-            
+
         Output:
-            - architecture_html: Interactive HTML with Mermaid diagrams
+            - architecture_xml: Structured XML with Mermaid diagram
+            - architecture_html: Interactive HTML with rendered Mermaid diagrams
         """
         try:
             self.log_execution("start", "Generating architecture diagram")
             self.validate_input(input_data, ["project_name"])
-            
+
             project_name = input_data["project_name"]
             enrichment = input_data.get("enrichment", {})
             use_cases = input_data.get("use_cases", [])
             research_insights = input_data.get("research_insights", {})
-            
+
             # Prepare context
             research_text = json.dumps(research_insights, indent=2) if research_insights else "No research insights available"
-            
+
             context_text = f"""
 Project Name: {project_name}
 
@@ -60,478 +66,202 @@ Research Insights (for architecture patterns):
 {research_text[:1500]}
 """
 
-            system_message = """## ROLE AND GOAL
-You are a Senior Cloud Architect. Your goal is to create a high-level system architecture design based on the project requirements and suggested design patterns. Your output must be a structured XML document containing a MermaidJS diagram.
-
-## CONTEXT
-You will receive the `<productRequirementsDocument>` XML and the `<knowledgeEnrichment>` XML.
+            # STAGE 1: Generate XML with Mermaid diagram for data storage
+            xml_system_message = """## ROLE AND GOAL
+You are a Senior Cloud Architect and System Designer. Your goal is to create a comprehensive, production-ready system architecture design based on the project requirements and suggested design patterns. Your output must be a structured XML document containing a detailed MermaidJS diagram.
 
 ## STEP-BY-STEP PROCESS
-1. Review the `<technicalContext>` from the PRD and the `<technicalSuggestions>` from the research findings.
-2. Incorporate the `<suggestedPattern>`s from the Knowledge Base Agent into your design.
-3. Design a high-level architecture that includes a frontend, a backend API, a database, and any necessary integrations. Prioritize open-source components.
-4. Represent this architecture as a MermaidJS flowchart diagram.
-5. Provide a brief breakdown of each major component.
-6. Format the entire design into the strict XML schema below.
+1. Review the technical context, use cases, and research findings.
+2. Design a comprehensive architecture that includes:
+   - Frontend layer (web, mobile, desktop as applicable)
+   - API Gateway / Load Balancer
+   - Backend services (microservices or monolith)
+   - Data layer (databases, caches, message queues)
+   - External integrations (third-party APIs, services)
+   - Security layer (authentication, authorization)
+   - Infrastructure components (CDN, storage, monitoring)
+3. Represent this architecture as a detailed MermaidJS flowchart diagram showing:
+   - All major components and their relationships
+   - Data flow directions
+   - Component groupings (using subgraphs if needed)
+   - Different node types (databases, services, external systems)
+4. Provide a comprehensive breakdown of each major component with technical details.
+5. Format the entire design into the strict XML schema below.
 
 ## OUTPUT FORMAT (CRITICAL)
-You MUST produce a single, valid XML document that exactly matches the XSLT template structure. Your entire response MUST be only this XML.
+You MUST produce a single, valid XML document. Your entire response MUST be only this XML.
 
 <systemArchitecture>
-    <description>A high-level overview of the proposed architecture, referencing open-source components and the Decision Support System pattern.</description>
+    <description>A comprehensive overview of the proposed architecture, referencing open-source components, design patterns, and architectural decisions.</description>
     <diagram type="mermaid-flowchart">
         <![CDATA[
             graph TD
-                A[React Frontend] --> B{FastAPI Backend};
-                B --> C[Decision Engine];
-                C --> D[(MongoDB)];
-                B --> E[External APIs];
+                %% Frontend Layer
+                A[React Native Mobile App] -->|HTTPS/REST| B[API Gateway - Kong/Nginx]
+                A2[React Web App] -->|HTTPS/REST| B
+
+                %% API Gateway & Auth
+                B --> C[Auth Service - OAuth 2.0]
+                C --> D[Identity Provider]
+
+                %% Backend Services
+                B --> E[User Service]
+                B --> F[Core Business Logic Service]
+                B --> G[Analytics Service]
+
+                %% Data Layer
+                E --> H[(PostgreSQL - User Data)]
+                F --> I[(MongoDB - Application Data)]
+                G --> J[(Redis Cache)]
+
+                %% Message Queue
+                F --> K[Message Queue - RabbitMQ/Kafka]
+                K --> L[Background Workers]
+
+                %% External Services
+                B --> M[Third-Party APIs]
+                F --> N[Cloud Storage - S3]
         ]]>
     </diagram>
     <componentBreakdown>
-        <component name="React Frontend">A responsive user interface built with React and styled with Tailwind CSS.</component>
-        <component name="FastAPI Backend">A Python-based API server to handle business logic and data processing.</component>
-        <component name="Decision Engine">A dedicated module within the backend that implements the core AI logic for scenario analysis.</component>
-        <component name="MongoDB">A NoSQL database for storing project data, supplier information, and audit trails.</component>
+        <component name="React Native Mobile App">Cross-platform mobile application built with React Native, providing native iOS and Android experiences.</component>
+        <component name="React Web App">Responsive web application built with React, TypeScript, and modern UI libraries.</component>
+        <component name="API Gateway">Kong or Nginx-based API gateway handling routing, rate limiting, authentication, and load balancing.</component>
+        <component name="Auth Service">OAuth 2.0 / OpenID Connect authentication service with JWT token management.</component>
+        <component name="User Service">Microservice handling user management, profiles, and preferences.</component>
+        <component name="Core Business Logic Service">Main application service implementing business rules and workflows.</component>
+        <component name="PostgreSQL">Relational database for structured user and transactional data.</component>
+        <component name="MongoDB">NoSQL database for flexible, document-based application data.</component>
+        <component name="Redis Cache">In-memory cache for session management and performance optimization.</component>
+        <component name="Message Queue">Asynchronous message processing using RabbitMQ or Kafka for event-driven architecture.</component>
     </componentBreakdown>
 </systemArchitecture>
 
 ## GUIDELINES & CONSTRAINTS
 - The architecture MUST be based on open-source technologies unless the client's existing stack dictates otherwise.
-- The Mermaid diagram MUST be syntactically correct.
+- The Mermaid diagram MUST be syntactically correct and comprehensive.
+- Include ALL relevant components: frontend, backend, databases, caches, queues, external services, security layers.
+- Show clear data flow and relationships between components.
+- Use appropriate Mermaid node types: [] for services, [()] for databases, {} for decision points.
+- Add comments in the Mermaid diagram to organize sections (e.g., %% Frontend Layer).
 - Your entire response MUST be only the XML document."""
 
-            user_message = f"""Generate a system architecture XML document for project: {project_name}
+            self.log_execution("progress", "Generating architecture XML")
+
+            xml_response = await self._call_llm(xml_system_message, f"""Generate a system architecture XML document for project: {project_name}
 
 Input Data:
-{context_text}"""
+{context_text}""")
 
-            # Call LLM to generate architecture
-            self.log_execution("progress", "Calling LLM for architecture generation")
-            
-            response = await self._call_llm(system_message, user_message)
-            architecture_content = response.strip()
+            architecture_xml = xml_response.strip()
 
             # Clean XML response
-            if architecture_content.startswith("```xml"):
-                architecture_content = architecture_content.split("```xml")[1].split("```")[0].strip()
-            elif architecture_content.startswith("```"):
-                architecture_content = architecture_content.split("```")[1].split("```")[0].strip()
+            if architecture_xml.startswith("```xml"):
+                architecture_xml = architecture_xml.split("```xml")[1].split("```")[0].strip()
+            elif architecture_xml.startswith("```"):
+                architecture_xml = architecture_xml.split("```")[1].split("```")[0].strip()
 
-            self.log_execution("success", f"Generated architecture XML ({len(architecture_content)} chars)")
+            self.log_execution("success", f"Generated architecture XML ({len(architecture_xml)} chars)")
+
+            # STAGE 2: Transform XML to HTML with interactive Mermaid rendering
+            design_system = get_design_system_prompt()
+            
+            html_system_message = f"""## ROLE AND GOAL
+You are an expert Technical Documentation Designer. Your goal is to transform a system architecture XML (containing Mermaid diagrams) into a professional, interactive HTML document with AICOE branding.
+
+
+{design_system}
+
+## CONTEXT
+You will be given an XML string containing a `<systemArchitecture>` with embedded Mermaid diagram code.
+
+## STEP-BY-STEP PROCESS
+1. Parse the input XML to extract the architecture description, Mermaid diagram, and component breakdown.
+2. Generate a clean HTML structure with:
+   - Architecture overview section
+   - Interactive Mermaid diagram (using Mermaid.js CDN)
+   - Component breakdown with detailed descriptions
+   - Professional styling
+3. Apply the AICOE branding guidelines with absolute precision.
+4. Return the final, single HTML file as a string.
+
+## OUTPUT FORMAT (CRITICAL)
+You MUST produce a single, complete HTML string as your response. DO NOT include any other text, explanation, or formatting like markdown code fences. Your response should start with `<!DOCTYPE html>` and end with `</html>`.
+
+## GUIDELINES & STYLING (NON-NEGOTIABLE)
+- **Styling:** All CSS MUST be contained within a `<style>` tag in the `<head>` of the HTML document.
+- **Mermaid Setup:**
+  * Include Mermaid.js via CDN: `<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>`
+  * Initialize Mermaid with custom theme in a `<script>` tag at the end of `<body>`:
+    ```javascript
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'base',
+        themeVariables: {
+            primaryColor: '#1a1a2e',
+            primaryTextColor: '#ffffff',
+            primaryBorderColor: '#00ffcc',
+            lineColor: '#00ffcc',
+            secondaryColor: '#2a2a3e',
+            tertiaryColor: '#3a2a4e',
+            fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif'
+        }
+    });
+    ```
+  * Place Mermaid diagram code inside a `<div class="mermaid">` element
+  * Ensure the diagram container has proper styling (white background, padding, border-radius)
+- **Branding:** Use the AICOE color palette (Primary Navy: #1a1a2e, Accent Cyan: #00ffcc, Accent Pink: #ff69b4, etc.)
+- **Logo:** Include the AICOE logo in the footer with gradient text effect.
+- **Layout:** Clean, minimalist design following Apple's principles with generous whitespace.
+- **Typography:** Use -apple-system, BlinkMacSystemFont, 'SF Pro Display' font stack.
+- **Interactive:** Mermaid diagram should be interactive, zoomable, and clearly visible.
+- **Icons:** Use Lucide icon library via CDN for component cards.
+- **Responsive:** Must work on desktop, tablet, and mobile.
+- **Print-friendly:** Include print styles.
+- **Diagram Visibility:** Ensure the Mermaid diagram is large, clear, and properly styled with AICOE colors."""
+
+            self.log_execution("progress", "Transforming XML to HTML")
+
+            html_response = await self._call_llm(
+                html_system_message,
+                f"""Transform this system architecture XML into a beautiful, professional HTML document with interactive Mermaid diagram:
+
+{architecture_xml}""",
+                max_tokens=12000
+            )
+
+            # Clean HTML response
+            architecture_html = html_response.strip()
+            if architecture_html.startswith("```html"):
+                architecture_html = architecture_html.split("```html")[1].split("```")[0].strip()
+            elif architecture_html.startswith("```"):
+                architecture_html = architecture_html.split("```")[1].split("```")[0].strip()
+
+            # Validate HTML starts correctly
+            if not architecture_html.startswith("<!DOCTYPE"):
+                self.logger.warning("Generated HTML doesn't start with DOCTYPE, prepending it")
+                architecture_html = "<!DOCTYPE html>\n" + architecture_html
+
+            self.log_execution("success", f"Generated architecture HTML ({len(architecture_html)} characters)")
 
             return AgentResult(
                 success=True,
                 data={
-                    "architecture_xml": architecture_content,
+                    "architecture_xml": architecture_xml,
+                    "architecture_html": architecture_html,
                     "project_name": project_name
                 },
                 metadata={
                     "agent": self.config.name,
-                    "format": "xml"
+                    "format": "xml+html"
                 }
             )
-            
+
         except Exception as e:
-            self.log_execution("error", f"Failed to generate architecture: {str(e)}")
+            self.logger.error(f"Error in ArchitectureAgent: {str(e)}")
             return AgentResult(
                 success=False,
-                error=f"Architecture generation failed: {str(e)}",
+                data=None,
+                error=str(e),
                 metadata={"agent": self.config.name}
             )
-    
-    def _generate_html(self, architecture_data: dict, project_name: str) -> str:
-        """Generate interactive HTML with Mermaid diagrams and AICOE branding"""
-        diagrams = architecture_data.get('diagrams', [])
-        components = architecture_data.get('components', [])
-        integrations = architecture_data.get('integrations', [])
-        infrastructure = architecture_data.get('infrastructure', {})
-        
-        # Generate diagram HTML sections
-        diagram_sections = []
-        for idx, diagram in enumerate(diagrams):
-            mermaid_code = diagram.get('mermaid_code', '').replace('\\n', '\n')
-            diagram_sections.append(f"""
-            <div class="diagram-section">
-                <h2>{diagram.get('title', f'Diagram {idx+1}')}</h2>
-                <p class="diagram-description">{diagram.get('description', '')}</p>
-                <div class="mermaid-container">
-                    <pre class="mermaid">
-{mermaid_code}
-                    </pre>
-                </div>
-            </div>
-            """)
-        
-        # Generate components table
-        components_html = '<table class="components-table"><tr><th>Component</th><th>Type</th><th>Technology</th><th>Description</th></tr>'
-        for comp in components:
-            components_html += f"""
-            <tr>
-                <td><strong>{comp.get('name', '')}</strong></td>
-                <td>{comp.get('type', '')}</td>
-                <td><code>{comp.get('technology', '')}</code></td>
-                <td>{comp.get('description', '')}</td>
-            </tr>
-            """
-        components_html += '</table>'
-        
-        # Generate integrations list
-        integrations_html = '<ul class="integrations-list">'
-        for integration in integrations:
-            integrations_html += f'<li><strong>{integration.get("name", "")}</strong> ({integration.get("type", "")}): {integration.get("purpose", "")}</li>'
-        integrations_html += '</ul>'
-        
-        # Full HTML template with AICOE branding
-        html_template = f"""
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{project_name} - System Architecture</title>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        * {{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }}
-
-        :root {{
-            --primary-navy: #1a1a2e;
-            --midnight-blue: #2a2a3e;
-            --deep-purple: #3a2a4e;
-            --accent-pink: #ff69b4;
-            --accent-cyan: #00ffcc;
-            --accent-turquoise: #00e5b3;
-            --text-primary: #1a1a1a;
-            --text-secondary: #666666;
-            --bg-white: #ffffff;
-            --bg-gray: #f5f5f7;
-            --border-gray: #d2d2d7;
-            --shadow: 0 2px 16px rgba(26, 26, 46, 0.08);
-            --shadow-hover: 0 4px 24px rgba(26, 26, 46, 0.12);
-        }}
-
-        body {{
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
-            background: var(--bg-gray);
-            color: var(--text-primary);
-            line-height: 1.6;
-            font-size: 17px;
-            -webkit-font-smoothing: antialiased;
-        }}
-
-        .container {{
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }}
-
-        header {{
-            background: var(--bg-white);
-            padding: 60px 0;
-            text-align: center;
-            margin-bottom: 40px;
-            border-radius: 24px;
-            box-shadow: var(--shadow);
-        }}
-
-        .header-content {{
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }}
-
-        h1 {{
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--deep-purple) 50%, var(--accent-pink) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }}
-
-        .subtitle {{
-            font-size: 21px;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            line-height: 1.5;
-        }}
-
-        .metadata {{
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            flex-wrap: wrap;
-            margin-top: 32px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border-gray);
-        }}
-
-        .metadata-item {{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }}
-
-        .metadata-label {{
-            font-size: 13px;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
-        }}
-
-        .metadata-value {{
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }}
-
-        .diagram-section {{
-            background: var(--bg-white);
-            border-radius: 24px;
-            padding: 48px;
-            margin-bottom: 32px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }}
-
-        .diagram-section:hover {{
-            box-shadow: var(--shadow-hover);
-            transform: translateY(-2px);
-        }}
-
-        h2 {{
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--primary-navy);
-        }}
-
-        .diagram-description {{
-            font-size: 17px;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-        }}
-
-        .mermaid-container {{
-            background: var(--bg-gray);
-            padding: 32px;
-            border-radius: 16px;
-            overflow-x: auto;
-        }}
-
-        .components-table {{
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }}
-
-        .components-table th {{
-            background: var(--primary-navy);
-            color: white;
-            padding: 12px;
-            text-align: left;
-            font-weight: 600;
-        }}
-
-        .components-table td {{
-            padding: 12px;
-            border-bottom: 1px solid var(--border-gray);
-        }}
-
-        .components-table tr:hover {{
-            background: var(--bg-gray);
-        }}
-
-        code {{
-            background: var(--bg-gray);
-            padding: 2px 8px;
-            border-radius: 4px;
-            color: var(--accent-pink);
-            font-family: 'SF Mono', Monaco, monospace;
-        }}
-
-        .integrations-list {{
-            list-style: none;
-            padding: 0;
-        }}
-
-        .integrations-list li {{
-            padding: 12px;
-            margin-bottom: 8px;
-            background: var(--bg-gray);
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-cyan);
-        }}
-
-        .info-box {{
-            background: linear-gradient(135deg, rgba(26, 26, 46, 0.03) 0%, rgba(58, 42, 78, 0.05) 100%);
-            padding: 24px;
-            border-radius: 16px;
-            margin: 24px 0;
-            border-left: 4px solid var(--accent-pink);
-        }}
-
-        footer {{
-            text-align: center;
-            padding: 60px 20px 40px;
-            color: var(--text-secondary);
-            font-size: 15px;
-        }}
-
-        .footer-logo {{
-            font-size: 24px;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--accent-pink) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 12px;
-        }}
-
-        @media (max-width: 768px) {{
-            h1 {{
-                font-size: 36px;
-            }}
-
-            .subtitle {{
-                font-size: 19px;
-            }}
-
-            .diagram-section {{
-                padding: 32px 24px;
-            }}
-
-            .metadata {{
-                gap: 20px;
-            }}
-        }}
-
-        @media print {{
-            * {{
-                print-color-adjust: exact;
-                -webkit-print-color-adjust: exact;
-            }}
-
-            body {{
-                background: white;
-            }}
-
-            .container {{
-                max-width: 100%;
-                padding: 20px;
-            }}
-
-            header {{
-                margin-bottom: 30px;
-                page-break-after: avoid;
-            }}
-
-            h1 {{
-                font-size: 36px;
-                color: var(--text-primary) !important;
-                -webkit-text-fill-color: var(--text-primary) !important;
-            }}
-
-            .diagram-section {{
-                break-inside: avoid;
-                page-break-inside: avoid;
-                box-shadow: none;
-                border: 1px solid var(--border-gray);
-                margin-bottom: 20px;
-                padding: 32px;
-            }}
-
-            footer {{
-                page-break-before: always;
-            }}
-        }}
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <div class="header-content">
-                <h1>🏗️ System Architecture</h1>
-                <p class="subtitle">{project_name}</p>
-                <div class="metadata">
-                    <div class="metadata-item">
-                        <span class="metadata-label">Project</span>
-                        <span class="metadata-value">{project_name}</span>
-                    </div>
-                    <div class="metadata-item">
-                        <span class="metadata-label">Version</span>
-                        <span class="metadata-value">1.0</span>
-                    </div>
-                    <div class="metadata-item">
-                        <span class="metadata-label">Generated by</span>
-                        <span class="metadata-value">AICOE Platform</span>
-                    </div>
-                    <div class="metadata-item">
-                        <span class="metadata-label">Document Type</span>
-                        <span class="metadata-value">Architecture Diagrams</span>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        {''.join(diagram_sections)}
-
-        <div class="diagram-section">
-            <h2>System Components</h2>
-            <p class="diagram-description">Detailed breakdown of all system components and their technologies</p>
-            {components_html}
-        </div>
-
-        <div class="diagram-section">
-            <h2>External Integrations</h2>
-            <p class="diagram-description">Third-party services and APIs integrated into the system</p>
-            {integrations_html}
-        </div>
-
-        <div class="diagram-section">
-            <h2>Infrastructure Overview</h2>
-            <p class="diagram-description">Hosting and infrastructure details</p>
-            <div class="info-box">
-                <p><strong>Hosting:</strong> {infrastructure.get('hosting', 'Not specified')}</p>
-                <p><strong>Database:</strong> {infrastructure.get('database', 'Not specified')}</p>
-                <p><strong>Caching:</strong> {infrastructure.get('caching', 'Not specified')}</p>
-                <p><strong>CDN:</strong> {infrastructure.get('cdn', 'Not specified')}</p>
-            </div>
-        </div>
-
-        <footer>
-            <div class="footer-logo">AICOE</div>
-            <p>© 2025 AICOE - AI Center of Excellence</p>
-            <p style="margin-top: 8px;">Interactive Architecture Diagrams</p>
-        </footer>
-    </div>
-
-    <script>
-        mermaid.initialize({{ 
-            startOnLoad: true,
-            theme: 'default',
-            themeVariables: {{
-                primaryColor: '#1a1a2e',
-                primaryTextColor: '#fff',
-                primaryBorderColor: '#00ffcc',
-                lineColor: '#ff69b4',
-                secondaryColor: '#3a2a4e',
-                tertiaryColor: '#f5f5f7'
-            }}
-        }});
-        lucide.createIcons();
-    </script>
-</body>
-</html>
-"""
-        
-        return html_template
-

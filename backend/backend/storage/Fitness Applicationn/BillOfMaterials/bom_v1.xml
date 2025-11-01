@@ -1,0 +1,33 @@
+<billOfMaterials>
+    <summary>An estimated monthly cost breakdown for deploying and running the Fitness Application MVP.</summary>
+    <items>
+        <category name="Cloud Infrastructure">
+            <item name="Frontend Hosting (static assets)" provider="Vercel/Netlify" costPerMonth="30.00" />
+            <item name="API Server (Cloud Run / Elastic Beanstalk)" provider="Google Cloud Platform/AWS" costPerMonth="80.00" />
+            <item name="Managed PostgreSQL (user & auth data)" provider="AWS RDS" costPerMonth="70.00" />
+            <item name="Managed MongoDB (sensor & activity data)" provider="MongoDB Atlas" costPerMonth="75.00" />
+            <item name="Managed FHIR Server (HAPI FHIR)" provider="Azure Health Data Services" costPerMonth="100.00" />
+            <item name="Managed Kafka (event bus)" provider="Confluent Cloud" costPerMonth="120.00" />
+            <item name="Object Storage (S3 / Blob)" provider="AWS S3" costPerMonth="20.00" />
+            <item name="CDN (CloudFront)" provider="AWS CloudFront" costPerMonth="15.00" />
+        </category>
+        <category name="Third-Party Services">
+            <item name="Authentication Service (Auth0)" provider="Auth0" costPerMonth="23.00" />
+            <item name="Consent Management Platform" provider="OneTrust" costPerMonth="50.00" />
+            <item name="Push Notification Service" provider="Firebase Cloud Messaging" costPerMonth="10.00" />
+            <item name="Email & SMS Verification" provider="Twilio" costPerMonth="30.costPerMonth="30.00" />
+            <item name="LLM API Usage (OpenAI)" provider="OpenAI" costPerMonth="150.00" />
+            <item name="Nutrition & Barcode API" provider="Edamam/USDA" costPerMonth="40.00" />
+        </category>
+        <category name="Software Licenses">
+            <item name="CI/CD Platform (GitHub Actions)" provider="GitHub" costPerMonth="10.00" />
+            <item name="Monitoring & Metrics (Datadog)" provider="Datadog" costPerMonth="50.00" />
+            <item name="Error Tracking (Sentry)" provider="Sentry" costPerMonth="26.00" />
+        </category>
+        <category name="AI Services">
+            <item name="AI Recommendation Engine (Vertex AI)" provider="Google Cloud Vertex AI" costPerMonth="200.00" />
+            <item name="Federated Learning Infrastructure" provider="AWS SageMaker Edge" costPerMonth="100.00" />
+        </category>
+    </items>
+    <totalCostPerMonth>1219.00</totalCostPerMonth>
+</billOfMaterials>
