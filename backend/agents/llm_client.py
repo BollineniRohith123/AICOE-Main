@@ -178,6 +178,81 @@ class LLMClient:
         }
         return json.dumps(data, indent=2)
     
+    def _generate_mock_prd(self) -> str:
+        """Generate mock PRD as text"""
+        return """# Product Requirements Document
+
+## Project Overview
+Task Management Application - A modern productivity tool
+
+## Core Features
+1. User Authentication (email/password)
+2. Task CRUD operations
+3. Dashboard with statistics
+4. Filtering and sorting
+
+## Technical Stack
+- Frontend: React.js
+- Backend: Node.js
+- Database: MongoDB
+"""
+    
+    def _generate_prd_json(self) -> str:
+        """Generate PRD in JSON/structured format"""
+        import json
+        return json.dumps({
+            "title": "Product Requirements Document - Task Manager",
+            "sections": {
+                "overview": "Modern task management application",
+                "features": ["Authentication", "Task Management", "Dashboard"],
+                "tech_stack": {"frontend": "React", "backend": "Node.js", "database": "MongoDB"}
+            }
+        }, indent=2)
+    
+    def _generate_proposal_json(self) -> str:
+        """Generate commercial proposal in JSON"""
+        import json
+        return json.dumps({
+            "proposal": {
+                "project_name": "Task Management App",
+                "total_cost": 45000,
+                "timeline_weeks": 12,
+                "breakdown": {
+                    "development": 30000,
+                    "design": 8000,
+                    "testing": 5000,
+                    "deployment": 2000
+                }
+            }
+        }, indent=2)
+    
+    def _generate_bom_json(self) -> str:
+        """Generate BOM in JSON"""
+        import json
+        return json.dumps({
+            "bill_of_materials": {
+                "frontend": ["React 18.x", "Tailwind CSS"],
+                "backend": ["Node.js 20.x", "Express.js"],
+                "database": ["MongoDB Atlas"],
+                "hosting": ["Vercel", "AWS EC2"]
+            }
+        }, indent=2)
+    
+    def _generate_architecture_json(self) -> str:
+        """Generate architecture in JSON"""
+        import json
+        return json.dumps({
+            "architecture": {
+                "type": "Three-tier architecture",
+                "layers": {
+                    "frontend": "React SPA",
+                    "backend": "REST API with Node.js",
+                    "database": "MongoDB"
+                },
+                "security": ["HTTPS", "JWT", "Input validation"]
+            }
+        }, indent=2)
+    
     def _generate_mock_mockup(self) -> str:
         """Generate mock mockup HTML"""
         return """<!DOCTYPE html>
