@@ -2,51 +2,8 @@
   "synthetic_data": {
     "data_sets": [
       {
-        "name": "Task Management App - User Data",
-        "description": "Sample user data for testing task management app",
-        "use_case_id": "UC-001",
-        "format": "json",
-        "schema": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string"
-            },
-            "username": {
-              "type": "string"
-            },
-            "email": {
-              "type": "string"
-            },
-            "password": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "id",
-            "username",
-            "email",
-            "password"
-          ]
-        },
-        "sample_data": [
-          {
-            "id": "user1",
-            "username": "johnDoe",
-            "email": "john.doe@example.com",
-            "password": "password123"
-          },
-          {
-            "id": "user2",
-            "username": "janeDoe",
-            "email": "jane.doe@example.com",
-            "password": "password123"
-          }
-        ]
-      },
-      {
-        "name": "Task Management App - Task Data",
-        "description": "Sample task data for testing task management app",
+        "name": "Tasks",
+        "description": "A collection of tasks for demonstration",
         "use_case_id": "UC-001",
         "format": "json",
         "schema": {
@@ -74,59 +31,28 @@
         },
         "sample_data": [
           {
-            "id": "task1",
-            "title": "Buy milk",
-            "description": "Buy 2 liters of milk",
+            "id": "T-001",
+            "title": "Task 1",
+            "description": "This is a sample task",
             "due_date": "2025-11-05"
           },
           {
-            "id": "task2",
-            "title": "Finish project",
-            "description": "Complete all tasks for the project",
+            "id": "T-002",
+            "title": "Task 2",
+            "description": "This is another sample task",
             "due_date": "2025-11-10"
+          },
+          {
+            "id": "T-003",
+            "title": "Task 3",
+            "description": "This is a third sample task",
+            "due_date": "2025-11-15"
           }
         ]
       },
       {
-        "name": "Task Management App - Assignee Data",
-        "description": "Sample assignee data for testing task assignment",
-        "use_case_id": "UC-002",
-        "format": "json",
-        "schema": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string"
-            },
-            "username": {
-              "type": "string"
-            },
-            "email": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "id",
-            "username",
-            "email"
-          ]
-        },
-        "sample_data": [
-          {
-            "id": "assignee1",
-            "username": "johnDoe",
-            "email": "john.doe@example.com"
-          },
-          {
-            "id": "assignee2",
-            "username": "janeDoe",
-            "email": "jane.doe@example.com"
-          }
-        ]
-      },
-      {
-        "name": "Task Management App - Task Assignment Data",
-        "description": "Sample task assignment data for testing task assignment",
+        "name": "Task Assignments",
+        "description": "A collection of task assignments for demonstration",
         "use_case_id": "UC-002",
         "format": "json",
         "schema": {
@@ -138,32 +64,51 @@
             "task_id": {
               "type": "string"
             },
-            "assignee_id": {
+            "team_member_id": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            },
+            "due_date": {
               "type": "string"
             }
           },
           "required": [
             "id",
             "task_id",
-            "assignee_id"
+            "team_member_id",
+            "role",
+            "due_date"
           ]
         },
         "sample_data": [
           {
-            "id": "assignment1",
-            "task_id": "task1",
-            "assignee_id": "assignee1"
+            "id": "A-001",
+            "task_id": "T-001",
+            "team_member_id": "M-001",
+            "role": "Project Manager",
+            "due_date": "2025-11-05"
           },
           {
-            "id": "assignment2",
-            "task_id": "task2",
-            "assignee_id": "assignee2"
+            "id": "A-002",
+            "task_id": "T-002",
+            "team_member_id": "M-002",
+            "role": "Developer",
+            "due_date": "2025-11-10"
+          },
+          {
+            "id": "A-003",
+            "task_id": "T-003",
+            "team_member_id": "M-003",
+            "role": "Quality Assurance",
+            "due_date": "2025-11-15"
           }
         ]
       },
       {
-        "name": "Task Management App - Task Progress Data",
-        "description": "Sample task progress data for testing task tracking",
+        "name": "Task History",
+        "description": "A collection of task history records for demonstration",
         "use_case_id": "UC-003",
         "format": "json",
         "schema": {
@@ -175,38 +120,44 @@
             "task_id": {
               "type": "string"
             },
-            "status": {
+            "event": {
               "type": "string"
             },
-            "comments": {
+            "timestamp": {
               "type": "string"
             }
           },
           "required": [
             "id",
             "task_id",
-            "status",
-            "comments"
+            "event",
+            "timestamp"
           ]
         },
         "sample_data": [
           {
-            "id": "progress1",
-            "task_id": "task1",
-            "status": "in_progress",
-            "comments": "Task is being worked on"
+            "id": "H-001",
+            "task_id": "T-001",
+            "event": "Created",
+            "timestamp": "2025-11-01T10:00:00"
           },
           {
-            "id": "progress2",
-            "task_id": "task2",
-            "status": "completed",
-            "comments": "Task is completed"
+            "id": "H-002",
+            "task_id": "T-001",
+            "event": "Updated",
+            "timestamp": "2025-11-02T12:00:00"
+          },
+          {
+            "id": "H-003",
+            "task_id": "T-001",
+            "event": "Completed",
+            "timestamp": "2025-11-03T14:00:00"
           }
         ]
       },
       {
-        "name": "Task Management App - Task Update Data",
-        "description": "Sample task update data for testing task status update",
+        "name": "Custom Workflows",
+        "description": "A collection of custom workflows for demonstration",
         "use_case_id": "UC-004",
         "format": "json",
         "schema": {
@@ -215,66 +166,135 @@
             "id": {
               "type": "string"
             },
-            "task_id": {
+            "workflow_id": {
               "type": "string"
             },
-            "status": {
-              "type": "string"
+            "task_sequence": {
+              "type": "array"
+            },
+            "team_member_assignments": {
+              "type": "array"
             }
           },
           "required": [
             "id",
-            "task_id",
-            "status"
+            "workflow_id",
+            "task_sequence",
+            "team_member_assignments"
           ]
         },
         "sample_data": [
           {
-            "id": "update1",
-            "task_id": "task1",
-            "status": "completed"
+            "id": "WF-001",
+            "workflow_id": "WF-001",
+            "task_sequence": [
+              {
+                "task_id": "T-001",
+                "due_date": "2025-11-05"
+              },
+              {
+                "task_id": "T-002",
+                "due_date": "2025-11-10"
+              },
+              {
+                "task_id": "T-003",
+                "due_date": "2025-11-15"
+              }
+            ],
+            "team_member_assignments": [
+              {
+                "team_member_id": "M-001",
+                "role": "Project Manager"
+              },
+              {
+                "team_member_id": "M-002",
+                "role": "Developer"
+              },
+              {
+                "team_member_id": "M-003",
+                "role": "Quality Assurance"
+              }
+            ]
           },
           {
-            "id": "update2",
-            "task_id": "task2",
-            "status": "in_progress"
+            "id": "WF-002",
+            "workflow_id": "WF-002",
+            "task_sequence": [
+              {
+                "task_id": "T-002",
+                "due_date": "2025-11-10"
+              },
+              {
+                "task_id": "T-001",
+                "due_date": "2025-11-05"
+              },
+              {
+                "task_id": "T-003",
+                "due_date": "2025-11-15"
+              }
+            ],
+            "team_member_assignments": [
+              {
+                "team_member_id": "M-002",
+                "role": "Developer"
+              },
+              {
+                "team_member_id": "M-001",
+                "role": "Project Manager"
+              },
+              {
+                "team_member_id": "M-003",
+                "role": "Quality Assurance"
+              }
+            ]
           }
         ]
       },
       {
-        "name": "Task Management App - Task Delete Data",
-        "description": "Sample task delete data for testing task deletion",
+        "name": "Reporting and Analytics",
+        "description": "A collection of reporting and analytics data for demonstration",
         "use_case_id": "UC-005",
         "format": "json",
         "schema": {
           "type": "object",
           "properties": {
-            "id": {
+            "task_id": {
               "type": "string"
             },
-            "task_id": {
+            "completion_rate": {
+              "type": "number"
+            },
+            "team_performance": {
               "type": "string"
             }
           },
           "required": [
-            "id",
-            "task_id"
+            "task_id",
+            "completion_rate",
+            "team_performance"
           ]
         },
         "sample_data": [
           {
-            "id": "delete1",
-            "task_id": "task1"
+            "task_id": "T-001",
+            "completion_rate": 0.8,
+            "team_performance": "High"
           },
           {
-            "id": "delete2",
-            "task_id": "task2"
+            "task_id": "T-002",
+            "completion_rate": 0.9,
+            "team_performance": "Excellent"
+          },
+          {
+            "task_id": "T-003",
+            "completion_rate": 0.7,
+            "team_performance": "Good"
           }
         ]
       }
     ],
-    "summary": "This dataset contains sample user, task, assignee, task assignment, task progress, task update, and task delete data for testing the Task Management App."
+    "summary": "This data represents a comprehensive set of tasks, task assignments, task history, custom workflows, and reporting and analytics data for demonstration purposes."
   },
   "project_name": "Complete Test - Task Management App",
-  "num_datasets": 7
+  "num_datasets": 5
 }
