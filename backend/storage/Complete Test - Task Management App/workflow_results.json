@@ -1,13 +1,13 @@
 {
   "project_name": "Complete Test - Task Management App",
-  "workflow_id": "workflow_20251101_201003",
+  "workflow_id": "workflow_20251101_201209",
   "status": "success",
   "context": {
     "project_name": "Complete Test - Task Management App",
-    "workflow_id": "workflow_20251101_201003",
+    "workflow_id": "workflow_20251101_201209",
     "workflow_type": "full",
-    "start_time": "2025-11-01T20:10:03.354187",
-    "end_time": "2025-11-01T20:15:03.197351",
+    "start_time": "2025-11-01T20:12:09.653619",
+    "end_time": "2025-11-01T20:16:41.907947",
     "status": "completed"
   },
   "results": {
@@ -30,14 +30,14 @@
         "audit"
       ],
       "audit_log": {
-        "timestamp": "2025-11-01T20:10:03.354589",
+        "timestamp": "2025-11-01T20:12:09.653966",
         "action": "project_created",
         "project_name": "Complete Test - Task Management App",
         "user": "system"
       }
     },
     "transcript": {
-      "structured_notes_xml": "<structured_notes>\n    <project_name>Complete Test - Task Management App</project_name>\n    <company_overview>Not specified</company_overview>\n    <attendees>\n        <attendee>\n            <name>Product Manager</name>\n            <role>Product Manager</role>\n        </attendee>\n        <attendee>\n            <name>Tech Lead</name>\n            <role>Tech Lead</role>\n        </attendee>\n        <attendee>\n            <name>UX Designer</name>\n            <role>UX Designer</role>\n        </attendee>\n    </attendees>\n    <meeting_date>November 1, 2025</meeting_date>\n    <meeting_objective>Main purpose/goal of the meeting: Building a simple task management application</meeting_objective>\n    <key_discussion_points>\n        <point>User registration and login</point>\n        <point>Create, view, and manage tasks</point>\n        <point>Mark tasks as complete</point>\n        <point>Simple dashboard to see all tasks</point>\n        <point>User authentication (email/password)</point>\n        <point>Task CRUD operations</point>\n        <point>Dashboard with statistics</point>\n        <point>Filtering and sorting</point>\n    </key_discussion_points>\n    <pain_points>\n        <pain_point>Not specified</pain_point>\n    </pain_points>\n    <requirements>\n        <requirement>User registration and login</requirement>\n        <requirement>Create, view, and manage tasks</requirement>\n        <requirement>Mark tasks as complete</requirement>\n        <requirement>Simple dashboard to see all tasks</requirement>\n        <requirement>User authentication (email/password)</requirement>\n        <requirement>Task CRUD operations</requirement>\n        <requirement>Dashboard with statistics</requirement>\n        <requirement>Filtering and sorting</requirement>\n    </requirements>\n    <decisions_made>\n        <decision>Aim to have the application ready in 4 weeks</decision>\n    </decisions_made>\n    <action_items>\n        <action_item>UX Designer to start working on mockups</action_item>\n        <action_item>Tech Lead to draft technical architecture and API specifications</action_item>\n    </action_items>\n    <technical_constraints>\n        <constraint>Modern web application with React frontend, Node.js backend, and MongoDB database</constraint>\n    </technical_constraints>\n    <stakeholders>\n        <stakeholder>Product Manager, Tech Lead, UX Designer</stakeholder>\n    </stakeholders>\n</structured_notes>",
+      "structured_notes_xml": "<structured_notes>\n    <project_name>Complete Test - Task Management App</project_name>\n    <company_overview>Not specified</company_overview>\n    <attendees>\n        <attendee>\n            <name>Product Manager</name>\n            <role>Product Manager</role>\n        </attendee>\n        <attendee>\n            <name>Tech Lead</name>\n            <role>Tech Lead</role>\n        </attendee>\n        <attendee>\n            <name>UX Designer</name>\n            <role>UX Designer</role>\n        </attendee>\n    </attendees>\n    <meeting_date>November 1, 2025</meeting_date>\n    <meeting_objective>Main purpose/goal of the meeting: Building a simple task management application</meeting_objective>\n    <key_discussion_points>\n        <point>User registration and login</point>\n        <point>Create, view, and manage tasks</point>\n        <point>Mark tasks as complete</point>\n        <point>Simple dashboard to see all tasks</point>\n        <point>User authentication (email/password)</point>\n        <point>Task CRUD operations</point>\n        <point>Dashboard with statistics</point>\n        <point>Filtering and sorting</point>\n    </key_discussion_points>\n    <pain_points>\n        <pain_point>Not specified</pain_point>\n    </pain_points>\n    <requirements>\n        <requirement>User registration and login</requirement>\n        <requirement>Create, view, and manage tasks</requirement>\n        <requirement>Mark tasks as complete</requirement>\n        <requirement>Simple dashboard to see all tasks</requirement>\n        <requirement>User authentication (email/password)</requirement>\n        <requirement>Task CRUD operations</requirement>\n        <requirement>Dashboard with statistics</requirement>\n        <requirement>Filtering and sorting</requirement>\n    </requirements>\n    <decisions_made>\n        <decision>Aim to have this ready in 4 weeks</decision>\n    </decisions_made>\n    <action_items>\n        <action_item>UX Designer: Start working on mockups</action_item>\n        <action_item>Tech Lead: Draft technical architecture and API specifications</action_item>\n    </action_items>\n    <technical_constraints>\n        <constraint>React for frontend, Node.js for backend, and MongoDB for database</constraint>\n    </technical_constraints>\n    <stakeholders>\n        <stakeholder>Product Manager</stakeholder>\n        <stakeholder>Tech Lead</stakeholder>\n        <stakeholder>UX Designer</stakeholder>\n    </stakeholders>\n</structured_notes>",
       "project_name": "Complete Test - Task Management App",
       "transcript_length": 2338
     },
@@ -56,18 +56,18 @@
         "competitor_insights": [],
         "best_practices": [
           "Agile development methodologies",
-          "Prioritized task management",
-          "Real-time reporting and updates",
-          "Customizable workflows",
-          "Integrations with calendar and email"
+          "User story mapping",
+          "Prioritization techniques",
+          "Task segmentation",
+          "Customizable workflows"
         ],
         "technical_standards": [],
         "user_expectations": [
-          "Easy task assignment and tracking",
-          "Real-time task updates and notifications",
-          "Customizable task templates",
-          "Collaboration features",
-          "Mobile accessibility"
+          "Intuitive interface",
+          "Real-time task updates",
+          "Customizable notifications",
+          "Task assignment and delegation",
+          "Reporting and analytics"
         ],
         "regulatory_requirements": [],
         "sources": []
@@ -80,179 +80,189 @@
       "use_cases": [
         {
           "id": "UC-001",
-          "title": "Create Task",
-          "description": "A user creates a new task with a title, description, and due date.",
+          "title": "Create New Task",
+          "description": "The user creates a new task, providing task details such as title, description, and due date.",
           "actors": [
             "User"
           ],
           "preconditions": "User is logged in and has permission to create tasks",
           "main_flow": [
             {
-              "step": "User enters task title and description",
-              "description": "User enters the title and description of the task"
+              "step": "The user enters task details (title, description, due date)",
+              "step_description": "The user provides the necessary details for the new task"
             },
             {
-              "step": "User selects due date",
-              "description": "User selects the due date for the task"
+              "step": "The user submits the task",
+              "step_description": "The user clicks the submit button to create the new task"
             },
             {
-              "step": "Task is created",
-              "description": "Task is created and added to the user's task list"
+              "step": "The system validates and creates the task",
+              "step_description": "The system checks for errors and creates the new task if valid"
             }
           ],
-          "alternate_flows": [],
-          "postconditions": "Task is created and added to the user's task list",
+          "alternate_flows": [
+            {
+              "step": "The user cancels the task creation",
+              "step_description": "The user clicks the cancel button to abandon the task creation"
+            }
+          ],
+          "postconditions": "The new task is created and displayed in the task list",
           "priority": "high",
-          "business_value": "Allows users to create new tasks efficiently"
+          "business_value": "Allows users to create and manage tasks efficiently"
         },
         {
           "id": "UC-002",
-          "title": "Assign Task",
-          "description": "A user assigns a task to another user.",
+          "title": "Assign Task to Team Member",
+          "description": "The user assigns a task to a team member, specifying the team member's role and due date.",
           "actors": [
             "User",
-            "Assignee"
+            "Team Member"
           ],
-          "preconditions": "User is logged in and has permission to assign tasks, Assignee is logged in and has permission to accept tasks",
+          "preconditions": "User is logged in, team member is logged in, and task exists",
           "main_flow": [
             {
-              "step": "User selects task to assign",
-              "description": "User selects the task to assign"
+              "step": "The user selects the task to assign",
+              "step_description": "The user selects the task they want to assign to a team member"
             },
             {
-              "step": "User selects assignee",
-              "description": "User selects the assignee"
+              "step": "The user selects the team member",
+              "step_description": "The user selects the team member to assign the task to"
             },
             {
-              "step": "Task is assigned",
-              "description": "Task is assigned to the assignee"
+              "step": "The user sets the due date",
+              "step_description": "The user sets the due date for the task assignment"
+            },
+            {
+              "step": "The system validates and assigns the task",
+              "step_description": "The system checks for errors and assigns the task to the team member if valid"
             }
           ],
-          "alternate_flows": [],
-          "postconditions": "Task is assigned to the assignee",
+          "alternate_flows": [
+            {
+              "step": "The user cancels the task assignment",
+              "step_description": "The user clicks the cancel button to abandon the task assignment"
+            }
+          ],
+          "postconditions": "The task is assigned to the team member and displayed in their task list",
           "priority": "high",
-          "business_value": "Allows for efficient task assignment and delegation"
+          "business_value": "Enables efficient task management and collaboration among team members"
         },
         {
           "id": "UC-003",
-          "title": "Track Task Progress",
-          "description": "A user views the progress of a task.",
+          "title": "View Task Details",
+          "description": "The user views the details of a task, including task history and comments.",
           "actors": [
             "User"
           ],
-          "preconditions": "User is logged in and has permission to view task progress",
+          "preconditions": "User is logged in and has permission to view task details",
           "main_flow": [
             {
-              "step": "User selects task to view progress",
-              "description": "User selects the task to view progress"
+              "step": "The user selects the task to view",
+              "step_description": "The user selects the task they want to view details for"
             },
             {
-              "step": "Task progress is displayed",
-              "description": "Task progress is displayed, including due date, status, and comments"
+              "step": "The system displays task details",
+              "step_description": "The system displays the task details, including task history and comments"
             }
           ],
           "alternate_flows": [],
-          "postconditions": "Task progress is displayed",
+          "postconditions": "The task details are displayed",
           "priority": "medium",
-          "business_value": "Allows users to track task progress and stay informed"
+          "business_value": "Provides users with essential task information"
         },
         {
           "id": "UC-004",
-          "title": "Update Task",
-          "description": "A user updates the status of a task.",
+          "title": "Create Custom Workflow",
+          "description": "The user creates a custom workflow by defining a sequence of tasks and assigning tasks to team members.",
           "actors": [
             "User"
           ],
-          "preconditions": "User is logged in and has permission to update task status",
+          "preconditions": "User is logged in and has permission to create custom workflows",
           "main_flow": [
             {
-              "step": "User selects task to update",
-              "description": "User selects the task to update"
+              "step": "The user defines the workflow sequence",
+              "step_description": "The user defines the sequence of tasks they want to create"
             },
             {
-              "step": "User updates task status",
-              "description": "User updates the status of the task"
+              "step": "The user assigns tasks to team members",
+              "step_description": "The user assigns tasks to team members in the defined sequence"
             },
             {
-              "step": "Task status is updated",
-              "description": "Task status is updated and reflected in the task list"
+              "step": "The system validates and creates the custom workflow",
+              "step_description": "The system checks for errors and creates the custom workflow if valid"
             }
           ],
           "alternate_flows": [],
-          "postconditions": "Task status is updated",
-          "priority": "medium",
-          "business_value": "Allows for efficient task status updates"
+          "postconditions": "The custom workflow is created and displayed",
+          "priority": "high",
+          "business_value": "Allows users to create tailored workflows to meet their specific needs"
         },
         {
           "id": "UC-005",
-          "title": "Delete Task",
-          "description": "A user deletes a task.",
+          "title": "View Reporting and Analytics",
+          "description": "The user views reporting and analytics data, including task completion rates and team performance.",
           "actors": [
             "User"
           ],
-          "preconditions": "User is logged in and has permission to delete tasks",
+          "preconditions": "User is logged in and has permission to view reporting and analytics",
           "main_flow": [
             {
-              "step": "User selects task to delete",
-              "description": "User selects the task to delete"
+              "step": "The user selects the reporting and analytics option",
+              "step_description": "The user selects the reporting and analytics option from the menu"
             },
             {
-              "step": "Task is deleted",
-              "description": "Task is deleted from the task list"
+              "step": "The system displays reporting and analytics data",
+              "step_description": "The system displays the reporting and analytics data, including task completion rates and team performance"
             }
           ],
           "alternate_flows": [],
-          "postconditions": "Task is deleted",
-          "priority": "low",
-          "business_value": "Allows for efficient task deletion"
+          "postconditions": "The reporting and analytics data are displayed",
+          "priority": "medium",
+          "business_value": "Provides users with valuable insights into task completion rates and team performance"
         }
       ],
       "business_requirements": {
-        "overview": "The Complete Test Task Management App will provide a user-friendly interface for creating, assigning, tracking, and updating tasks.",
+        "overview": "The Complete Test Task Management App will provide a comprehensive platform for users to create, assign, view, and manage tasks, with a focus on collaboration and efficiency.",
         "business_goals": [
           "Improve task management efficiency",
-          "Enhance user experience",
-          "Increase productivity"
+          "Enhance collaboration among team members",
+          "Provide users with essential task information"
         ],
         "success_criteria": [
-          "App meets user expectations",
-          "App is easy to use",
-          "App is scalable"
+          "Task creation and assignment functionality",
+          "Custom workflow creation and assignment",
+          "Reporting and analytics data display"
         ],
         "constraints": [
-          "Limited resources",
-          "Technical constraints"
+          "Limited budget for development and maintenance",
+          "Complexity of task management features"
         ],
         "assumptions": [
-          "Users will have basic computer skills",
-          "Users will have permission to create and update tasks"
+          "Users will have basic knowledge of task management concepts",
+          "Users will have permission to create and assign tasks"
         ],
         "risks": [
-          "User adoption",
-          "Technical issues"
-        ],
-        "mitigation_strategies": [
-          "Provide user training",
-          "Implement robust testing and quality assurance"
+          "Insufficient user adoption",
+          "Technical difficulties with custom workflow creation"
         ]
       },
       "project_name": "Complete Test - Task Management App"
     },
     "knowledge_base": {
       "enrichment": {
-        "raw_response": "{\n  \"relevant_patterns\": [\n    {\n      \"category\": \"AI Design Patterns\",\n      \"pattern\": \"Microservices Architecture\",\n      \"description\": \"Appropriate for a task management app with multiple features and users, allows for scalability and flexibility\",\n      \"priority\": \"high\"\n    },\n    {\n      \"category\": \"Best Practices\",\n      \"pattern\": \"Prioritized Task Management\",\n      \"description\": \"Aligns with user expectations of easy task assignment and tracking, and allows for efficient task management\",\n      \"priority\": \"high\"\n    },\n    {\n      \"category\": \"Integration Patterns\",\n      \"pattern\": \"Event-Driven Architecture\",\n      \"description\": \"Suitable for integrating with calendar and email, and for real-time reporting and updates\",\n      \"priority\": \"medium\"\n    }\n  ],\n  \"suggestions\": [\n    {\n      \"area\": \"User Experience\",\n      \"suggestion\": \"Implement real-time task updates and notifications, and customizable task templates\",\n      \"rationale\": \"Aligns with user expectations of easy task assignment and tracking, and allows for efficient task management\"\n    },\n    {\n      \"area\": \"Security\",\n      \"suggestion\": \"Implement role-based access control and data encryption for task assignments and updates\",\n      \"rationale\": \"Ensures compliance with regulatory requirements and protects sensitive user data\"\n    }\n  ],\n  \"compliance_notes\": [\n    \"GDPR and CCPA regulations require data encryption and secure data storage for task assignments and updates\",\n    \"HIPAA regulations require secure data storage and transmission for task assignments and updates involving sensitive user data\"\n  ],\n  \"integration_recommendations\": [\n    \"Integrate with Google Calendar and Gmail for real-time task updates and notifications\",\n    \"Integrate with Slack for real-time collaboration and task assignments\"\n  ]"
+        "raw_response": "{\n  \"relevant_patterns\": [\n    {\n      \"category\": \"AI Design Patterns\",\n      \"pattern\": \"Microservices Architecture\",\n      \"description\": \"Apply microservices architecture to handle task management, user authentication, and reporting, ensuring scalability and maintainability.\",\n      \"priority\": \"high\"\n    },\n    {\n      \"category\": \"Compliance Rules\",\n      \"pattern\": \"GDPR Data Protection\",\n      \"description\": \"Implement GDPR-compliant data storage and processing for task-related data, ensuring user data protection.\",\n      \"priority\": \"medium\"\n    },\n    {\n      \"category\": \"Best Practices\",\n      \"pattern\": \"User Story Mapping\",\n      \"description\": \"Use user story mapping to define and prioritize tasks, ensuring a clear understanding of user requirements.\",\n      \"priority\": \"high\"\n    },\n    {\n      \"category\": \"Integration Patterns\",\n      \"pattern\": \"Event-Driven Architecture\",\n      \"description\": \"Apply event-driven architecture to integrate task management with reporting and analytics, enabling real-time updates.\",\n      \"priority\": \"medium\"\n    }\n  ],\n  \"suggestions\": [\n    {\n      \"area\": \"User Experience\",\n      \"suggestion\": \"Implement customizable workflows and notifications to enhance user engagement and productivity.\",\n      \"rationale\": \"User expectations include customizable notifications and reporting, which can be achieved through workflow customization.\"\n    },\n    {\n      \"area\": \"Task Management\",\n      \"suggestion\": \"Integrate task segmentation to enable more efficient task management and prioritization.\",\n      \"rationale\": \"Task segmentation can help users prioritize tasks more effectively, aligning with industry best practices.\"\n    }\n  ],\n  \"compliance_notes\": [\n    \"Ensure compliance with GDPR regulations for data protection and processing.\",\n    \"Implement data encryption for task-related data to ensure security.\"\n  ],\n  \"integration_recommendations\": [\n    \"Integrate with reporting and analytics tools to enable real-time updates and insights.\",\n    \"Use event-driven architecture to enable seamless integration between task management and reporting.\"\n  ]"
       },
       "project_name": "Complete Test - Task Management App",
       "warning": "Could not parse as JSON"
     },
     "prd": {
-      "prd_xml": "Here is the PRD XML document for the Complete Test - Task Management App:\n\n```xml\n<productRequirementsDocument>\n    <title>PRD for Complete Test - Task Management App</title>\n    <executiveSummary>The Complete Test Task Management App will provide a user-friendly interface for creating, assigning, tracking, and updating tasks, improving task management efficiency, enhancing user experience, and increasing productivity.</executiveSummary>\n    <scope>\n        <inScope>\n            <item>Feature 1: Create Task</item>\n            <item>Feature 2: Assign Task</item>\n            <item>Feature 3: Track Task Progress</item>\n            <item>Feature 4: Update Task</item>\n            <item>Feature 5: Delete Task</item>\n        </inScope>\n        <outOfScope>\n            <item>Feature 6: Advanced Reporting</item>\n            <item>Feature 7: Customizable Dashboards</item>\n        </outOfScope>\n    </scope>\n    <businessGoals>\n        <goal>Increase marketing efficiency by 50%</goal>\n        <goal>Enhance user experience</goal>\n        <goal>Increase productivity</goal>\n    </businessGoals>\n    <useCases>\n        <useCaseModel>\n            <useCase id=\"UC-001\">\n                <title>Create Task</title>\n                <description>A user creates a new task with a title, description, and due date.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>User is logged in and has permission to create tasks</preconditions>\n                <main_flow>\n                    <step>Step 1: User enters task title and description</step>\n                    <step>Step 2: User selects due date</step>\n                    <step>Step 3: Task is created</step>\n                </main_flow>\n                <alternate_flows/>\n                <postconditions>Task is created and added to the user's task list</postconditions>\n                <priority>high</priority>\n                <business_value>Allows users to create new tasks efficiently</business_value>\n            </useCase>\n            <useCase id=\"UC-002\">\n                <title>Assign Task</title>\n                <description>A user assigns a task to another user.</description>\n                <actors>\n                    <actor>User</actor>\n                    <actor>Assignee</actor>\n                </actors>\n                <preconditions>User is logged in and has permission to assign tasks, Assignee is logged in and has permission to accept tasks</preconditions>\n                <main_flow>\n                    <step>Step 1: User selects task to assign</step>\n                    <step>Step 2: User selects assignee</step>\n                    <step>Step 3: Task is assigned</step>\n                </main_flow>\n                <alternate_flows/>\n                <postconditions>Task is assigned to the assignee</postconditions>\n                <priority>high</priority>\n                <business_value>Allows for efficient task assignment and delegation</business_value>\n            </useCase>\n            <useCase id=\"UC-003\">\n                <title>Track Task Progress</title>\n                <description>A user views the progress of a task.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>User is logged in and has permission to view task progress</preconditions>\n                <main_flow>\n                    <step>Step 1: User selects task to view progress</step>\n                    <step>Step 2: Task progress is displayed</step>\n                </main_flow>\n                <alternate_flows/>\n                <postconditions>Task progress is displayed</postconditions>\n                <priority>medium</priority>\n                <business_value>Allows users to track task progress and stay informed</business_value>\n            </useCase>\n            <useCase id=\"UC-004\">\n                <title>Update Task</title>\n                <description>A user updates the status of a task.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>User is logged in and has permission to update task status</preconditions>\n                <main_flow>\n                    <step>Step 1: User selects task to update</step>\n                    <step>Step 2: User updates task status</step>\n                    <step>Step 3: Task status is updated</step>\n                </main_flow>\n                <alternate_flows/>\n                <postconditions>Task status is updated</postconditions>\n                <priority>medium</priority>\n                <business_value>Allows for efficient task status updates</business_value>\n            </useCase>\n            <useCase id=\"UC-005\">\n                <title>Delete Task</title>\n                <description>A user deletes a task.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>User is logged in and has permission to delete tasks</preconditions>\n                <main_flow>\n                    <step>Step 1: User selects task to delete</step>\n                    <step>Step 2: Task is deleted</step>\n                </main_flow>\n                <alternate_flows/>\n                <postconditions>Task is deleted</postconditions>\n                <priority>low</priority>\n                <business_value>Allows for efficient task deletion</business_value>\n            </useCase>\n        </useCaseModel>\n    </useCases>\n    <nonFunctionalRequirements>\n        <requirement type=\"Security\">All sensitive data must be encrypted at rest and in transit using industry-standard protocols.</requirement>\n        <requirement type=\"Performance\">The system must respond to 95% of user queries in under 2 seconds.</requirement>\n    </nonFunctionalRequirements>\n</productRequirementsDocument>\n```\n\nNote: I've extracted the relevant information from the input data and formatted it according to the specified XML structure. I've also added some additional details to make the PRD more comprehensive.",
-      "prd_html": "<!DOCTYPE html>\nHere is the transformed PRD XML into a beautiful, professional HTML document:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>PRD for Complete Test - Task Management App</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n    <script src=\"https://unpkg.com/lucide@latest\"></script>\n</head>\n<body>\n    <header>\n        <nav>\n            <ul>\n                <li><a href=\"#executive-summary\">Executive Summary</a></li>\n                <li><a href=\"#scope\">Scope</a></li>\n                <li><a href=\"#business-goals\">Business Goals</a></li>\n                <li><a href=\"#use-cases\">Use Cases</a></li>\n                <li><a href=\"#non-functional-requirements\">Non-Functional Requirements</a></li>\n            </ul>\n        </nav>\n    </header>\n    <main>\n        <section id=\"executive-summary\">\n            <h1>Executive Summary</h1>\n            <p>The Complete Test Task Management App will provide a user-friendly interface for creating, assigning, tracking, and updating tasks, improving task management efficiency, enhancing user experience, and increasing productivity.</p>\n        </section>\n        <section id=\"scope\">\n            <h1>Scope</h1>\n            <h2>In Scope</h2>\n            <ul>\n                <li>Feature 1: Create Task</li>\n                <li>Feature 2: Assign Task</li>\n                <li>Feature 3: Track Task Progress</li>\n                <li>Feature 4: Update Task</li>\n                <li>Feature 5: Delete Task</li>\n            </ul>\n            <h2>Out of Scope</h2>\n            <ul>\n                <li>Feature 6: Advanced Reporting</li>\n                <li>Feature 7: Customizable Dashboards</li>\n            </ul>\n        </section>\n        <section id=\"business-goals\">\n            <h1>Business Goals</h1>\n            <ul>\n                <li>Increase marketing efficiency by 50%</li>\n                <li>Enhance user experience</li>\n                <li>Increase productivity</li>\n            </ul>\n        </section>\n        <section id=\"use-cases\">\n            <h1>Use Cases</h1>\n            <h2>Use Case Model</h2>\n            <ul>\n                <li id=\"uc-001\">\n                    <h3>Create Task</h3>\n                    <p>A user creates a new task with a title, description, and due date.</p>\n                    <ul>\n                        <li>Actors:</li>\n                        <li>User</li>\n                        <li>Preconditions:</li>\n                        <li>User is logged in and has permission to create tasks</li>\n                        <li>Main Flow:</li>\n                        <li>Step 1: User enters task title and description</li>\n                        <li>Step 2: User selects due date</li>\n                        <li>Step 3: Task is created</li>\n                        <li>Alternate Flows:</li>\n                        <li></li>\n                        <li>Postconditions:</li>\n                        <li>Task is created and added to the user's task list</li>\n                        <li>Priority:</li>\n                        <li>high</li>\n                        <li>Business Value:</li>\n                        <li>Allows users to create new tasks efficiently</li>\n                    </ul>\n                </li>\n                <li id=\"uc-002\">\n                    <h3>Assign Task</h3>\n                    <p>A user assigns a task to another user.</p>\n                    <ul>\n                        <li>Actors:</li>\n                        <li>User</li>\n                        <li>Assignee</li>\n                        <li>Preconditions:</li>\n                        <li>User is logged in and has permission to assign tasks, Assignee is logged in and has permission to accept tasks</li>\n                        <li>Main Flow:</li>\n                        <li>Step 1: User selects task to assign</li>\n                        <li>Step 2: User selects assignee</li>\n                        <li>Step 3: Task is assigned</li>\n                        <li>Alternate Flows:</li>\n                        <li></li>\n                        <li>Postconditions:</li>\n                        <li>Task is assigned to the assignee</li>\n                        <li>Priority:</li>\n                        <li>high</li>\n                        <li>Business Value:</li>\n                        <li>Allows for efficient task assignment and delegation</li>\n                    </ul>\n                </li>\n                <li id=\"uc-003\">\n                    <h3>Track Task Progress</h3>\n                    <p>A user views the progress of a task.</p>\n                    <ul>\n                        <li>Actors:</li>\n                        <li>User</li>\n                        <li>Preconditions:</li>\n                        <li>User is logged in and has permission to view task progress</li>\n                        <li>Main Flow:</li>\n                        <li>Step 1: User selects task to view progress</li>\n                        <li>Step 2: Task progress is displayed</li>\n                        <li>Alternate Flows:</li>\n                        <li></li>\n                        <li>Postconditions:</li>\n                        <li>Task progress is displayed</li>\n                        <li>Priority:</li>\n                        <li>medium</li>\n                        <li>Business Value:</li>\n                        <li>Allows users to track task progress and stay informed</li>\n                    </ul>\n                </li>\n                <li id=\"uc-004\">\n                    <h3>Update Task</h3>\n                    <p>A user updates the status of a task.</p>\n                    <ul>\n                        <li>Actors:</li>\n                        <li>User</li>\n                        <li>Preconditions:</li>\n                        <li>User is logged in and has permission to update task status</li>\n                        <li>Main Flow:</li>\n                        <li>Step 1: User selects task to update</li>\n                        <li>Step 2: User updates task status</li>\n                        <li>Step 3: Task status is updated</li>\n                        <li>Alternate Flows:</li>\n                        <li></li>\n                        <li>Postconditions:</li>\n                        <li>Task status is updated</li>\n                        <li>Priority:</li>\n                        <li>medium</li>\n                        <li>Business Value:</li>\n                        <li>Allows for efficient task status updates</li>\n                    </ul>\n                </li>\n                <li id=\"uc-005\">\n                    <h3>Delete Task</h3>\n                    <p>A user deletes a task.</p>\n                    <ul>\n                        <li>Actors:</li>\n                        <li>User</li>\n                        <li>Preconditions:</li>\n                        <li>User is logged in and has permission to delete tasks</li>\n                        <li>Main Flow:</li>\n                        <li>Step 1: User selects task to delete</li>\n                        <li>Step 2: Task is deleted</li>\n                        <li>Alternate Flows:</li>\n                        <li></li>\n                        <li>Postconditions:</li>\n                        <li>Task is deleted</li>\n                        <li>Priority:</li>\n                        <li>low</li>\n                        <li>Business Value:</li>\n                        <li>Allows for efficient task deletion</li>\n                    </ul>\n                </li>\n            </ul>\n        </section>\n        <section id=\"non-functional-requirements\">\n            <h1>Non-Functional Requirements</h1>\n            <ul>\n                <li type=\"Security\">All sensitive data must be encrypted at rest and in transit using industry-standard protocols.</li>\n                <li type=\"Performance\">The system must respond to 95% of user queries in under 2 seconds.</li>\n            </ul>\n        </section>\n    </main>\n    <footer>\n        <p>&copy; 2023 Complete Test Task Management App</p>\n        <script src=\"script.js\"></script>\n    </footer>\n</body>\n</html>\n```\n\n```css\nbody {\n    font-family: Arial, sans-serif;\n    margin: 0;\n    padding: 0;\n}\n\nheader {\n    background-color: #333;\n    color: #fff;\n    padding: 1em;\n    text-align: center;\n}\n\nnav ul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n    display: flex;\n    justify-content: space-between;\n}\n\nnav li {\n    margin-right: 20px;\n}\n\nnav a {\n    color: #fff;\n    text-decoration: none;\n}\n\nmain {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding: 2em;\n}\n\nsection {\n    background-color: #f7f7f7;\n    padding: 1em;\n    margin-bottom: 20px;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n\nh1 {\n    font-weight: bold;\n    font-size: 24px;\n    margin-bottom: 10px;\n}\n\nh2 {\n    font-weight: bold;\n    font-size: 18px;\n    margin-bottom: 10px;\n}\n\nul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n}\n\nli {\n    margin-bottom: 10px;\n}\n\n#uc-001, #uc-002, #uc-003, #uc-004, #uc-005 {\n    background-color: #fff;\n    padding: 20px;\n    border: 1px solid #ddd;\n    border-radius: 10px;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n\n#uc-001 h3, #uc-002 h3, #uc-003 h3, #uc-004 h3, #uc-005 h3 {\n    font-weight: bold;\n    font-size: 18px;\n    margin-bottom: 10px;\n}\n\n#uc-001 p, #uc-002 p, #uc-003 p, #uc-004 p, #uc-005 p {\n    margin-bottom: 20px;\n}\n\nfooter {\n    background-color: #333;\n    color: #fff;\n    padding: 1em;\n    text-align: center;\n    clear: both;\n}\n\nfooter p {\n    margin-bottom: 10px;\n}\n```\n\n```javascript\n// script.js\n// Add event listener to nav links\ndocument.querySelectorAll('nav a').forEach(link => {\n    link.addEventListener('click', event => {\n        event.preventDefault();\n        const id = link.getAttribute('href').split('#')[1];\n        const section = document.getElementById(id);\n        section.scrollIntoView({ behavior: 'smooth' });\n    });\n});\n```\n\nThis HTML document includes a clean and responsive design, with a navigation menu that links to each section of the PRD. The use cases are displayed in a separate section, with each use case having its own background color and padding. The non-functional requirements are listed at the bottom of the document. The script.js file adds an event listener to the navigation links, which smooth scrolls to the corresponding section when clicked.",
+      "prd_xml": "Here is the PRD XML document for the Complete Test - Task Management App:\n\n```xml\n<productRequirementsDocument>\n    <title>PRD for Complete Test - Task Management App</title>\n    <executiveSummary>A comprehensive platform for users to create, assign, view, and manage tasks, with a focus on collaboration and efficiency.</executiveSummary>\n    <scope>\n        <inScope>A bulleted list of features that are in scope for the MVP.</inScope>\n        <inScope>\n            <item>Task creation and assignment functionality</item>\n            <item>Custom workflow creation and assignment</item>\n            <item>Reporting and analytics data display</item>\n        </inScope>\n        <outOfScope>A bulleted list of features that are explicitly out of scope.</outOfScope>\n        <outOfScope>\n            <item>Advanced reporting and analytics features</item>\n            <item>Integration with external task management systems</item>\n        </outOfScope>\n    </scope>\n    <businessGoals>\n        <goal>Increase task management efficiency</goal>\n        <goal>Enhance collaboration among team members</goal>\n        <goal>Provide users with essential task information</goal>\n    </businessGoals>\n    <useCases>\n        <useCaseModel>\n            <useCase id=\"UC-001\">\n                <title>Create New Task</title>\n                <description>The user creates a new task, providing task details such as title, description, and due date.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>User is logged in and has permission to create tasks</preconditions>\n                <mainFlow>\n                    <step id=\"S1\">The user enters task details (title, description, due date)</step>\n                    <step id=\"S2\">The user submits the task</step>\n                    <step id=\"S3\">The system validates and creates the task</step>\n                </mainFlow>\n                <alternateFlows>\n                    <flow id=\"A1\" trigger=\"Alternative condition\">\n                        <step id=\"A1\">The user cancels the task creation</step>\n                    </flow>\n                </alternateFlows>\n                <postconditions>The new task is created and displayed in the task list</postconditions>\n            </useCase>\n            <useCase id=\"UC-002\">\n                <title>Assign Task to Team Member</title>\n                <description>The user assigns a task to a team member, specifying the team member's role and due date.</description>\n                <actors>\n                    <actor>User</actor>\n                    <actor>Team Member</actor>\n                </actors>\n                <preconditions>User is logged in, team member is logged in, and task exists</preconditions>\n                <mainFlow>\n                    <step id=\"S1\">The user selects the task to assign</step>\n                    <step id=\"S2\">The user selects the team member</step>\n                    <step id=\"S3\">The user sets the due date</step>\n                    <step id=\"S4\">The system validates and assigns the task</step>\n                </mainFlow>\n                <alternateFlows>\n                    <flow id=\"A1\" trigger=\"Alternative condition\">\n                        <step id=\"A1\">The user cancels the task assignment</step>\n                    </flow>\n                </alternateFlows>\n                <postconditions>The task is assigned to the team member and displayed in their task list</postconditions>\n            </useCase>\n            <useCase id=\"UC-003\">\n                <title>View Task Details</title>\n                <description>The user views the details of a task, including task history and comments.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>User is logged in and has permission to view task details</preconditions>\n                <mainFlow>\n                    <step id=\"S1\">The user selects the task to view</step>\n                    <step id=\"S2\">The system displays task details</step>\n                </mainFlow>\n                <postconditions>The task details are displayed</postconditions>\n            </useCase>\n            <useCase id=\"UC-004\">\n                <title>Create Custom Workflow</title>\n                <description>The user creates a custom workflow by defining a sequence of tasks and assigning tasks to team members.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>User is logged in and has permission to create custom workflows</preconditions>\n                <mainFlow>\n                    <step id=\"S1\">The user defines the workflow sequence</step>\n                    <step id=\"S2\">The user assigns tasks to team members</step>\n                    <step id=\"S3\">The system validates and creates the custom workflow</step>\n                </mainFlow>\n                <postconditions>The custom workflow is created and displayed</postconditions>\n            </useCase>\n            <useCase id=\"UC-005\">\n                <title>View Reporting and Analytics</title>\n                <description>The user views reporting and analytics data, including task completion rates and team performance.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>User is logged in and has permission to view reporting and analytics</preconditions>\n                <mainFlow>\n                    <step id=\"S1\">The user selects the reporting and analytics option</step>\n                    <step id=\"S2\">The system displays reporting and analytics data</step>\n                </mainFlow>\n                <postconditions>The reporting and analytics data are displayed</postconditions>\n            </useCase>\n        </useCaseModel>\n    </useCases>\n    <nonFunctionalRequirements>\n        <requirement type=\"Security\">\n            All sensitive data must be encrypted at rest and in transit using industry-standard protocols.\n        </requirement>\n        <requirement type=\"Performance\">\n            The system must respond to 95% of user queries in under 2 seconds.\n        </requirement>\n    </nonFunctionalRequirements>\n</productRequirementsDocument>\n```",
+      "prd_html": "<!DOCTYPE html>\nHere is the transformed PRD XML into a beautiful, professional HTML document:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>PRD for Complete Test - Task Management App</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n</head>\n<body>\n    <header>\n        <nav>\n            <ul>\n                <li><a href=\"#executive-summary\">Executive Summary</a></li>\n                <li><a href=\"#scope\">Scope</a></li>\n                <li><a href=\"#business-goals\">Business Goals</a></li>\n                <li><a href=\"#use-cases\">Use Cases</a></li>\n                <li><a href=\"#non-functional-requirements\">Non-Functional Requirements</a></li>\n            </ul>\n        </nav>\n    </header>\n    <main>\n        <section id=\"executive-summary\">\n            <h1>Executive Summary</h1>\n            <p>A comprehensive platform for users to create, assign, view, and manage tasks, with a focus on collaboration and efficiency.</p>\n        </section>\n        <section id=\"scope\">\n            <h1>Scope</h1>\n            <h2>In-Scopes</h2>\n            <ul>\n                <li>Task creation and assignment functionality</li>\n                <li>Custom workflow creation and assignment</li>\n                <li>Reporting and analytics data display</li>\n            </ul>\n            <h2>Out-of-Scopes</h2>\n            <ul>\n                <li>Advanced reporting and analytics features</li>\n                <li>Integration with external task management systems</li>\n            </ul>\n        </section>\n        <section id=\"business-goals\">\n            <h1>Business Goals</h1>\n            <ul>\n                <li>Increase task management efficiency</li>\n                <li>Enhance collaboration among team members</li>\n                <li>Provide users with essential task information</li>\n            </ul>\n        </section>\n        <section id=\"use-cases\">\n            <h1>Use Cases</h1>\n            <h2>Use Case 1: Create New Task</h2>\n            <p>The user creates a new task, providing task details such as title, description, and due date.</p>\n            <ul>\n                <li>Actors:</li>\n                <li>User</li>\n                <li>Preconditions:</li>\n                <li>User is logged in and has permission to create tasks</li>\n                <li>Main Flow:</li>\n                <li>Step 1: The user enters task details (title, description, due date)</li>\n                <li>Step 2: The user submits the task</li>\n                <li>Step 3: The system validates and creates the task</li>\n                <li>Alternate Flows:</li>\n                <li>Flow 1: The user cancels the task creation</li>\n                <li>Postconditions:</li>\n                <li>The new task is created and displayed in the task list</li>\n            </ul>\n            <h2>Use Case 2: Assign Task to Team Member</h2>\n            <p>The user assigns a task to a team member, specifying the team member's role and due date.</p>\n            <ul>\n                <li>Actors:</li>\n                <li>User</li>\n                <li>Team Member</li>\n                <li>Preconditions:</li>\n                <li>User is logged in, team member is logged in, and task exists</li>\n                <li>Main Flow:</li>\n                <li>Step 1: The user selects the task to assign</li>\n                <li>Step 2: The user selects the team member</li>\n                <li>Step 3: The user sets the due date</li>\n                <li>Step 4: The system validates and assigns the task</li>\n                <li>Alternate Flows:</li>\n                <li>Flow 1: The user cancels the task assignment</li>\n                <li>Postconditions:</li>\n                <li>The task is assigned to the team member and displayed in their task list</li>\n            </ul>\n            <h2>Use Case 3: View Task Details</h2>\n            <p>The user views the details of a task, including task history and comments.</p>\n            <ul>\n                <li>Actors:</li>\n                <li>User</li>\n                <li>Preconditions:</li>\n                <li>User is logged in and has permission to view task details</li>\n                <li>Main Flow:</li>\n                <li>Step 1: The user selects the task to view</li>\n                <li>Step 2: The system displays task details</li>\n                <li>Postconditions:</li>\n                <li>The task details are displayed</li>\n            </ul>\n            <h2>Use Case 4: Create Custom Workflow</h2>\n            <p>The user creates a custom workflow by defining a sequence of tasks and assigning tasks to team members.</p>\n            <ul>\n                <li>Actors:</li>\n                <li>User</li>\n                <li>Preconditions:</li>\n                <li>User is logged in and has permission to create custom workflows</li>\n                <li>Main Flow:</li>\n                <li>Step 1: The user defines the workflow sequence</li>\n                <li>Step 2: The user assigns tasks to team members</li>\n                <li>Step 3: The system validates and creates the custom workflow</li>\n                <li>Postconditions:</li>\n                <li>The custom workflow is created and displayed</li>\n            </ul>\n            <h2>Use Case 5: View Reporting and Analytics</h2>\n            <p>The user views reporting and analytics data, including task completion rates and team performance.</p>\n            <ul>\n                <li>Actors:</li>\n                <li>User</li>\n                <li>Preconditions:</li>\n                <li>User is logged in and has permission to view reporting and analytics</li>\n                <li>Main Flow:</li>\n                <li>Step 1: The user selects the reporting and analytics option</li>\n                <li>Step 2: The system displays reporting and analytics data</li>\n                <li>Postconditions:</li>\n                <li>The reporting and analytics data are displayed</li>\n            </ul>\n        </section>\n        <section id=\"non-functional-requirements\">\n            <h1>Non-Functional Requirements</h1>\n            <h2>Security</h2>\n            <p>All sensitive data must be encrypted at rest and in transit using industry-standard protocols.</p>\n            <h2>Performance</h2>\n            <p>The system must respond to 95% of user queries in under 2 seconds.</p>\n        </section>\n    </main>\n    <footer>\n        <p>&copy; 2023 Complete Test - Task Management App</p>\n        <p>AICOE Logo:</p>\n        <img src=\"aicoe-logo.png\" alt=\"AICOE Logo\">\n    </footer>\n    <script src=\"script.js\"></script>\n</body>\n</html>\n```\n\nNote: The above HTML code is a basic representation of the PRD XML document. It may require further styling and customization to match the desired design and layout.\n\nAlso, the following CSS styles are included in the `styles.css` file:\n\n```css\nbody {\n    font-family: Arial, sans-serif;\n    margin: 0;\n    padding: 0;\n}\n\nheader {\n    background-color: #333;\n    color: #fff;\n    padding: 1rem;\n    text-align: center;\n}\n\nnav ul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n    display: flex;\n    justify-content: space-between;\n}\n\nnav li {\n    margin-right: 20px;\n}\n\nnav a {\n    color: #fff;\n    text-decoration: none;\n}\n\nmain {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding: 2rem;\n}\n\nsection {\n    background-color: #f7f7f7;\n    padding: 1rem;\n    margin-bottom: 20px;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n\nh1, h2, h3 {\n    color: #333;\n    margin-bottom: 10px;\n}\n\nul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n}\n\nli {\n    margin-bottom: 10px;\n}\n\nfooter {\n    background-color: #333;\n    color: #fff;\n    padding: 1rem;\n    text-align: center;\n    clear: both;\n}\n\nfooter img {\n    width: 50px;\n    height: 50px;\n    margin-right: 10px;\n}\n```\n\nThis CSS code provides a basic layout and styling for the HTML document. It may require further customization to match the desired design and layout.",
       "project_name": "Complete Test - Task Management App"
     },
     "mockup": {
       "mockup_pages": {
-        "index.html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Complete Test - Task Management App</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n    <script src=\"https://unpkg.com/lucide@latest\"></script>\n    <script src=\"https://cdn.jsdelivr.net/npm/chart.js\"></script>\n    <script src=\"https://cdn.jsdelivr.net/npm/mermaid@8.8.0/dist/mermaid.min.js\"></script>\n</head>\n<body>\n    <header class=\"container\">\n        <nav class=\"nav\">\n            <a href=\"#\" class=\"logo\">Complete Test</a>\n            <ul class=\"nav-links\">\n                <li><a href=\"#\">Home</a></li>\n                <li><a href=\"#\">About</a></li>\n                <li><a href=\"#\">Contact</a></li>\n            </ul>\n        </nav>\n    </header>\n    <main class=\"container\">\n        <section class=\"hero\">\n            <h1 class=\"title\">Task Management App</h1>\n            <p class=\"tagline\">Stay organized and on top of your tasks</p>\n            <button class=\"btn btn-primary\">Get Started</button>\n        </section>\n        <section class=\"use-case-grid\">\n            <h2 class=\"section-title\">Use Cases</h2>\n            <div class=\"grid\">\n                <div class=\"card\">\n                    <i data-lucide=\"clipboard-list\"></i>\n                    <h3 class=\"card-title\">UC-001: Create Task</h3>\n                    <p class=\"card-description\">A user creates a new task with a title, description, and due date.</p>\n                    <button class=\"view-mockup\">View Mockup</button>\n                </div>\n                <div class=\"card\">\n                    <i data-lucide=\"user-plus\"></i>\n                    <h3 class=\"card-title\">UC-002: Assign Task</h3>\n                    <p class=\"card-description\">A user assigns a task to another user.</p>\n                    <button class=\"view-mockup\">View Mockup</button>\n                </div>\n                <div class=\"card\">\n                    <i data-lucide=\"chart-line\"></i>\n                    <h3 class=\"card-title\">UC-003: View Progress</h3>\n                    <p class=\"card-description\">A user views the progress of a task.</p>\n                    <button class=\"view-mockup\">View Mockup</button>\n                </div>\n                <div class=\"card\">\n                    <i data-lucide=\"pencil-alt\"></i>\n                    <h3 class=\"card-title\">UC-004: Update Status</h3>\n                    <p class=\"card-description\">A user updates the status of a task.</p>\n                    <button class=\"view-mockup\">View Mockup</button>\n                </div>\n                <div class=\"card\">\n                    <i data-lucide=\"trash-alt\"></i>\n                    <h3 class=\"card-title\">UC-005: Delete Task</h3>\n                    <p class=\"card-description\">A user deletes a task.</p>\n                    <button class=\"view-mockup\">View Mockup</button>\n                </div>\n            </div>\n        </section>\n        <section class=\"footer\">\n            <p class=\"copyright\">2023 Complete Test. All rights reserved.</p>\n            <ul class=\"social-links\">\n                <li><a href=\"#\" class=\"social-link\">Twitter</a></li>\n                <li><a href=\"#\" class=\"social-link\">Facebook</a></li>\n                <li><a href=\"#\" class=\"social-link\">Instagram</a></li>\n            </ul>\n        </section>\n    </main>\n    <script src=\"script.js\"></script>\n</body>\n</html>",
+        "index.html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Complete Test - Task Management App</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n    <script src=\"https://unpkg.com/lucide@latest\"></script>\n</head>\n<body>\n    <header class=\"header\">\n        <nav class=\"nav\">\n            <ul>\n                <li><a href=\"#\" class=\"nav-link\">Home</a></li>\n                <li><a href=\"#\" class=\"nav-link\">Features</a></li>\n                <li><a href=\"#\" class=\"nav-link\">Pricing</a></li>\n                <li><a href=\"#\" class=\"nav-link\">About</a></li>\n            </ul>\n        </nav>\n        <div class=\"logo\">\n            <img src=\"logo.png\" alt=\"Logo\">\n        </div>\n    </header>\n    <main class=\"main\">\n        <section class=\"hero\">\n            <h1>Task Management App</h1>\n            <p>Streamline your workflow and boost productivity with our intuitive task management app.</p>\n            <button class=\"btn-primary\">Get Started</button>\n        </section>\n        <section class=\"use-cases\">\n            <h2>Use Cases</h2>\n            <div class=\"grid\">\n                <div class=\"card\">\n                    <i class=\"lucide icon\" data-lucide=\"clock\"></i>\n                    <h3>UC-001: Create Task</h3>\n                    <p>The user creates a new task, providing task details such as title, description, and due date.</p>\n                    <button class=\"btn-secondary\">View Mockup</button>\n                </div>\n                <div class=\"card\">\n                    <i class=\"lucide icon\" data-lucide=\"person\"></i>\n                    <h3>UC-002: Assign Task</h3>\n                    <p>The user assigns a task to a team member, specifying the team member's role and due date.</p>\n                    <button class=\"btn-secondary\">View Mockup</button>\n                </div>\n                <div class=\"card\">\n                    <i class=\"lucide icon\" data-lucide=\"eye\"></i>\n                    <h3>UC-003: View Task Details</h3>\n                    <p>The user views the details of a task, including task history and comments.</p>\n                    <button class=\"btn-secondary\">View Mockup</button>\n                </div>\n                <div class=\"card\">\n                    <i class=\"lucide icon\" data-lucide=\"chart-line\"></i>\n                    <h3>UC-004: Custom Workflow</h3>\n                    <p>The user creates a custom workflow by defining a sequence of tasks and assigning tasks to team members.</p>\n                    <button class=\"btn-secondary\">View Mockup</button>\n                </div>\n                <div class=\"card\">\n                    <i class=\"lucide icon\" data-lucide=\"chart-bar\"></i>\n                    <h3>UC-005: Reporting and Analytics</h3>\n                    <p>The user views reporting and analytics data, including task completion rates and team performance.</p>\n                    <button class=\"btn-secondary\">View Mockup</button>\n                </div>\n            </div>\n        </section>\n    </main>\n    <footer class=\"footer\">\n        <p>&copy; 2023 Complete Test - Task Management App</p>\n    </footer>\n    <script src=\"script.js\"></script>\n</body>\n</html>",
         "UC-001_mockup.html": "<!DOCTYPE html><html><body><h1>Error generating mockup for Unnamed Use Case</h1></body></html>",
         "UC-002_mockup.html": "<!DOCTYPE html><html><body><h1>Error generating mockup for Unnamed Use Case</h1></body></html>",
         "UC-003_mockup.html": "<!DOCTYPE html><html><body><h1>Error generating mockup for Unnamed Use Case</h1></body></html>",
@@ -302,51 +312,8 @@
       "synthetic_data": {
         "data_sets": [
           {
-            "name": "Task Management App - User Data",
-            "description": "Sample user data for testing task management app",
-            "use_case_id": "UC-001",
-            "format": "json",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "username": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "password": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "username",
-                "email",
-                "password"
-              ]
-            },
-            "sample_data": [
-              {
-                "id": "user1",
-                "username": "johnDoe",
-                "email": "john.doe@example.com",
-                "password": "password123"
-              },
-              {
-                "id": "user2",
-                "username": "janeDoe",
-                "email": "jane.doe@example.com",
-                "password": "password123"
-              }
-            ]
-          },
-          {
-            "name": "Task Management App - Task Data",
-            "description": "Sample task data for testing task management app",
+            "name": "Tasks",
+            "description": "A collection of tasks for demonstration",
             "use_case_id": "UC-001",
             "format": "json",
             "schema": {
@@ -374,59 +341,28 @@
             },
             "sample_data": [
               {
-                "id": "task1",
-                "title": "Buy milk",
-                "description": "Buy 2 liters of milk",
+                "id": "T-001",
+                "title": "Task 1",
+                "description": "This is a sample task",
                 "due_date": "2025-11-05"
               },
               {
-                "id": "task2",
-                "title": "Finish project",
-                "description": "Complete all tasks for the project",
+                "id": "T-002",
+                "title": "Task 2",
+                "description": "This is another sample task",
                 "due_date": "2025-11-10"
+              },
+              {
+                "id": "T-003",
+                "title": "Task 3",
+                "description": "This is a third sample task",
+                "due_date": "2025-11-15"
               }
             ]
           },
           {
-            "name": "Task Management App - Assignee Data",
-            "description": "Sample assignee data for testing task assignment",
-            "use_case_id": "UC-002",
-            "format": "json",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "username": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "username",
-                "email"
-              ]
-            },
-            "sample_data": [
-              {
-                "id": "assignee1",
-                "username": "johnDoe",
-                "email": "john.doe@example.com"
-              },
-              {
-                "id": "assignee2",
-                "username": "janeDoe",
-                "email": "jane.doe@example.com"
-              }
-            ]
-          },
-          {
-            "name": "Task Management App - Task Assignment Data",
-            "description": "Sample task assignment data for testing task assignment",
+            "name": "Task Assignments",
+            "description": "A collection of task assignments for demonstration",
             "use_case_id": "UC-002",
             "format": "json",
             "schema": {
@@ -438,32 +374,51 @@
                 "task_id": {
                   "type": "string"
                 },
-                "assignee_id": {
+                "team_member_id": {
+                  "type": "string"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "due_date": {
                   "type": "string"
                 }
               },
               "required": [
                 "id",
                 "task_id",
-                "assignee_id"
+                "team_member_id",
+                "role",
+                "due_date"
               ]
             },
             "sample_data": [
               {
-                "id": "assignment1",
-                "task_id": "task1",
-                "assignee_id": "assignee1"
+                "id": "A-001",
+                "task_id": "T-001",
+                "team_member_id": "M-001",
+                "role": "Project Manager",
+                "due_date": "2025-11-05"
               },
               {
-                "id": "assignment2",
-                "task_id": "task2",
-                "assignee_id": "assignee2"
+                "id": "A-002",
+                "task_id": "T-002",
+                "team_member_id": "M-002",
+                "role": "Developer",
+                "due_date": "2025-11-10"
+              },
+              {
+                "id": "A-003",
+                "task_id": "T-003",
+                "team_member_id": "M-003",
+                "role": "Quality Assurance",
+                "due_date": "2025-11-15"
               }
             ]
           },
           {
-            "name": "Task Management App - Task Progress Data",
-            "description": "Sample task progress data for testing task tracking",
+            "name": "Task History",
+            "description": "A collection of task history records for demonstration",
             "use_case_id": "UC-003",
             "format": "json",
             "schema": {
@@ -475,38 +430,44 @@
                 "task_id": {
                   "type": "string"
                 },
-                "status": {
+                "event": {
                   "type": "string"
                 },
-                "comments": {
+                "timestamp": {
                   "type": "string"
                 }
               },
               "required": [
                 "id",
                 "task_id",
-                "status",
-                "comments"
+                "event",
+                "timestamp"
               ]
             },
             "sample_data": [
               {
-                "id": "progress1",
-                "task_id": "task1",
-                "status": "in_progress",
-                "comments": "Task is being worked on"
+                "id": "H-001",
+                "task_id": "T-001",
+                "event": "Created",
+                "timestamp": "2025-11-01T10:00:00"
               },
               {
-                "id": "progress2",
-                "task_id": "task2",
-                "status": "completed",
-                "comments": "Task is completed"
+                "id": "H-002",
+                "task_id": "T-001",
+                "event": "Updated",
+                "timestamp": "2025-11-02T12:00:00"
+              },
+              {
+                "id": "H-003",
+                "task_id": "T-001",
+                "event": "Completed",
+                "timestamp": "2025-11-03T14:00:00"
               }
             ]
           },
           {
-            "name": "Task Management App - Task Update Data",
-            "description": "Sample task update data for testing task status update",
+            "name": "Custom Workflows",
+            "description": "A collection of custom workflows for demonstration",
             "use_case_id": "UC-004",
             "format": "json",
             "schema": {
@@ -515,82 +476,151 @@
                 "id": {
                   "type": "string"
                 },
-                "task_id": {
+                "workflow_id": {
                   "type": "string"
                 },
-                "status": {
-                  "type": "string"
+                "task_sequence": {
+                  "type": "array"
+                },
+                "team_member_assignments": {
+                  "type": "array"
                 }
               },
               "required": [
                 "id",
-                "task_id",
-                "status"
+                "workflow_id",
+                "task_sequence",
+                "team_member_assignments"
               ]
             },
             "sample_data": [
               {
-                "id": "update1",
-                "task_id": "task1",
-                "status": "completed"
+                "id": "WF-001",
+                "workflow_id": "WF-001",
+                "task_sequence": [
+                  {
+                    "task_id": "T-001",
+                    "due_date": "2025-11-05"
+                  },
+                  {
+                    "task_id": "T-002",
+                    "due_date": "2025-11-10"
+                  },
+                  {
+                    "task_id": "T-003",
+                    "due_date": "2025-11-15"
+                  }
+                ],
+                "team_member_assignments": [
+                  {
+                    "team_member_id": "M-001",
+                    "role": "Project Manager"
+                  },
+                  {
+                    "team_member_id": "M-002",
+                    "role": "Developer"
+                  },
+                  {
+                    "team_member_id": "M-003",
+                    "role": "Quality Assurance"
+                  }
+                ]
               },
               {
-                "id": "update2",
-                "task_id": "task2",
-                "status": "in_progress"
+                "id": "WF-002",
+                "workflow_id": "WF-002",
+                "task_sequence": [
+                  {
+                    "task_id": "T-002",
+                    "due_date": "2025-11-10"
+                  },
+                  {
+                    "task_id": "T-001",
+                    "due_date": "2025-11-05"
+                  },
+                  {
+                    "task_id": "T-003",
+                    "due_date": "2025-11-15"
+                  }
+                ],
+                "team_member_assignments": [
+                  {
+                    "team_member_id": "M-002",
+                    "role": "Developer"
+                  },
+                  {
+                    "team_member_id": "M-001",
+                    "role": "Project Manager"
+                  },
+                  {
+                    "team_member_id": "M-003",
+                    "role": "Quality Assurance"
+                  }
+                ]
               }
             ]
           },
           {
-            "name": "Task Management App - Task Delete Data",
-            "description": "Sample task delete data for testing task deletion",
+            "name": "Reporting and Analytics",
+            "description": "A collection of reporting and analytics data for demonstration",
             "use_case_id": "UC-005",
             "format": "json",
             "schema": {
               "type": "object",
               "properties": {
-                "id": {
+                "task_id": {
                   "type": "string"
                 },
-                "task_id": {
+                "completion_rate": {
+                  "type": "number"
+                },
+                "team_performance": {
                   "type": "string"
                 }
               },
               "required": [
-                "id",
-                "task_id"
+                "task_id",
+                "completion_rate",
+                "team_performance"
               ]
             },
             "sample_data": [
               {
-                "id": "delete1",
-                "task_id": "task1"
+                "task_id": "T-001",
+                "completion_rate": 0.8,
+                "team_performance": "High"
               },
               {
-                "id": "delete2",
-                "task_id": "task2"
+                "task_id": "T-002",
+                "completion_rate": 0.9,
+                "team_performance": "Excellent"
+              },
+              {
+                "task_id": "T-003",
+                "completion_rate": 0.7,
+                "team_performance": "Good"
               }
             ]
           }
         ],
-        "summary": "This dataset contains sample user, task, assignee, task assignment, task progress, task update, and task delete data for testing the Task Management App."
+        "summary": "This data represents a comprehensive set of tasks, task assignments, task history, custom workflows, and reporting and analytics data for demonstration purposes."
       },
       "project_name": "Complete Test - Task Management App",
-      "num_datasets": 7
+      "num_datasets": 5
     },
     "commercial_proposal": {
-      "proposal_xml": "<commercialProposal>\n    <introduction>An introduction to the proposal for the client, referencing the project vision.</introduction>\n    <scopeOfWork>A summary of the key features and deliverables for the Complete Test - Task Management App, derived from the provided use cases.</scopeOfWork>\n    <timeline>\n        <phase name=\"Phase 1: Discovery & Design\" durationWeeks=\"2\"/>\n        <phase name=\"Phase 2: Development & Integration\" durationWeeks=\"6\"/>\n        <phase name=\"Phase 3: Testing & Deployment\" durationWeeks=\"2\"/>\n    </timeline>\n    <pricing>\n        <services>\n            <item name=\"Blended Team Day Rate (Design & Engineering)\" rate=\"3000.00\" currency=\"GBP\" unit=\"per day\"/>\n            <item name=\"Development Services\" rate=\"12000.00\" currency=\"GBP\" unit=\"per week\"/>\n            <item name=\"Quality Assurance & Testing\" rate=\"2000.00\" currency=\"GBP\" unit=\"per week\"/>\n            <item name=\"Deployment & Integration\" rate=\"1500.00\" currency=\"GBP\" unit=\"per week\"/>\n        </services>\n        <infrastructure>\n            <item name=\"Estimated Monthly Cloud Costs\" rate=\"365.00\" currency=\"GBP\" unit=\"per month\" notes=\"Based on the Bill of Materials. Billed directly by the cloud provider.\"/>\n        </infrastructure>\n    </pricing>\n    <nextSteps>The next steps are to review this proposal and schedule a follow-up meeting to discuss the project in more detail.</nextSteps>\n</commercialProposal>",
-      "proposal_html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Complete Test - Task Management App Proposal</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n</head>\n<body>\n    <header>\n        <h1>Complete Test - Task Management App Proposal</h1>\n        <p>An introduction to the proposal for the client, referencing the project vision.</p>\n    </header>\n    <main>\n        <section class=\"scope-of-work\">\n            <h2>Scope of Work</h2>\n            <p>A summary of the key features and deliverables for the Complete Test - Task Management App, derived from the provided use cases.</p>\n        </section>\n        <section class=\"timeline\">\n            <h2>Timeline</h2>\n            <ul>\n                <li>\n                    <h3>Phase 1: Discovery & Design</h3>\n                    <p>Duration: 2 weeks</p>\n                </li>\n                <li>\n                    <h3>Phase 2: Development & Integration</h3>\n                    <p>Duration: 6 weeks</p>\n                </li>\n                <li>\n                    <h3>Phase 3: Testing & Deployment</h3>\n                    <p>Duration: 2 weeks</p>\n                </li>\n            </ul>\n        </section>\n        <section class=\"pricing\">\n            <h2>Pricing</h2>\n            <h3>Services</h3>\n            <ul>\n                <li>\n                    <h4>Blended Team Day Rate (Design & Engineering)</h4>\n                    <p>Rate: \u00a33,000.00</p>\n                    <p>Currency: GBP</p>\n                    <p>Unit: per day</p>\n                </li>\n                <li>\n                    <h4>Development Services</h4>\n                    <p>Rate: \u00a312,000.00</p>\n                    <p>Currency: GBP</p>\n                    <p>Unit: per week</p>\n                </li>\n                <li>\n                    <h4>Quality Assurance & Testing</h4>\n                    <p>Rate: \u00a32,000.00</p>\n                    <p>Currency: GBP</p>\n                    <p>Unit: per week</p>\n                </li>\n                <li>\n                    <h4>Deployment & Integration</h4>\n                    <p>Rate: \u00a31,500.00</p>\n                    <p>Currency: GBP</p>\n                    <p>Unit: per week</p>\n                </li>\n            </ul>\n            <h3>Infrastructure</h3>\n            <ul>\n                <li>\n                    <h4>Estimated Monthly Cloud Costs</h4>\n                    <p>Rate: \u00a3365.00</p>\n                    <p>Currency: GBP</p>\n                    <p>Unit: per month</p>\n                    <p>Notes: Based on the Bill of Materials. Billed directly by the cloud provider.</p>\n                </li>\n            </ul>\n        </section>\n        <section class=\"next-steps\">\n            <h2>Next Steps</h2>\n            <p>The next steps are to review this proposal and schedule a follow-up meeting to discuss the project in more detail.</p>\n        </section>\n    </main>\n    <footer>\n        <p>&copy; 2023 Complete Test - Task Management App</p>\n        <p>Designed and developed by <a href=\"https://www.aicoe.com\">AICOE</a></p>\n    </footer>\n    <script src=\"script.js\"></script>\n</body>\n</html>",
+      "proposal_xml": "<commercialProposal>\n    <introduction>\n        <title>Complete Test - Task Management App</title>\n        <description>A comprehensive task management app designed to streamline workflows and enhance team collaboration.</description>\n    </introduction>\n    <scopeOfWork>\n        <title>Key Features and Deliverables</title>\n        <description>\n            The proposed task management app will include the following features:\n            <ul>\n                <li>Create New Task</li>\n                <li>Assign Task to Team Member</li>\n                <li>View Task Details</li>\n                <li>Create Custom Workflow</li>\n                <li>View Reporting and Analytics</li>\n            </ul>\n        </description>\n    </scopeOfWork>\n    <timeline>\n        <phase name=\"Phase 1: Discovery & Architectural Design\" durationWeeks=\"2\">\n            <description>Define project scope, requirements, and technical architecture.</description>\n        </phase>\n        <phase name=\"Phase 2: MVP Development & Integration\" durationWeeks=\"6\">\n            <description>Develop the minimum viable product (MVP) with core features.</description>\n        </phase>\n        <phase name=\"Phase 3: User Acceptance Testing & Deployment\" durationWeeks=\"2\">\n            <description>Conduct user acceptance testing and deploy the app to production.</description>\n        </phase>\n    </timeline>\n    <pricing>\n        <services>\n            <item name=\"Blended Team Day Rate (Design & Engineering)\" rate=\"3000.00\" currency=\"GBP\" unit=\"per day\"/>\n            <item name=\"Development Time\" rate=\"120.00\" currency=\"GBP\" unit=\"hours\"/>\n            <item name=\"Testing Time\" rate=\"60.00\" currency=\"GBP\" unit=\"hours\"/>\n        </services>\n        <infrastructure>\n            <item name=\"Estimated Monthly Cloud Costs\" rate=\"365.00\" currency=\"GBP\" unit=\"per month\" notes=\"Based on the Bill of Materials. Billed directly by the cloud provider.\"/>\n        </infrastructure>\n    </pricing>\n    <nextSteps>\n        <title>Next Steps</title>\n        <description>Review and approve the proposal. Schedule a follow-up meeting to discuss the project in more detail.</description>\n    </nextSteps>\n</commercialProposal>",
+      "proposal_html": "<!DOCTYPE html>\nHere is the transformed commercial proposal XML into a beautiful, professional HTML document:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Complete Test - Task Management App</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n</head>\n<body>\n    <header>\n        <h1>Complete Test - Task Management App</h1>\n        <p>A comprehensive task management app designed to streamline workflows and enhance team collaboration.</p>\n    </header>\n    <main>\n        <section class=\"introduction\">\n            <h2>Introduction</h2>\n            <p>The proposed task management app will include the following features:</p>\n            <ul>\n                <li>Create New Task</li>\n                <li>Assign Task to Team Member</li>\n                <li>View Task Details</li>\n                <li>Create Custom Workflow</li>\n                <li>View Reporting and Analytics</li>\n            </ul>\n        </section>\n        <section class=\"scopeOfWork\">\n            <h2>Scope of Work</h2>\n            <p>The proposed task management app will include the following features:</p>\n            <ul>\n                <li>Create New Task</li>\n                <li>Assign Task to Team Member</li>\n                <li>View Task Details</li>\n                <li>Create Custom Workflow</li>\n                <li>View Reporting and Analytics</li>\n            </ul>\n        </section>\n        <section class=\"timeline\">\n            <h2>Timeline</h2>\n            <ul>\n                <li>\n                    <h3>Phase 1: Discovery & Architectural Design</h3>\n                    <p>Define project scope, requirements, and technical architecture.</p>\n                    <p>Duration: 2 weeks</p>\n                </li>\n                <li>\n                    <h3>Phase 2: MVP Development & Integration</h3>\n                    <p>Develop the minimum viable product (MVP) with core features.</p>\n                    <p>Duration: 6 weeks</p>\n                </li>\n                <li>\n                    <h3>Phase 3: User Acceptance Testing & Deployment</h3>\n                    <p>Conduct user acceptance testing and deploy the app to production.</p>\n                    <p>Duration: 2 weeks</p>\n                </li>\n            </ul>\n        </section>\n        <section class=\"pricing\">\n            <h2>Pricing</h2>\n            <h3>Services</h3>\n            <ul>\n                <li>\n                    <h4>Blended Team Day Rate (Design & Engineering)</h4>\n                    <p>\u00a33000.00 per day</p>\n                    <p>Currency: GBP</p>\n                    <p>Unit: per day</p>\n                </li>\n                <li>\n                    <h4>Development Time</h4>\n                    <p>\u00a3120.00 per hour</p>\n                    <p>Currency: GBP</p>\n                    <p>Unit: hours</p>\n                </li>\n                <li>\n                    <h4>Testing Time</h4>\n                    <p>\u00a360.00 per hour</p>\n                    <p>Currency: GBP</p>\n                    <p>Unit: hours</p>\n                </li>\n            </ul>\n            <h3>Infrastructure</h3>\n            <ul>\n                <li>\n                    <h4>Estimated Monthly Cloud Costs</h4>\n                    <p>\u00a3365.00 per month</p>\n                    <p>Currency: GBP</p>\n                    <p>Unit: per month</p>\n                    <p>Notes: Based on the Bill of Materials. Billed directly by the cloud provider.</p>\n                </li>\n            </ul>\n        </section>\n        <section class=\"nextSteps\">\n            <h2>Next Steps</h2>\n            <p>Review and approve the proposal. Schedule a follow-up meeting to discuss the project in more detail.</p>\n        </section>\n    </main>\n    <footer>\n        <p>&copy; 2023 Complete Test. All rights reserved.</p>\n        <p>Designed and developed by AICOE.</p>\n        <img src=\"aicoe-logo.png\" alt=\"AICOE Logo\">\n    </footer>\n</body>\n</html>\n```\n\nAnd here is the corresponding CSS file (`styles.css`):\n\n```css\nbody {\n    font-family: Arial, sans-serif;\n    margin: 0;\n    padding: 0;\n}\n\nheader {\n    background-color: #1a1a2e;\n    color: #ffffff;\n    padding: 20px;\n    text-align: center;\n}\n\nmain {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding: 20px;\n}\n\nsection {\n    background-color: #ffffff;\n    padding: 20px;\n    margin-bottom: 20px;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n\nh1, h2, h3 {\n    color: #1a1a2e;\n    margin-bottom: 10px;\n}\n\nul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\nli {\n    padding: 10px;\n    border-bottom: 1px solid #ddd;\n}\n\nli:last-child {\n    border-bottom: none;\n}\n\np {\n    color: #666666;\n    margin-bottom: 20px;\n}\n\nfooter {\n    background-color: #1a1a2e;\n    color: #ffffff;\n    padding: 10px;\n    text-align: center;\n    clear: both;\n}\n\nfooter img {\n    width: 100px;\n    height: 100px;\n    margin: 10px;\n}\n```\n\nThis HTML document follows the AICOE branding guidelines and includes the required sections, features, and pricing information. The CSS file styles the document with a clean and modern design.",
       "project_name": "Complete Test - Task Management App"
     },
     "bom": {
-      "bom_xml": "<billOfMaterials>\n    <summary>An estimated monthly cost breakdown for deploying and running the proposed Complete Test - Task Management App.</summary>\n    <items>\n        <category name=\"Cloud Infrastructure\">\n            <item name=\"Web Server Hosting (2 instances)\" provider=\"Vercel/Netlify\" costPerMonth=\"40.00\" />\n            <item name=\"API Server Hosting (2 instances)\" provider=\"AWS/GCP\" costPerMonth=\"100.00\" />\n            <item name=\"Managed MongoDB\" provider=\"MongoDB Atlas\" costPerMonth=\"75.00\" />\n            <item name=\"Event-Driven Architecture\" provider=\"AWS/GCP\" costPerMonth=\"50.00\" />\n        </category>\n        <category name=\"Third-Party Services\">\n            <item name=\"LLM API Usage\" provider=\"OpenAI/Anthropic\" costPerMonth=\"150.00\" />\n            <item name=\"Google Calendar Integration\" provider=\"Google Cloud\" costPerMonth=\"20.00\" />\n            <item name=\"Gmail Integration\" provider=\"Google Cloud\" costPerMonth=\"10.00\" />\n            <item name=\"Slack Integration\" provider=\"Slack\" costPerMonth=\"5.00\" />\n        </category>\n        <category name=\"Software Licenses\">\n            <item name=\"Task Management Software\" provider=\"Complete Test\" costPerMonth=\"0.00\" />\n        </category>\n    </items>\n    <totalCostPerMonth>315.00</totalCostPerMonth>\n</billOfMaterials>",
-      "bom_html": "<!DOCTYPE html>\nHere is the transformed HTML document:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Complete Test - Task Management App Estimated Monthly Cost Breakdown</title>\n    <style>\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;\n            background-color: #f5f5f7;\n            margin: 0;\n            padding: 0;\n        }\n        \n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 20px;\n            background-color: #ffffff;\n            border-radius: 10px;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        \n        .summary {\n            font-size: 24px;\n            font-weight: bold;\n            margin-bottom: 20px;\n        }\n        \n        .category {\n            margin-bottom: 40px;\n        }\n        \n        .category h2 {\n            font-size: 18px;\n            font-weight: bold;\n            margin-bottom: 10px;\n        }\n        \n        .item {\n            display: flex;\n            justify-content: space-between;\n            align-items: center;\n            padding: 10px;\n            border-bottom: 1px solid #ddd;\n        }\n        \n        .item:last-child {\n            border-bottom: none;\n        }\n        \n        .item span {\n            font-size: 16px;\n            color: #666;\n        }\n        \n        .item .provider {\n            font-size: 14px;\n            color: #999;\n        }\n        \n        .item .cost {\n            font-size: 16px;\n            color: #666;\n            font-weight: bold;\n        }\n        \n        .total-cost {\n            font-size: 24px;\n            font-weight: bold;\n            margin-top: 40px;\n        }\n        \n        .footer {\n            text-align: center;\n            margin-top: 20px;\n        }\n        \n        .footer a {\n            text-decoration: none;\n            color: #337ab7;\n        }\n        \n        .footer a:hover {\n            color: #23527c;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"summary\">\n            An estimated monthly cost breakdown for deploying and running the proposed Complete Test - Task Management App.\n        </div>\n        <div class=\"items\">\n            <div class=\"category\">\n                <h2>Cloud Infrastructure</h2>\n                <div class=\"item\">\n                    <span>Web Server Hosting (2 instances)</span>\n                    <span>Provider: Vercel/Netlify</span>\n                    <span>Cost per month: $40.00</span>\n                </div>\n                <div class=\"item\">\n                    <span>API Server Hosting (2 instances)</span>\n                    <span>Provider: AWS/GCP</span>\n                    <span>Cost per month: $100.00</span>\n                </div>\n                <div class=\"item\">\n                    <span>Managed MongoDB</span>\n                    <span>Provider: MongoDB Atlas</span>\n                    <span>Cost per month: $75.00</span>\n                </div>\n                <div class=\"item\">\n                    <span>Event-Driven Architecture</span>\n                    <span>Provider: AWS/GCP</span>\n                    <span>Cost per month: $50.00</span>\n                </div>\n            </div>\n            <div class=\"category\">\n                <h2>Third-Party Services</h2>\n                <div class=\"item\">\n                    <span>LLM API Usage</span>\n                    <span>Provider: OpenAI/Anthropic</span>\n                    <span>Cost per month: $150.00</span>\n                </div>\n                <div class=\"item\">\n                    <span>Google Calendar Integration</span>\n                    <span>Provider: Google Cloud</span>\n                    <span>Cost per month: $20.00</span>\n                </div>\n                <div class=\"item\">\n                    <span>Gmail Integration</span>\n                    <span>Provider: Google Cloud</span>\n                    <span>Cost per month: $10.00</span>\n                </div>\n                <div class=\"item\">\n                    <span>Slack Integration</span>\n                    <span>Provider: Slack</span>\n                    <span>Cost per month: $5.00</span>\n                </div>\n            </div>\n            <div class=\"category\">\n                <h2>Software Licenses</h2>\n                <div class=\"item\">\n                    <span>Task Management Software</span>\n                    <span>Provider: Complete Test</span>\n                    <span>Cost per month: $0.00</span>\n                </div>\n            </div>\n        </div>\n        <div class=\"total-cost\">\n            Total cost per month: $315.00\n        </div>\n        <div class=\"footer\">\n            <p>&copy; 2023 Complete Test. All rights reserved.</p>\n            <a href=\"#\">Learn more about our services</a>\n        </div>\n    </div>\n</body>\n</html>\n```\n\nThis HTML document is designed to be visually appealing, easy to read, and accessible. It includes a clean and simple layout, with clear headings, paragraphs, and tables. The CSS styles are applied to make the document look professional and consistent with the AICOE branding guidelines.",
+      "bom_xml": "<billOfMaterials>\n    <summary>An estimated monthly cost breakdown for deploying and running the proposed Complete Test - Task Management App.</summary>\n    <items>\n        <category name=\"Cloud Infrastructure\">\n            <item name=\"Web Server Hosting (2 instances)\" provider=\"Vercel/Netlify\" costPerMonth=\"40.00\" />\n            <item name=\"API Server Hosting (2 instances)\" provider=\"AWS/GCP\" costPerMonth=\"100.00\" />\n            <item name=\"Managed MongoDB\" provider=\"MongoDB Atlas\" costPerMonth=\"75.00\" />\n        </category>\n        <category name=\"Third-Party Services\">\n            <item name=\"LLM API Usage\" provider=\"OpenAI/Anthropic\" costPerMonth=\"150.00\" />\n        </category>\n        <category name=\"Software Licenses\">\n            <item name=\"Task Management Software License\" provider=\"Complete Test\" costPerMonth=\"500.00\" />\n        </category>\n    </items>\n    <totalCostPerMonth>615.00</totalCostPerMonth>\n</billOfMaterials>",
+      "bom_html": "<!DOCTYPE html>\nBelow is the transformed HTML document based on the provided BOM XML:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Complete Test - Task Management App Cost Breakdown</title>\n    <style>\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;\n            background-color: #f5f5f7;\n            margin: 0;\n            padding: 0;\n        }\n        \n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 20px;\n            background-color: #ffffff;\n            border-radius: 10px;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        \n        .summary {\n            font-size: 24px;\n            font-weight: bold;\n            margin-bottom: 20px;\n        }\n        \n        .category {\n            margin-bottom: 20px;\n        }\n        \n        .item {\n            display: flex;\n            align-items: center;\n            margin-bottom: 10px;\n        }\n        \n        .item-name {\n            font-weight: bold;\n            margin-right: 10px;\n        }\n        \n        .provider {\n            font-size: 14px;\n            color: #666;\n        }\n        \n        .cost {\n            font-size: 14px;\n            color: #666;\n        }\n        \n        .total-cost {\n            font-size: 24px;\n            font-weight: bold;\n            margin-top: 20px;\n        }\n        \n        .table {\n            border-collapse: collapse;\n            width: 100%;\n        }\n        \n        .table th, .table td {\n            border: 1px solid #ddd;\n            padding: 10px;\n            text-align: left;\n        }\n        \n        .table th {\n            background-color: #f0f0f0;\n        }\n        \n        .table tr:nth-child(even) {\n            background-color: #f9f9f9;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"summary\">\n            An estimated monthly cost breakdown for deploying and running the proposed Complete Test - Task Management App.\n        </div>\n        <div class=\"table\">\n            <table>\n                <thead>\n                    <tr>\n                        <th>Category</th>\n                        <th>Item</th>\n                        <th>Provider</th>\n                        <th>Cost per Month</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr>\n                        <td class=\"category\">Cloud Infrastructure</td>\n                        <td class=\"item\">\n                            <span class=\"item-name\">Web Server Hosting (2 instances)</span>\n                            <span class=\"provider\">Vercel/Netlify</span>\n                            <span class=\"cost\">$40.00</span>\n                        </td>\n                        <td class=\"item\">\n                            <span class=\"item-name\">API Server Hosting (2 instances)</span>\n                            <span class=\"provider\">AWS/GCP</span>\n                            <span class=\"cost\">$100.00</span>\n                        </td>\n                        <td class=\"item\">\n                            <span class=\"item-name\">Managed MongoDB</span>\n                            <span class=\"provider\">MongoDB Atlas</span>\n                            <span class=\"cost\">$75.00</span>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td class=\"category\">Third-Party Services</td>\n                        <td class=\"item\">\n                            <span class=\"item-name\">LLM API Usage</span>\n                            <span class=\"provider\">OpenAI/Anthropic</span>\n                            <span class=\"cost\">$150.00</span>\n                        </td>\n                    </tr>\n                    <tr>\n                        <td class=\"category\">Software Licenses</td>\n                        <td class=\"item\">\n                            <span class=\"item-name\">Task Management Software License</span>\n                            <span class=\"provider\">Complete Test</span>\n                            <span class=\"cost\">$500.00</span>\n                        </td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n        <div class=\"total-cost\">\n            Total Cost per Month: $<span class=\"cost\">$615.00</span>\n        </div>\n    </div>\n</body>\n</html>\n```\n\nThis HTML document maintains the original structure and content of the BOM XML while presenting it in a clean, professional, and visually appealing manner. The CSS styles ensure that the layout is responsive and follows Apple's design principles.",
       "project_name": "Complete Test - Task Management App"
     },
     "architecture_diagram": {
-      "architecture_xml": "Here is the system architecture XML document for the Complete Test - Task Management App:\n\n```xml\n<systemArchitecture>\n    <description>A comprehensive overview of the proposed architecture for the Complete Test - Task Management App.</description>\n    <diagram type=\"mermaid-flowchart\">\n        <![CDATA[\n            graph TD\n                %% Frontend Layer\n                A[React Native Mobile App] -->|HTTPS/REST| B[API Gateway - Kong/Nginx]\n                A2[React Web App] -->|HTTPS/REST| B\n\n                %% API Gateway & Auth\n                B --> C[Auth Service - OAuth 2.0]\n                C --> D[Identity Provider]\n\n                %% Backend Services\n                B --> E[User Service]\n                B --> F[Core Business Logic Service]\n                B --> G[Analytics Service]\n\n                %% Data Layer\n                E --> H[(PostgreSQL - User Data)]\n                F --> I[(MongoDB - Application Data)]\n                G --> J[(Redis Cache)]\n\n                %% Message Queue\n                F --> K[Message Queue - RabbitMQ/Kafka]\n                K --> L[Background Workers]\n\n                %% External Services\n                B --> M[Third-Party APIs]\n                F --> N[Cloud Storage - S3]\n        ]]>\n    </diagram>\n    <componentBreakdown>\n        <component name=\"React Native Mobile App\">Cross-platform mobile application built with React Native, providing native iOS and Android experiences.</component>\n        <component name=\"React Web App\">Responsive web application built with React, TypeScript, and modern UI libraries.</component>\n        <component name=\"API Gateway\">Kong or Nginx-based API gateway handling routing, rate limiting, authentication, and load balancing.</component>\n        <component name=\"Auth Service\">OAuth 2.0 / OpenID Connect authentication service with JWT token management.</component>\n        <component name=\"User Service\">Microservice handling user management, profiles, and preferences.</component>\n        <component name=\"Core Business Logic Service\">Main application service implementing business rules and workflows.</component>\n        <component name=\"PostgreSQL\">Relational database for structured user and transactional data.</component>\n        <component name=\"MongoDB\">NoSQL database for flexible, document-based application data.</component>\n        <component name=\"Redis Cache\">In-memory cache for session management and performance optimization.</component>\n        <component name=\"Message Queue\">Asynchronous message processing using RabbitMQ or Kafka for event-driven architecture.</component>\n    </componentBreakdown>\n</systemArchitecture>\n```\n\nThis system architecture design is based on the provided input data, including the project name, technical architecture, use cases, research insights, and industry trends. The design incorporates microservices architecture, prioritized task management, real-time reporting and updates, and integrations with calendar and email. The system also includes a robust security layer with OAuth 2.0 authentication and JWT token management.",
-      "architecture_html": "<!DOCTYPE html>\nHere is the transformed system architecture in a beautiful, professional HTML document with an interactive Mermaid diagram:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Complete Test - Task Management App System Architecture</title>\n    <style>\n        /* Global Styles */\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, \"SF Pro Display\", sans-serif;\n            margin: 0;\n            padding: 0;\n            background-color: #f5f5f5;\n        }\n\n        /* Header Styles */\n        header {\n            background-color: #1a1a2e;\n            color: #ffffff;\n            padding: 1rem;\n            text-align: center;\n        }\n\n        /* Navigation Styles */\n        nav {\n            background-color: #1a1a2e;\n            color: #ffffff;\n            padding: 1rem;\n            text-align: center;\n        }\n\n        /* Content Styles */\n        main {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 2rem;\n        }\n\n        /* Diagram Styles */\n        .mermaid {\n            width: 100%;\n            height: 500px;\n            border: 1px solid #ddd;\n            padding: 1rem;\n        }\n\n        /* Component Breakdown Styles */\n        .component-breakdown {\n            margin-top: 2rem;\n        }\n\n        .component {\n            background-color: #f7f7f7;\n            padding: 1rem;\n            border: 1px solid #ddd;\n            margin-bottom: 1rem;\n            width: 50%;\n        }\n\n        .component-name {\n            font-weight: bold;\n            font-size: 1.5rem;\n            color: #333333;\n        }\n\n        .component-description {\n            font-size: 1rem;\n            color: #666666;\n        }\n    </style>\n</head>\n<body>\n    <header>\n        <h1>Complete Test - Task Management App System Architecture</h1>\n    </header>\n    <nav>\n        <ul>\n            <li><a href=\"#architecture\">System Architecture</a></li>\n            <li><a href=\"#components\">Components</a></li>\n        </ul>\n    </nav>\n    <main>\n        <section id=\"architecture\">\n            <h2>System Architecture</h2>\n            <div class=\"mermaid\">\n                <![CDATA[\n                    graph TD\n                        %% Frontend Layer\n                        A[React Native Mobile App] -->|HTTPS/REST| B[API Gateway - Kong/Nginx]\n                        A2[React Web App] -->|HTTPS/REST| B\n\n                        %% API Gateway & Auth\n                        B --> C[Auth Service - OAuth 2.0]\n                        C --> D[Identity Provider]\n\n                        %% Backend Services\n                        B --> E[User Service]\n                        B --> F[Core Business Logic Service]\n                        B --> G[Analytics Service]\n\n                        %% Data Layer\n                        E --> H[(PostgreSQL - User Data)]\n                        F --> I[(MongoDB - Application Data)]\n                        G --> J[(Redis Cache)]\n\n                        %% Message Queue\n                        F --> K[Message Queue - RabbitMQ/Kafka]\n                        K --> L[Background Workers]\n\n                        %% External Services\n                        B --> M[Third-Party APIs]\n                        F --> N[Cloud Storage - S3]\n                ]]>\n            </div>\n        </section>\n        <section id=\"components\">\n            <h2>Components</h2>\n            <div class=\"component-breakdown\">\n                <div class=\"component\">\n                    <h3 class=\"component-name\">React Native Mobile App</h3>\n                    <p class=\"component-description\">Cross-platform mobile application built with React Native, providing native iOS and Android experiences.</p>\n                </div>\n                <div class=\"component\">\n                    <h3 class=\"component-name\">React Web App</h3>\n                    <p class=\"component-description\">Responsive web application built with React, TypeScript, and modern UI libraries.</p>\n                </div>\n                <div class=\"component\">\n                    <h3 class=\"component-name\">API Gateway</h3>\n                    <p class=\"component-description\">Kong or Nginx-based API gateway handling routing, rate limiting, authentication, and load balancing.</p>\n                </div>\n                <div class=\"component\">\n                    <h3 class=\"component-name\">Auth Service</h3>\n                    <p class=\"component-description\">OAuth 2.0 / OpenID Connect authentication service with JWT token management.</p>\n                </div>\n                <div class=\"component\">\n                    <h3 class=\"component-name\">User Service</h3>\n                    <p class=\"component-description\">Microservice handling user management, profiles, and preferences.</p>\n                </div>\n                <div class=\"component\">\n                    <h3 class=\"component-name\">Core Business Logic Service</h3>\n                    <p class=\"component-description\">Main application service implementing business rules and workflows.</p>\n                </div>\n                <div class=\"component\">\n                    <h3 class=\"component-name\">PostgreSQL</h3>\n                    <p class=\"component-description\">Relational database for structured user and transactional data.</p>\n                </div>\n                <div class=\"component\">\n                    <h3 class=\"component-name\">MongoDB</h3>\n                    <p class=\"component-description\">NoSQL database for flexible, document-based application data.</p>\n                </div>\n                <div class=\"component\">\n                    <h3 class=\"component-name\">Redis Cache</h3>\n                    <p class=\"component-description\">In-memory cache for session management and performance optimization.</p>\n                </div>\n                <div class=\"component\">\n                    <h3 class=\"component-name\">Message Queue</h3>\n                    <p class=\"component-description\">Asynchronous message processing using RabbitMQ or Kafka for event-driven architecture.</p>\n                </div>\n            </div>\n        </section>\n    </main>\n    <footer>\n        <p>&copy; 2023 Complete Test - Task Management App</p>\n        <div class=\"mermaid\">\n            <![CDATA[\n                graph TD\n                    A[Logo] -->|Gradient Text| B[Gradient Text]\n            ]]>\n        </div>\n    </footer>\n    <script src=\"https://cdn.jsdelivr.net/npm/mermaid@8.4.0/dist/mermaid.min.js\"></script>\n    <script>\n        mermaid.initialize({\n            startOnLoad: true,\n            theme: 'base',\n            themeVariables: {\n                primaryColor: '#1a1a2e',\n                primaryTextColor: '#ffffff',\n                primaryBorderColor: '#00ffcc',\n                lineColor: '#00ffcc',\n                secondaryColor: '#2a2a3e',\n                tertiaryColor: '#3a2a4e',\n                fontFamily: '-apple-system, BlinkMacSystemFont, \"SF Pro Display\", sans-serif'\n            }\n        });\n    </script>\n</body>\n</html>\n```\n\nThis HTML document includes a professional layout, AICOE branding, and an interactive Mermaid diagram that showcases the system architecture. The diagram is generated using the Mermaid.js library and is displayed within a container with proper styling. The component breakdown is also included, with each component listed in a separate section with a descriptive name and description.",
+      "architecture_xml": "Here is the system architecture XML document for the Complete Test - Task Management App:\n\n```xml\n<systemArchitecture>\n    <description>A comprehensive overview of the proposed architecture for the Complete Test - Task Management App.</description>\n    <diagram type=\"mermaid-flowchart\">\n        <![CDATA[\n            graph TD\n                %% Frontend Layer\n                A[React Native Mobile App] -->|HTTPS/REST| B[API Gateway - Kong/Nginx]\n                A2[React Web App] -->|HTTPS/REST| B\n\n                %% API Gateway & Auth\n                B --> C[Auth Service - OAuth 2.0]\n                C --> D[Identity Provider]\n\n                %% Backend Services\n                B --> E[User Service]\n                B --> F[Core Business Logic Service]\n                B --> G[Analytics Service]\n\n                %% Data Layer\n                E --> H[(PostgreSQL - User Data)]\n                F --> I[(MongoDB - Application Data)]\n                G --> J[(Redis Cache)]\n\n                %% Message Queue\n                F --> K[Message Queue - RabbitMQ/Kafka]\n                K --> L[Background Workers]\n\n                %% External Services\n                B --> M[Third-Party APIs]\n                F --> N[Cloud Storage - S3]\n\n                %% Integration with Reporting and Analytics\n                F --> O[Reporting and Analytics Service]\n                O --> P[Real-Time Data Visualization]\n\n                %% Customizable Workflows and Notifications\n                E --> Q[Customizable Workflows Service]\n                Q --> R[Customizable Notifications Service]\n\n                %% Task Segmentation\n                F --> S[Task Segmentation Service]\n                S --> T[Task Prioritization Service]\n\n                %% User Experience\n                A2 --> U[User Experience Service]\n                U --> V[Real-Time Task Updates Service]\n                U --> W[Customizable Notifications Service]\n        ]]>\n    </diagram>\n    <componentBreakdown>\n        <component name=\"React Native Mobile App\">Cross-platform mobile application built with React Native, providing native iOS and Android experiences.</component>\n        <component name=\"React Web App\">Responsive web application built with React, TypeScript, and modern UI libraries.</component>\n        <component name=\"API Gateway\">Kong or Nginx-based API gateway handling routing, rate limiting, authentication, and load balancing.</component>\n        <component name=\"Auth Service\">OAuth 2.0 / OpenID Connect authentication service with JWT token management.</component>\n        <component name=\"User Service\">Microservice handling user management, profiles, and preferences.</component>\n        <component name=\"Core Business Logic Service\">Main application service implementing business rules and workflows.</component>\n        <component name=\"PostgreSQL\">Relational database for structured user and transactional data.</component>\n        <component name=\"MongoDB\">NoSQL database for flexible, document-based application data.</component>\n        <component name=\"Redis Cache\">In-memory cache for session management and performance optimization.</component>\n        <component name=\"Message Queue\">Asynchronous message processing using RabbitMQ or Kafka for event-driven architecture.</component>\n        <component name=\"Third-Party APIs\">Integration with third-party APIs for data exchange and services.</component>\n        <component name=\"Cloud Storage - S3\">Cloud storage service for storing and retrieving application data.</component>\n        <component name=\"Reporting and Analytics Service\">Service providing real-time reporting and analytics for task management.</component>\n        <component name=\"Real-Time Data Visualization\">Service providing real-time data visualization for task management.</component>\n        <component name=\"Customizable Workflows Service\">Service providing customizable workflows for task management.</component>\n        <component name=\"Customizable Notifications Service\">Service providing customizable notifications for task management.</component>\n        <component name=\"Task Segmentation Service\">Service providing task segmentation for task management.</component>\n        <component name=\"Task Prioritization Service\">Service providing task prioritization for task management.</component>\n        <component name=\"User Experience Service\">Service providing user experience for task management.</component>\n    </componentBreakdown>\n</systemArchitecture>\n```\n\nNote that this is a generated XML document based on the provided input data, and it may require modifications to fit the specific requirements of the Complete Test - Task Management App.",
+      "architecture_html": "<!DOCTYPE html>\nBelow is the transformed HTML document with an interactive Mermaid diagram:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Complete Test - Task Management App System Architecture</title>\n    <style>\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, \"SF Pro Display\", sans-serif;\n            background-color: #f5f5f7;\n        }\n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 0 var(--space-lg);\n            background-color: #ffffff;\n            border-radius: 10px;\n            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);\n        }\n        .mermaid {\n            width: 100%;\n            height: 600px;\n            background-color: #ffffff;\n            border-radius: 10px;\n            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);\n        }\n        .component-breakdown {\n            padding: 0 var(--space-lg);\n        }\n        .component {\n            margin-bottom: 20px;\n            padding: 10px;\n            border-radius: 10px;\n            background-color: #ffffff;\n            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);\n        }\n        .component-name {\n            font-weight: bold;\n            font-size: 18px;\n            color: #333333;\n        }\n        .component-description {\n            font-size: 14px;\n            color: #666666;\n        }\n    </style>\n    <script src=\"https://cdn.jsdelivr.net/npm/mermaid@8.4.0/dist/mermaid.min.js\"></script>\n    <script>\n        mermaid.initialize({\n            startOnLoad: true,\n            theme: 'base',\n            themeVariables: {\n                primaryColor: '#1a1a2e',\n                primaryTextColor: '#ffffff',\n                primaryBorderColor: '#00ffcc',\n                lineColor: '#00ffcc',\n                secondaryColor: '#2a2a3e',\n                tertiaryColor: '#3a2a4e',\n                fontFamily: '-apple-system, BlinkMacSystemFont, \"SF Pro Display\", sans-serif'\n            }\n        });\n    </script>\n</head>\n<body>\n    <div class=\"container\">\n        <h1>Complete Test - Task Management App System Architecture</h1>\n        <div class=\"mermaid\">\n            <![CDATA[\n                graph TD\n                    %% Frontend Layer\n                    A[React Native Mobile App] -->|HTTPS/REST| B[API Gateway - Kong/Nginx]\n                    A2[React Web App] -->|HTTPS/REST| B\n\n                    %% API Gateway & Auth\n                    B --> C[Auth Service - OAuth 2.0]\n                    C --> D[Identity Provider]\n\n                    %% Backend Services\n                    B --> E[User Service]\n                    B --> F[Core Business Logic Service]\n                    B --> G[Analytics Service]\n\n                    %% Data Layer\n                    E --> H[(PostgreSQL - User Data)]\n                    F --> I[(MongoDB - Application Data)]\n                    G --> J[(Redis Cache)]\n\n                    %% Message Queue\n                    F --> K[Message Queue - RabbitMQ/Kafka]\n                    K --> L[Background Workers]\n\n                    %% External Services\n                    B --> M[Third-Party APIs]\n                    F --> N[Cloud Storage - S3]\n\n                    %% Integration with Reporting and Analytics\n                    F --> O[Reporting and Analytics Service]\n                    O --> P[Real-Time Data Visualization]\n\n                    %% Customizable Workflows and Notifications\n                    E --> Q[Customizable Workflows Service]\n                    Q --> R[Customizable Notifications Service]\n\n                    %% Task Segmentation\n                    F --> S[Task Segmentation Service]\n                    S --> T[Task Prioritization Service]\n\n                    %% User Experience\n                    A2 --> U[User Experience Service]\n                    U --> V[Real-Time Task Updates Service]\n                    U --> W[Customizable Notifications Service]\n            ]]>\n        </div>\n        <div class=\"component-breakdown\">\n            <div class=\"component\">\n                <div class=\"component-name\">React Native Mobile App</div>\n                <div class=\"component-description\">Cross-platform mobile application built with React Native, providing native iOS and Android experiences.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">React Web App</div>\n                <div class=\"component-description\">Responsive web application built with React, TypeScript, and modern UI libraries.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">API Gateway</div>\n                <div class=\"component-description\">Kong or Nginx-based API gateway handling routing, rate limiting, authentication, and load balancing.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">Auth Service</div>\n                <div class=\"component-description\">OAuth 2.0 / OpenID Connect authentication service with JWT token management.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">User Service</div>\n                <div class=\"component-description\">Microservice handling user management, profiles, and preferences.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">Core Business Logic Service</div>\n                <div class=\"component-description\">Main application service implementing business rules and workflows.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">PostgreSQL</div>\n                <div class=\"component-description\">Relational database for structured user and transactional data.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">MongoDB</div>\n                <div class=\"component-description\">NoSQL database for flexible, document-based application data.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">Redis Cache</div>\n                <div class=\"component-description\">In-memory cache for session management and performance optimization.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">Message Queue</div>\n                <div class=\"component-description\">Asynchronous message processing using RabbitMQ or Kafka for event-driven architecture.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">Third-Party APIs</div>\n                <div class=\"component-description\">Integration with third-party APIs for data exchange and services.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">Cloud Storage - S3</div>\n                <div class=\"component-description\">Cloud storage service for storing and retrieving application data.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">Reporting and Analytics Service</div>\n                <div class=\"component-description\">Service providing real-time reporting and analytics for task management.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">Real-Time Data Visualization</div>\n                <div class=\"component-description\">Service providing real-time data visualization for task management.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">Customizable Workflows Service</div>\n                <div class=\"component-description\">Service providing customizable workflows for task management.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">Customizable Notifications Service</div>\n                <div class=\"component-description\">Service providing customizable notifications for task management.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">Task Segmentation Service</div>\n                <div class=\"component-description\">Service providing task segmentation for task management.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">Task Prioritization Service</div>\n                <div class=\"component-description\">Service providing task prioritization for task management.</div>\n            </div>\n            <div class=\"component\">\n                <div class=\"component-name\">User Experience Service</div>\n                <div class=\"component-description\">Service providing user experience for task management.</div>\n            </div>\n        </div>\n    </div>\n    <footer>\n        <div class=\"logo\">\n            <img src=\"https://example.com/logo.png\" alt=\"AICOE Logo\">\n            <span style=\"font-size: 18px; color: #00ffcc;\">AICOE</span>\n        </div>\n        <p>Copyright 2023 AICOE. All rights reserved.</p>\n    </footer>\n</body>\n</html>\n```\n\nThis HTML document includes an interactive Mermaid diagram, a component breakdown with detailed descriptions, and a professional styling following the AICOE branding guidelines.",
       "project_name": "Complete Test - Task Management App"
     },
     "gallery": {
@@ -604,67 +634,67 @@
     {
       "name": "storage",
       "status": "completed",
-      "duration": 0.000583
+      "duration": 0.000494
     },
     {
       "name": "transcript",
       "status": "completed",
-      "duration": 13.083236
+      "duration": 8.439232
     },
     {
       "name": "researcher",
       "status": "completed",
-      "duration": 21.136917
+      "duration": 8.673371
     },
     {
       "name": "requirements",
       "status": "completed",
-      "duration": 12.432179
+      "duration": 21.016991
     },
     {
       "name": "knowledge_base",
       "status": "completed",
-      "duration": 5.463631
+      "duration": 5.272086
     },
     {
       "name": "prd",
       "status": "completed",
-      "duration": 50.651138
+      "duration": 35.278374
     },
     {
       "name": "mockup",
       "status": "completed",
-      "duration": 98.637047
+      "duration": 87.219716
     },
     {
       "name": "synthetic_data",
       "status": "completed",
-      "duration": 15.573932
+      "duration": 32.101228
     },
     {
       "name": "commercial_proposal",
       "status": "completed",
-      "duration": 23.078636
+      "duration": 22.292604
     },
     {
       "name": "bom",
       "status": "completed",
-      "duration": 25.193564
+      "duration": 18.141285
     },
     {
       "name": "architecture_diagram",
       "status": "completed",
-      "duration": 34.574114
+      "duration": 33.79566
     },
     {
       "name": "reviewer",
       "status": "failed",
-      "duration": 0.000177
+      "duration": 0.000234
     },
     {
       "name": "gallery",
       "status": "completed",
-      "duration": 0.000538
+      "duration": 0.000722
     }
   ]
 }

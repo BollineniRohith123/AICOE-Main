@@ -5,17 +5,13 @@
             <item name="Web Server Hosting (2 instances)" provider="Vercel/Netlify" costPerMonth="40.00" />
             <item name="API Server Hosting (2 instances)" provider="AWS/GCP" costPerMonth="100.00" />
             <item name="Managed MongoDB" provider="MongoDB Atlas" costPerMonth="75.00" />
-            <item name="Event-Driven Architecture" provider="AWS/GCP" costPerMonth="50.00" />
         </category>
         <category name="Third-Party Services">
             <item name="LLM API Usage" provider="OpenAI/Anthropic" costPerMonth="150.00" />
-            <item name="Google Calendar Integration" provider="Google Cloud" costPerMonth="20.00" />
-            <item name="Gmail Integration" provider="Google Cloud" costPerMonth="10.00" />
-            <item name="Slack Integration" provider="Slack" costPerMonth="5.00" />
         </category>
         <category name="Software Licenses">
-            <item name="Task Management Software" provider="Complete Test" costPerMonth="0.00" />
+            <item name="Task Management Software License" provider="Complete Test" costPerMonth="500.00" />
         </category>
     </items>
-    <totalCostPerMonth>315.00</totalCostPerMonth>
+    <totalCostPerMonth>615.00</totalCostPerMonth>
 </billOfMaterials>

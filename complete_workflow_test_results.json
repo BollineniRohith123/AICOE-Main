@@ -4,7 +4,7 @@
       "test": "API Health Check",
       "success": true,
       "details": "Backend API is running",
-      "timestamp": "2025-11-01T20:08:45.081440",
+      "timestamp": "2025-11-01T20:12:09.599323",
       "response_data": {
         "message": "AICOE Automation Platform API",
         "version": "1.0.0",
@@ -15,10 +15,10 @@
       "test": "Start Workflow",
       "success": true,
       "details": "Workflow initiated successfully",
-      "timestamp": "2025-11-01T20:08:45.092178",
+      "timestamp": "2025-11-01T20:12:09.611023",
       "response_data": {
-        "project_id": "566dd3a0-5e4b-43ef-94fd-5d4db851d0ca",
-        "workflow_id": "workflow_20251101_200845_566dd3a0",
+        "project_id": "4fca9be2-cc33-4917-b565-9a558fd66069",
+        "workflow_id": "workflow_20251101_201209_4fca9be2",
         "status": "started"
       }
     },
@@ -26,40 +26,53 @@
       "test": "WebSocket Connection",
       "success": true,
       "details": "Connected to WebSocket successfully",
-      "timestamp": "2025-11-01T20:08:45.134107",
+      "timestamp": "2025-11-01T20:12:09.651925",
       "response_data": null
     },
     {
       "test": "Complete Workflow Execution",
-      "success": false,
-      "details": "Workflow failed after 6.5s",
-      "timestamp": "2025-11-01T20:08:51.622163",
+      "success": true,
+      "details": "Workflow completed successfully in 272.3s",
+      "timestamp": "2025-11-01T20:16:41.909244",
       "response_data": {
         "completed_agents": [
-          "storage"
+          "storage",
+          "transcript",
+          "researcher",
+          "requirements",
+          "knowledge_base",
+          "prd",
+          "mockup",
+          "synthetic_data",
+          "commercial_proposal",
+          "bom",
+          "architecture_diagram",
+          "gallery"
         ],
-        "failed_at": 1
+        "total_agents": 12,
+        "expected_agents": 12,
+        "execution_time": 272.2569811344147
       }
     },
     {
       "test": "Artifact Verification",
       "success": false,
       "details": "HTTP 404",
-      "timestamp": "2025-11-01T20:08:51.639075",
+      "timestamp": "2025-11-01T20:16:41.967931",
       "response_data": "{\"detail\":\"Project not found\"}"
     },
     {
       "test": "Database Persistence",
       "success": false,
       "details": "HTTP 404",
-      "timestamp": "2025-11-01T20:08:51.647310",
+      "timestamp": "2025-11-01T20:16:41.976140",
       "response_data": "{\"detail\":\"Project not found\"}"
     },
     {
       "test": "File System Verification",
       "success": true,
       "details": "Found 5/5 directories + results file",
-      "timestamp": "2025-11-01T20:08:51.647474",
+      "timestamp": "2025-11-01T20:16:41.976328",
       "response_data": {
         "project_dir": "/app/backend/storage/Complete Test - Task Management App",
         "found_dirs": [
@@ -76,10 +89,32 @@
   ],
   "agent_progress": {
     "storage": "completed",
-    "transcript": "failed"
+    "transcript": "completed",
+    "researcher": "completed",
+    "requirements": "completed",
+    "knowledge_base": "completed",
+    "prd": "completed",
+    "mockup": "completed",
+    "synthetic_data": "completed",
+    "commercial_proposal": "completed",
+    "bom": "completed",
+    "architecture_diagram": "completed",
+    "reviewer": "failed",
+    "gallery": "completed"
   },
   "completed_agents": [
-    "storage"
+    "storage",
+    "transcript",
+    "researcher",
+    "requirements",
+    "knowledge_base",
+    "prd",
+    "mockup",
+    "synthetic_data",
+    "commercial_proposal",
+    "bom",
+    "architecture_diagram",
+    "gallery"
   ],
   "workflow_results": null
 }
