@@ -20,7 +20,7 @@ class LLMClient:
         self,
         api_key: Optional[str] = None,
         provider: str = "openrouter",
-        model: str = "x-ai/grok-code-fast-1"
+        model: str = "meta-llama/llama-3.2-3b-instruct:free"
     ):
         self.api_key = api_key or os.getenv("OPENROUTER_API_KEY")
         if not self.api_key:
