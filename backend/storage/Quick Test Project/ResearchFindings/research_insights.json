@@ -1,0 +1,40 @@
+{
+  "company_name": "Quick Test Project",
+  "product_type": "task management",
+  "search_queries_used": [
+    "task management industry trends 2025 best practices",
+    "best task management applications competitors market leaders",
+    "task management technical standards architecture patterns",
+    "task management user experience expectations features",
+    "task management development best practices design patterns"
+  ],
+  "industry_trends": [
+    "Modern cloud-native architecture",
+    "Mobile-first design",
+    "AI/ML integration"
+  ],
+  "competitor_insights": [
+    "Focus on user experience",
+    "Scalable infrastructure",
+    "Real-time capabilities"
+  ],
+  "best_practices": [
+    "Follow industry-standard design patterns",
+    "Implement comprehensive security measures",
+    "Ensure scalability and performance",
+    "Prioritize user experience and accessibility",
+    "Use modern technology stack"
+  ],
+  "technical_standards": [
+    "RESTful API design",
+    "Responsive web design",
+    "Cloud deployment"
+  ],
+  "user_expectations": [
+    "Intuitive interface",
+    "Fast performance",
+    "Mobile accessibility"
+  ],
+  "regulatory_requirements": [],
+  "sources": []
+}

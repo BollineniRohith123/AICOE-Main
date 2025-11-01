@@ -14,5 +14,15 @@
       "size": 969
     },
     "user": "system"
+  },
+  {
+    "timestamp": "2025-11-01T14:36:23.056580",
+    "action": "file_saved",
+    "details": {
+      "folder": "research",
+      "filename": "research_insights.json",
+      "size": 1192
+    },
+    "user": "system"
   }
 ]
