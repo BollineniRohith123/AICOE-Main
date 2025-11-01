@@ -26,7 +26,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/input" element={<TranscriptInput />} />
           <Route path="/processing" element={<ProcessingView />} />
-          <Route path="/results" element={<Results />} />
+          <Route path="/results" element={<ResultsNew />} />
+          <Route path="/results-old" element={<Results />} />
         </Routes>
         <AICOELogo />
       </BrowserRouter>
