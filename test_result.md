@@ -318,6 +318,7 @@ test_plan:
     - "LLM Integration Testing"
     - "End-to-End Workflow Execution"
     - "Artifact Generation Verification"
+    - "Complete Frontend End-to-End Testing with Messy Transcript"
 
 agent_communication:
   - agent: "testing"
