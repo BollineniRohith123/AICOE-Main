@@ -44,5 +44,25 @@
       "size": 2175
     },
     "user": "system"
+  },
+  {
+    "timestamp": "2025-11-02T04:14:45.615072",
+    "action": "file_saved",
+    "details": {
+      "folder": "bom",
+      "filename": "bom_v1.xml",
+      "size": 1595
+    },
+    "user": "system"
+  },
+  {
+    "timestamp": "2025-11-02T04:14:45.615420",
+    "action": "file_saved",
+    "details": {
+      "folder": "bom",
+      "filename": "bom_v1.html",
+      "size": 5153
+    },
+    "user": "system"
   }
 ]

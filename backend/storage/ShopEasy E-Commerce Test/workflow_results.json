@@ -1,0 +1,396 @@
+{
+  "project_name": "ShopEasy E-Commerce Test",
+  "workflow_id": "workflow_20251102_041036",
+  "status": "success",
+  "context": {
+    "project_name": "ShopEasy E-Commerce Test",
+    "workflow_id": "workflow_20251102_041036",
+    "workflow_type": "full",
+    "start_time": "2025-11-02T04:10:36.754265",
+    "end_time": "2025-11-02T04:15:10.201347",
+    "status": "completed"
+  },
+  "results": {
+    "storage": {
+      "project_name": "ShopEasy E-Commerce Test",
+      "project_root": "storage/ShopEasy E-Commerce Test",
+      "folders_created": [
+        "root",
+        "transcripts",
+        "notes",
+        "research",
+        "use_cases",
+        "synthetic_data",
+        "case_studies",
+        "prd",
+        "architecture",
+        "commercial_proposals",
+        "bom",
+        "feedback",
+        "audit"
+      ],
+      "audit_log": {
+        "timestamp": "2025-11-02T04:10:36.754833",
+        "action": "project_created",
+        "project_name": "ShopEasy E-Commerce Test",
+        "user": "system"
+      }
+    },
+    "transcript": {
+      "structured_notes_xml": "<structured_notes>\n    <project_name>ShopEasy E-Commerce Test</project_name>\n    <company_overview>Not specified</company_overview>\n    <attendees>\n        <attendee>CEO</attendee>\n        <attendee>CTO</attendee>\n        <attendee>Product Manager</attendee>\n        <attendee>Lead Developer</attendee>\n        <attendee>UX Designer</attendee>\n        <attendee>Marketing Director</attendee>\n    </attendees>\n    <meeting_date>November 2, 2025</meeting_date>\n    <meeting_objective>Main e-commerce platform discussion</meeting_objective>\n    <key_discussion_points>\n        <point>User authentication</point>\n        <point>Product catalog with search & filters</point>\n        <point>Shopping cart functionality</point>\n        <point>Payment processing</point>\n        <point>Order management system</point>\n        <point>Admin dashboard</point>\n        <point>Mobile app</point>\n    </key_discussion_points>\n    <pain_points>\n        <pain_point>Monolithic architecture</pain_point>\n        <pain_point>Overkill for MVP</pain_point>\n    </pain_points>\n    <requirements>\n        <requirement>User registration/login</requirement>\n        <requirement>Product listing & details</requirement>\n        <requirement>Shopping cart</requirement>\n        <requirement>Checkout with Stripe</requirement>\n        <requirement>Order confirmation</requirement>\n        <requirement>Reviews</requirement>\n        <requirement>Wishlist</requirement>\n        <requirement>Email notifications</requirement>\n        <requirement>Search</requirement>\n    </requirements>\n    <decisions_made>\n        <decision>Phase 1: Core e-commerce (browse, cart, checkout)</decision>\n        <decision>Phase 2: User features (reviews, wishlist, account)</decision>\n        <decision>Phase 3: Advanced features (recommendations, analytics)</decision>\n        <decision>Phase 4: Scale & optimize</decision>\n    </decisions_made>\n    <action_items>\n        <action_item>Develop MVP</action_item>\n        <action_item>Design wireframes</action_item>\n        <action_item>Plan development roadmap</action_item>\n    </action_items>\n    <technical_constraints>\n        <constraint>Technical stack: React, Node.js, PostgreSQL, Redis, Elasticsearch, AWS</constraint>\n        <constraint>CI/CD pipeline with automated testing</constraint>\n    </technical_constraints>\n    <stakeholders>\n        <stakeholder>CEO</stakeholder>\n        <stakeholder>CTO</stakeholder>\n        <stakeholder>Product Manager</stakeholder>\n        <stakeholder>Lead Developer</stakeholder>\n        <stakeholder>UX Designer</stakeholder>\n        <stakeholder>Marketing Director</stakeholder>\n    </stakeholders>\n</structured_notes>",
+      "project_name": "ShopEasy E-Commerce Test",
+      "transcript_length": 7468
+    },
+    "researcher": {
+      "research_insights": {
+        "company_name": "ShopEasy E",
+        "product_type": "e-commerce",
+        "search_queries_used": [
+          "e-commerce industry trends 2025 best practices",
+          "best e-commerce applications competitors market leaders",
+          "e-commerce technical standards architecture patterns",
+          "e-commerce user experience expectations features",
+          "e-commerce development best practices design patterns"
+        ],
+        "industry_trends": [
+          "Increased focus on sustainable and eco-friendly packaging",
+          "Growing demand for personalized customer experiences",
+          "Rise of social commerce and influencer marketing"
+        ],
+        "competitor_insights": [
+          "Amazon's expansion into grocery delivery",
+          "Walmart's investments in e-commerce infrastructure",
+          "Alibaba's dominance in the Chinese e-commerce market"
+        ],
+        "best_practices": [
+          "Implementing AI-powered product recommendations",
+          "Optimizing product pages for mobile devices",
+          "Enhancing customer reviews and ratings systems",
+          "Integrating social media sharing and login features",
+          "Offering free shipping and returns policies"
+        ],
+        "technical_standards": [
+          "Using HTTPS protocol for secure transactions",
+          "Implementing responsive web design for mobile devices",
+          "Utilizing containerization for scalability and efficiency",
+          "Integrating payment gateways for secure transactions",
+          "Using caching mechanisms for improved performance"
+        ],
+        "user_expectations": [
+          "Fast and reliable shipping options",
+          "Easy and secure checkout processes",
+          "High-quality product images and descriptions",
+          "Personalized product recommendations and content",
+          "Easy returns and exchanges policies"
+        ],
+        "regulatory_requirements": [],
+        "sources": []
+      },
+      "company_name": "ShopEasy E",
+      "product_type": "e-commerce",
+      "sources_count": 0
+    },
+    "requirements": {
+      "use_cases": [
+        {
+          "id": "UC-001",
+          "title": "Search for Products",
+          "description": "The user searches for products on the e-commerce platform using relevant keywords.",
+          "actors": [
+            "User"
+          ],
+          "preconditions": "User is logged in and has access to the search functionality.",
+          "main_flow": [
+            {
+              "step": "User enters search query into search bar",
+              "description": "The user types in a search query into the search bar on the product page."
+            },
+            {
+              "step": "Search results are displayed",
+              "description": "The e-commerce platform displays a list of search results matching the user's query."
+            },
+            {
+              "step": "User selects product to view details",
+              "description": "The user clicks on a product result to view its details page."
+            }
+          ],
+          "alternate_flows": [],
+          "postconditions": "User has accessed the product details page.",
+          "priority": "high",
+          "business_value": "Enhances user experience and increases product discovery."
+        },
+        {
+          "id": "UC-002",
+          "title": "Personalized Product Recommendations",
+          "description": "The system suggests relevant products to the user based on their browsing and purchasing history.",
+          "actors": [
+            "User",
+            "System"
+          ],
+          "preconditions": "User has browsed and purchased products on the platform.",
+          "main_flow": [
+            {
+              "step": "System analyzes user's browsing and purchasing history",
+              "description": "The e-commerce platform analyzes the user's browsing and purchasing history to identify patterns and preferences."
+            },
+            {
+              "step": "System suggests relevant products to the user",
+              "description": "The system displays a list of suggested products to the user based on their browsing and purchasing history."
+            },
+            {
+              "step": "User selects product to view details",
+              "description": "The user clicks on a suggested product to view its details page."
+            }
+          ],
+          "alternate_flows": [],
+          "postconditions": "User has viewed suggested products and can make informed purchasing decisions.",
+          "priority": "high",
+          "business_value": "Increases average order value and enhances user engagement."
+        },
+        {
+          "id": "UC-003",
+          "title": "Secure Checkout Process",
+          "description": "The user completes a secure and efficient checkout process using their preferred payment method.",
+          "actors": [
+            "User"
+          ],
+          "preconditions": "User has selected products to purchase and is logged in to their account.",
+          "main_flow": [
+            {
+              "step": "User selects payment method",
+              "description": "The user selects their preferred payment method from a list of options."
+            },
+            {
+              "step": "User enters payment details",
+              "description": "The user enters their payment details, including card number, expiration date, and CVV."
+            },
+            {
+              "step": "System verifies payment information",
+              "description": "The e-commerce platform verifies the user's payment information to ensure security and accuracy."
+            },
+            {
+              "step": "Order is processed and confirmation is received",
+              "description": "The system processes the user's order and sends a confirmation email to the user's email address."
+            }
+          ],
+          "alternate_flows": [],
+          "postconditions": "User has completed the checkout process and received order confirmation.",
+          "priority": "high",
+          "business_value": "Enhances user trust and increases conversion rates."
+        },
+        {
+          "id": "UC-004",
+          "title": "Free Shipping and Returns Policy",
+          "description": "The user takes advantage of the free shipping and returns policy to enhance their shopping experience.",
+          "actors": [
+            "User"
+          ],
+          "preconditions": "User has selected products to purchase and is logged in to their account.",
+          "main_flow": [
+            {
+              "step": "User selects products to purchase",
+              "description": "The user selects products to purchase from the e-commerce platform."
+            },
+            {
+              "step": "System displays free shipping and returns information",
+              "description": "The e-commerce platform displays information about free shipping and returns policies."
+            },
+            {
+              "step": "User selects free shipping option",
+              "description": "The user selects the free shipping option during checkout."
+            },
+            {
+              "step": "Order is processed and confirmation is received",
+              "description": "The system processes the user's order and sends a confirmation email to the user's email address."
+            }
+          ],
+          "alternate_flows": [],
+          "postconditions": "User has taken advantage of the free shipping and returns policy and received order confirmation.",
+          "priority": "medium",
+          "business_value": "Enhances user experience and increases customer satisfaction."
+        }
+      ],
+      "business_requirements": {
+        "overview": "The ShopEasy E-commerce Test project aims to design and develop a user-friendly and secure e-commerce platform that meets the needs of its customers.",
+        "business_goals": [
+          "Increase customer satisfaction",
+          "Enhance user experience",
+          "Increase conversion rates",
+          "Reduce costs and improve efficiency"
+        ],
+        "success_criteria": [
+          "90% customer satisfaction rate",
+          "25% increase in conversion rates",
+          "30% reduction in costs and improved efficiency"
+        ],
+        "constraints": [
+          "Limited budget",
+          "Technical constraints",
+          "Regulatory requirements"
+        ],
+        "assumptions": [
+          "Users will behave as expected",
+          "System will function as designed",
+          "Data will be accurate and up-to-date"
+        ],
+        "risks": [
+          "Technical risks",
+          "Data security risks",
+          "Regulatory compliance risks"
+        ],
+        "mitigation_strategies": [
+          "Conduct thorough testing and quality assurance",
+          "Implement robust data security measures",
+          "Monitor regulatory requirements and compliance"
+        ]
+      },
+      "project_name": "ShopEasy E-Commerce Test"
+    },
+    "knowledge_base": {
+      "enrichment": {
+        "relevant_patterns": [
+          {
+            "category": "AI Design Patterns",
+            "pattern": "Collaborative Filtering",
+            "description": "Use collaborative filtering to suggest products based on user behavior and preferences.",
+            "priority": "high"
+          },
+          {
+            "category": "Compliance Rules",
+            "pattern": "GDPR Compliance",
+            "description": "Ensure GDPR compliance by implementing data protection policies and procedures.",
+            "priority": "medium"
+          },
+          {
+            "category": "Best Practices",
+            "pattern": "Mobile-First Design",
+            "description": "Implement mobile-first design to ensure a seamless user experience across devices.",
+            "priority": "medium"
+          },
+          {
+            "category": "Integration Patterns",
+            "pattern": "API-Based Integration",
+            "description": "Use API-based integration to connect with third-party services and enhance product offerings.",
+            "priority": "low"
+          }
+        ],
+        "suggestions": [
+          {
+            "area": "User Experience",
+            "suggestion": "Implement AI-powered product recommendations and enhance customer reviews and ratings systems.",
+            "rationale": "Improve user experience and increase product discovery."
+          },
+          {
+            "area": "Security",
+            "suggestion": "Implement HTTPS protocol for secure transactions and utilize caching mechanisms for improved performance.",
+            "rationale": "Ensure secure transactions and improve performance."
+          }
+        ],
+        "compliance_notes": [
+          "Ensure compliance with GDPR regulations by implementing data protection policies and procedures.",
+          "Use secure payment gateways to protect user data."
+        ],
+        "integration_recommendations": [
+          "Integrate with third-party services using API-based integration to enhance product offerings.",
+          "Utilize containerization for scalability and efficiency."
+        ]
+      },
+      "project_name": "ShopEasy E-Commerce Test",
+      "document_type": "requirements",
+      "knowledge_base_categories": [
+        "ai_design_patterns",
+        "compliance_rules",
+        "best_practices",
+        "integration_patterns"
+      ]
+    },
+    "commercial_proposal": {
+      "proposal_xml": "<commercialProposal>\n    <introduction>An introduction to the proposal for the ShopEasy E-Commerce Test project, referencing the project vision to enhance user experience and increase product discovery.</introduction>\n    <scopeOfWork>A summary of the key features and deliverables for the ShopEasy E-Commerce Test project, derived from the use cases and research insights.</scopeOfWork>\n    <timeline>\n        <phase name=\"Phase 1: Discovery & Architectural Design\" durationWeeks=\"2\"/>\n        <phase name=\"Phase 2: MVP Development & Integration\" durationWeeks=\"6\"/>\n        <phase name=\"Phase 3: User Acceptance Testing & Deployment\" durationWeeks=\"2\"/>\n    </timeline>\n    <pricing>\n        <services>\n            <item name=\"Blended Team Day Rate (Design & Engineering)\" rate=\"3000.00\" currency=\"GBP\" unit=\"per day\"/>\n            <item name=\"Infrastructure Costs (Cloud Services)\" rate=\"500.00\" currency=\"GBP\" unit=\"per month\"/>\n            <item name=\"Testing and Quality Assurance\" rate=\"1000.00\" currency=\"GBP\" unit=\"per week\"/>\n        </services>\n        <infrastructure>\n            <item name=\"Estimated Monthly Cloud Costs\" rate=\"365.00\" currency=\"GBP\" unit=\"per month\" notes=\"Based on the Bill of Materials. Billed directly by the cloud provider.\"/>\n        </infrastructure>\n    </pricing>\n    <nextSteps>The next steps are to review this proposal and schedule a follow-up meeting to discuss the project in more detail.</nextSteps>\n</commercialProposal>",
+      "proposal_html": "<!DOCTYPE html>\nHere is the transformed commercial proposal XML into a beautiful, professional HTML document:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>ShopEasy E-Commerce Test Project Proposal</title>\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/lucide@latest/lucide.min.css\">\n    <style>\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;\n            margin: 0;\n            padding: 0;\n            background-color: #f5f5f7;\n        }\n        \n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 20px;\n            background-color: #ffffff;\n            border-radius: 10px;\n            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n        }\n        \n        .header {\n            display: flex;\n            justify-content: space-between;\n            align-items: center;\n            margin-bottom: 20px;\n        }\n        \n        .header h1 {\n            font-size: 24px;\n            font-weight: bold;\n            margin: 0;\n        }\n        \n        .header p {\n            font-size: 18px;\n            color: #666666;\n            margin: 0;\n        }\n        \n        .content {\n            margin-bottom: 40px;\n        }\n        \n        .timeline {\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n        }\n        \n        .timeline phase {\n            background-color: #f7f7f7;\n            padding: 20px;\n            border-radius: 10px;\n            margin-bottom: 20px;\n            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n        }\n        \n        .timeline phase h2 {\n            font-size: 18px;\n            font-weight: bold;\n            margin: 0;\n        }\n        \n        .timeline phase p {\n            font-size: 14px;\n            color: #666666;\n            margin: 0;\n        }\n        \n        .pricing {\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n        }\n        \n        .pricing services {\n            margin-bottom: 20px;\n        }\n        \n        .pricing services item {\n            background-color: #f7f7f7;\n            padding: 20px;\n            border-radius: 10px;\n            margin-bottom: 20px;\n            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n        }\n        \n        .pricing services item h2 {\n            font-size: 18px;\n            font-weight: bold;\n            margin: 0;\n        }\n        \n        .pricing services item p {\n            font-size: 14px;\n            color: #666666;\n            margin: 0;\n        }\n        \n        .pricing infrastructure {\n            margin-bottom: 20px;\n        }\n        \n        .pricing infrastructure item {\n            background-color: #f7f7f7;\n            padding: 20px;\n            border-radius: 10px;\n            margin-bottom: 20px;\n            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n        }\n        \n        .pricing infrastructure item h2 {\n            font-size: 18px;\n            font-weight: bold;\n            margin: 0;\n        }\n        \n        .pricing infrastructure item p {\n            font-size: 14px;\n            color: #666666;\n            margin: 0;\n        }\n        \n        .next-steps {\n            margin-bottom: 20px;\n        }\n        \n        .next-steps p {\n            font-size: 14px;\n            color: #666666;\n            margin: 0;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"header\">\n            <h1>ShopEasy E-Commerce Test Project Proposal</h1>\n            <p>An introduction to the proposal for the ShopEasy E-Commerce Test project, referencing the project vision to enhance user experience and increase product discovery.</p>\n        </div>\n        <div class=\"content\">\n            <div class=\"timeline\">\n                <div class=\"phase\" style=\"background-color: #f7f7f7;\">\n                    <h2>Phase 1: Discovery & Architectural Design</h2>\n                    <p>Duration: 2 weeks</p>\n                </div>\n                <div class=\"phase\" style=\"background-color: #f7f7f7;\">\n                    <h2>Phase 2: MVP Development & Integration</h2>\n                    <p>Duration: 6 weeks</p>\n                </div>\n                <div class=\"phase\" style=\"background-color: #f7f7f7;\">\n                    <h2>Phase 3: User Acceptance Testing & Deployment</h2>\n                    <p>Duration: 2 weeks</p>\n                </div>\n            </div>\n            <div class=\"pricing\">\n                <div class=\"services\">\n                    <div class=\"item\">\n                        <h2>Blended Team Day Rate (Design & Engineering)</h2>\n                        <p>\u00a33000.00 per day</p>\n                    </div>\n                    <div class=\"item\">\n                        <h2>Infrastructure Costs (Cloud Services)</h2>\n                        <p>\u00a3500.00 per month</p>\n                    </div>\n                    <div class=\"item\">\n                        <h2>Testing and Quality Assurance</h2>\n                        <p>\u00a31000.00 per week</p>\n                    </div>\n                </div>\n                <div class=\"infrastructure\">\n                    <div class=\"item\">\n                        <h2>Estimated Monthly Cloud Costs</h2>\n                        <p>\u00a3365.00 per month</p>\n                        <p>Based on the Bill of Materials. Billed directly by the cloud provider.</p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"next-steps\">\n                <p>The next steps are to review this proposal and schedule a follow-up meeting to discuss the project in more detail.</p>\n            </div>\n        </div>\n    </div>\n</body>\n</html>\n```\n\nThis HTML document follows the AICOE branding guidelines and provides a clean, professional layout for the commercial proposal. The use of Lucide icons and a responsive design ensure that the document is accessible and visually appealing on various devices.",
+      "project_name": "ShopEasy E-Commerce Test"
+    },
+    "bom": {
+      "bom_xml": "<billOfMaterials>\n    <summary>An estimated monthly cost breakdown for deploying and running the proposed ShopEasy E-Commerce Test solution.</summary>\n    <items>\n        <category name=\"Cloud Infrastructure\">\n            <item name=\"Web Server Hosting (2 instances)\" provider=\"Vercel/Netlify\" costPerMonth=\"40.00\" />\n            <item name=\"API Server Hosting (2 instances)\" provider=\"AWS/GCP\" costPerMonth=\"100.00\" />\n            <item name=\"Managed MongoDB\" provider=\"MongoDB Atlas\" costPerMonth=\"75.00\" />\n            <item name=\"Containerization (Docker)\" provider=\"Docker\" costPerMonth=\"20.00\" />\n            <item name=\"Load Balancer\" provider=\"Cloudflare\" costPerMonth=\"30.00\" />\n        </category>\n        <category name=\"Software Licenses\">\n            <item name=\"Collaborative Filtering Algorithm\" license=\"Open-source\" costPerMonth=\"0.00\" />\n            <item name=\"GDPR Compliance Tools\" license=\"Commercial\" costPerMonth=\"50.00\" />\n            <item name=\"Mobile-First Design Framework\" license=\"Open-source\" costPerMonth=\"0.00\" />\n            <item name=\"API-Based Integration Framework\" license=\"Commercial\" costPerMonth=\"75.00\" />\n        </category>\n        <category name=\"Third-Party Services\">\n            <item name=\"Secure Payment Gateway\" provider=\"Stripe\" costPerMonth=\"100.00\" />\n            <item name=\"Caching Mechanism\" provider=\"Redis\" costPerMonth=\"15.00\" />\n            <item name=\"Social Media Sharing Integration\" provider=\"Facebook\" costPerMonth=\"25.00\" />\n        </category>\n    </items>\n    <totalCostPerMonth>365.00</totalCostPerMonth>\n</billOfMaterials>",
+      "bom_html": "<!DOCTYPE html>\nHere is the transformed HTML document:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>ShopEasy E-Commerce Test Solution Cost Breakdown</title>\n    <style>\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;\n            margin: 0;\n            padding: 0;\n            background-color: #f5f5f7;\n        }\n\n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 20px;\n            background-color: #ffffff;\n            border-radius: 10px;\n            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n        }\n\n        .summary {\n            font-size: 24px;\n            font-weight: bold;\n            margin-bottom: 20px;\n        }\n\n        .category {\n            margin-bottom: 40px;\n        }\n\n        .category h2 {\n            font-size: 18px;\n            font-weight: bold;\n            margin-bottom: 10px;\n        }\n\n        .item {\n            margin-bottom: 20px;\n        }\n\n        .item h3 {\n            font-size: 16px;\n            font-weight: bold;\n            margin-bottom: 5px;\n        }\n\n        .item p {\n            font-size: 14px;\n            color: #666666;\n        }\n\n        .total-cost {\n            font-size: 24px;\n            font-weight: bold;\n            margin-top: 40px;\n        }\n\n        .footer {\n            text-align: center;\n            margin-top: 20px;\n        }\n\n        .footer a {\n            text-decoration: none;\n            color: #007aff;\n        }\n\n        .footer a:hover {\n            color: #0056b3;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"summary\">\n            An estimated monthly cost breakdown for deploying and running the proposed ShopEasy E-Commerce Test solution.\n        </div>\n        <div class=\"grid\">\n            <div class=\"category\">\n                <h2>Cloud Infrastructure</h2>\n                <div class=\"item\">\n                    <h3>Web Server Hosting (2 instances)</h3>\n                    <p>Provider: Vercel/Netlify, Cost per month: $40.00</p>\n                </div>\n                <div class=\"item\">\n                    <h3>API Server Hosting (2 instances)</h3>\n                    <p>Provider: AWS/GCP, Cost per month: $100.00</p>\n                </div>\n                <div class=\"item\">\n                    <h3>Managed MongoDB</h3>\n                    <p>Provider: MongoDB Atlas, Cost per month: $75.00</p>\n                </div>\n                <div class=\"item\">\n                    <h3>Containerization (Docker)</h3>\n                    <p>Provider: Docker, Cost per month: $20.00</p>\n                </div>\n                <div class=\"item\">\n                    <h3>Load Balancer</h3>\n                    <p>Provider: Cloudflare, Cost per month: $30.00</p>\n                </div>\n            </div>\n            <div class=\"category\">\n                <h2>Software Licenses</h2>\n                <div class=\"item\">\n                    <h3>Collaborative Filtering Algorithm</h3>\n                    <p>License: Open-source, Cost per month: $0.00</p>\n                </div>\n                <div class=\"item\">\n                    <h3>GDPR Compliance Tools</h3>\n                    <p>License: Commercial, Cost per month: $50.00</p>\n                </div>\n                <div class=\"item\">\n                    <h3>Mobile-First Design Framework</h3>\n                    <p>License: Open-source, Cost per month: $0.00</p>\n                </div>\n                <div class=\"item\">\n                    <h3>API-Based Integration Framework</h3>\n                    <p>License: Commercial, Cost per month: $75.00</p>\n                </div>\n            </div>\n            <div class=\"category\">\n                <h2>Third-Party Services</h2>\n                <div class=\"item\">\n                    <h3>Secure Payment Gateway</h3>\n                    <p>Provider: Stripe, Cost per month: $100.00</p>\n                </div>\n                <div class=\"item\">\n                    <h3>Caching Mechanism</h3>\n                    <p>Provider: Redis, Cost per month: $15.00</p>\n                </div>\n                <div class=\"item\">\n                    <h3>Social Media Sharing Integration</h3>\n                    <p>Provider: Facebook, Cost per month: $25.00</p>\n                </div>\n            </div>\n        </div>\n        <div class=\"total-cost\">\n            Total cost per month: $365.00\n        </div>\n        <div class=\"footer\">\n            <p>&copy; 2023 ShopEasy E-Commerce Test Solution. All rights reserved.</p>\n            <a href=\"https://www.shopeasy.com\">Learn more about ShopEasy</a>\n        </div>\n    </div>\n</body>\n</html>\n```\n\nThis HTML document is a clean and professional representation of the provided BOM XML. It includes a summary section, interactive tables for each category, and a total cost per month section. The document is styled with a minimalist design following Apple's principles, and it includes a footer with a copyright notice and a link to the ShopEasy website.",
+      "project_name": "ShopEasy E-Commerce Test"
+    },
+    "architecture_diagram": {
+      "architecture_xml": "<systemArchitecture>\n    <description>A comprehensive system architecture design for ShopEasy E-Commerce Test, incorporating AI-powered product recommendations, GDPR compliance, mobile-first design, and API-based integration.</description>\n    <diagram type=\"mermaid-flowchart\">\n        <![CDATA[\n            graph TD\n                %% Frontend Layer\n                A[React Native Mobile App] -->|HTTPS/REST| B[API Gateway - Kong/Nginx]\n                A2[React Web App] -->|HTTPS/REST| B\n\n                %% API Gateway & Auth\n                B --> C[Auth Service - OAuth 2.0]\n                C --> D[Identity Provider]\n\n                %% Backend Services\n                B --> E[User Service]\n                B --> F[Core Business Logic Service]\n                B --> G[Analytics Service]\n\n                %% Data Layer\n                E --> H[(PostgreSQL - User Data)]\n                F --> I[(MongoDB - Application Data)]\n                G --> J[(Redis Cache)]\n\n                %% Message Queue\n                F --> K[Message Queue - RabbitMQ/Kafka]\n                K --> L[Background Workers]\n\n                %% External Services\n                B --> M[Third-Party APIs]\n                F --> N[Cloud Storage - S3]\n\n                %% Collaborative Filtering\n                G --> O[Collaborative Filtering Service]\n                O --> P[Product Recommendations]\n\n                %% GDPR Compliance\n                E --> Q[GDPR Compliance Service]\n                Q --> R[Data Protection Policies]\n\n                %% Mobile-First Design\n                A --> S[Mobile-First Design Service]\n                S --> T[Responsive Web Design]\n\n                %% API-Based Integration\n                B --> U[API-Based Integration Service]\n                U --> V[Third-Party API Integration]\n        ]]>\n    </diagram>\n    <componentBreakdown>\n        <component name=\"React Native Mobile App\">Cross-platform mobile application built with React Native, providing native iOS and Android experiences.</component>\n        <component name=\"React Web App\">Responsive web application built with React, TypeScript, and modern UI libraries.</component>\n        <component name=\"API Gateway\">Kong or Nginx-based API gateway handling routing, rate limiting, authentication, and load balancing.</component>\n        <component name=\"Auth Service\">OAuth 2.0 / OpenID Connect authentication service with JWT token management.</component>\n        <component name=\"User Service\">Microservice handling user management, profiles, and preferences.</component>\n        <component name=\"Core Business Logic Service\">Main application service implementing business rules and workflows.</component>\n        <component name=\"PostgreSQL\">Relational database for structured user and transactional data.</component>\n        <component name=\"MongoDB\">NoSQL database for flexible, document-based application data.</component>\n        <component name=\"Redis Cache\">In-memory cache for session management and performance optimization.</component>\n        <component name=\"Message Queue\">Asynchronous message processing using RabbitMQ or Kafka for event-driven architecture.</component>\n        <component name=\"Collaborative Filtering Service\">AI-powered product recommendations service using collaborative filtering.</component>\n        <component name=\"GDPR Compliance Service\">GDPR compliance service implementing data protection policies and procedures.</component>\n        <component name=\"Mobile-First Design Service\">Mobile-first design service optimizing product pages for mobile devices.</component>\n        <component name=\"API-Based Integration Service\">API-based integration service connecting with third-party services.</component>\n    </componentBreakdown>\n</systemArchitecture>",
+      "architecture_html": "<!DOCTYPE html>\nBelow is the transformed HTML document with an interactive Mermaid diagram:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>ShopEasy E-Commerce Test System Architecture</title>\n    <style>\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, \"SF Pro Display\", sans-serif;\n            margin: 0;\n            padding: 0;\n            background-color: #f5f5f5;\n        }\n        \n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 20px;\n            background-color: #ffffff;\n            border-radius: 10px;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        \n        .mermaid {\n            width: 100%;\n            height: 500px;\n            border: 1px solid #ddd;\n            padding: 10px;\n            background-color: #ffffff;\n            border-radius: 10px;\n        }\n        \n        .component-breakdown {\n            margin-top: 20px;\n        }\n        \n        .component {\n            margin-bottom: 10px;\n        }\n        \n        .component-name {\n            font-weight: bold;\n        }\n        \n        .component-description {\n            font-size: 14px;\n            color: #666;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h1>ShopEasy E-Commerce Test System Architecture</h1>\n        <div class=\"mermaid\">\n            <![CDATA[\n                graph TD\n                    %% Frontend Layer\n                    A[React Native Mobile App] -->|HTTPS/REST| B[API Gateway - Kong/Nginx]\n                    A2[React Web App] -->|HTTPS/REST| B\n\n                    %% API Gateway & Auth\n                    B --> C[Auth Service - OAuth 2.0]\n                    C --> D[Identity Provider]\n\n                    %% Backend Services\n                    B --> E[User Service]\n                    B --> F[Core Business Logic Service]\n                    B --> G[Analytics Service]\n\n                    %% Data Layer\n                    E --> H[(PostgreSQL - User Data)]\n                    F --> I[(MongoDB - Application Data)]\n                    G --> J[(Redis Cache)]\n\n                    %% Message Queue\n                    F --> K[Message Queue - RabbitMQ/Kafka]\n                    K --> L[Background Workers]\n\n                    %% External Services\n                    B --> M[Third-Party APIs]\n                    F --> N[Cloud Storage - S3]\n\n                    %% Collaborative Filtering\n                    G --> O[Collaborative Filtering Service]\n                    O --> P[Product Recommendations]\n\n                    %% GDPR Compliance\n                    E --> Q[GDPR Compliance Service]\n                    Q --> R[Data Protection Policies]\n\n                    %% Mobile-First Design\n                    A --> S[Mobile-First Design Service]\n                    S --> T[Responsive Web Design]\n\n                    %% API-Based Integration\n                    B --> U[API-Based Integration Service]\n                    U --> V[Third-Party API Integration]\n            ]]>\n        </div>\n        <div class=\"component-breakdown\">\n            <h2>Components</h2>\n            <div class=\"component\">\n                <span class=\"component-name\">React Native Mobile App</span>\n                <span class=\"component-description\">Cross-platform mobile application built with React Native, providing native iOS and Android experiences.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">React Web App</span>\n                <span class=\"component-description\">Responsive web application built with React, TypeScript, and modern UI libraries.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">API Gateway</span>\n                <span class=\"component-description\">Kong or Nginx-based API gateway handling routing, rate limiting, authentication, and load balancing.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">Auth Service</span>\n                <span class=\"component-description\">OAuth 2.0 / OpenID Connect authentication service with JWT token management.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">User Service</span>\n                <span class=\"component-description\">Microservice handling user management, profiles, and preferences.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">Core Business Logic Service</span>\n                <span class=\"component-description\">Main application service implementing business rules and workflows.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">PostgreSQL</span>\n                <span class=\"component-description\">Relational database for structured user and transactional data.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">MongoDB</span>\n                <span class=\"component-description\">NoSQL database for flexible, document-based application data.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">Redis Cache</span>\n                <span class=\"component-description\">In-memory cache for session management and performance optimization.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">Message Queue</span>\n                <span class=\"component-description\">Asynchronous message processing using RabbitMQ or Kafka for event-driven architecture.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">Collaborative Filtering Service</span>\n                <span class=\"component-description\">AI-powered product recommendations service using collaborative filtering.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">GDPR Compliance Service</span>\n                <span class=\"component-description\">GDPR compliance service implementing data protection policies and procedures.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">Mobile-First Design Service</span>\n                <span class=\"component-description\">Mobile-first design service optimizing product pages for mobile devices.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">API-Based Integration Service</span>\n                <span class=\"component-description\">API-based integration service connecting with third-party services.</span>\n            </div>\n        </div>\n    </div>\n    <script src=\"https://cdn.jsdelivr.net/npm/mermaid@8.8.0/dist/mermaid.min.js\"></script>\n    <script>\n        mermaid.initialize({\n            startOnLoad: true,\n            theme: 'base',\n            themeVariables: {\n                primaryColor: '#1a1a2e',\n                primaryTextColor: '#ffffff',\n                primaryBorderColor: '#00ffcc',\n                lineColor: '#00ffcc',\n                secondaryColor: '#2a2a3e',\n                tertiaryColor: '#3a2a4e',\n                fontFamily: '-apple-system, BlinkMacSystemFont, \"SF Pro Display\", sans-serif'\n            }\n        });\n    </script>\n</body>\n</html>\n```\n\nThis HTML document includes an interactive Mermaid diagram showcasing the system architecture, along with a component breakdown section providing detailed information about each component. The document adheres to the provided AICOE branding guidelines and follows a clean, minimalist design.",
+      "project_name": "ShopEasy E-Commerce Test"
+    },
+    "gallery": {
+      "gallery_html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>AICOE Case Study Gallery</title>\n    <script src=\"https://unpkg.com/lucide@latest\"></script>\n    <style>\n        :root {\n            --aicoe-primary: #0066cc;\n            --aicoe-accent: #00d9ff;\n            --aicoe-dark: #1d1d1f;\n            --aicoe-gray: #6e6e73;\n            --aicoe-light-gray: #f5f5f7;\n            --aicoe-white: #ffffff;\n            --aicoe-success: #34c759;\n            --aicoe-warning: #ff9500;\n        }\n\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n            background-color: var(--aicoe-light-gray);\n            color: var(--aicoe-dark);\n            line-height: 1.6;\n        }\n\n        /* Navigation */\n        nav {\n            background: var(--aicoe-white);\n            padding: 1rem 2rem;\n            box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n            position: sticky;\n            top: 0;\n            z-index: 100;\n        }\n\n        .nav-container {\n            max-width: 1400px;\n            margin: 0 auto;\n            display: flex;\n            justify-content: space-between;\n            align-items: center;\n        }\n\n        .nav-brand {\n            font-size: 1.5rem;\n            font-weight: 700;\n            color: var(--aicoe-primary);\n        }\n\n        /* Hero Section */\n        .hero {\n            background: linear-gradient(135deg, var(--aicoe-primary), var(--aicoe-accent));\n            color: var(--aicoe-white);\n            padding: 4rem 2rem;\n            text-align: center;\n        }\n\n        .hero h1 {\n            font-size: 3rem;\n            font-weight: 700;\n            margin-bottom: 1rem;\n        }\n\n        .hero p {\n            font-size: 1.25rem;\n            opacity: 0.9;\n        }\n\n        /* Filters */\n        .filters {\n            max-width: 1400px;\n            margin: 2rem auto;\n            padding: 0 2rem;\n            display: flex;\n            gap: 1rem;\n            flex-wrap: wrap;\n            align-items: flex-end;\n        }\n\n        .filter-group {\n            flex: 1;\n            min-width: 200px;\n        }\n\n        .filter-group label {\n            display: block;\n            margin-bottom: 0.5rem;\n            font-weight: 600;\n            color: var(--aicoe-gray);\n            font-size: 0.875rem;\n        }\n\n        .filter-group select,\n        .filter-group input {\n            width: 100%;\n            padding: 0.75rem;\n            border: 1px solid #ddd;\n            border-radius: 8px;\n            font-size: 1rem;\n            background: var(--aicoe-white);\n        }\n\n        .filter-group select:focus,\n        .filter-group input:focus {\n            outline: none;\n            border-color: var(--aicoe-primary);\n        }\n\n        .clear-filters {\n            padding: 0.75rem 1.5rem;\n            background: var(--aicoe-gray);\n            color: var(--aicoe-white);\n            border: none;\n            border-radius: 8px;\n            font-weight: 600;\n            cursor: pointer;\n            transition: background 0.3s ease;\n        }\n\n        .clear-filters:hover {\n            background: #5a5a5f;\n        }\n\n        /* Results Count */\n        .results-count {\n            max-width: 1400px;\n            margin: 0 auto 1rem;\n            padding: 0 2rem;\n            color: var(--aicoe-gray);\n            font-size: 0.875rem;\n        }\n\n        /* Gallery Grid */\n        .gallery {\n            max-width: 1400px;\n            margin: 2rem auto;\n            padding: 0 2rem 4rem;\n            display: grid;\n            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n            gap: 2rem;\n        }\n\n        /* Case Study Card */\n        .case-study-card {\n            background: var(--aicoe-white);\n            border-radius: 12px;\n            padding: 2rem;\n            box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n            transition: all 0.3s ease;\n            cursor: pointer;\n            display: flex;\n            flex-direction: column;\n        }\n\n        .case-study-card:hover {\n            transform: translateY(-4px);\n            box-shadow: 0 8px 16px rgba(0,0,0,0.15);\n        }\n\n        .case-study-card.hidden {\n            display: none;\n        }\n\n        .industry-badge {\n            display: inline-block;\n            padding: 0.5rem 1rem;\n            background: var(--aicoe-primary);\n            color: var(--aicoe-white);\n            border-radius: 20px;\n            font-size: 0.875rem;\n            font-weight: 600;\n            margin-bottom: 1rem;\n            align-self: flex-start;\n        }\n\n        .card-title {\n            font-size: 1.5rem;\n            font-weight: 700;\n            margin-bottom: 0.5rem;\n            color: var(--aicoe-dark);\n        }\n\n        .card-description {\n            color: var(--aicoe-gray);\n            margin-bottom: 1rem;\n            line-height: 1.6;\n            flex-grow: 1;\n        }\n\n        .tech-stack {\n            display: flex;\n            flex-wrap: wrap;\n            gap: 0.5rem;\n            margin-bottom: 1rem;\n        }\n\n        .tech-tag {\n            padding: 0.25rem 0.75rem;\n            background: var(--aicoe-light-gray);\n            color: var(--aicoe-gray);\n            border-radius: 12px;\n            font-size: 0.875rem;\n        }\n\n        .card-meta {\n            display: flex;\n            justify-content: space-between;\n            align-items: center;\n            margin-top: 1rem;\n            padding-top: 1rem;\n            border-top: 1px solid #eee;\n        }\n\n        .meta-info {\n            display: flex;\n            gap: 1rem;\n            font-size: 0.875rem;\n            color: var(--aicoe-gray);\n        }\n\n        .meta-item {\n            display: flex;\n            align-items: center;\n            gap: 0.25rem;\n        }\n\n        .view-button {\n            padding: 0.75rem 1.5rem;\n            background: var(--aicoe-primary);\n            color: var(--aicoe-white);\n            border: none;\n            border-radius: 8px;\n            font-weight: 600;\n            cursor: pointer;\n            transition: background 0.3s ease;\n        }\n\n        .view-button:hover {\n            background: #0052a3;\n        }\n\n        .view-button:disabled {\n            background: var(--aicoe-gray);\n            cursor: not-allowed;\n        }\n\n        /* Empty State */\n        .empty-state {\n            text-align: center;\n            padding: 4rem 2rem;\n            color: var(--aicoe-gray);\n        }\n\n        .empty-state i {\n            font-size: 4rem;\n            margin-bottom: 1rem;\n            opacity: 0.5;\n        }\n\n        /* Responsive */\n        @media (max-width: 768px) {\n            .hero h1 {\n                font-size: 2rem;\n            }\n\n            .filters {\n                flex-direction: column;\n            }\n\n            .filter-group {\n                width: 100%;\n            }\n\n            .gallery {\n                grid-template-columns: 1fr;\n            }\n        }\n    </style>\n</head>\n<body>\n    <nav>\n        <div class=\"nav-container\">\n            <div class=\"nav-brand\">\ud83c\udfa8 AICOE Case Study Gallery</div>\n        </div>\n    </nav>\n\n    <div class=\"hero\">\n        <h1>Case Study Gallery</h1>\n        <p>Explore our collection of AI-powered project mockups and prototypes</p>\n    </div>\n\n    <div class=\"filters\">\n        <div class=\"filter-group\">\n            <label>Industry</label>\n            <select id=\"industryFilter\">\n                <option value=\"\">All Industries</option>\n            </select>\n        </div>\n        <div class=\"filter-group\">\n            <label>Technology</label>\n            <select id=\"techFilter\">\n                <option value=\"\">All Technologies</option>\n            </select>\n        </div>\n        <div class=\"filter-group\">\n            <label>Search</label>\n            <input type=\"text\" id=\"searchInput\" placeholder=\"Search projects...\">\n        </div>\n        <div class=\"filter-group\">\n            <label>Sort By</label>\n            <select id=\"sortFilter\">\n                <option value=\"date-desc\">Newest First</option>\n                <option value=\"date-asc\">Oldest First</option>\n                <option value=\"name-asc\">Name (A-Z)</option>\n                <option value=\"name-desc\">Name (Z-A)</option>\n                <option value=\"usecases-desc\">Most Use Cases</option>\n                <option value=\"usecases-asc\">Least Use Cases</option>\n            </select>\n        </div>\n        <button class=\"clear-filters\" onclick=\"clearFilters()\">Clear Filters</button>\n    </div>\n\n    <div class=\"results-count\" id=\"resultsCount\"></div>\n\n    <div class=\"gallery\" id=\"gallery\"></div>\n\n    <div class=\"empty-state\" id=\"emptyState\" style=\"display: none;\">\n        <div style=\"font-size: 4rem; margin-bottom: 1rem;\">\ud83d\udd0d</div>\n        <h2>No case studies found</h2>\n        <p>Try adjusting your filters or search terms</p>\n    </div>\n\n    <script>\n        // Embedded case studies data\n        const caseStudies = [];\n\n        let filteredStudies = [...caseStudies];\n\n        // Initialize on page load\n        document.addEventListener('DOMContentLoaded', () => {\n            populateFilters();\n            renderGallery();\n\n            // Add event listeners\n            document.getElementById('industryFilter').addEventListener('change', applyFilters);\n            document.getElementById('techFilter').addEventListener('change', applyFilters);\n            document.getElementById('searchInput').addEventListener('input', applyFilters);\n            document.getElementById('sortFilter').addEventListener('change', applyFilters);\n        });\n\n        function populateFilters() {\n            // Get unique industries\n            const industries = [...new Set(caseStudies.map(s => s.industry))].sort();\n            const industryFilter = document.getElementById('industryFilter');\n            industries.forEach(industry => {\n                const option = document.createElement('option');\n                option.value = industry;\n                option.textContent = industry;\n                industryFilter.appendChild(option);\n            });\n\n            // Get unique technologies\n            const technologies = [...new Set(caseStudies.flatMap(s => s.tech_stack || []))].sort();\n            const techFilter = document.getElementById('techFilter');\n            technologies.forEach(tech => {\n                const option = document.createElement('option');\n                option.value = tech;\n                option.textContent = tech;\n                techFilter.appendChild(option);\n            });\n        }\n\n        function applyFilters() {\n            const industryFilter = document.getElementById('industryFilter').value;\n            const techFilter = document.getElementById('techFilter').value;\n            const searchQuery = document.getElementById('searchInput').value.toLowerCase();\n            const sortFilter = document.getElementById('sortFilter').value;\n\n            // Filter\n            filteredStudies = caseStudies.filter(study => {\n                // Industry filter\n                if (industryFilter && study.industry !== industryFilter) return false;\n\n                // Technology filter\n                if (techFilter && (!study.tech_stack || !study.tech_stack.includes(techFilter))) return false;\n\n                // Search filter\n                if (searchQuery) {\n                    const searchText = `${study.project_name} ${study.description} ${study.industry}`.toLowerCase();\n                    if (!searchText.includes(searchQuery)) return false;\n                }\n\n                return true;\n            });\n\n            // Sort\n            filteredStudies.sort((a, b) => {\n                switch(sortFilter) {\n                    case 'date-desc':\n                        return new Date(b.date_created) - new Date(a.date_created);\n                    case 'date-asc':\n                        return new Date(a.date_created) - new Date(b.date_created);\n                    case 'name-asc':\n                        return a.project_name.localeCompare(b.project_name);\n                    case 'name-desc':\n                        return b.project_name.localeCompare(a.project_name);\n                    case 'usecases-desc':\n                        return b.use_case_count - a.use_case_count;\n                    case 'usecases-asc':\n                        return a.use_case_count - b.use_case_count;\n                    default:\n                        return 0;\n                }\n            });\n\n            renderGallery();\n        }\n\n        function clearFilters() {\n            document.getElementById('industryFilter').value = '';\n            document.getElementById('techFilter').value = '';\n            document.getElementById('searchInput').value = '';\n            document.getElementById('sortFilter').value = 'date-desc';\n            applyFilters();\n        }\n\n        function renderGallery() {\n            const gallery = document.getElementById('gallery');\n            const emptyState = document.getElementById('emptyState');\n            const resultsCount = document.getElementById('resultsCount');\n\n            // Update results count\n            resultsCount.textContent = `Showing ${filteredStudies.length} of ${caseStudies.length} case studies`;\n\n            if (filteredStudies.length === 0) {\n                gallery.style.display = 'none';\n                emptyState.style.display = 'block';\n                return;\n            }\n\n            gallery.style.display = 'grid';\n            emptyState.style.display = 'none';\n            gallery.innerHTML = '';\n\n            filteredStudies.forEach(study => {\n                const card = createCaseStudyCard(study);\n                gallery.appendChild(card);\n            });\n        }\n\n        function createCaseStudyCard(study) {\n            const card = document.createElement('div');\n            card.className = 'case-study-card';\n\n            // Format date\n            const date = new Date(study.date_created);\n            const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });\n\n            // Tech stack HTML\n            const techStackHTML = (study.tech_stack || []).map(tech =>\n                `<span class=\"tech-tag\">${tech}</span>`\n            ).join('');\n\n            card.innerHTML = `\n                <div class=\"industry-badge\">${study.industry}</div>\n                <h3 class=\"card-title\">${study.project_name}</h3>\n                <p class=\"card-description\">${study.description || 'No description available'}</p>\n                ${techStackHTML ? `<div class=\"tech-stack\">${techStackHTML}</div>` : ''}\n                <div class=\"card-meta\">\n                    <div class=\"meta-info\">\n                        <div class=\"meta-item\">\n                            <span>\ud83d\udcc5</span>\n                            <span>${formattedDate}</span>\n                        </div>\n                        <div class=\"meta-item\">\n                            <span>\ud83d\udccb</span>\n                            <span>${study.use_case_count} use cases</span>\n                        </div>\n                    </div>\n                </div>\n                <button class=\"view-button\" onclick=\"viewMockup('${study.mockup_url}')\" ${!study.has_mockup ? 'disabled' : ''}>\n                    ${study.has_mockup ? 'View Mockup \u2192' : 'No Mockup'}\n                </button>\n            `;\n\n            return card;\n        }\n\n        function viewMockup(url) {\n            if (url) {\n                window.location.href = url;\n            }\n        }\n    </script>\n</body>\n</html>",
+      "gallery_data": {},
+      "case_study_count": 0,
+      "gallery_path": "backend/storage/case-study-gallery/index.html"
+    }
+  },
+  "stages": [
+    {
+      "name": "storage",
+      "status": "completed",
+      "duration": 0.000655
+    },
+    {
+      "name": "transcript",
+      "status": "completed",
+      "duration": 8.127665
+    },
+    {
+      "name": "researcher",
+      "status": "completed",
+      "duration": 20.749027
+    },
+    {
+      "name": "requirements",
+      "status": "completed",
+      "duration": 16.97796
+    },
+    {
+      "name": "knowledge_base",
+      "status": "completed",
+      "duration": 6.405813
+    },
+    {
+      "name": "prd",
+      "status": "failed",
+      "duration": 29.543331
+    },
+    {
+      "name": "mockup",
+      "status": "failed",
+      "duration": 108.05168
+    },
+    {
+      "name": "synthetic_data",
+      "status": "failed",
+      "duration": 11.526252
+    },
+    {
+      "name": "commercial_proposal",
+      "status": "completed",
+      "duration": 30.021912
+    },
+    {
+      "name": "bom",
+      "status": "completed",
+      "duration": 17.452982
+    },
+    {
+      "name": "architecture_diagram",
+      "status": "completed",
+      "duration": 24.583952
+    },
+    {
+      "name": "reviewer",
+      "status": "failed",
+      "duration": 0.000181
+    },
+    {
+      "name": "gallery",
+      "status": "completed",
+      "duration": 0.000563
+    }
+  ]
+}

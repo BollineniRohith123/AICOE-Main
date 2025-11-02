@@ -1,0 +1,24 @@
+<billOfMaterials>
+    <summary>An estimated monthly cost breakdown for deploying and running the proposed ShopEasy E-Commerce Test solution.</summary>
+    <items>
+        <category name="Cloud Infrastructure">
+            <item name="Web Server Hosting (2 instances)" provider="Vercel/Netlify" costPerMonth="40.00" />
+            <item name="API Server Hosting (2 instances)" provider="AWS/GCP" costPerMonth="100.00" />
+            <item name="Managed MongoDB" provider="MongoDB Atlas" costPerMonth="75.00" />
+            <item name="Containerization (Docker)" provider="Docker" costPerMonth="20.00" />
+            <item name="Load Balancer" provider="Cloudflare" costPerMonth="30.00" />
+        </category>
+        <category name="Software Licenses">
+            <item name="Collaborative Filtering Algorithm" license="Open-source" costPerMonth="0.00" />
+            <item name="GDPR Compliance Tools" license="Commercial" costPerMonth="50.00" />
+            <item name="Mobile-First Design Framework" license="Open-source" costPerMonth="0.00" />
+            <item name="API-Based Integration Framework" license="Commercial" costPerMonth="75.00" />
+        </category>
+        <category name="Third-Party Services">
+            <item name="Secure Payment Gateway" provider="Stripe" costPerMonth="100.00" />
+            <item name="Caching Mechanism" provider="Redis" costPerMonth="15.00" />
+            <item name="Social Media Sharing Integration" provider="Facebook" costPerMonth="25.00" />
+        </category>
+    </items>
+    <totalCostPerMonth>365.00</totalCostPerMonth>
+</billOfMaterials>
