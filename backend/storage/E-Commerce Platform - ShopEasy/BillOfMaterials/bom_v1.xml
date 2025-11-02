@@ -8,23 +8,15 @@ Here is the Bill of Materials XML document for the E-Commerce Platform - ShopEas
             <item name="Web Server Hosting (2 instances)" provider="Vercel/Netlify" costPerMonth="40.00" />
             <item name="API Server Hosting (2 instances)" provider="AWS/GCP" costPerMonth="100.00" />
             <item name="Managed MongoDB" provider="MongoDB Atlas" costPerMonth="75.00" />
-            <item name="Database Hosting (e.g., MySQL, PostgreSQL)" provider="AWS/RDS" costPerMonth="20.00" />
-            <item name="Load Balancer" provider="AWS/NGINX" costPerMonth="15.00" />
-            <item name="Security Group" provider="AWS" costPerMonth="5.00" />
         </category>
         <category name="Third-Party Services">
-            <item name="LLM API Usage" provider="OpenAI/Anthropic" costPerMonth="150.00" />
-            <item name="Payment Gateway (e.g., Stripe, PayPal)" provider="Stripe/PayPal" costPerMonth="50.00" />
-            <item name="Social Media Integration (e.g., Facebook, Twitter)" provider="Facebook/Twitter" costPerMonth="10.00" />
-        </category>
-        <category name="Software Licenses">
-            <item name="E-commerce Platform Software" provider="Shopify/BigCommerce" costPerMonth="100.00" />
-            <item name="Content Management System (CMS)" provider="WordPress" costPerMonth="20.00" />
-            <item name="Customer Relationship Management (CRM)" provider="Salesforce" costPerMonth="50.00" />
+            <item name="Search Library (e.g. Algolia)" provider="Algolia" costPerMonth="50.00" />
+            <item name="Payment Gateway (e.g. Stripe)" provider="Stripe" costPerMonth="75.00" />
+            <item name="Social Media Integration (e.g. Facebook, Instagram)" provider="Facebook/Instagram" costPerMonth="25.00" />
         </category>
     </items>
-    <totalCostPerMonth>425.00</totalCostPerMonth>
+    <totalCostPerMonth>365.00</totalCostPerMonth>
 </billOfMaterials>
 ```
 
-Note that the costs are estimates and may vary based on the actual usage and requirements of the E-Commerce Platform - ShopEasy.
+Note: The costs are estimates and may vary based on the actual usage and requirements of the platform.

@@ -1,13 +1,13 @@
 {
   "project_name": "E-Commerce Platform - ShopEasy",
-  "workflow_id": "workflow_20251102_035848",
+  "workflow_id": "workflow_20251102_040053",
   "status": "success",
   "context": {
     "project_name": "E-Commerce Platform - ShopEasy",
-    "workflow_id": "workflow_20251102_035848",
+    "workflow_id": "workflow_20251102_040053",
     "workflow_type": "full",
-    "start_time": "2025-11-02T03:58:48.145392",
-    "end_time": "2025-11-02T04:03:55.125067",
+    "start_time": "2025-11-02T04:00:53.675675",
+    "end_time": "2025-11-02T04:06:26.452388",
     "status": "completed"
   },
   "results": {
@@ -30,14 +30,14 @@
         "audit"
       ],
       "audit_log": {
-        "timestamp": "2025-11-02T03:58:48.145921",
+        "timestamp": "2025-11-02T04:00:53.676030",
         "action": "project_created",
         "project_name": "E-Commerce Platform - ShopEasy",
         "user": "system"
       }
     },
     "transcript": {
-      "structured_notes_xml": "<structured_notes>\n    <project_name>E-Commerce Platform - ShopEasy</project_name>\n    <company_overview>Not specified</company_overview>\n    <attendees>\n        <attendee>CEO</attendee>\n        <attendee>CTO</attendee>\n        <attendee>Product Manager</attendee>\n        <attendee>Lead Developer</attendee>\n        <attendee>UX Designer</attendee>\n        <attendee>Marketing Director</attendee>\n    </attendees>\n    <meeting_date>November 2, 2025</meeting_date>\n    <meeting_objective>Main e-commerce platform discussion</meeting_objective>\n    <key_discussion_points>\n        <point>User authentication and social logins</point>\n        <point>Product catalog with search and filters</point>\n        <point>Shopping cart functionality and payment processing</point>\n        <point>Order management system and admin dashboard</point>\n        <point>Microservices architecture and scalability</point>\n        <point>Wireframes and design system for user experience</point>\n        <point>Technical stack and infrastructure requirements</point>\n    </key_discussion_points>\n    <pain_points>\n        <pain_point>Scalability and performance concerns</pain_point>\n        <pain_point>Complexity and feature creep</pain_point>\n    </pain_points>\n    <requirements>\n        <requirement>User registration and login</requirement>\n        <requirement>Product listing and details</requirement>\n        <requirement>Shopping cart and checkout functionality</requirement>\n        <requirement>Payment processing and order management</requirement>\n        <requirement>Admin dashboard and user account management</requirement>\n        <requirement>Mobile app and push notifications</requirement>\n        <requirement>Recommendation engine and live chat support</requirement>\n    </requirements>\n    <decisions_made>\n        <decision>Phase 1: Core e-commerce features</decision>\n        <decision>Technical stack: React, Node.js, PostgreSQL, and AWS</decision>\n    </decisions_made>\n    <action_items>\n        <action_item>Develop wireframes and design system</action_item>\n        <action_item>Implement technical stack and infrastructure</action_item>\n    </action_items>\n    <technical_constraints>\n        <constraint>Scalability and performance concerns</constraint>\n        <constraint>Complexity and feature creep</constraint>\n    </technical_constraints>\n    <stakeholders>\n        <stakeholder>CEO</stakeholder>\n        <stakeholder>CTO</stakeholder>\n        <stakeholder>Product Manager</stakeholder>\n        <stakeholder>Lead Developer</stakeholder>\n        <stakeholder>UX Designer</stakeholder>\n        <stakeholder>Marketing Director</stakeholder>\n    </stakeholders>\n</structured_notes>",
+      "structured_notes_xml": "<structured_notes>\n    <project_name>E-Commerce Platform - ShopEasy</project_name>\n    <company_overview>Not specified</company_overview>\n    <attendees>\n        <attendee>CEO</attendee>\n        <attendee>CTO</attendee>\n        <attendee>Product Manager</attendee>\n        <attendee>Lead Developer</attendee>\n        <attendee>UX Designer</attendee>\n        <attendee>Marketing Director</attendee>\n    </attendees>\n    <meeting_date>November 2, 2025</meeting_date>\n    <meeting_objective>Main e-commerce platform discussion</meeting_objective>\n    <key_discussion_points>\n        <point>User authentication and social logins</point>\n        <point>Product catalog with search and filters</point>\n        <point>Shopping cart functionality and payment processing</point>\n        <point>Order management system and admin dashboard</point>\n        <point>Microservices architecture and technical stack</point>\n        <point>Features and functionalities for users</point>\n        <point>Design and user experience</point>\n    </key_discussion_points>\n    <pain_points>\n        <pain_point>Monolithic architecture</pain_point>\n        <pain_point>Technical complexity</pain_point>\n        <pain_point>Scalability and performance</pain_point>\n    </pain_points>\n    <requirements>\n        <requirement>User registration and login</requirement>\n        <requirement>Product listing and details</requirement>\n        <requirement>Shopping cart and checkout</requirement>\n        <requirement>Payment processing and order management</requirement>\n        <requirement>Admin dashboard and user account management</requirement>\n        <requirement>Design and user experience</requirement>\n    </requirements>\n    <decisions_made>\n        <decision>Microservices architecture</decision>\n        <decision>Technical stack (React, Node.js, PostgreSQL, Redis, Elasticsearch, AWS)</decision>\n        <decision>Phase 1 MVP features</decision>\n    </decisions_made>\n    <action_items>\n        <action_item>Develop MVP features</action_item>\n        <action_item>Design and implement user experience</action_item>\n        <action_item>Develop and deploy technical stack</action_item>\n    </action_items>\n    <technical_constraints>\n        <constraint>Scalability and performance</constraint>\n        <constraint>Technical complexity</constraint>\n        <constraint>Security and compliance</constraint>\n    </technical_constraints>\n    <stakeholders>\n        <stakeholder>CEO</stakeholder>\n        <stakeholder>CTO</stakeholder>\n        <stakeholder>Product Manager</stakeholder>\n        <stakeholder>Lead Developer</stakeholder>\n        <stakeholder>UX Designer</stakeholder>\n        <stakeholder>Marketing Director</stakeholder>\n    </stakeholders>\n</structured_notes>",
       "project_name": "E-Commerce Platform - ShopEasy",
       "transcript_length": 8418
     },
@@ -68,175 +68,186 @@
       "use_cases": [
         {
           "id": "UC-001",
-          "title": "Register New User",
-          "description": "The user creates a new account on the E-Commerce Platform to purchase products.",
+          "title": "User Search and Product Filtering",
+          "description": "The user searches for products and filters the results based on various criteria.",
           "actors": [
             "User"
           ],
-          "preconditions": "The user is on the login page and has not registered before.",
+          "preconditions": "The user is logged in and has access to the search functionality.",
           "main_flow": [
             {
-              "step": "The user clicks the 'Register' button.",
-              "description": "The user initiates the registration process."
+              "step": "The user enters a search query in the search bar.",
+              "description": "The user types a search query in the search bar."
             },
             {
-              "step": "The system displays a registration form.",
-              "description": "The system provides the user with a registration form."
+              "step": "The system retrieves a list of search results.",
+              "description": "The system searches for products based on the user's search query."
             },
             {
-              "step": "The user fills out the registration form.",
-              "description": "The user provides the required information."
+              "step": "The user filters the search results.",
+              "description": "The user selects filters to narrow down the search results."
             },
             {
-              "step": "The system validates the user's input.",
-              "description": "The system checks the user's input for errors."
-            },
-            {
-              "step": "The system creates a new user account.",
-              "description": "The system creates a new account for the user."
+              "step": "The system displays the filtered search results.",
+              "description": "The system displays the filtered search results to the user."
             }
           ],
           "alternate_flows": [],
-          "postconditions": "The user is logged in and can view the product catalog.",
+          "postconditions": "The user has viewed the filtered search results.",
           "priority": "high",
-          "business_value": "Allows users to create an account and start shopping."
+          "business_value": "The user can quickly find products that match their search criteria."
         },
         {
           "id": "UC-002",
-          "title": "Search for Products",
-          "description": "The user searches for products on the E-Commerce Platform.",
+          "title": "Product Details and Reviews",
+          "description": "The user views product details and reviews from other users.",
           "actors": [
             "User"
           ],
-          "preconditions": "The user is on the product catalog page.",
+          "preconditions": "The user has selected a product from the search results.",
           "main_flow": [
             {
-              "step": "The user enters a search query.",
-              "description": "The user initiates the search process."
+              "step": "The user selects a product to view its details.",
+              "description": "The user clicks on a product to view its details."
             },
             {
-              "step": "The system displays search results.",
-              "description": "The system provides the user with search results."
+              "step": "The system displays product details.",
+              "description": "The system displays the product's details, including price, description, and images."
             },
             {
-              "step": "The user browses through search results.",
-              "description": "The user views the search results."
+              "step": "The user views reviews from other users.",
+              "description": "The user clicks on a review to view its content."
+            },
+            {
+              "step": "The system displays the reviews.",
+              "description": "The system displays the reviews to the user."
             }
           ],
           "alternate_flows": [],
-          "postconditions": "The user views relevant search results.",
-          "priority": "medium",
-          "business_value": "Allows users to find products easily."
+          "postconditions": "The user has viewed the product details and reviews.",
+          "priority": "high",
+          "business_value": "The user can make informed purchasing decisions."
         },
         {
           "id": "UC-003",
-          "title": "Add Product to Cart",
-          "description": "The user adds a product to their cart on the E-Commerce Platform.",
+          "title": "Cart Management",
+          "description": "The user adds and manages products in their cart.",
           "actors": [
             "User"
           ],
-          "preconditions": "The user is on the product details page.",
+          "preconditions": "The user has selected products to add to their cart.",
           "main_flow": [
             {
-              "step": "The user clicks the 'Add to Cart' button.",
-              "description": "The user initiates the addition process."
+              "step": "The user adds a product to their cart.",
+              "description": "The user clicks the 'Add to Cart' button."
             },
             {
-              "step": "The system adds the product to the user's cart.",
-              "description": "The system updates the user's cart."
+              "step": "The system updates the cart contents.",
+              "description": "The system updates the cart contents to reflect the added product."
+            },
+            {
+              "step": "The user removes a product from their cart.",
+              "description": "The user clicks the 'Remove' button."
+            },
+            {
+              "step": "The system updates the cart contents.",
+              "description": "The system updates the cart contents to reflect the removed product."
             }
           ],
           "alternate_flows": [],
-          "postconditions": "The user's cart is updated with the added product.",
+          "postconditions": "The user has managed their cart contents.",
           "priority": "medium",
-          "business_value": "Allows users to add products to their cart."
+          "business_value": "The user can easily manage their cart contents."
         },
         {
           "id": "UC-004",
-          "title": "Checkout Process",
-          "description": "The user completes the checkout process on the E-Commerce Platform.",
+          "title": "Checkout and Payment",
+          "description": "The user completes the checkout process and pays for their products.",
           "actors": [
             "User"
           ],
-          "preconditions": "The user is on the cart page and has added products.",
+          "preconditions": "The user has added products to their cart and has access to payment options.",
           "main_flow": [
             {
-              "step": "The user clicks the 'Checkout' button.",
-              "description": "The user initiates the checkout process."
+              "step": "The user proceeds to checkout.",
+              "description": "The user clicks the 'Checkout' button."
             },
             {
-              "step": "The system displays a summary of the user's cart.",
-              "description": "The system provides the user with a summary."
+              "step": "The system displays payment options.",
+              "description": "The system displays payment options to the user."
             },
             {
-              "step": "The user reviews and confirms their order.",
-              "description": "The user reviews and confirms their order."
+              "step": "The user selects a payment option.",
+              "description": "The user clicks on a payment option."
             },
             {
               "step": "The system processes the payment.",
-              "description": "The system processes the payment."
-            },
-            {
-              "step": "The system updates the user's order status.",
-              "description": "The system updates the user's order status."
+              "description": "The system processes the payment and updates the order status."
             }
           ],
           "alternate_flows": [],
-          "postconditions": "The user's order is completed and confirmed.",
+          "postconditions": "The user has completed the checkout process and paid for their products.",
           "priority": "high",
-          "business_value": "Allows users to complete their purchases."
+          "business_value": "The user can complete the checkout process and receive their products."
         },
         {
           "id": "UC-005",
-          "title": "Order Tracking",
-          "description": "The user tracks their order on the E-Commerce Platform.",
+          "title": "Order Tracking and Management",
+          "description": "The user tracks and manages their orders.",
           "actors": [
             "User"
           ],
-          "preconditions": "The user is on the order tracking page.",
+          "preconditions": "The user has placed an order.",
           "main_flow": [
             {
-              "step": "The user enters their order number.",
-              "description": "The user initiates the tracking process."
+              "step": "The user views their order history.",
+              "description": "The user clicks on the 'Order History' button."
+            },
+            {
+              "step": "The system displays order details.",
+              "description": "The system displays the order details, including status and shipping information."
+            },
+            {
+              "step": "The user tracks the order status.",
+              "description": "The user clicks on the 'Track Order' button."
             },
             {
               "step": "The system displays the order status.",
-              "description": "The system provides the user with the order status."
-            },
-            {
-              "step": "The user views the order details.",
-              "description": "The user views the order details."
+              "description": "The system displays the order status to the user."
             }
           ],
           "alternate_flows": [],
-          "postconditions": "The user views their order status.",
+          "postconditions": "The user has tracked and managed their orders.",
           "priority": "medium",
-          "business_value": "Allows users to track their orders."
+          "business_value": "The user can easily track and manage their orders."
         }
       ],
       "business_requirements": {
-        "overview": "The E-Commerce Platform will provide a user-friendly and secure online shopping experience.",
+        "overview": "The E-Commerce Platform - ShopEasy is designed to provide a seamless and user-friendly shopping experience.",
         "business_goals": [
-          "Increase customer satisfaction",
-          "Improve conversion rates",
-          "Enhance user experience"
+          "To provide a user-friendly and intuitive interface for users to browse and purchase products.",
+          "To enable users to easily manage their carts and checkout process.",
+          "To provide a secure and reliable payment processing system."
         ],
         "success_criteria": [
-          "Customer satisfaction rating of 4.5/5",
-          "Conversion rate of 2.5%",
-          "User engagement metrics exceeded"
+          "Users can easily find and purchase products.",
+          "Users can manage their carts and checkout process efficiently.",
+          "Users can track and manage their orders effectively."
         ],
         "constraints": [
-          "Limited budget for development",
-          "Technical infrastructure limitations"
+          "The system must be able to handle a high volume of users and transactions.",
+          "The system must be secure and reliable to protect user data and payment information."
         ],
         "assumptions": [
-          "Users will have a stable internet connection",
-          "Users will have a valid payment method"
+          "Users will have access to a stable internet connection and a compatible device."
         ],
         "risks": [
-          "Technical issues during development",
-          "Security breaches"
+          "Technical issues may arise during the checkout process or payment processing.",
+          "Users may not be able to find products or navigate the system effectively."
+        ],
+        "mitigation_strategies": [
+          "Implement a robust testing and quality assurance process to identify and fix technical issues.",
+          "Provide user-friendly and intuitive interface design to reduce navigation difficulties."
         ]
       },
       "project_name": "E-Commerce Platform - ShopEasy"
@@ -246,42 +257,42 @@
         "relevant_patterns": [
           {
             "category": "AI Design Patterns",
-            "pattern": "Microservices Architecture",
-            "description": "Applying microservices architecture can improve scalability and maintainability of the e-commerce platform.",
+            "pattern": "Model-View-Controller (MVC) pattern",
+            "description": "Applying the MVC pattern can improve the separation of concerns and make the system more maintainable.",
             "priority": "high"
           },
           {
-            "category": "Compliance Rules",
-            "pattern": "GDPR Compliance",
-            "description": "Ensure GDPR compliance by implementing data protection by design and default, and providing users with clear and transparent data processing information.",
+            "category": "Best Practices",
+            "pattern": "Use a search library to improve search functionality",
+            "description": "Using a search library can improve the performance and accuracy of the search results.",
             "priority": "medium"
           },
           {
-            "category": "Best Practices",
-            "pattern": "Secure Sockets Layer/Transport Layer Security (SSL/TLS)",
-            "description": "Implement SSL/TLS encryption to ensure secure data transmission between the user's browser and the e-commerce platform.",
+            "category": "Integration Patterns",
+            "pattern": "Use RESTful APIs for product details and reviews",
+            "description": "Using RESTful APIs can improve the scalability and flexibility of the system.",
             "priority": "high"
           }
         ],
         "suggestions": [
           {
             "area": "User Experience",
-            "suggestion": "Implement a search suggestion feature to improve user search experience and reduce bounce rate.",
-            "rationale": "Research shows that search suggestion features can improve user engagement and conversion rates."
+            "suggestion": "Implement a faceted search feature",
+            "rationale": "Faceted search can improve the user's ability to find products that match their search criteria."
           },
           {
-            "area": "Product Recommendations",
-            "suggestion": "Implement a personalized product recommendation engine to increase average order value and customer satisfaction.",
-            "rationale": "Research indicates that personalized product recommendations can lead to increased sales and customer loyalty."
+            "area": "Performance Optimization",
+            "suggestion": "Implement caching for search results",
+            "rationale": "Caching can improve the performance of the search results and reduce the load on the system."
           }
         ],
         "compliance_notes": [
-          "Ensure compliance with PCI-DSS standards for secure payment processing.",
-          "Implement data retention and deletion policies to comply with GDPR regulations."
+          "Ensure compliance with GDPR regulations for user data",
+          "Implement accessibility features to comply with WCAG 2.1 standards"
         ],
         "integration_recommendations": [
-          "Integrate with third-party payment gateways to expand payment options and improve user experience.",
-          "Integrate with social media platforms to enable social login and improve user engagement."
+          "Integrate with social media platforms for user authentication",
+          "Integrate with payment gateways for secure payment processing"
         ]
       },
       "project_name": "E-Commerce Platform - ShopEasy",
@@ -294,13 +305,13 @@
       ]
     },
     "prd": {
-      "prd_xml": "Here is the PRD XML document for the E-Commerce Platform - ShopEasy project:\n\n```xml\n<productRequirementsDocument>\n    <title>PRD for E-Commerce Platform - ShopEasy</title>\n    <executiveSummary>\n        The E-Commerce Platform - ShopEasy is designed to provide a user-friendly and secure online shopping experience. The platform will allow users to register, search for products, add products to their cart, complete the checkout process, and track their orders.\n    </executiveSummary>\n    <scope>\n        <inScope>\n            <ul>\n                <li>Register new user</li>\n                <li>Search for products</li>\n                <li>Add product to cart</li>\n                <li>Checkout process</li>\n                <li>Order tracking</li>\n            </ul>\n        </inScope>\n        <outOfScope>\n            <ul>\n                <li>Other e-commerce features</li>\n            </ul>\n        </outOfScope>\n    </scope>\n    <businessGoals>\n        <goal>Increase customer satisfaction</goal>\n        <goal>Improve conversion rates</goal>\n        <goal>Enhance user experience</goal>\n    </businessGoals>\n    <useCases>\n        <useCaseModel>\n            <useCase id=\"UC-001\">\n                <title>Register New User</title>\n                <description>The user creates a new account on the E-Commerce Platform to purchase products.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>The user is on the login page and has not registered before.</preconditions>\n                <mainFlow>\n                    <step id=\"S1\">The user clicks the 'Register' button.</step>\n                    <step id=\"S2\">The system displays a registration form.</step>\n                    <step id=\"S3\">The user fills out the registration form.</step>\n                    <step id=\"S4\">The system validates the user's input.</step>\n                    <step id=\"S5\">The system creates a new user account.</step>\n                </mainFlow>\n                <alternateFlows>\n                    <flow id=\"AF1\" trigger=\"Alternative condition\">\n                        <step id=\"AF1S1\">The user clicks the 'Register' button.</step>\n                    </flow>\n                </alternateFlows>\n                <postconditions>The user is logged in and can view the product catalog.</postconditions>\n                <priority>high</priority>\n                <businessValue>Allows users to create an account and start shopping.</businessValue>\n            </useCase>\n            <useCase id=\"UC-002\">\n                <title>Search for Products</title>\n                <description>The user searches for products on the E-Commerce Platform.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>The user is on the product catalog page.</preconditions>\n                <mainFlow>\n                    <step id=\"S1\">The user enters a search query.</step>\n                    <step id=\"S2\">The system displays search results.</step>\n                    <step id=\"S3\">The user browses through search results.</step>\n                </mainFlow>\n                <alternateFlows>\n                    <flow id=\"AF1\" trigger=\"Alternative condition\">\n                        <step id=\"AF1S1\">The user enters a search query.</step>\n                    </flow>\n                </alternateFlows>\n                <postconditions>The user views relevant search results.</postconditions>\n                <priority>medium</priority>\n                <businessValue>Allows users to find products easily.</businessValue>\n            </useCase>\n            <useCase id=\"UC-003\">\n                <title>Add Product to Cart</title>\n                <description>The user adds a product to their cart on the E-Commerce Platform.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>The user is on the product details page.</preconditions>\n                <mainFlow>\n                    <step id=\"S1\">The user clicks the 'Add to Cart' button.</step>\n                    <step id=\"S2\">The system adds the product to the user's cart.</step>\n                </mainFlow>\n                <alternateFlows>\n                    <flow id=\"AF1\" trigger=\"Alternative condition\">\n                        <step id=\"AF1S1\">The user clicks the 'Add to Cart' button.</step>\n                    </flow>\n                </alternateFlows>\n                <postconditions>The user's cart is updated with the added product.</postconditions>\n                <priority>medium</priority>\n                <businessValue>Allows users to add products to their cart.</businessValue>\n            </useCase>\n            <useCase id=\"UC-004\">\n                <title>Checkout Process</title>\n                <description>The user completes the checkout process on the E-Commerce Platform.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>The user is on the cart page and has added products.</preconditions>\n                <mainFlow>\n                    <step id=\"S1\">The user clicks the 'Checkout' button.</step>\n                    <step id=\"S2\">The system displays a summary of the user's cart.</step>\n                    <step id=\"S3\">The user reviews and confirms their order.</step>\n                    <step id=\"S4\">The system processes the payment.</step>\n                    <step id=\"S5\">The system updates the user's order status.</step>\n                </mainFlow>\n                <alternateFlows>\n                    <flow id=\"AF1\" trigger=\"Alternative condition\">\n                        <step id=\"AF1S1\">The user clicks the 'Checkout' button.</step>\n                    </flow>\n                </alternateFlows>\n                <postconditions>The user's order is completed and confirmed.</postconditions>\n                <priority>high</priority>\n                <businessValue>Allows users to complete their purchases.</businessValue>\n            </useCase>\n            <useCase id=\"UC-005\">\n                <title>Order Tracking</title>\n                <description>The user tracks their order on the E-Commerce Platform.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>The user is on the order tracking page.</preconditions>\n                <mainFlow>\n                    <step id=\"S1\">The user enters their order number.</step>\n                    <step id=\"S2\">The system displays the order status.</step>\n                    <step id=\"S3\">The user views the order details.</step>\n                </mainFlow>\n                <alternateFlows>\n                    <flow id=\"AF1\" trigger=\"Alternative condition\">\n                        <step id=\"AF1S1\">The user enters their order number.</step>\n                    </flow>\n                </alternateFlows>\n                <postconditions>The user views their order status.</postconditions>\n                <priority>medium</priority>\n                <businessValue>Allows users to track their orders.</businessValue>\n            </useCase>\n        </useCaseModel>\n    </useCases>\n    <nonFunctionalRequirements>\n        <requirement type=\"Security\">\n            All sensitive data must be encrypted at rest and in transit using industry-standard protocols.\n        </requirement>\n        <requirement type=\"Performance\">\n            The system must respond to 95% of user queries in under 2 seconds.\n        </requirement>\n    </nonFunctionalRequirements>\n</productRequirementsDocument>\n```\n\nNote that I've extracted the use cases, business goals, and non-functional requirements from the input data and formatted them according to the XML structure. I've also added some additional details to make the PRD more comprehensive.",
-      "prd_html": "<!DOCTYPE html>\nHere is the transformed PRD XML into a beautiful, professional HTML document:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>PRD for E-Commerce Platform - ShopEasy</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n</head>\n<body>\n    <header>\n        <nav>\n            <ul>\n                <li><a href=\"#executive-summary\">Executive Summary</a></li>\n                <li><a href=\"#scope\">Scope</a></li>\n                <li><a href=\"#business-goals\">Business Goals</a></li>\n                <li><a href=\"#use-cases\">Use Cases</a></li>\n                <li><a href=\"#non-functional-requirements\">Non-Functional Requirements</a></li>\n            </ul>\n        </nav>\n    </header>\n    <main>\n        <section id=\"executive-summary\">\n            <h1>Executive Summary</h1>\n            <p>The E-Commerce Platform - ShopEasy is designed to provide a user-friendly and secure online shopping experience. The platform will allow users to register, search for products, add products to their cart, complete the checkout process, and track their orders.</p>\n        </section>\n        <section id=\"scope\">\n            <h1>Scope</h1>\n            <h2>In Scope</h2>\n            <ul>\n                <li>Register new user</li>\n                <li>Search for products</li>\n                <li>Add product to cart</li>\n                <li>Checkout process</li>\n                <li>Order tracking</li>\n            </ul>\n            <h2>Out of Scope</h2>\n            <ul>\n                <li>Other e-commerce features</li>\n            </ul>\n        </section>\n        <section id=\"business-goals\">\n            <h1>Business Goals</h1>\n            <ul>\n                <li>Increase customer satisfaction</li>\n                <li>Improve conversion rates</li>\n                <li>Enhance user experience</li>\n            </ul>\n        </section>\n        <section id=\"use-cases\">\n            <h1>Use Cases</h1>\n            <ul>\n                <li id=\"uc-001\">\n                    <h2>Register New User</h2>\n                    <p>The user creates a new account on the E-Commerce Platform to purchase products.</p>\n                    <p><a href=\"#uc-001-step-1\">Step 1: The user clicks the 'Register' button.</a></p>\n                    <p><a href=\"#uc-001-step-2\">Step 2: The system displays a registration form.</a></p>\n                    <p><a href=\"#uc-001-step-3\">Step 3: The user fills out the registration form.</a></p>\n                    <p><a href=\"#uc-001-step-4\">Step 4: The system validates the user's input.</a></p>\n                    <p><a href=\"#uc-001-step-5\">Step 5: The system creates a new user account.</a></p>\n                </li>\n                <li id=\"uc-002\">\n                    <h2>Search for Products</h2>\n                    <p>The user searches for products on the E-Commerce Platform.</p>\n                    <p><a href=\"#uc-002-step-1\">Step 1: The user enters a search query.</a></p>\n                    <p><a href=\"#uc-002-step-2\">Step 2: The system displays search results.</a></p>\n                    <p><a href=\"#uc-002-step-3\">Step 3: The user browses through search results.</a></p>\n                </li>\n                <li id=\"uc-003\">\n                    <h2>Add Product to Cart</h2>\n                    <p>The user adds a product to their cart on the E-Commerce Platform.</p>\n                    <p><a href=\"#uc-003-step-1\">Step 1: The user clicks the 'Add to Cart' button.</a></p>\n                    <p><a href=\"#uc-003-step-2\">Step 2: The system adds the product to the user's cart.</a></p>\n                </li>\n                <li id=\"uc-004\">\n                    <h2>Checkout Process</h2>\n                    <p>The user completes the checkout process on the E-Commerce Platform.</p>\n                    <p><a href=\"#uc-004-step-1\">Step 1: The user clicks the 'Checkout' button.</a></p>\n                    <p><a href=\"#uc-004-step-2\">Step 2: The system displays a summary of the user's cart.</a></p>\n                    <p><a href=\"#uc-004-step-3\">Step 3: The user reviews and confirms their order.</a></p>\n                    <p><a href=\"#uc-004-step-4\">Step 4: The system processes the payment.</a></p>\n                    <p><a href=\"#uc-004-step-5\">Step 5: The system updates the user's order status.</a></p>\n                </li>\n                <li id=\"uc-005\">\n                    <h2>Order Tracking</h2>\n                    <p>The user tracks their order on the E-Commerce Platform.</p>\n                    <p><a href=\"#uc-005-step-1\">Step 1: The user enters their order number.</a></p>\n                    <p><a href=\"#uc-005-step-2\">Step 2: The system displays the order status.</a></p>\n                    <p><a href=\"#uc-005-step-3\">Step 3: The user views the order details.</a></p>\n                </li>\n            </ul>\n        </section>\n        <section id=\"non-functional-requirements\">\n            <h1>Non-Functional Requirements</h1>\n            <ul>\n                <li>\n                    <h2>Security</h2>\n                    <p>All sensitive data must be encrypted at rest and in transit using industry-standard protocols.</p>\n                </li>\n                <li>\n                    <h2>Performance</h2>\n                    <p>The system must respond to 95% of user queries in under 2 seconds.</p>\n                </li>\n            </ul>\n        </section>\n    </main>\n    <footer>\n        <p>&copy; 2023 ShopEasy</p>\n    </footer>\n    <script src=\"script.js\"></script>\n</body>\n</html>\n```\n\nAnd here is the CSS code in a separate file:\n\n```css\n/* styles.css */\n\nbody {\n    font-family: Arial, sans-serif;\n    margin: 0;\n    padding: 0;\n}\n\nheader {\n    background-color: #333;\n    color: #fff;\n    padding: 1rem;\n    text-align: center;\n}\n\nnav ul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n    display: flex;\n    justify-content: space-between;\n}\n\nnav ul li {\n    margin-right: 20px;\n}\n\nnav a {\n    color: #fff;\n    text-decoration: none;\n}\n\nmain {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 2rem;\n}\n\nsection {\n    background-color: #f7f7f7;\n    padding: 1rem;\n    margin-bottom: 20px;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n\nh1 {\n    font-weight: bold;\n    font-size: 24px;\n    margin-bottom: 10px;\n}\n\nh2 {\n    font-weight: bold;\n    font-size: 18px;\n    margin-bottom: 10px;\n}\n\nul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n}\n\nli {\n    margin-bottom: 10px;\n}\n\na {\n    text-decoration: none;\n    color: #337ab7;\n}\n\na:hover {\n    color: #23527c;\n}\n\nfooter {\n    background-color: #333;\n    color: #fff;\n    padding: 1rem;\n    text-align: center;\n    clear: both;\n}\n\ntable {\n    border-collapse: collapse;\n    width: 100%;\n}\n\nth, td {\n    border: 1px solid #ddd;\n    padding: 10px;\n    text-align: left;\n}\n\nth {\n    background-color: #f0f0f0;\n}\n\n#toc {\n    position: sticky;\n    top: 0;\n    background-color: #333;\n    color: #fff;\n    padding: 1rem;\n    text-align: center;\n}\n\n#toc ul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n    display: flex;\n    justify-content: space-between;\n}\n\n#toc li {\n    margin-right: 20px;\n}\n\n#toc a {\n    color: #fff;\n    text-decoration: none;\n}\n\n#toc a:hover {\n    color: #23527c;\n}\n\n/* use-case steps */\n\n#uc-001-step-1 {\n    background-color: #f7f7f7;\n    padding: 1rem;\n    margin-bottom: 10px;\n    border: 1px solid #ddd;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n\n#uc-001-step-2 {\n    background-color: #f7f7f7;\n    padding: 1rem;\n    margin-bottom: 10px;\n    border: 1px solid #ddd;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n\n#uc-001-step-3 {\n    background-color: #f7f7f7;\n    padding: 1rem;\n    margin-bottom: 10px;\n    border: 1px solid #ddd;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n\n#uc-001-step-4 {\n    background-color: #f7f7f7;\n    padding: 1rem;\n    margin-bottom: 10px;\n    border: 1px solid #ddd;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n\n#uc-001-step-5 {\n    background-color: #f7f7f7;\n    padding: 1rem;\n    margin-bottom: 10px;\n    border: 1px solid #ddd;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n\n/* use-case details */\n\n#uc-001-details {\n    background-color: #f7f7f7;\n    padding: 1rem;\n    margin-bottom: 10px;\n    border: 1px solid #ddd;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n}\n\n#uc-001-details h2 {\n    font-weight: bold;\n    font-size: 18px;\n    margin-bottom: 10px;\n}\n\n#uc-001-details p {\n    margin-bottom: 10px;\n}\n\n/* non-functional requirements */\n\n#non-functional-requirements ul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#non-functional-requirements li {\n    margin-bottom: 10px;\n}\n\n#non-functional-requirements h2 {\n    font-weight: bold;\n    font-size: 18px;\n    margin-bottom: 10px;\n}\n\n#non-functional-requirements p {\n    margin-bottom: 10px;\n}\n\n/* toc styles */\n\n#toc ul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n    display: flex;\n    justify-content: space-between;\n}\n\n#toc li {\n    margin-right: 20px;\n}\n\n#toc a {\n    color: #337ab7;\n    text-decoration: none;\n}\n\n#toc a:hover {\n    color: #23527c;\n}\n```\n\nAnd here is the JavaScript code in a separate file:\n\n```javascript\n// script.js\n\n// TOC functionality\nconst tocLinks = document.querySelectorAll('#toc a');\n\ntocLinks.forEach((link) => {\n    link.addEventListener('click', (e) => {\n        e.preventDefault();\n        const id = link.getAttribute('href').slice(1);\n        const section = document.getElementById(id);\n        section.scrollIntoView({ behavior: 'smooth' });\n    });\n});\n```\n\nThis HTML document includes a clean and professional structure, with a sticky table of contents at the top and use-case steps with details below. The CSS code styles the document with a modern and responsive design, and the JavaScript code adds functionality to the table of contents.",
+      "prd_xml": "Here is the PRD XML document for the E-Commerce Platform - ShopEasy project:\n\n```xml\n<productRequirementsDocument>\n    <title>PRD for E-Commerce Platform - ShopEasy</title>\n    <executiveSummary>A comprehensive e-commerce platform designed to provide a seamless and user-friendly shopping experience.</executiveSummary>\n    <scope>\n        <inScope>\n            <ul>\n                <li>User Search and Product Filtering</li>\n                <li>Product Details and Reviews</li>\n                <li>Cart Management</li>\n                <li>Checkout and Payment</li>\n                <li>Order Tracking and Management</li>\n            </ul>\n        </inScope>\n        <outOfScope>\n            <ul>\n                <li>Payment Gateway Integration</li>\n                <li>Inventory Management</li>\n                <li>Shipping Integration</li>\n            </ul>\n        </outOfScope>\n    </scope>\n    <businessGoals>\n        <goal>To provide a user-friendly and intuitive interface for users to browse and purchase products.</goal>\n        <goal>To enable users to easily manage their carts and checkout process.</goal>\n        <goal>To provide a secure and reliable payment processing system.</goal>\n    </businessGoals>\n    <useCases>\n        <useCaseModel>\n            <useCase id=\"UC-001\">\n                <title>User Search and Product Filtering</title>\n                <description>The user searches for products and filters the results based on various criteria.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>The user is logged in and has access to the search functionality.</preconditions>\n                <mainFlow>\n                    <step>\n                        <description>The user enters a search query in the search bar.</description>\n                    </step>\n                    <step>\n                        <description>The system retrieves a list of search results.</description>\n                    </step>\n                    <step>\n                        <description>The user filters the search results.</description>\n                    </step>\n                    <step>\n                        <description>The system displays the filtered search results.</description>\n                    </step>\n                </mainFlow>\n                <alternateFlows>\n                </alternateFlows>\n                <postconditions>The user has viewed the filtered search results.</postconditions>\n            </useCase>\n            <useCase id=\"UC-002\">\n                <title>Product Details and Reviews</title>\n                <description>The user views product details and reviews from other users.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>The user has selected a product from the search results.</preconditions>\n                <mainFlow>\n                    <step>\n                        <description>The user selects a product to view its details.</description>\n                    </step>\n                    <step>\n                        <description>The system displays product details.</description>\n                    </step>\n                    <step>\n                        <description>The user views reviews from other users.</description>\n                    </step>\n                    <step>\n                        <description>The system displays the reviews.</description>\n                    </step>\n                </mainFlow>\n                <alternateFlows>\n                </alternateFlows>\n                <postconditions>The user has viewed the product details and reviews.</postconditions>\n            </useCase>\n            <useCase id=\"UC-003\">\n                <title>Cart Management</title>\n                <description>The user adds and manages products in their cart.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>The user has selected products to add to their cart.</preconditions>\n                <mainFlow>\n                    <step>\n                        <description>The user adds a product to their cart.</description>\n                    </step>\n                    <step>\n                        <description>The system updates the cart contents.</description>\n                    </step>\n                    <step>\n                        <description>The user removes a product from their cart.</description>\n                    </step>\n                    <step>\n                        <description>The system updates the cart contents.</description>\n                    </step>\n                </mainFlow>\n                <alternateFlows>\n                </alternateFlows>\n                <postconditions>The user has managed their cart contents.</postconditions>\n            </useCase>\n            <useCase id=\"UC-004\">\n                <title>Checkout and Payment</title>\n                <description>The user completes the checkout process and pays for their products.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>The user has added products to their cart and has access to payment options.</preconditions>\n                <mainFlow>\n                    <step>\n                        <description>The user proceeds to checkout.</description>\n                    </step>\n                    <step>\n                        <description>The system displays payment options.</description>\n                    </step>\n                    <step>\n                        <description>The user selects a payment option.</description>\n                    </step>\n                    <step>\n                        <description>The system processes the payment.</description>\n                    </step>\n                </mainFlow>\n                <alternateFlows>\n                </alternateFlows>\n                <postconditions>The user has completed the checkout process and paid for their products.</postconditions>\n            </useCase>\n            <useCase id=\"UC-005\">\n                <title>Order Tracking and Management</title>\n                <description>The user tracks and manages their orders.</description>\n                <actors>\n                    <actor>User</actor>\n                </actors>\n                <preconditions>The user has placed an order.</preconditions>\n                <mainFlow>\n                    <step>\n                        <description>The user views their order history.</description>\n                    </step>\n                    <step>\n                        <description>The system displays order details.</description>\n                    </step>\n                    <step>\n                        <description>The user tracks the order status.</description>\n                    </step>\n                    <step>\n                        <description>The system displays the order status.</description>\n                    </step>\n                </mainFlow>\n                <alternateFlows>\n                </alternateFlows>\n                <postconditions>The user has tracked and managed their orders.</postconditions>\n            </useCase>\n        </useCaseModel>\n    </useCases>\n    <nonFunctionalRequirements>\n        <requirement type=\"Security\">\n            All sensitive data must be encrypted at rest and in transit using industry-standard protocols.\n        </requirement>\n        <requirement type=\"Performance\">\n            The system must respond to 95% of user queries in under 2 seconds.\n        </requirement>\n    </nonFunctionalRequirements>\n</productRequirementsDocument>\n```",
+      "prd_html": "<!DOCTYPE html>\nHere is the transformed PRD XML into a beautiful, professional HTML document:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>PRD for E-Commerce Platform - ShopEasy</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/lucide@latest/lucide.min.css\">\n</head>\n<body>\n    <header>\n        <nav>\n            <ul>\n                <li><a href=\"#executive-summary\">Executive Summary</a></li>\n                <li><a href=\"#scope\">Scope</a></li>\n                <li><a href=\"#business-goals\">Business Goals</a></li>\n                <li><a href=\"#use-cases\">Use Cases</a></li>\n                <li><a href=\"#non-functional-requirements\">Non-Functional Requirements</a></li>\n            </ul>\n        </nav>\n    </header>\n    <main>\n        <section id=\"executive-summary\">\n            <h1>Executive Summary</h1>\n            <p>A comprehensive e-commerce platform designed to provide a seamless and user-friendly shopping experience.</p>\n        </section>\n        <section id=\"scope\">\n            <h1>Scope</h1>\n            <h2>In-Scopes</h2>\n            <ul>\n                <li>User Search and Product Filtering</li>\n                <li>Product Details and Reviews</li>\n                <li>Cart Management</li>\n                <li>Checkout and Payment</li>\n                <li>Order Tracking and Management</li>\n            </ul>\n            <h2>Out-of-Scopes</h2>\n            <ul>\n                <li>Payment Gateway Integration</li>\n                <li>Inventory Management</li>\n                <li>Shipping Integration</li>\n            </ul>\n        </section>\n        <section id=\"business-goals\">\n            <h1>Business Goals</h1>\n            <ul>\n                <li>To provide a user-friendly and intuitive interface for users to browse and purchase products.</li>\n                <li>To enable users to easily manage their carts and checkout process.</li>\n                <li>To provide a secure and reliable payment processing system.</li>\n            </ul>\n        </section>\n        <section id=\"use-cases\">\n            <h1>Use Cases</h1>\n            <h2>Use Case Model</h2>\n            <ul>\n                <li id=\"uc-001\">\n                    <h3>User Search and Product Filtering</h3>\n                    <p>The user searches for products and filters the results based on various criteria.</p>\n                    <p>Actors:</p>\n                    <ul>\n                        <li>User</li>\n                    </ul>\n                    <p>Preconditions:</p>\n                    <p>The user is logged in and has access to the search functionality.</p>\n                    <p>Main Flow:</p>\n                    <ul>\n                        <li>The user enters a search query in the search bar.</li>\n                        <li>The system retrieves a list of search results.</li>\n                        <li>The user filters the search results.</li>\n                        <li>The system displays the filtered search results.</li>\n                    </ul>\n                    <p>Alternate Flows:</p>\n                    <p></p>\n                    <p>Postconditions:</p>\n                    <p>The user has viewed the filtered search results.</p>\n                </li>\n                <li id=\"uc-002\">\n                    <h3>Product Details and Reviews</h3>\n                    <p>The user views product details and reviews from other users.</p>\n                    <p>Actors:</p>\n                    <ul>\n                        <li>User</li>\n                    </ul>\n                    <p>Preconditions:</p>\n                    <p>The user has selected a product from the search results.</p>\n                    <p>Main Flow:</p>\n                    <ul>\n                        <li>The user selects a product to view its details.</li>\n                        <li>The system displays product details.</li>\n                        <li>The user views reviews from other users.</li>\n                        <li>The system displays the reviews.</li>\n                    </ul>\n                    <p>Alternate Flows:</p>\n                    <p></p>\n                    <p>Postconditions:</p>\n                    <p>The user has viewed the product details and reviews.</p>\n                </li>\n                <li id=\"uc-003\">\n                    <h3>Cart Management</h3>\n                    <p>The user adds and manages products in their cart.</p>\n                    <p>Actors:</p>\n                    <ul>\n                        <li>User</li>\n                    </ul>\n                    <p>Preconditions:</p>\n                    <p>The user has selected products to add to their cart.</p>\n                    <p>Main Flow:</p>\n                    <ul>\n                        <li>The user adds a product to their cart.</li>\n                        <li>The system updates the cart contents.</li>\n                        <li>The user removes a product from their cart.</li>\n                        <li>The system updates the cart contents.</li>\n                    </ul>\n                    <p>Alternate Flows:</p>\n                    <p></p>\n                    <p>Postconditions:</p>\n                    <p>The user has managed their cart contents.</p>\n                </li>\n                <li id=\"uc-004\">\n                    <h3>Checkout and Payment</h3>\n                    <p>The user completes the checkout process and pays for their products.</p>\n                    <p>Actors:</p>\n                    <ul>\n                        <li>User</li>\n                    </ul>\n                    <p>Preconditions:</p>\n                    <p>The user has added products to their cart and has access to payment options.</p>\n                    <p>Main Flow:</p>\n                    <ul>\n                        <li>The user proceeds to checkout.</li>\n                        <li>The system displays payment options.</li>\n                        <li>The user selects a payment option.</li>\n                        <li>The system processes the payment.</li>\n                    </ul>\n                    <p>Alternate Flows:</p>\n                    <p></p>\n                    <p>Postconditions:</p>\n                    <p>The user has completed the checkout process and paid for their products.</p>\n                </li>\n                <li id=\"uc-005\">\n                    <h3>Order Tracking and Management</h3>\n                    <p>The user tracks and manages their orders.</p>\n                    <p>Actors:</p>\n                    <ul>\n                        <li>User</li>\n                    </ul>\n                    <p>Preconditions:</p>\n                    <p>The user has placed an order.</p>\n                    <p>Main Flow:</p>\n                    <ul>\n                        <li>The user views their order history.</li>\n                        <li>The system displays order details.</li>\n                        <li>The user tracks the order status.</li>\n                        <li>The system displays the order status.</li>\n                    </ul>\n                    <p>Alternate Flows:</p>\n                    <p></p>\n                    <p>Postconditions:</p>\n                    <p>The user has tracked and managed their orders.</p>\n                </li>\n            </ul>\n        </section>\n        <section id=\"non-functional-requirements\">\n            <h1>Non-Functional Requirements</h1>\n            <ul>\n                <li type=\"Security\">\n                    All sensitive data must be encrypted at rest and in transit using industry-standard protocols.\n                </li>\n                <li type=\"Performance\">\n                    The system must respond to 95% of user queries in under 2 seconds.\n                </li>\n            </ul>\n        </section>\n    </main>\n    <footer>\n        <p>&copy; 2023 ShopEasy</p>\n        <p>Designed by <a href=\"https://www.example.com\">Example</a></p>\n    </footer>\n    <script src=\"script.js\"></script>\n    <script src=\"https://unpkg.com/lucide@latest/lucide.min.js\"></script>\n</body>\n</html>\n```\n\nAnd here is the CSS code to style the HTML document:\n\n```css\n/* Global Styles */\n\n* {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n}\n\nbody {\n    font-family: Arial, sans-serif;\n    line-height: 1.6;\n    color: #333;\n    background-color: #f9f9f9;\n}\n\nheader {\n    background-color: #333;\n    color: #fff;\n    padding: 1em;\n    text-align: center;\n}\n\nheader nav ul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n    display: flex;\n    justify-content: space-between;\n}\n\nheader nav ul li {\n    margin-right: 20px;\n}\n\nheader nav a {\n    color: #fff;\n    text-decoration: none;\n}\n\nmain {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding: 2em;\n}\n\nsection {\n    background-color: #fff;\n    padding: 1em;\n    margin-bottom: 20px;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n\nh1, h2, h3 {\n    color: #333;\n    margin-bottom: 10px;\n}\n\nul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n}\n\nli {\n    margin-bottom: 10px;\n}\n\n#use-cases ul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n}\n\n#use-cases li {\n    margin-bottom: 20px;\n}\n\n#use-cases li h3 {\n    margin-top: 0;\n}\n\n#use-cases li p {\n    margin-bottom: 10px;\n}\n\nfooter {\n    background-color: #333;\n    color: #fff;\n    padding: 1em;\n    text-align: center;\n    clear: both;\n}\n\nfooter p {\n    margin-bottom: 10px;\n}\n\nfooter a {\n    color: #fff;\n    text-decoration: none;\n}\n\n/* Responsive Design */\n\n@media (max-width: 768px) {\n    main {\n        flex-direction: column;\n        align-items: center;\n        padding: 1em;\n    }\n    section {\n        margin-bottom: 10px;\n    }\n    #use-cases ul {\n        flex-direction: column;\n    }\n    #use-cases li {\n        margin-bottom: 10px;\n    }\n}\n\n@media (max-width: 480px) {\n    main {\n        padding: 0.5em;\n    }\n    section {\n        margin-bottom: 5px;\n    }\n    #use-cases ul {\n        flex-direction: column;\n    }\n    #use-cases li {\n        margin-bottom: 5px;\n    }\n}\n```\n\nNote that this is just one possible way to style the HTML document, and you may choose to use a different approach depending on your personal preferences and design requirements.",
       "project_name": "E-Commerce Platform - ShopEasy"
     },
     "mockup": {
       "mockup_pages": {
-        "index.html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>ShopEasy - E-Commerce Platform</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/lucide@latest/lucide.min.css\">\n    <script src=\"https://unpkg.com/lucide@latest/lucide.min.js\"></script>\n</head>\n<body>\n    <!-- Hero Section -->\n    <header class=\"hero\">\n        <div class=\"container\">\n            <h1 class=\"title\">ShopEasy</h1>\n            <h2 class=\"tagline\">Your One-Stop Shop for All Your Needs</h2>\n            <button class=\"btn btn-primary\">Get Started</button>\n        </div>\n    </header>\n\n    <!-- Use Case Grid -->\n    <section class=\"use-case-grid\">\n        <div class=\"container\">\n            <h2 class=\"section-title\">Use Cases</h2>\n            <div class=\"grid\">\n                <div class=\"card\" data-id=\"UC-001\">\n                    <i class=\"lucide-icon lucide-user-plus\"></i>\n                    <h3>UC-001</h3>\n                    <p>Unnamed Use Case</p>\n                    <p>The user creates a new account on the E-Commerce Platform to purchase products.</p>\n                    <button class=\"btn btn-view-mockup\">View Mockup</button>\n                </div>\n                <div class=\"card\" data-id=\"UC-002\">\n                    <i class=\"lucide-icon lucide-search\"></i>\n                    <h3>UC-002</h3>\n                    <p>Unnamed Use Case</p>\n                    <p>The user searches for products on the E-Commerce Platform.</p>\n                    <button class=\"btn btn-view-mockup\">View Mockup</button>\n                </div>\n                <div class=\"card\" data-id=\"UC-003\">\n                    <i class=\"lucide-icon lucide-shopping-cart\"></i>\n                    <h3>UC-003</h3>\n                    <p>Unnamed Use Case</p>\n                    <p>The user adds a product to their cart on the E-Commerce Platform.</p>\n                    <button class=\"btn btn-view-mockup\">View Mockup</button>\n                </div>\n                <div class=\"card\" data-id=\"UC-004\">\n                    <i class=\"lucide-icon lucide-check\"></i>\n                    <h3>UC-004</h3>\n                    <p>Unnamed Use Case</p>\n                    <p>The user completes the checkout process on the E-Commerce Platform.</p>\n                    <button class=\"btn btn-view-mockup\">View Mockup</button>\n                </div>\n                <div class=\"card\" data-id=\"UC-005\">\n                    <i class=\"lucide-icon lucide-truck\"></i>\n                    <h3>UC-005</h3>\n                    <p>Unnamed Use Case</p>\n                    <p>The user tracks their order on the E-Commerce Platform.</p>\n                    <button class=\"btn btn-view-mockup\">View Mockup</button>\n                </div>\n            </div>\n        </div>\n    </section>\n\n    <!-- Navigation -->\n    <nav class=\"nav\">\n        <ul>\n            <li><a href=\"#\">Home</a></li>\n            <li><a href=\"#\">About</a></li>\n            <li><a href=\"#\">Contact</a></li>\n        </ul>\n    </nav>\n\n    <!-- Footer -->\n    <footer class=\"footer\">\n        <div class=\"container\">\n            <h2 class=\"section-title\">ShopEasy</h2>\n            <p>&copy; 2025 ShopEasy. All rights reserved.</p>\n            <ul>\n                <li><a href=\"#\">Terms of Service</a></li>\n                <li><a href=\"#\">Privacy Policy</a></li>\n            </ul>\n        </div>\n    </footer>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>",
+        "index.html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>ShopEasy - E-Commerce Platform</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/lucide@latest/lucide.min.css\">\n</head>\n<body>\n    <header class=\"header\">\n        <nav class=\"nav\">\n            <div class=\"logo\">\n                <a href=\"#\">\n                    <img src=\"logo.png\" alt=\"ShopEasy Logo\">\n                </a>\n            </div>\n            <ul class=\"nav-links\">\n                <li><a href=\"#\">Home</a></li>\n                <li><a href=\"#\">About</a></li>\n                <li><a href=\"#\">Contact</a></li>\n            </ul>\n        </nav>\n    </header>\n    <main class=\"main\">\n        <section class=\"hero-section\">\n            <h1 class=\"hero-title\">ShopEasy - Your One-Stop E-Commerce Platform</h1>\n            <p class=\"hero-tagline\">Experience the ease of online shopping with us!</p>\n            <button class=\"hero-button\">Get Started</button>\n        </section>\n        <section class=\"use-case-grid\">\n            <h2 class=\"use-case-grid-title\">Our Use Cases</h2>\n            <div class=\"grid\">\n                <div class=\"card\">\n                    <h3>UC-001</h3>\n                    <p class=\"card-description\">The user searches for products and filters the results based on various criteria.</p>\n                    <i class=\"lucide-search icon\"></i>\n                    <button class=\"view-mockup\">View Mockup</button>\n                </div>\n                <div class=\"card\">\n                    <h3>UC-002</h3>\n                    <p class=\"card-description\">The user views product details and reviews from other users.</p>\n                    <i class=\"lucide-eye icon\"></i>\n                    <button class=\"view-mockup\">View Mockup</button>\n                </div>\n                <div class=\"card\">\n                    <h3>UC-003</h3>\n                    <p class=\"card-description\">The user adds and manages products in their cart.</p>\n                    <i class=\"lucide-shopping-cart icon\"></i>\n                    <button class=\"view-mockup\">View Mockup</button>\n                </div>\n                <div class=\"card\">\n                    <h3>UC-004</h3>\n                    <p class=\"card-description\">The user completes the checkout process and pays for their products.</p>\n                    <i class=\"lucide-paypal icon\"></i>\n                    <button class=\"view-mockup\">View Mockup</button>\n                </div>\n                <div class=\"card\">\n                    <h3>UC-005</h3>\n                    <p class=\"card-description\">The user tracks and manages their orders.</p>\n                    <i class=\"lucide-truck icon\"></i>\n                    <button class=\"view-mockup\">View Mockup</button>\n                </div>\n            </div>\n        </section>\n        <footer class=\"footer\">\n            <p class=\"footer-text\">&copy; 2023 ShopEasy. All rights reserved.</p>\n            <div class=\"social-links\">\n                <a href=\"#\" class=\"social-link\">\n                    <i class=\"lucide-facebook icon\"></i>\n                </a>\n                <a href=\"#\" class=\"social-link\">\n                    <i class=\"lucide-twitter icon\"></i>\n                </a>\n                <a href=\"#\" class=\"social-link\">\n                    <i class=\"lucide-instagram icon\"></i>\n                </a>\n            </div>\n        </footer>\n    </main>\n    <script src=\"script.js\"></script>\n</body>\n</html>",
         "UC-001_mockup.html": "<!DOCTYPE html><html><body><h1>Error generating mockup for Unnamed Use Case</h1></body></html>",
         "UC-002_mockup.html": "<!DOCTYPE html><html><body><h1>Error generating mockup for Unnamed Use Case</h1></body></html>",
         "UC-003_mockup.html": "<!DOCTYPE html><html><body><h1>Error generating mockup for Unnamed Use Case</h1></body></html>",
@@ -351,101 +362,171 @@
         "data_sets": [
           {
             "name": "User Information",
-            "description": "Sample user data for registration and login",
+            "description": "Information about the users of the E-Commerce Platform - ShopEasy",
             "use_case_id": "UC-001",
             "format": "json",
             "schema": {
               "type": "object",
               "properties": {
                 "id": {
-                  "type": "string",
-                  "description": "Unique user ID"
+                  "type": "string"
                 },
-                "username": {
-                  "type": "string",
-                  "description": "User username"
+                "name": {
+                  "type": "string"
                 },
                 "email": {
-                  "type": "string",
-                  "description": "User email"
+                  "type": "string"
                 },
                 "password": {
-                  "type": "string",
-                  "description": "User password"
+                  "type": "string"
                 }
               },
               "required": [
                 "id",
-                "username",
+                "name",
                 "email",
                 "password"
               ]
             },
             "sample_data": [
               {
-                "id": "user123",
-                "username": "johndoe",
+                "id": "user1",
+                "name": "John Doe",
                 "email": "johndoe@example.com",
                 "password": "password123"
               },
               {
-                "id": "user456",
-                "username": "janeDoe",
-                "email": "janeDoe@example.com",
-                "password": "password456"
+                "id": "user2",
+                "name": "Jane Doe",
+                "email": "janedoe@example.com",
+                "password": "password123"
+              },
+              {
+                "id": "user3",
+                "name": "Bob Smith",
+                "email": "bobsmith@example.com",
+                "password": "password123"
               }
             ]
           },
           {
-            "name": "Product Information",
-            "description": "Sample product data for search and catalog",
+            "name": "Products",
+            "description": "Information about the products available on the E-Commerce Platform - ShopEasy",
             "use_case_id": "UC-002",
             "format": "json",
             "schema": {
               "type": "object",
               "properties": {
                 "id": {
-                  "type": "string",
-                  "description": "Unique product ID"
+                  "type": "string"
                 },
                 "name": {
-                  "type": "string",
-                  "description": "Product name"
+                  "type": "string"
                 },
                 "description": {
-                  "type": "string",
-                  "description": "Product description"
+                  "type": "string"
                 },
                 "price": {
-                  "type": "number",
-                  "description": "Product price"
+                  "type": "number"
+                },
+                "image": {
+                  "type": "string"
                 }
               },
               "required": [
                 "id",
                 "name",
                 "description",
-                "price"
+                "price",
+                "image"
               ]
             },
             "sample_data": [
               {
-                "id": "prod1",
-                "name": "Apple iPhone",
-                "description": "Latest iPhone model with 128GB storage",
-                "price": 999.99
+                "id": "product1",
+                "name": "Product 1",
+                "description": "This is product 1",
+                "price": 10.99,
+                "image": "product1.jpg"
               },
               {
-                "id": "prod2",
-                "name": "Samsung TV",
-                "description": "Latest 4K TV model with 75\" screen",
-                "price": 1299.99
+                "id": "product2",
+                "name": "Product 2",
+                "description": "This is product 2",
+                "price": 5.99,
+                "image": "product2.jpg"
+              },
+              {
+                "id": "product3",
+                "name": "Product 3",
+                "description": "This is product 3",
+                "price": 7.99,
+                "image": "product3.jpg"
               }
             ]
           },
           {
-            "name": "Cart Items",
-            "description": "Sample cart items data for checkout",
+            "name": "Search Results",
+            "description": "Search results for the E-Commerce Platform - ShopEasy",
+            "use_case_id": "UC-001",
+            "format": "json",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "number"
+                  },
+                  "image": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "description",
+                  "price",
+                  "image"
+                ]
+              }
+            },
+            "sample_data": [
+              {
+                "id": "search1",
+                "name": "Product 1",
+                "description": "This is product 1",
+                "price": 10.99,
+                "image": "product1.jpg"
+              },
+              {
+                "id": "search2",
+                "name": "Product 2",
+                "description": "This is product 2",
+                "price": 5.99,
+                "image": "product2.jpg"
+              },
+              {
+                "id": "search3",
+                "name": "Product 3",
+                "description": "This is product 3",
+                "price": 7.99,
+                "image": "product3.jpg"
+              }
+            ]
+          },
+          {
+            "name": "Cart Contents",
+            "description": "Products in the cart for the E-Commerce Platform - ShopEasy",
             "use_case_id": "UC-003",
             "format": "json",
             "schema": {
@@ -454,104 +535,125 @@
                 "type": "object",
                 "properties": {
                   "id": {
-                    "type": "string",
-                    "description": "Unique cart item ID"
+                    "type": "string"
                   },
-                  "product_id": {
-                    "type": "string",
-                    "description": "Product ID of the cart item"
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "number"
                   },
                   "quantity": {
-                    "type": "number",
-                    "description": "Quantity of the cart item"
+                    "type": "number"
                   }
                 },
                 "required": [
                   "id",
-                  "product_id",
+                  "name",
+                  "description",
+                  "price",
                   "quantity"
                 ]
               }
             },
             "sample_data": [
               {
-                "id": "cart_item1",
-                "product_id": "prod1",
+                "id": "cart1",
+                "name": "Product 1",
+                "description": "This is product 1",
+                "price": 10.99,
                 "quantity": 2
               },
               {
-                "id": "cart_item2",
-                "product_id": "prod2",
+                "id": "cart2",
+                "name": "Product 2",
+                "description": "This is product 2",
+                "price": 5.99,
                 "quantity": 1
+              },
+              {
+                "id": "cart3",
+                "name": "Product 3",
+                "description": "This is product 3",
+                "price": 7.99,
+                "quantity": 3
               }
             ]
           },
           {
             "name": "Orders",
-            "description": "Sample order data for order tracking",
+            "description": "Information about the orders placed on the E-Commerce Platform - ShopEasy",
             "use_case_id": "UC-005",
             "format": "json",
             "schema": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "description": "Unique order ID"
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "user_id": {
+                    "type": "string"
+                  },
+                  "order_date": {
+                    "type": "string"
+                  },
+                  "total": {
+                    "type": "number"
+                  }
                 },
-                "user_id": {
-                  "type": "string",
-                  "description": "User ID of the order"
-                },
-                "order_date": {
-                  "type": "string",
-                  "description": "Order date"
-                },
-                "total": {
-                  "type": "number",
-                  "description": "Total order value"
-                }
-              },
-              "required": [
-                "id",
-                "user_id",
-                "order_date",
-                "total"
-              ]
+                "required": [
+                  "id",
+                  "user_id",
+                  "order_date",
+                  "total"
+                ]
+              }
             },
             "sample_data": [
               {
                 "id": "order1",
-                "user_id": "user123",
+                "user_id": "user1",
                 "order_date": "2025-11-01",
-                "total": 1999.98
+                "total": 29.97
               },
               {
                 "id": "order2",
-                "user_id": "user456",
-                "order_date": "2025-11-02",
-                "total": 1299.99
+                "user_id": "user2",
+                "order_date": "2025-10-31",
+                "total": 19.97
+              },
+              {
+                "id": "order3",
+                "user_id": "user3",
+                "order_date": "2025-10-30",
+                "total": 23.97
               }
             ]
           }
         ],
-        "summary": "Generated sample data for E-Commerce Platform use cases"
+        "summary": "Synthetic data sets for the E-Commerce Platform - ShopEasy, including user information, products, search results, cart contents, and orders."
       },
       "project_name": "E-Commerce Platform - ShopEasy",
-      "num_datasets": 4
+      "num_datasets": 5
     },
     "commercial_proposal": {
-      "proposal_xml": "<commercialProposal>\n    <introduction>\n        <title>E-Commerce Platform - ShopEasy</title>\n        <description>A comprehensive e-commerce platform designed to provide a seamless user experience, efficient product management, and streamlined payment processing.</description>\n    </introduction>\n    <scopeOfWork>\n        <title>Key Features and Deliverables</title>\n        <ul>\n            <li>Registration and login functionality</li>\n            <li>Product catalog with search and filtering capabilities</li>\n            <li>Cart and checkout process with payment processing</li>\n            <li>Order tracking and management</li>\n            <li>Responsive design for mobile and desktop devices</li>\n        </ul>\n    </scopeOfWork>\n    <timeline>\n        <phase name=\"Phase 1: Discovery & Architectural Design\" durationWeeks=\"2\">\n            <description>Conduct market research, analyze competitors, and define the platform's technical architecture.</description>\n        </phase>\n        <phase name=\"Phase 2: MVP Development & Integration\" durationWeeks=\"6\">\n            <description>Develop the minimum viable product (MVP) with core features and integrate third-party services.</description>\n        </phase>\n        <phase name=\"Phase 3: User Acceptance Testing & Deployment\" durationWeeks=\"2\">\n            <description>Conduct user acceptance testing, deploy the platform, and ensure seamless integration with payment gateways.</description>\n        </phase>\n    </timeline>\n    <pricing>\n        <services>\n            <item name=\"Blended Team Day Rate (Design & Engineering)\" rate=\"3000.00\" currency=\"GBP\" unit=\"per day\"/>\n            <item name=\"Infrastructure Costs\" rate=\"500.00\" currency=\"GBP\" unit=\"per month\" notes=\"Estimated monthly cloud costs for hosting and infrastructure.\"/>\n        </services>\n    </pricing>\n    <nextSteps>\n        <title>Next Steps</title>\n        <description>Review this proposal, schedule a follow-up meeting to discuss the project in more detail, and provide feedback on the project scope and timeline.</description>\n    </nextSteps>\n</commercialProposal>",
-      "proposal_html": "<!DOCTYPE html>\nHere is the transformed commercial proposal XML into a beautiful, professional HTML document:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>E-Commerce Platform - ShopEasy</title>\n    <style>\n        /* AICOE branding guidelines */\n        :root {\n            --aicoe-primary-navy: #1a1a2e;\n            --aicoe-midnight-blue: #2a2a3e;\n            --aicoe-deep-purple: #3a2a4e;\n            --aicoe-accent-pink: #ff69b4;\n            --aicoe-accent-cyan: #00ffcc;\n            --aicoe-accent-turquoise: #00e5b3;\n            --aicoe-text-primary: #1a1a1a;\n            --aicoe-text-secondary: #6e6e73;\n            --aicoe-bg-white: #ffffff;\n            --aicoe-bg-gray: #f5f5f7;\n            --aicoe-bg-dark: #1d1d1f;\n            --aicoe-success: #34c759;\n            --aicoe-warning: #ff9500;\n            --aicoe-error: #ff3b30;\n            --aicoe-info: #007aff;\n            --aicoe-gradient-primary: linear-gradient(135deg, var(--aicoe-accent-pink), var(--aicoe-accent-cyan));\n            --aicoe-gradient-secondary: linear-gradient(135deg, var(--aicoe-primary-navy), var(--aicoe-deep-purple));\n        }\n        \n        /* Typography system */\n        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;\n        \n        /* Spacing system */\n        --space-xs: 0.5rem;\n        --space-sm: 1rem;\n        --space-md: 1.5rem;\n        --space-lg: 2rem;\n        --space-xl: 2.5rem;\n        --space-2xl: 3rem;\n        --space-3xl: 4rem;\n        --space-4xl: 5rem;\n        \n        /* Shadow system */\n        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);\n        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);\n        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\n        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);\n        --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);\n        --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);\n        \n        /* Border radius */\n        --radius-sm: 0.375rem;\n        --radius-md: 0.5rem;\n        --radius-lg: 0.75rem;\n        --radius-xl: 1rem;\n        --radius-2xl: 1.5rem;\n        --radius-full: 9999px;\n        \n        /* Transitions & animations */\n        --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);\n        --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);\n        --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);\n        \n        /* Layout patterns */\n        .container {\n            width: 100%;\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 0 var(--space-lg);\n        }\n        \n        .grid {\n            display: grid;\n            gap: var(--space-lg);\n        }\n        \n        .grid-2 {\n            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n        }\n        \n        .grid-3 {\n            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n        }\n        \n        .grid-4 {\n            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n        }\n        \n        /* Responsive breakpoints */\n        @media (min-width: 640px) {\n            /* Mobile first approach */\n        }\n        @media (min-width: 768px) {\n            /* Tablet approach */\n        }\n        @media (min-width: 1024px) {\n            /* Desktop approach */\n        }\n        @media (min-width: 1280px) {\n            /* Large desktop approach */\n        }\n        @media (min-width: 1536px) {\n            /* Extra large desktop approach */\n        }\n    </style>\n</head>\n<body>\n    <header>\n        <nav>\n            <ul>\n                <li><a href=\"#\">Home</a></li>\n                <li><a href=\"#\">About</a></li>\n                <li><a href=\"#\">Services</a></li>\n                <li><a href=\"#\">Contact</a></li>\n            </ul>\n        </nav>\n    </header>\n    <main class=\"container\">\n        <section>\n            <h1>E-Commerce Platform - ShopEasy</h1>\n            <p>A comprehensive e-commerce platform designed to provide a seamless user experience, efficient product management, and streamlined payment processing.</p>\n        </section>\n        <section>\n            <h2>Scope of Work</h2>\n            <ul>\n                <li>Registration and login functionality</li>\n                <li>Product catalog with search and filtering capabilities</li>\n                <li>Cart and checkout process with payment processing</li>\n                <li>Order tracking and management</li>\n                <li>Responsive design for mobile and desktop devices</li>\n            </ul>\n        </section>\n        <section>\n            <h2>Timeline</h2>\n            <div class=\"grid grid-2\">\n                <div>\n                    <h3>Phase 1: Discovery & Architectural Design</h3>\n                    <p>Conduct market research, analyze competitors, and define the platform's technical architecture.</p>\n                    <p>Duration: 2 weeks</p>\n                </div>\n                <div>\n                    <h3>Phase 2: MVP Development & Integration</h3>\n                    <p>Develop the minimum viable product (MVP) with core features and integrate third-party services.</p>\n                    <p>Duration: 6 weeks</p>\n                </div>\n                <div>\n                    <h3>Phase 3: User Acceptance Testing & Deployment</h3>\n                    <p>Conduct user acceptance testing, deploy the platform, and ensure seamless integration with payment gateways.</p>\n                    <p>Duration: 2 weeks</p>\n                </div>\n            </div>\n        </section>\n        <section>\n            <h2>Pricing</h2>\n            <h3>Services</h3>\n            <ul>\n                <li>\n                    <h4>Blended Team Day Rate (Design & Engineering)</h4>\n                    <p>\u00a33000.00</p>\n                    <p>Currency: GBP</p>\n                    <p>Unit: per day</p>\n                </li>\n                <li>\n                    <h4>Infrastructure Costs</h4>\n                    <p>\u00a3500.00</p>\n                    <p>Currency: GBP</p>\n                    <p>Unit: per month</p>\n                    <p>Notes: Estimated monthly cloud costs for hosting and infrastructure.</p>\n                </li>\n            </ul>\n        </section>\n        <section>\n            <h2>Next Steps</h2>\n            <p>Review this proposal, schedule a follow-up meeting to discuss the project in more detail, and provide feedback on the project scope and timeline.</p>\n        </section>\n    </main>\n    <footer>\n        <p>&copy; 2023 ShopEasy. All rights reserved.</p>\n        <p><a href=\"#\">Terms of Service</a> | <a href=\"#\">Privacy Policy</a></p>\n    </footer>\n</body>\n</html>\n```\n\nThis HTML document follows the AICOE branding guidelines, typography system, spacing system, shadow system, border radius, transitions & animations, layout patterns, and responsive breakpoints. It also includes a clean and professional design, with clear headings, paragraphs, and bullet points. The document is well-structured and easy to read, making it suitable for a commercial proposal.",
+      "proposal_xml": "Here is the commercial proposal XML document for the E-Commerce Platform - ShopEasy project:\n\n```xml\n<commercialProposal>\n    <introduction>\n        <title>E-Commerce Platform - ShopEasy</title>\n        <description>A comprehensive e-commerce platform designed to meet the needs of online retailers, providing a seamless user experience and efficient order management.</description>\n    </introduction>\n    <scopeOfWork>\n        <title>Key Features and Deliverables</title>\n        <description>\n            The E-Commerce Platform - ShopEasy will include the following key features and deliverables:\n            <ul>\n                <li>User Search and Product Filtering</li>\n                <li>Product Details and Reviews</li>\n                <li>Cart Management</li>\n                <li>Checkout and Payment</li>\n                <li>Order Tracking and Management</li>\n            </ul>\n        </description>\n    </scopeOfWork>\n    <timeline>\n        <phase name=\"Phase 1: Discovery & Architectural Design\" durationWeeks=\"2\">\n            <description>Conduct research and analysis to determine the technical requirements of the e-commerce platform.</description>\n        </phase>\n        <phase name=\"Phase 2: MVP Development & Integration\" durationWeeks=\"6\">\n            <description>Develop the minimum viable product (MVP) of the e-commerce platform, including user search and product filtering, product details and reviews, cart management, checkout and payment, and order tracking and management.</description>\n        </phase>\n        <phase name=\"Phase 3: User Acceptance Testing & Deployment\" durationWeeks=\"2\">\n            <description>Conduct user acceptance testing and deploy the e-commerce platform to production.</description>\n        </phase>\n    </timeline>\n    <pricing>\n        <services>\n            <item name=\"Blended Team Day Rate (Design & Engineering)\" rate=\"3000.00\" currency=\"GBP\" unit=\"per day\"/>\n            <item name=\"Infrastructure Costs\" rate=\"365.00\" currency=\"GBP\" unit=\"per month\" notes=\"Estimated monthly cloud costs based on the Bill of Materials. Billed directly by the cloud provider.\"/>\n        </services>\n    </pricing>\n    <nextSteps>\n        <title>Next Steps</title>\n        <description>\n            We recommend reviewing this proposal and scheduling a follow-up meeting to discuss the project in more detail.\n        </description>\n    </nextSteps>\n</commercialProposal>\n```\n\nNote that I've used the provided use cases to inform the scope of work and timeline, and I've also incorporated the research insights to inform the pricing and market context.",
+      "proposal_html": "<!DOCTYPE html>\nHere is the transformed commercial proposal XML into a beautiful, professional HTML document:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>E-Commerce Platform - ShopEasy</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n    <link rel=\"icon\" href=\"favicon.ico\">\n</head>\n<body>\n    <header>\n        <nav>\n            <ul>\n                <li><a href=\"#introduction\">Introduction</a></li>\n                <li><a href=\"#scopeOfWork\">Scope of Work</a></li>\n                <li><a href=\"#timeline\">Timeline</a></li>\n                <li><a href=\"#pricing\">Pricing</a></li>\n                <li><a href=\"#nextSteps\">Next Steps</a></li>\n            </ul>\n        </nav>\n    </header>\n    <main>\n        <section id=\"introduction\">\n            <h1>E-Commerce Platform - ShopEasy</h1>\n            <p>A comprehensive e-commerce platform designed to meet the needs of online retailers, providing a seamless user experience and efficient order management.</p>\n        </section>\n        <section id=\"scopeOfWork\">\n            <h2>Key Features and Deliverables</h2>\n            <p>The E-Commerce Platform - ShopEasy will include the following key features and deliverables:</p>\n            <ul>\n                <li>User Search and Product Filtering</li>\n                <li>Product Details and Reviews</li>\n                <li>Cart Management</li>\n                <li>Checkout and Payment</li>\n                <li>Order Tracking and Management</li>\n            </ul>\n        </section>\n        <section id=\"timeline\">\n            <h2>Timeline</h2>\n            <p>The E-Commerce Platform - ShopEasy will be developed in three phases:</p>\n            <ul>\n                <li>\n                    <h3>Phase 1: Discovery & Architectural Design</h3>\n                    <p>Duration: 2 weeks</p>\n                    <p>Conduct research and analysis to determine the technical requirements of the e-commerce platform.</p>\n                </li>\n                <li>\n                    <h3>Phase 2: MVP Development & Integration</h3>\n                    <p>Duration: 6 weeks</p>\n                    <p>Develop the minimum viable product (MVP) of the e-commerce platform, including user search and product filtering, product details and reviews, cart management, checkout and payment, and order tracking and management.</p>\n                </li>\n                <li>\n                    <h3>Phase 3: User Acceptance Testing & Deployment</h3>\n                    <p>Duration: 2 weeks</p>\n                    <p>Conduct user acceptance testing and deploy the e-commerce platform to production.</p>\n                </li>\n            </ul>\n        </section>\n        <section id=\"pricing\">\n            <h2>Pricing</h2>\n            <p>The total cost for the E-Commerce Platform - ShopEasy will be based on the following services:</p>\n            <ul>\n                <li>\n                    <h3>Blended Team Day Rate (Design & Engineering)</h3>\n                    <p>Rate: \u00a33,000.00</p>\n                    <p>Unit: per day</p>\n                </li>\n                <li>\n                    <h3>Infrastructure Costs</h3>\n                    <p>Rate: \u00a3365.00</p>\n                    <p>Unit: per month</p>\n                    <p>Notes: Estimated monthly cloud costs based on the Bill of Materials. Billed directly by the cloud provider.</p>\n                </li>\n            </ul>\n        </section>\n        <section id=\"nextSteps\">\n            <h2>Next Steps</h2>\n            <p>We recommend reviewing this proposal and scheduling a follow-up meeting to discuss the project in more detail.</p>\n        </section>\n    </main>\n    <footer>\n        <p>&copy; 2023 E-Commerce Platform - ShopEasy</p>\n        <p>Designed and Developed by [Your Name]</p>\n    </footer>\n</body>\n</html>\n```\n\nAnd here is the corresponding CSS file (`styles.css`):\n\n```css\nbody {\n    font-family: Arial, sans-serif;\n    margin: 0;\n    padding: 0;\n}\n\nheader {\n    background-color: #333;\n    color: #fff;\n    padding: 1em;\n    text-align: center;\n}\n\nheader nav ul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n    display: flex;\n    justify-content: space-between;\n}\n\nheader nav ul li {\n    margin-right: 20px;\n}\n\nheader nav a {\n    color: #fff;\n    text-decoration: none;\n}\n\nmain {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding: 2em;\n}\n\nsection {\n    background-color: #f7f7f7;\n    padding: 1em;\n    margin-bottom: 20px;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n\nh1, h2, h3 {\n    color: #333;\n    margin-bottom: 10px;\n}\n\nul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n}\n\nli {\n    margin-bottom: 10px;\n}\n\np {\n    margin-bottom: 20px;\n}\n\nfooter {\n    background-color: #333;\n    color: #fff;\n    padding: 1em;\n    text-align: center;\n    clear: both;\n}\n```\n\nNote that this is just one possible way to transform the XML into an HTML document. You may need to adjust the styles and layout to fit your specific needs.",
       "project_name": "E-Commerce Platform - ShopEasy"
     },
     "bom": {
-      "bom_xml": "Here is the Bill of Materials XML document for the E-Commerce Platform - ShopEasy:\n\n```xml\n<billOfMaterials>\n    <summary>An estimated monthly cost breakdown for deploying and running the proposed E-Commerce Platform - ShopEasy.</summary>\n    <items>\n        <category name=\"Cloud Infrastructure\">\n            <item name=\"Web Server Hosting (2 instances)\" provider=\"Vercel/Netlify\" costPerMonth=\"40.00\" />\n            <item name=\"API Server Hosting (2 instances)\" provider=\"AWS/GCP\" costPerMonth=\"100.00\" />\n            <item name=\"Managed MongoDB\" provider=\"MongoDB Atlas\" costPerMonth=\"75.00\" />\n            <item name=\"Database Hosting (e.g., MySQL, PostgreSQL)\" provider=\"AWS/RDS\" costPerMonth=\"20.00\" />\n            <item name=\"Load Balancer\" provider=\"AWS/NGINX\" costPerMonth=\"15.00\" />\n            <item name=\"Security Group\" provider=\"AWS\" costPerMonth=\"5.00\" />\n        </category>\n        <category name=\"Third-Party Services\">\n            <item name=\"LLM API Usage\" provider=\"OpenAI/Anthropic\" costPerMonth=\"150.00\" />\n            <item name=\"Payment Gateway (e.g., Stripe, PayPal)\" provider=\"Stripe/PayPal\" costPerMonth=\"50.00\" />\n            <item name=\"Social Media Integration (e.g., Facebook, Twitter)\" provider=\"Facebook/Twitter\" costPerMonth=\"10.00\" />\n        </category>\n        <category name=\"Software Licenses\">\n            <item name=\"E-commerce Platform Software\" provider=\"Shopify/BigCommerce\" costPerMonth=\"100.00\" />\n            <item name=\"Content Management System (CMS)\" provider=\"WordPress\" costPerMonth=\"20.00\" />\n            <item name=\"Customer Relationship Management (CRM)\" provider=\"Salesforce\" costPerMonth=\"50.00\" />\n        </category>\n    </items>\n    <totalCostPerMonth>425.00</totalCostPerMonth>\n</billOfMaterials>\n```\n\nNote that the costs are estimates and may vary based on the actual usage and requirements of the E-Commerce Platform - ShopEasy.",
-      "bom_html": "<!DOCTYPE html>\nHere is the transformed HTML document:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>ShopEasy E-Commerce Platform - Bill of Materials</title>\n    <style>\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;\n            background-color: #f5f5f7;\n            margin: 0;\n            padding: 0;\n        }\n\n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 20px;\n            background-color: #ffffff;\n            border: 1px solid #ddd;\n            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n        }\n\n        .summary {\n            font-size: 24px;\n            font-weight: bold;\n            margin-bottom: 10px;\n        }\n\n        .category {\n            margin-bottom: 20px;\n        }\n\n        .item {\n            display: flex;\n            align-items: center;\n            margin-bottom: 10px;\n        }\n\n        .item-name {\n            font-weight: bold;\n            margin-right: 10px;\n        }\n\n        .provider {\n            margin-right: 10px;\n        }\n\n        .cost {\n            font-size: 18px;\n            font-weight: bold;\n        }\n\n        .total-cost {\n            font-size: 24px;\n            font-weight: bold;\n            margin-top: 20px;\n        }\n\n        .buttons {\n            display: flex;\n            justify-content: space-between;\n            margin-top: 20px;\n        }\n\n        .button {\n            background-color: #4CAF50;\n            color: #ffffff;\n            padding: 10px 20px;\n            border: none;\n            border-radius: 5px;\n            cursor: pointer;\n        }\n\n        .button:hover {\n            background-color: #3e8e41;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"summary\">\n            An estimated monthly cost breakdown for deploying and running the proposed E-Commerce Platform - ShopEasy.\n        </div>\n        <div class=\"categories\">\n            <div class=\"category\">\n                <h2>Cloud Infrastructure</h2>\n                <div class=\"items\">\n                    <div class=\"item\">\n                        <span class=\"item-name\">Web Server Hosting (2 instances)</span>\n                        <span class=\"provider\">Vercel/Netlify</span>\n                        <span class=\"cost\">$40.00</span>\n                    </div>\n                    <div class=\"item\">\n                        <span class=\"item-name\">API Server Hosting (2 instances)</span>\n                        <span class=\"provider\">AWS/GCP</span>\n                        <span class=\"cost\">$100.00</span>\n                    </div>\n                    <div class=\"item\">\n                        <span class=\"item-name\">Managed MongoDB</span>\n                        <span class=\"provider\">MongoDB Atlas</span>\n                        <span class=\"cost\">$75.00</span>\n                    </div>\n                    <div class=\"item\">\n                        <span class=\"item-name\">Database Hosting (e.g., MySQL, PostgreSQL)</span>\n                        <span class=\"provider\">AWS/RDS</span>\n                        <span class=\"cost\">$20.00</span>\n                    </div>\n                    <div class=\"item\">\n                        <span class=\"item-name\">Load Balancer</span>\n                        <span class=\"provider\">AWS/NGINX</span>\n                        <span class=\"cost\">$15.00</span>\n                    </div>\n                    <div class=\"item\">\n                        <span class=\"item-name\">Security Group</span>\n                        <span class=\"provider\">AWS</span>\n                        <span class=\"cost\">$5.00</span>\n                    </div>\n                </div>\n            </div>\n            <div class=\"category\">\n                <h2>Third-Party Services</h2>\n                <div class=\"items\">\n                    <div class=\"item\">\n                        <span class=\"item-name\">LLM API Usage</span>\n                        <span class=\"provider\">OpenAI/Anthropic</span>\n                        <span class=\"cost\">$150.00</span>\n                    </div>\n                    <div class=\"item\">\n                        <span class=\"item-name\">Payment Gateway (e.g., Stripe, PayPal)</span>\n                        <span class=\"provider\">Stripe/PayPal</span>\n                        <span class=\"cost\">$50.00</span>\n                    </div>\n                    <div class=\"item\">\n                        <span class=\"item-name\">Social Media Integration (e.g., Facebook, Twitter)</span>\n                        <span class=\"provider\">Facebook/Twitter</span>\n                        <span class=\"cost\">$10.00</span>\n                    </div>\n                </div>\n            </div>\n            <div class=\"category\">\n                <h2>Software Licenses</h2>\n                <div class=\"items\">\n                    <div class=\"item\">\n                        <span class=\"item-name\">E-commerce Platform Software</span>\n                        <span class=\"provider\">Shopify/BigCommerce</span>\n                        <span class=\"cost\">$100.00</span>\n                    </div>\n                    <div class=\"item\">\n                        <span class=\"item-name\">Content Management System (CMS)</span>\n                        <span class=\"provider\">WordPress</span>\n                        <span class=\"cost\">$20.00</span>\n                    </div>\n                    <div class=\"item\">\n                        <span class=\"item-name\">Customer Relationship Management (CRM)</span>\n                        <span class=\"provider\">Salesforce</span>\n                        <span class=\"cost\">$50.00</span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"total-cost\">\n            <span class=\"cost\">$425.00</span>\n        </div>\n        <div class=\"buttons\">\n            <button class=\"button\">View Details</button>\n            <button class=\"button\">Print</button>\n        </div>\n    </div>\n</body>\n</html>\n```\n\nThis HTML document is a clean and professional representation of the provided Bill of Materials XML document. It includes a summary section, category headings, item details, and a total cost section. The design is based on the AICOE branding guidelines, with a focus on clarity, deference, and depth. The layout is responsive and works well on desktop, tablet, and mobile devices.",
+      "bom_xml": "Here is the Bill of Materials XML document for the E-Commerce Platform - ShopEasy:\n\n```xml\n<billOfMaterials>\n    <summary>An estimated monthly cost breakdown for deploying and running the proposed E-Commerce Platform - ShopEasy.</summary>\n    <items>\n        <category name=\"Cloud Infrastructure\">\n            <item name=\"Web Server Hosting (2 instances)\" provider=\"Vercel/Netlify\" costPerMonth=\"40.00\" />\n            <item name=\"API Server Hosting (2 instances)\" provider=\"AWS/GCP\" costPerMonth=\"100.00\" />\n            <item name=\"Managed MongoDB\" provider=\"MongoDB Atlas\" costPerMonth=\"75.00\" />\n        </category>\n        <category name=\"Third-Party Services\">\n            <item name=\"Search Library (e.g. Algolia)\" provider=\"Algolia\" costPerMonth=\"50.00\" />\n            <item name=\"Payment Gateway (e.g. Stripe)\" provider=\"Stripe\" costPerMonth=\"75.00\" />\n            <item name=\"Social Media Integration (e.g. Facebook, Instagram)\" provider=\"Facebook/Instagram\" costPerMonth=\"25.00\" />\n        </category>\n    </items>\n    <totalCostPerMonth>365.00</totalCostPerMonth>\n</billOfMaterials>\n```\n\nNote: The costs are estimates and may vary based on the actual usage and requirements of the platform.",
+      "bom_html": "<!DOCTYPE html>\nHere is the transformed HTML document:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>ShopEasy E-Commerce Platform Bill of Materials</title>\n    <style>\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;\n            background-color: #f5f5f7;\n            margin: 0;\n            padding: 0;\n        }\n        \n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 20px;\n            background-color: #ffffff;\n            border: 1px solid #ddd;\n            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n        }\n        \n        .summary {\n            font-size: 24px;\n            font-weight: bold;\n            margin-bottom: 20px;\n        }\n        \n        .category {\n            margin-bottom: 40px;\n        }\n        \n        .item {\n            font-size: 18px;\n            margin-bottom: 10px;\n        }\n        \n        .provider {\n            font-size: 14px;\n            color: #666;\n        }\n        \n        .cost {\n            font-size: 16px;\n            color: #333;\n        }\n        \n        .total-cost {\n            font-size: 24px;\n            font-weight: bold;\n            margin-top: 40px;\n        }\n        \n        .table {\n            border-collapse: collapse;\n            width: 100%;\n        }\n        \n        .table th, .table td {\n            border: 1px solid #ddd;\n            padding: 10px;\n            text-align: left;\n        }\n        \n        .table th {\n            background-color: #f0f0f0;\n        }\n        \n        .table td {\n            background-color: #ffffff;\n        }\n        \n        .table tr:nth-child(even) {\n            background-color: #f9f9f9;\n        }\n        \n        .table tr:hover {\n            background-color: #f5f5f5;\n        }\n        \n        .button {\n            background-color: #4CAF50;\n            color: #ffffff;\n            padding: 10px 20px;\n            border: none;\n            border-radius: 5px;\n            cursor: pointer;\n        }\n        \n        .button:hover {\n            background-color: #3e8e41;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"summary\">\n            An estimated monthly cost breakdown for deploying and running the proposed E-Commerce Platform - ShopEasy.\n        </div>\n        <div class=\"category\">\n            <h2>Cloud Infrastructure</h2>\n            <table class=\"table\">\n                <tr>\n                    <th>Item</th>\n                    <th>Provider</th>\n                    <th>Cost per Month</th>\n                </tr>\n                <tr>\n                    <td>Web Server Hosting (2 instances)</td>\n                    <td>Vercel/Netlify</td>\n                    <td>$40.00</td>\n                </tr>\n                <tr>\n                    <td>API Server Hosting (2 instances)</td>\n                    <td>AWS/GCP</td>\n                    <td>$100.00</td>\n                </tr>\n                <tr>\n                    <td>Managed MongoDB</td>\n                    <td>MongoDB Atlas</td>\n                    <td>$75.00</td>\n                </tr>\n            </table>\n        </div>\n        <div class=\"category\">\n            <h2>Third-Party Services</h2>\n            <table class=\"table\">\n                <tr>\n                    <th>Item</th>\n                    <th>Provider</th>\n                    <th>Cost per Month</th>\n                </tr>\n                <tr>\n                    <td>Search Library (e.g. Algolia)</td>\n                    <td>Algolia</td>\n                    <td>$50.00</td>\n                </tr>\n                <tr>\n                    <td>Payment Gateway (e.g. Stripe)</td>\n                    <td>Stripe</td>\n                    <td>$75.00</td>\n                </tr>\n                <tr>\n                    <td>Social Media Integration (e.g. Facebook, Instagram)</td>\n                    <td>Facebook/Instagram</td>\n                    <td>$25.00</td>\n                </tr>\n            </table>\n        </div>\n        <div class=\"total-cost\">\n            Total Cost per Month: $365.00\n        </div>\n        <div class=\"button\">\n            <a href=\"#\">View Details</a>\n        </div>\n    </div>\n</body>\n</html>\n```\n\nThis HTML document maintains the original structure and content of the provided XML, while transforming it into a clean and professional HTML document with a modern design. The document includes a summary section, category headers, item details, and a total cost per month. The design is based on the AICOE branding guidelines, with a focus on simplicity, clarity, and readability.",
       "project_name": "E-Commerce Platform - ShopEasy"
     },
     "architecture_diagram": {
-      "architecture_xml": "<systemArchitecture>\n    <description>E-Commerce Platform - ShopEasy System Architecture Design</description>\n    <diagram type=\"mermaid-flowchart\">\n        <![CDATA[\n            graph TD\n                %% Frontend Layer\n                A[React Native Mobile App] -->|HTTPS/REST| B[API Gateway - Kong/Nginx]\n                A2[React Web App] -->|HTTPS/REST| B\n\n                %% API Gateway & Auth\n                B --> C[Auth Service - OAuth 2.0]\n                C --> D[Identity Provider]\n\n                %% Backend Services\n                B --> E[User Service]\n                B --> F[Core Business Logic Service]\n                B --> G[Analytics Service]\n\n                %% Data Layer\n                E --> H[(PostgreSQL - User Data)]\n                F --> I[(MongoDB - Application Data)]\n                G --> J[(Redis Cache)]\n\n                %% Message Queue\n                F --> K[Message Queue - RabbitMQ/Kafka]\n                K --> L[Background Workers]\n\n                %% External Services\n                B --> M[Third-Party APIs]\n                F --> N[Cloud Storage - S3]\n\n                %% Search Suggestion Feature\n                B --> O[Search Suggestion Service - Elasticsearch]\n                O --> P[Search Suggestion Algorithm]\n\n                %% Personalized Product Recommendation Engine\n                B --> Q[Product Recommendation Service - TensorFlow]\n                Q --> R[Product Recommendation Algorithm]\n\n                %% PCI-DSS Compliance\n                B --> S[PCI-DSS Compliance Service - PCI-DSS]\n\n                %% GDPR Compliance\n                B --> T[GDPR Compliance Service - GDPR]\n\n            ]]>\n    </diagram>\n    <componentBreakdown>\n        <component name=\"React Native Mobile App\">Cross-platform mobile application built with React Native, providing native iOS and Android experiences.</component>\n        <component name=\"React Web App\">Responsive web application built with React, TypeScript, and modern UI libraries.</component>\n        <component name=\"API Gateway\">Kong or Nginx-based API gateway handling routing, rate limiting, authentication, and load balancing.</component>\n        <component name=\"Auth Service\">OAuth 2.0 / OpenID Connect authentication service with JWT token management.</component>\n        <component name=\"User Service\">Microservice handling user management, profiles, and preferences.</component>\n        <component name=\"Core Business Logic Service\">Main application service implementing business rules and workflows.</component>\n        <component name=\"PostgreSQL\">Relational database for structured user and transactional data.</component>\n        <component name=\"MongoDB\">NoSQL database for flexible, document-based application data.</component>\n        <component name=\"Redis Cache\">In-memory cache for session management and performance optimization.</component>\n        <component name=\"Message Queue\">Asynchronous message processing using RabbitMQ or Kafka for event-driven architecture.</component>\n        <component name=\"Search Suggestion Service\">Elasticsearch-based search suggestion service for improving user search experience.</component>\n        <component name=\"Product Recommendation Service\">TensorFlow-based personalized product recommendation engine for increasing average order value and customer satisfaction.</component>\n        <component name=\"PCI-DSS Compliance Service\">Service ensuring PCI-DSS compliance for secure payment processing.</component>\n        <component name=\"GDPR Compliance Service\">Service ensuring GDPR compliance for data protection by design and default.</component>\n    </componentBreakdown>\n</systemArchitecture>",
-      "architecture_html": "<!DOCTYPE html>\nBelow is the transformed system architecture HTML document with an interactive Mermaid diagram:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>ShopEasy System Architecture Design</title>\n    <style>\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, \"SF Pro Display\", sans-serif;\n            margin: 0;\n            padding: 0;\n            background-color: #f5f5f7;\n        }\n\n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 40px;\n            background-color: #ffffff;\n            border-radius: 10px;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n\n        .header {\n            text-align: center;\n            margin-bottom: 20px;\n        }\n\n        .mermaid-diagram {\n            width: 100%;\n            height: 500px;\n            border: 1px solid #ddd;\n            border-radius: 10px;\n            margin-bottom: 20px;\n        }\n\n        .component-breakdown {\n            margin-top: 20px;\n        }\n\n        .component {\n            margin-bottom: 10px;\n        }\n\n        .component-name {\n            font-weight: bold;\n        }\n\n        .component-description {\n            font-size: 14px;\n            color: #666;\n        }\n\n        .footer {\n            text-align: center;\n            margin-top: 20px;\n        }\n\n        .footer-text {\n            font-size: 14px;\n            color: #666;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"header\">\n            <h1>ShopEasy System Architecture Design</h1>\n        </div>\n        <div class=\"mermaid-diagram\">\n            <script>\n                mermaid.initialize({\n                    startOnLoad: true,\n                    theme: 'base',\n                    themeVariables: {\n                        primaryColor: '#1a1a2e',\n                        primaryTextColor: '#ffffff',\n                        primaryBorderColor: '#00ffcc',\n                        lineColor: '#00ffcc',\n                        secondaryColor: '#2a2a3e',\n                        tertiaryColor: '#3a2a4e',\n                        fontFamily: '-apple-system, BlinkMacSystemFont, \"SF Pro Display\", sans-serif'\n                    }\n                });\n                mermaid.render('mermaid-diagram', `\n                    graph TD\n                        %% Frontend Layer\n                        A[React Native Mobile App] -->|HTTPS/REST| B[API Gateway - Kong/Nginx]\n                        A2[React Web App] -->|HTTPS/REST| B\n\n                        %% API Gateway & Auth\n                        B --> C[Auth Service - OAuth 2.0]\n                        C --> D[Identity Provider]\n\n                        %% Backend Services\n                        B --> E[User Service]\n                        B --> F[Core Business Logic Service]\n                        B --> G[Analytics Service]\n\n                        %% Data Layer\n                        E --> H[(PostgreSQL - User Data)]\n                        F --> I[(MongoDB - Application Data)]\n                        G --> J[(Redis Cache)]\n\n                        %% Message Queue\n                        F --> K[Message Queue - RabbitMQ/Kafka]\n                        K --> L[Background Workers]\n\n                        %% External Services\n                        B --> M[Third-Party APIs]\n                        F --> N[Cloud Storage - S3]\n\n                        %% Search Suggestion Feature\n                        B --> O[Search Suggestion Service - Elasticsearch]\n                        O --> P[Search Suggestion Algorithm]\n\n                        %% Personalized Product Recommendation Engine\n                        B --> Q[Product Recommendation Service - TensorFlow]\n                        Q --> R[Product Recommendation Algorithm]\n\n                        %% PCI-DSS Compliance\n                        B --> S[PCI-DSS Compliance Service - PCI-DSS]\n\n                        %% GDPR Compliance\n                        B --> T[GDPR Compliance Service - GDPR]\n                `);\n            </script>\n            <div id=\"mermaid-diagram\"></div>\n        </div>\n        <div class=\"component-breakdown\">\n            <h2>Component Breakdown</h2>\n            <div class=\"component\">\n                <span class=\"component-name\">React Native Mobile App</span>\n                <span class=\"component-description\">Cross-platform mobile application built with React Native, providing native iOS and Android experiences.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">React Web App</span>\n                <span class=\"component-description\">Responsive web application built with React, TypeScript, and modern UI libraries.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">API Gateway</span>\n                <span class=\"component-description\">Kong or Nginx-based API gateway handling routing, rate limiting, authentication, and load balancing.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">Auth Service</span>\n                <span class=\"component-description\">OAuth 2.0 / OpenID Connect authentication service with JWT token management.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">User Service</span>\n                <span class=\"component-description\">Microservice handling user management, profiles, and preferences.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">Core Business Logic Service</span>\n                <span class=\"component-description\">Main application service implementing business rules and workflows.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">PostgreSQL</span>\n                <span class=\"component-description\">Relational database for structured user and transactional data.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">MongoDB</span>\n                <span class=\"component-description\">NoSQL database for flexible, document-based application data.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">Redis Cache</span>\n                <span class=\"component-description\">In-memory cache for session management and performance optimization.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">Message Queue</span>\n                <span class=\"component-description\">Asynchronous message processing using RabbitMQ or Kafka for event-driven architecture.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">Search Suggestion Service</span>\n                <span class=\"component-description\">Elasticsearch-based search suggestion service for improving user search experience.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">Product Recommendation Service</span>\n                <span class=\"component-description\">TensorFlow-based personalized product recommendation engine for increasing average order value and customer satisfaction.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">PCI-DSS Compliance Service</span>\n                <span class=\"component-description\">Service ensuring PCI-DSS compliance for secure payment processing.</span>\n            </div>\n            <div class=\"component\">\n                <span class=\"component-name\">GDPR Compliance Service</span>\n                <span class=\"component-description\">Service ensuring GDPR compliance for data protection by design and default.</span>\n            </div>\n        </div>\n        <div class=\"footer\">\n            <p>&copy; 2023 ShopEasy. All rights reserved.</p>\n        </div>\n    </div>\n</body>\n</html>\n```\n\nThis transformed HTML document includes an interactive Mermaid diagram, a clean and professional layout, and a component breakdown section with detailed descriptions of each component. The AICOE branding guidelines are applied throughout the document, and the layout is responsive and accessible.",
+      "architecture_xml": "Here is the system architecture XML document for the E-Commerce Platform - ShopEasy:\n\n```xml\n<systemArchitecture>\n    <description>E-Commerce Platform - ShopEasy Architecture Design</description>\n    <diagram type=\"mermaid-flowchart\">\n        <![CDATA[\n            graph TD\n                %% Frontend Layer\n                A[React Native Mobile App] -->|HTTPS/REST| B[API Gateway - Kong/Nginx]\n                A2[React Web App] -->|HTTPS/REST| B\n\n                %% API Gateway & Auth\n                B --> C[Auth Service - OAuth 2.0]\n                C --> D[Identity Provider]\n\n                %% Backend Services\n                B --> E[User Service]\n                B --> F[Core Business Logic Service]\n                B --> G[Analytics Service]\n\n                %% Data Layer\n                E --> H[(PostgreSQL - User Data)]\n                F --> I[(MongoDB - Application Data)]\n                G --> J[(Redis Cache)]\n\n                %% Message Queue\n                F --> K[Message Queue - RabbitMQ/Kafka]\n                K --> L[Background Workers]\n\n                %% External Services\n                B --> M[Third-Party APIs]\n                F --> N[Cloud Storage - S3]\n\n                %% Search Layer\n                B --> O[Search Service - Elasticsearch]\n                O --> P[Faceted Search Feature]\n\n                %% Cart Management\n                B --> Q[Cart Service - Redis]\n                Q --> R[Cart Management Flow]\n\n                %% Payment Processing\n                B --> S[Payment Service - Stripe]\n                S --> T[Payment Processing Flow]\n\n                %% User Experience\n                B --> U[User Experience Service - React]\n                U --> V[Search and Product Filtering]\n\n                %% Regulatory Requirements\n                B --> W[Regulatory Service - GDPR Compliance]\n                W --> X[Accessibility Features]\n\n        ]]>\n    </diagram>\n    <componentBreakdown>\n        <component name=\"React Native Mobile App\">Cross-platform mobile application built with React Native, providing native iOS and Android experiences.</component>\n        <component name=\"React Web App\">Responsive web application built with React, TypeScript, and modern UI libraries.</component>\n        <component name=\"API Gateway\">Kong or Nginx-based API gateway handling routing, rate limiting, authentication, and load balancing.</component>\n        <component name=\"Auth Service\">OAuth 2.0 / OpenID Connect authentication service with JWT token management.</component>\n        <component name=\"User Service\">Microservice handling user management, profiles, and preferences.</component>\n        <component name=\"Core Business Logic Service\">Main application service implementing business rules and workflows.</component>\n        <component name=\"PostgreSQL\">Relational database for structured user and transactional data.</component>\n        <component name=\"MongoDB\">NoSQL database for flexible, document-based application data.</component>\n        <component name=\"Redis Cache\">In-memory cache for session management and performance optimization.</component>\n        <component name=\"Message Queue\">Asynchronous message processing using RabbitMQ or Kafka for event-driven architecture.</component>\n        <component name=\"Search Service\">Elasticsearch-based search service with faceted search feature.</component>\n        <component name=\"Cart Service\">Redis-based cart management service with cart flow.</component>\n        <component name=\"Payment Service\">Stripe-based payment service with payment processing flow.</component>\n        <component name=\"User Experience Service\">React-based user experience service with search and product filtering.</component>\n        <component name=\"Regulatory Service\">GDPR compliance service with accessibility features.</component>\n    </componentBreakdown>\n</systemArchitecture>\n```\n\nNote that this is a high-level architecture design, and you may need to add more details and components based on your specific requirements.",
+      "architecture_html": "<!DOCTYPE html>\nHere is the transformed HTML document with an interactive Mermaid diagram:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>ShopEasy E-Commerce Platform Architecture</title>\n    <style>\n        /* Global Styles */\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, \"SF Pro Display\", sans-serif;\n            margin: 0;\n            padding: 0;\n            background-color: #f5f5f7;\n        }\n\n        /* Container Styles */\n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 0 var(--space-lg);\n            background-color: #ffffff;\n            border-radius: var(--radius-2xl);\n            box-shadow: var(--shadow-md);\n        }\n\n        /* Mermaid Diagram Styles */\n        .mermaid {\n            width: 100%;\n            height: 600px;\n            background-color: #ffffff;\n            border-radius: var(--radius-2xl);\n            box-shadow: var(--shadow-md);\n            padding: 20px;\n        }\n\n        /* Diagram Container Styles */\n        .diagram-container {\n            width: 100%;\n            height: 100%;\n            background-color: #ffffff;\n            border-radius: var(--radius-2xl);\n            box-shadow: var(--shadow-md);\n            padding: 20px;\n        }\n\n        /* Button Styles */\n        .button {\n            display: inline-block;\n            padding: 10px 20px;\n            border-radius: var(--radius-lg);\n            font-weight: var(--font-medium);\n            font-size: var(--font-body);\n            transition: all var(--transition-base);\n            cursor: pointer;\n            border: none;\n            text-decoration: none;\n            background-color: var(--aicoe-gradient-primary);\n            color: white;\n        }\n\n        /* Button Hover Styles */\n        .button:hover {\n            transform: translateY(-2px);\n            box-shadow: var(--shadow-lg);\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h1>ShopEasy E-Commerce Platform Architecture</h1>\n        <div class=\"mermaid\" id=\"mermaid-diagram\"></div>\n        <div class=\"diagram-container\">\n            <h2>System Architecture</h2>\n            <p>E-Commerce Platform - ShopEasy Architecture Design</p>\n            <div class=\"button\" id=\"mermaid-button\">View Diagram</button>\n        </div>\n        <div class=\"component-breakdown\">\n            <h2>Component Breakdown</h2>\n            <ul>\n                <li><strong>React Native Mobile App</strong> - Cross-platform mobile application built with React Native, providing native iOS and Android experiences.</li>\n                <li><strong>React Web App</strong> - Responsive web application built with React, TypeScript, and modern UI libraries.</li>\n                <li><strong>API Gateway</strong> - Kong or Nginx-based API gateway handling routing, rate limiting, authentication, and load balancing.</li>\n                <li><strong>Auth Service</strong> - OAuth 2.0 / OpenID Connect authentication service with JWT token management.</li>\n                <li><strong>User Service</strong> - Microservice handling user management, profiles, and preferences.</li>\n                <li><strong>Core Business Logic Service</strong> - Main application service implementing business rules and workflows.</li>\n                <li><strong>PostgreSQL</strong> - Relational database for structured user and transactional data.</li>\n                <li><strong>MongoDB</strong> - NoSQL database for flexible, document-based application data.</li>\n                <li><strong>Redis Cache</strong> - In-memory cache for session management and performance optimization.</li>\n                <li><strong>Message Queue</strong> - Asynchronous message processing using RabbitMQ or Kafka for event-driven architecture.</li>\n                <li><strong>Search Service</strong> - Elasticsearch-based search service with faceted search feature.</li>\n                <li><strong>Cart Service</strong> - Redis-based cart management service with cart flow.</li>\n                <li><strong>Payment Service</strong> - Stripe-based payment service with payment processing flow.</li>\n                <li><strong>User Experience Service</strong> - React-based user experience service with search and product filtering.</li>\n                <li><strong>Regulatory Service</strong> - GDPR compliance service with accessibility features.</li>\n            </ul>\n        </div>\n    </div>\n    <script src=\"https://cdn.jsdelivr.net/npm/mermaid@8.2.1/dist/mermaid.min.js\"></script>\n    <script>\n        mermaid.initialize({\n            startOnLoad: true,\n            theme: 'base',\n            themeVariables: {\n                primaryColor: '#1a1a2e',\n                primaryTextColor: '#ffffff',\n                primaryBorderColor: '#00ffcc',\n                lineColor: '#00ffcc',\n                secondaryColor: '#2a2a3e',\n                tertiaryColor: '#3a2a4e',\n                fontFamily: '-apple-system, BlinkMacSystemFont, \"SF Pro Display\", sans-serif'\n            }\n        });\n\n        const mermaidDiagram = document.getElementById('mermaid-diagram');\n        const mermaidButton = document.getElementById('mermaid-button');\n\n        mermaidButton.addEventListener('click', () => {\n            mermaidDiagram.innerHTML = `\n                graph TD\n                    %% Frontend Layer\n                    A[React Native Mobile App] -->|HTTPS/REST| B[API Gateway - Kong/Nginx]\n                    A2[React Web App] -->|HTTPS/REST| B\n\n                    %% API Gateway & Auth\n                    B --> C[Auth Service - OAuth 2.0]\n                    C --> D[Identity Provider]\n\n                    %% Backend Services\n                    B --> E[User Service]\n                    B --> F[Core Business Logic Service]\n                    B --> G[Analytics Service]\n\n                    %% Data Layer\n                    E --> H[(PostgreSQL - User Data)]\n                    F --> I[(MongoDB - Application Data)]\n                    G --> J[(Redis Cache)]\n\n                    %% Message Queue\n                    F --> K[Message Queue - RabbitMQ/Kafka]\n                    K --> L[Background Workers]\n\n                    %% External Services\n                    B --> M[Third-Party APIs]\n                    F --> N[Cloud Storage - S3]\n\n                    %% Search Layer\n                    B --> O[Search Service - Elasticsearch]\n                    O --> P[Faceted Search Feature]\n\n                    %% Cart Management\n                    B --> Q[Cart Service - Redis]\n                    Q --> R[Cart Management Flow]\n\n                    %% Payment Processing\n                    B --> S[Payment Service - Stripe]\n                    S --> T[Payment Processing Flow]\n\n                    %% User Experience\n                    B --> U[User Experience Service - React]\n                    U --> V[Search and Product Filtering]\n\n                    %% Regulatory Requirements\n                    B --> W[Regulatory Service - GDPR Compliance]\n                    W --> X[Accessibility Features]\n            `;\n        });\n    </script>\n</body>\n</html>\n```\n\nThis HTML document includes an interactive Mermaid diagram that displays the system architecture of the ShopEasy E-Commerce Platform. The diagram is generated using the Mermaid library and is displayed within a container element. The container element also includes a button that, when clicked, updates the diagram with the new content. The component breakdown is listed below the diagram and includes detailed descriptions of each component. The document also includes global styles, container styles, Mermaid diagram styles, button styles, and script tags that initialize the Mermaid library and handle the button click event.",
       "project_name": "E-Commerce Platform - ShopEasy"
     },
     "gallery": {
@@ -565,67 +667,67 @@
     {
       "name": "storage",
       "status": "completed",
-      "duration": 0.000612
+      "duration": 0.000535
     },
     {
       "name": "transcript",
       "status": "completed",
-      "duration": 6.972441
+      "duration": 8.326077
     },
     {
       "name": "researcher",
       "status": "completed",
-      "duration": 7.177884
+      "duration": 7.870826
     },
     {
       "name": "requirements",
       "status": "completed",
-      "duration": 14.398923
+      "duration": 18.165977
     },
     {
       "name": "knowledge_base",
       "status": "completed",
-      "duration": 4.729681
+      "duration": 5.495196
     },
     {
       "name": "prd",
       "status": "completed",
-      "duration": 45.493904
+      "duration": 51.335769
     },
     {
       "name": "mockup",
       "status": "completed",
-      "duration": 99.088108
+      "duration": 127.838598
     },
     {
       "name": "synthetic_data",
       "status": "completed",
-      "duration": 14.213904
+      "duration": 20.213825
     },
     {
       "name": "commercial_proposal",
       "status": "completed",
-      "duration": 35.776126
+      "duration": 28.257715
     },
     {
       "name": "bom",
       "status": "completed",
-      "duration": 29.948821
+      "duration": 22.52575
     },
     {
       "name": "architecture_diagram",
       "status": "completed",
-      "duration": 49.165924
+      "duration": 42.730305
     },
     {
       "name": "reviewer",
       "status": "failed",
-      "duration": 0.000278
+      "duration": 0.000145
     },
     {
       "name": "gallery",
       "status": "completed",
-      "duration": 0.000638
+      "duration": 0.000564
     }
   ]
 }

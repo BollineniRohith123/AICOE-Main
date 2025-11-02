@@ -9,17 +9,16 @@
   },
   "performance_metrics": {},
   "agent_execution_times": {
-    "storage": 0.0003681182861328125,
-    "transcript": 6.974198579788208,
-    "researcher": 7.178071975708008,
-    "requirements": 14.399657726287842,
-    "knowledge_base": 4.729938983917236,
-    "prd": 45.4959020614624,
-    "mockup": 99.09149837493896,
-    "synthetic_data": 14.214848756790161,
-    "commercial_proposal": 35.77625346183777,
-    "bom": 29.95020079612732,
-    "architecture_diagram": 49.16614007949829
+    "storage": 0.0003190040588378906,
+    "transcript": 8.327426195144653,
+    "researcher": 7.87152886390686,
+    "requirements": 18.166730880737305,
+    "knowledge_base": 5.495667934417725,
+    "prd": 51.33776021003723,
+    "mockup": 127.84487271308899,
+    "synthetic_data": 20.214354515075684,
+    "commercial_proposal": 28.257669687271118,
+    "bom": 22.52784276008606
   },
   "websocket_messages": [
     {
@@ -27,154 +26,147 @@
       "stage": "storage",
       "status": "running",
       "message": "Executing storage...",
-      "timestamp": "2025-11-02T03:58:48.145401"
+      "timestamp": "2025-11-02T04:00:53.675683"
     },
     {
       "type": "progress",
       "stage": "storage",
       "status": "completed",
       "message": "storage completed successfully",
-      "timestamp": "2025-11-02T03:58:48.146109"
+      "timestamp": "2025-11-02T04:00:53.676297"
     },
     {
       "type": "progress",
       "stage": "transcript",
       "status": "running",
       "message": "Executing transcript...",
-      "timestamp": "2025-11-02T03:58:48.146166"
+      "timestamp": "2025-11-02T04:00:53.676342"
     },
     {
       "type": "progress",
       "stage": "transcript",
       "status": "completed",
       "message": "transcript completed successfully",
-      "timestamp": "2025-11-02T03:58:55.119183"
+      "timestamp": "2025-11-02T04:01:02.002976"
     },
     {
       "type": "progress",
       "stage": "researcher",
       "status": "running",
       "message": "Executing researcher...",
-      "timestamp": "2025-11-02T03:58:55.119304"
+      "timestamp": "2025-11-02T04:01:02.003086"
     },
     {
       "type": "progress",
       "stage": "researcher",
       "status": "completed",
       "message": "researcher completed successfully",
-      "timestamp": "2025-11-02T03:59:02.297740"
+      "timestamp": "2025-11-02T04:01:09.874456"
     },
     {
       "type": "progress",
       "stage": "requirements",
       "status": "running",
       "message": "Executing requirements...",
-      "timestamp": "2025-11-02T03:59:02.297857"
+      "timestamp": "2025-11-02T04:01:09.874550"
     },
     {
       "type": "progress",
       "stage": "requirements",
       "status": "completed",
       "message": "requirements completed successfully",
-      "timestamp": "2025-11-02T03:59:16.697593"
+      "timestamp": "2025-11-02T04:01:28.041531"
     },
     {
       "type": "progress",
       "stage": "knowledge_base",
       "status": "running",
       "message": "Executing knowledge_base...",
-      "timestamp": "2025-11-02T03:59:16.697728"
+      "timestamp": "2025-11-02T04:01:28.041652"
     },
     {
       "type": "progress",
       "stage": "knowledge_base",
       "status": "completed",
       "message": "knowledge_base completed successfully",
-      "timestamp": "2025-11-02T03:59:21.428045"
+      "timestamp": "2025-11-02T04:01:33.537444"
     },
     {
       "type": "progress",
       "stage": "prd",
       "status": "running",
       "message": "Executing prd...",
-      "timestamp": "2025-11-02T03:59:21.428143"
+      "timestamp": "2025-11-02T04:01:33.537536"
     },
     {
       "type": "progress",
       "stage": "prd",
       "status": "completed",
       "message": "prd completed successfully",
-      "timestamp": "2025-11-02T04:00:06.923714"
+      "timestamp": "2025-11-02T04:02:24.874974"
     },
     {
       "type": "progress",
       "stage": "mockup",
       "status": "running",
       "message": "Executing mockup...",
-      "timestamp": "2025-11-02T04:00:06.923819"
+      "timestamp": "2025-11-02T04:02:24.875088"
     },
     {
       "type": "progress",
       "stage": "mockup",
       "status": "completed",
       "message": "mockup completed successfully",
-      "timestamp": "2025-11-02T04:01:46.015520"
+      "timestamp": "2025-11-02T04:04:32.718743"
     },
     {
       "type": "progress",
       "stage": "synthetic_data",
       "status": "running",
       "message": "Executing synthetic_data...",
-      "timestamp": "2025-11-02T04:01:46.015640"
+      "timestamp": "2025-11-02T04:04:32.718860"
     },
     {
       "type": "progress",
       "stage": "synthetic_data",
       "status": "completed",
       "message": "synthetic_data completed successfully",
-      "timestamp": "2025-11-02T04:02:00.230405"
+      "timestamp": "2025-11-02T04:04:52.934591"
     },
     {
       "type": "progress",
       "stage": "commercial_proposal",
       "status": "running",
       "message": "Executing commercial_proposal...",
-      "timestamp": "2025-11-02T04:02:00.230508"
+      "timestamp": "2025-11-02T04:04:52.934696"
     },
     {
       "type": "progress",
       "stage": "commercial_proposal",
       "status": "completed",
       "message": "commercial_proposal completed successfully",
-      "timestamp": "2025-11-02T04:02:36.006856"
+      "timestamp": "2025-11-02T04:05:21.192589"
     },
     {
       "type": "progress",
       "stage": "bom",
       "status": "running",
       "message": "Executing bom...",
-      "timestamp": "2025-11-02T04:02:36.006965"
+      "timestamp": "2025-11-02T04:05:21.192692"
     },
     {
       "type": "progress",
       "stage": "bom",
       "status": "completed",
       "message": "bom completed successfully",
-      "timestamp": "2025-11-02T04:03:05.957187"
+      "timestamp": "2025-11-02T04:05:43.720495"
     },
     {
       "type": "progress",
       "stage": "architecture_diagram",
       "status": "running",
       "message": "Executing architecture_diagram...",
-      "timestamp": "2025-11-02T04:03:05.957289"
-    },
-    {
-      "type": "progress",
-      "stage": "architecture_diagram",
-      "status": "completed",
-      "message": "architecture_diagram completed successfully",
-      "timestamp": "2025-11-02T04:03:55.123469"
+      "timestamp": "2025-11-02T04:05:43.720599"
     }
   ],
   "test_results": [
@@ -182,7 +174,7 @@
       "test": "API Health Check",
       "success": true,
       "details": "Backend API is running",
-      "timestamp": "2025-11-02T03:58:48.082187",
+      "timestamp": "2025-11-02T04:00:53.593510",
       "response_data": {
         "message": "AICOE Automation Platform API",
         "version": "1.0.0",
@@ -193,10 +185,10 @@
       "test": "Workflow Initiation",
       "success": true,
       "details": "Complex workflow started successfully",
-      "timestamp": "2025-11-02T03:58:48.087339",
+      "timestamp": "2025-11-02T04:00:53.606495",
       "response_data": {
-        "project_id": "21e2246f-aa28-48ee-ab5e-d1cdb67d38bb",
-        "workflow_id": "workflow_20251102_035848_21e2246f",
+        "project_id": "f8b6d203-3ee6-458e-8290-0655e8931230",
+        "workflow_id": "workflow_20251102_040053_f8b6d203",
         "transcript_length": 8418
       }
     },
@@ -204,7 +196,7 @@
       "test": "Workflow Timeout",
       "success": false,
       "details": "Workflow did not complete within 300s",
-      "timestamp": "2025-11-02T04:03:55.125552",
+      "timestamp": "2025-11-02T04:06:13.743239",
       "response_data": {
         "completed_agents": [
           "storage",
@@ -216,24 +208,23 @@
           "mockup",
           "synthetic_data",
           "commercial_proposal",
-          "bom",
-          "architecture_diagram"
+          "bom"
         ],
-        "partial_execution_time": 306.98177766799927
+        "partial_execution_time": 320.070515871048
       }
     },
     {
       "test": "Artifact Verification",
       "success": false,
       "details": "Failed to get project: HTTP 404",
-      "timestamp": "2025-11-02T04:03:55.185490",
+      "timestamp": "2025-11-02T04:06:13.850508",
       "response_data": "{\"detail\":\"Project not found\"}"
     },
     {
       "test": "Backend Log Check",
       "success": false,
       "details": "Found issues in logs",
-      "timestamp": "2025-11-02T04:03:55.194818",
+      "timestamp": "2025-11-02T04:06:13.857791",
       "response_data": {
         "issues": [
           "/var/log/supervisor/backend.err.log: Found 'ERROR' in logs",
@@ -244,35 +235,34 @@
     {
       "test": "Performance Analysis",
       "success": true,
-      "details": "Total: 0.00s, Avg: 27.91s, Agents: 11",
-      "timestamp": "2025-11-02T04:03:55.195095",
+      "details": "Total: 0.00s, Avg: 29.00s, Agents: 10",
+      "timestamp": "2025-11-02T04:06:13.857999",
       "response_data": {
         "total_execution_time": 0,
-        "average_agent_time": 27.907007174058393,
+        "average_agent_time": 29.004417276382448,
         "slowest_agent": {
           "name": "mockup",
-          "time": 99.09149837493896
+          "time": 127.84487271308899
         },
         "fastest_agent": {
           "name": "storage",
-          "time": 0.0003681182861328125
+          "time": 0.0003190040588378906
         },
-        "total_agents": 11,
+        "total_agents": 10,
         "agent_breakdown": {
-          "storage": 0.0003681182861328125,
-          "transcript": 6.974198579788208,
-          "researcher": 7.178071975708008,
-          "requirements": 14.399657726287842,
-          "knowledge_base": 4.729938983917236,
-          "prd": 45.4959020614624,
-          "mockup": 99.09149837493896,
-          "synthetic_data": 14.214848756790161,
-          "commercial_proposal": 35.77625346183777,
-          "bom": 29.95020079612732,
-          "architecture_diagram": 49.16614007949829
+          "storage": 0.0003190040588378906,
+          "transcript": 8.327426195144653,
+          "researcher": 7.87152886390686,
+          "requirements": 18.166730880737305,
+          "knowledge_base": 5.495667934417725,
+          "prd": 51.33776021003723,
+          "mockup": 127.84487271308899,
+          "synthetic_data": 20.214354515075684,
+          "commercial_proposal": 28.257669687271118,
+          "bom": 22.52784276008606
         }
       }
     }
   ],
-  "timestamp": "2025-11-02T04:03:55.195364"
+  "timestamp": "2025-11-02T04:06:13.858252"
 }
