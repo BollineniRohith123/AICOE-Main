@@ -3,42 +3,42 @@
     "relevant_patterns": [
       {
         "category": "AI Design Patterns",
-        "pattern": "Microservices Architecture",
-        "description": "Applying microservices architecture can improve scalability and maintainability of the e-commerce platform.",
+        "pattern": "Model-View-Controller (MVC) pattern",
+        "description": "Applying the MVC pattern can improve the separation of concerns and make the system more maintainable.",
         "priority": "high"
       },
       {
-        "category": "Compliance Rules",
-        "pattern": "GDPR Compliance",
-        "description": "Ensure GDPR compliance by implementing data protection by design and default, and providing users with clear and transparent data processing information.",
+        "category": "Best Practices",
+        "pattern": "Use a search library to improve search functionality",
+        "description": "Using a search library can improve the performance and accuracy of the search results.",
         "priority": "medium"
       },
       {
-        "category": "Best Practices",
-        "pattern": "Secure Sockets Layer/Transport Layer Security (SSL/TLS)",
-        "description": "Implement SSL/TLS encryption to ensure secure data transmission between the user's browser and the e-commerce platform.",
+        "category": "Integration Patterns",
+        "pattern": "Use RESTful APIs for product details and reviews",
+        "description": "Using RESTful APIs can improve the scalability and flexibility of the system.",
         "priority": "high"
       }
     ],
     "suggestions": [
       {
         "area": "User Experience",
-        "suggestion": "Implement a search suggestion feature to improve user search experience and reduce bounce rate.",
-        "rationale": "Research shows that search suggestion features can improve user engagement and conversion rates."
+        "suggestion": "Implement a faceted search feature",
+        "rationale": "Faceted search can improve the user's ability to find products that match their search criteria."
       },
       {
-        "area": "Product Recommendations",
-        "suggestion": "Implement a personalized product recommendation engine to increase average order value and customer satisfaction.",
-        "rationale": "Research indicates that personalized product recommendations can lead to increased sales and customer loyalty."
+        "area": "Performance Optimization",
+        "suggestion": "Implement caching for search results",
+        "rationale": "Caching can improve the performance of the search results and reduce the load on the system."
       }
     ],
     "compliance_notes": [
-      "Ensure compliance with PCI-DSS standards for secure payment processing.",
-      "Implement data retention and deletion policies to comply with GDPR regulations."
+      "Ensure compliance with GDPR regulations for user data",
+      "Implement accessibility features to comply with WCAG 2.1 standards"
     ],
     "integration_recommendations": [
-      "Integrate with third-party payment gateways to expand payment options and improve user experience.",
-      "Integrate with social media platforms to enable social login and improve user engagement."
+      "Integrate with social media platforms for user authentication",
+      "Integrate with payment gateways for secure payment processing"
     ]
   },
   "project_name": "E-Commerce Platform - ShopEasy",

@@ -2,175 +2,186 @@
   "use_cases": [
     {
       "id": "UC-001",
-      "title": "Register New User",
-      "description": "The user creates a new account on the E-Commerce Platform to purchase products.",
+      "title": "User Search and Product Filtering",
+      "description": "The user searches for products and filters the results based on various criteria.",
       "actors": [
         "User"
       ],
-      "preconditions": "The user is on the login page and has not registered before.",
+      "preconditions": "The user is logged in and has access to the search functionality.",
       "main_flow": [
         {
-          "step": "The user clicks the 'Register' button.",
-          "description": "The user initiates the registration process."
+          "step": "The user enters a search query in the search bar.",
+          "description": "The user types a search query in the search bar."
         },
         {
-          "step": "The system displays a registration form.",
-          "description": "The system provides the user with a registration form."
+          "step": "The system retrieves a list of search results.",
+          "description": "The system searches for products based on the user's search query."
         },
         {
-          "step": "The user fills out the registration form.",
-          "description": "The user provides the required information."
+          "step": "The user filters the search results.",
+          "description": "The user selects filters to narrow down the search results."
         },
         {
-          "step": "The system validates the user's input.",
-          "description": "The system checks the user's input for errors."
-        },
-        {
-          "step": "The system creates a new user account.",
-          "description": "The system creates a new account for the user."
+          "step": "The system displays the filtered search results.",
+          "description": "The system displays the filtered search results to the user."
         }
       ],
       "alternate_flows": [],
-      "postconditions": "The user is logged in and can view the product catalog.",
+      "postconditions": "The user has viewed the filtered search results.",
       "priority": "high",
-      "business_value": "Allows users to create an account and start shopping."
+      "business_value": "The user can quickly find products that match their search criteria."
     },
     {
       "id": "UC-002",
-      "title": "Search for Products",
-      "description": "The user searches for products on the E-Commerce Platform.",
+      "title": "Product Details and Reviews",
+      "description": "The user views product details and reviews from other users.",
       "actors": [
         "User"
       ],
-      "preconditions": "The user is on the product catalog page.",
+      "preconditions": "The user has selected a product from the search results.",
       "main_flow": [
         {
-          "step": "The user enters a search query.",
-          "description": "The user initiates the search process."
+          "step": "The user selects a product to view its details.",
+          "description": "The user clicks on a product to view its details."
         },
         {
-          "step": "The system displays search results.",
-          "description": "The system provides the user with search results."
+          "step": "The system displays product details.",
+          "description": "The system displays the product's details, including price, description, and images."
         },
         {
-          "step": "The user browses through search results.",
-          "description": "The user views the search results."
+          "step": "The user views reviews from other users.",
+          "description": "The user clicks on a review to view its content."
+        },
+        {
+          "step": "The system displays the reviews.",
+          "description": "The system displays the reviews to the user."
         }
       ],
       "alternate_flows": [],
-      "postconditions": "The user views relevant search results.",
-      "priority": "medium",
-      "business_value": "Allows users to find products easily."
+      "postconditions": "The user has viewed the product details and reviews.",
+      "priority": "high",
+      "business_value": "The user can make informed purchasing decisions."
     },
     {
       "id": "UC-003",
-      "title": "Add Product to Cart",
-      "description": "The user adds a product to their cart on the E-Commerce Platform.",
+      "title": "Cart Management",
+      "description": "The user adds and manages products in their cart.",
       "actors": [
         "User"
       ],
-      "preconditions": "The user is on the product details page.",
+      "preconditions": "The user has selected products to add to their cart.",
       "main_flow": [
         {
-          "step": "The user clicks the 'Add to Cart' button.",
-          "description": "The user initiates the addition process."
+          "step": "The user adds a product to their cart.",
+          "description": "The user clicks the 'Add to Cart' button."
         },
         {
-          "step": "The system adds the product to the user's cart.",
-          "description": "The system updates the user's cart."
+          "step": "The system updates the cart contents.",
+          "description": "The system updates the cart contents to reflect the added product."
+        },
+        {
+          "step": "The user removes a product from their cart.",
+          "description": "The user clicks the 'Remove' button."
+        },
+        {
+          "step": "The system updates the cart contents.",
+          "description": "The system updates the cart contents to reflect the removed product."
         }
       ],
       "alternate_flows": [],
-      "postconditions": "The user's cart is updated with the added product.",
+      "postconditions": "The user has managed their cart contents.",
       "priority": "medium",
-      "business_value": "Allows users to add products to their cart."
+      "business_value": "The user can easily manage their cart contents."
     },
     {
       "id": "UC-004",
-      "title": "Checkout Process",
-      "description": "The user completes the checkout process on the E-Commerce Platform.",
+      "title": "Checkout and Payment",
+      "description": "The user completes the checkout process and pays for their products.",
       "actors": [
         "User"
       ],
-      "preconditions": "The user is on the cart page and has added products.",
+      "preconditions": "The user has added products to their cart and has access to payment options.",
       "main_flow": [
         {
-          "step": "The user clicks the 'Checkout' button.",
-          "description": "The user initiates the checkout process."
+          "step": "The user proceeds to checkout.",
+          "description": "The user clicks the 'Checkout' button."
         },
         {
-          "step": "The system displays a summary of the user's cart.",
-          "description": "The system provides the user with a summary."
+          "step": "The system displays payment options.",
+          "description": "The system displays payment options to the user."
         },
         {
-          "step": "The user reviews and confirms their order.",
-          "description": "The user reviews and confirms their order."
+          "step": "The user selects a payment option.",
+          "description": "The user clicks on a payment option."
         },
         {
           "step": "The system processes the payment.",
-          "description": "The system processes the payment."
-        },
-        {
-          "step": "The system updates the user's order status.",
-          "description": "The system updates the user's order status."
+          "description": "The system processes the payment and updates the order status."
         }
       ],
       "alternate_flows": [],
-      "postconditions": "The user's order is completed and confirmed.",
+      "postconditions": "The user has completed the checkout process and paid for their products.",
       "priority": "high",
-      "business_value": "Allows users to complete their purchases."
+      "business_value": "The user can complete the checkout process and receive their products."
     },
     {
       "id": "UC-005",
-      "title": "Order Tracking",
-      "description": "The user tracks their order on the E-Commerce Platform.",
+      "title": "Order Tracking and Management",
+      "description": "The user tracks and manages their orders.",
       "actors": [
         "User"
       ],
-      "preconditions": "The user is on the order tracking page.",
+      "preconditions": "The user has placed an order.",
       "main_flow": [
         {
-          "step": "The user enters their order number.",
-          "description": "The user initiates the tracking process."
+          "step": "The user views their order history.",
+          "description": "The user clicks on the 'Order History' button."
+        },
+        {
+          "step": "The system displays order details.",
+          "description": "The system displays the order details, including status and shipping information."
+        },
+        {
+          "step": "The user tracks the order status.",
+          "description": "The user clicks on the 'Track Order' button."
         },
         {
           "step": "The system displays the order status.",
-          "description": "The system provides the user with the order status."
-        },
-        {
-          "step": "The user views the order details.",
-          "description": "The user views the order details."
+          "description": "The system displays the order status to the user."
         }
       ],
       "alternate_flows": [],
-      "postconditions": "The user views their order status.",
+      "postconditions": "The user has tracked and managed their orders.",
       "priority": "medium",
-      "business_value": "Allows users to track their orders."
+      "business_value": "The user can easily track and manage their orders."
     }
   ],
   "business_requirements": {
-    "overview": "The E-Commerce Platform will provide a user-friendly and secure online shopping experience.",
+    "overview": "The E-Commerce Platform - ShopEasy is designed to provide a seamless and user-friendly shopping experience.",
     "business_goals": [
-      "Increase customer satisfaction",
-      "Improve conversion rates",
-      "Enhance user experience"
+      "To provide a user-friendly and intuitive interface for users to browse and purchase products.",
+      "To enable users to easily manage their carts and checkout process.",
+      "To provide a secure and reliable payment processing system."
     ],
     "success_criteria": [
-      "Customer satisfaction rating of 4.5/5",
-      "Conversion rate of 2.5%",
-      "User engagement metrics exceeded"
+      "Users can easily find and purchase products.",
+      "Users can manage their carts and checkout process efficiently.",
+      "Users can track and manage their orders effectively."
     ],
     "constraints": [
-      "Limited budget for development",
-      "Technical infrastructure limitations"
+      "The system must be able to handle a high volume of users and transactions.",
+      "The system must be secure and reliable to protect user data and payment information."
     ],
     "assumptions": [
-      "Users will have a stable internet connection",
-      "Users will have a valid payment method"
+      "Users will have access to a stable internet connection and a compatible device."
     ],
     "risks": [
-      "Technical issues during development",
-      "Security breaches"
+      "Technical issues may arise during the checkout process or payment processing.",
+      "Users may not be able to find products or navigate the system effectively."
+    ],
+    "mitigation_strategies": [
+      "Implement a robust testing and quality assurance process to identify and fix technical issues.",
+      "Provide user-friendly and intuitive interface design to reduce navigation difficulties."
     ]
   },
   "project_name": "E-Commerce Platform - ShopEasy"
