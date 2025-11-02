@@ -1,0 +1,193 @@
+{
+  "synthetic_data": {
+    "data_sets": [
+      {
+        "name": "User Information",
+        "description": "Sample user data for registration and login",
+        "use_case_id": "UC-001",
+        "format": "json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Unique user ID"
+            },
+            "username": {
+              "type": "string",
+              "description": "User username"
+            },
+            "email": {
+              "type": "string",
+              "description": "User email"
+            },
+            "password": {
+              "type": "string",
+              "description": "User password"
+            }
+          },
+          "required": [
+            "id",
+            "username",
+            "email",
+            "password"
+          ]
+        },
+        "sample_data": [
+          {
+            "id": "user123",
+            "username": "johndoe",
+            "email": "johndoe@example.com",
+            "password": "password123"
+          },
+          {
+            "id": "user456",
+            "username": "janeDoe",
+            "email": "janeDoe@example.com",
+            "password": "password456"
+          }
+        ]
+      },
+      {
+        "name": "Product Information",
+        "description": "Sample product data for search and catalog",
+        "use_case_id": "UC-002",
+        "format": "json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Unique product ID"
+            },
+            "name": {
+              "type": "string",
+              "description": "Product name"
+            },
+            "description": {
+              "type": "string",
+              "description": "Product description"
+            },
+            "price": {
+              "type": "number",
+              "description": "Product price"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "description",
+            "price"
+          ]
+        },
+        "sample_data": [
+          {
+            "id": "prod1",
+            "name": "Apple iPhone",
+            "description": "Latest iPhone model with 128GB storage",
+            "price": 999.99
+          },
+          {
+            "id": "prod2",
+            "name": "Samsung TV",
+            "description": "Latest 4K TV model with 75\" screen",
+            "price": 1299.99
+          }
+        ]
+      },
+      {
+        "name": "Cart Items",
+        "description": "Sample cart items data for checkout",
+        "use_case_id": "UC-003",
+        "format": "json",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique cart item ID"
+              },
+              "product_id": {
+                "type": "string",
+                "description": "Product ID of the cart item"
+              },
+              "quantity": {
+                "type": "number",
+                "description": "Quantity of the cart item"
+              }
+            },
+            "required": [
+              "id",
+              "product_id",
+              "quantity"
+            ]
+          }
+        },
+        "sample_data": [
+          {
+            "id": "cart_item1",
+            "product_id": "prod1",
+            "quantity": 2
+          },
+          {
+            "id": "cart_item2",
+            "product_id": "prod2",
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "name": "Orders",
+        "description": "Sample order data for order tracking",
+        "use_case_id": "UC-005",
+        "format": "json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Unique order ID"
+            },
+            "user_id": {
+              "type": "string",
+              "description": "User ID of the order"
+            },
+            "order_date": {
+              "type": "string",
+              "description": "Order date"
+            },
+            "total": {
+              "type": "number",
+              "description": "Total order value"
+            }
+          },
+          "required": [
+            "id",
+            "user_id",
+            "order_date",
+            "total"
+          ]
+        },
+        "sample_data": [
+          {
+            "id": "order1",
+            "user_id": "user123",
+            "order_date": "2025-11-01",
+            "total": 1999.98
+          },
+          {
+            "id": "order2",
+            "user_id": "user456",
+            "order_date": "2025-11-02",
+            "total": 1299.99
+          }
+        ]
+      }
+    ],
+    "summary": "Generated sample data for E-Commerce Platform use cases"
+  },
+  "project_name": "E-Commerce Platform - ShopEasy",
+  "num_datasets": 4
+}

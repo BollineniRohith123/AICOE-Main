@@ -9,6 +9,7 @@ Here is the transformed PRD XML into a beautiful, professional HTML document:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRD for E-Commerce Platform - ShopEasy</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/lucide@latest/lucide.min.css">
 </head>
 <body>
     <header>
@@ -25,115 +26,192 @@ Here is the transformed PRD XML into a beautiful, professional HTML document:
     <main>
         <section id="executive-summary">
             <h1>Executive Summary</h1>
-            <p>The E-Commerce Platform - ShopEasy is designed to provide a user-friendly and secure online shopping experience. The platform will allow users to register, search for products, add products to their cart, complete the checkout process, and track their orders.</p>
+            <p>A comprehensive e-commerce platform designed to provide a seamless and user-friendly shopping experience.</p>
         </section>
         <section id="scope">
             <h1>Scope</h1>
-            <h2>In Scope</h2>
+            <h2>In-Scopes</h2>
             <ul>
-                <li>Register new user</li>
-                <li>Search for products</li>
-                <li>Add product to cart</li>
-                <li>Checkout process</li>
-                <li>Order tracking</li>
+                <li>User Search and Product Filtering</li>
+                <li>Product Details and Reviews</li>
+                <li>Cart Management</li>
+                <li>Checkout and Payment</li>
+                <li>Order Tracking and Management</li>
             </ul>
-            <h2>Out of Scope</h2>
+            <h2>Out-of-Scopes</h2>
             <ul>
-                <li>Other e-commerce features</li>
+                <li>Payment Gateway Integration</li>
+                <li>Inventory Management</li>
+                <li>Shipping Integration</li>
             </ul>
         </section>
         <section id="business-goals">
             <h1>Business Goals</h1>
             <ul>
-                <li>Increase customer satisfaction</li>
-                <li>Improve conversion rates</li>
-                <li>Enhance user experience</li>
+                <li>To provide a user-friendly and intuitive interface for users to browse and purchase products.</li>
+                <li>To enable users to easily manage their carts and checkout process.</li>
+                <li>To provide a secure and reliable payment processing system.</li>
             </ul>
         </section>
         <section id="use-cases">
             <h1>Use Cases</h1>
+            <h2>Use Case Model</h2>
             <ul>
                 <li id="uc-001">
-                    <h2>Register New User</h2>
-                    <p>The user creates a new account on the E-Commerce Platform to purchase products.</p>
-                    <p><a href="#uc-001-step-1">Step 1: The user clicks the 'Register' button.</a></p>
-                    <p><a href="#uc-001-step-2">Step 2: The system displays a registration form.</a></p>
-                    <p><a href="#uc-001-step-3">Step 3: The user fills out the registration form.</a></p>
-                    <p><a href="#uc-001-step-4">Step 4: The system validates the user's input.</a></p>
-                    <p><a href="#uc-001-step-5">Step 5: The system creates a new user account.</a></p>
+                    <h3>User Search and Product Filtering</h3>
+                    <p>The user searches for products and filters the results based on various criteria.</p>
+                    <p>Actors:</p>
+                    <ul>
+                        <li>User</li>
+                    </ul>
+                    <p>Preconditions:</p>
+                    <p>The user is logged in and has access to the search functionality.</p>
+                    <p>Main Flow:</p>
+                    <ul>
+                        <li>The user enters a search query in the search bar.</li>
+                        <li>The system retrieves a list of search results.</li>
+                        <li>The user filters the search results.</li>
+                        <li>The system displays the filtered search results.</li>
+                    </ul>
+                    <p>Alternate Flows:</p>
+                    <p></p>
+                    <p>Postconditions:</p>
+                    <p>The user has viewed the filtered search results.</p>
                 </li>
                 <li id="uc-002">
-                    <h2>Search for Products</h2>
-                    <p>The user searches for products on the E-Commerce Platform.</p>
-                    <p><a href="#uc-002-step-1">Step 1: The user enters a search query.</a></p>
-                    <p><a href="#uc-002-step-2">Step 2: The system displays search results.</a></p>
-                    <p><a href="#uc-002-step-3">Step 3: The user browses through search results.</a></p>
+                    <h3>Product Details and Reviews</h3>
+                    <p>The user views product details and reviews from other users.</p>
+                    <p>Actors:</p>
+                    <ul>
+                        <li>User</li>
+                    </ul>
+                    <p>Preconditions:</p>
+                    <p>The user has selected a product from the search results.</p>
+                    <p>Main Flow:</p>
+                    <ul>
+                        <li>The user selects a product to view its details.</li>
+                        <li>The system displays product details.</li>
+                        <li>The user views reviews from other users.</li>
+                        <li>The system displays the reviews.</li>
+                    </ul>
+                    <p>Alternate Flows:</p>
+                    <p></p>
+                    <p>Postconditions:</p>
+                    <p>The user has viewed the product details and reviews.</p>
                 </li>
                 <li id="uc-003">
-                    <h2>Add Product to Cart</h2>
-                    <p>The user adds a product to their cart on the E-Commerce Platform.</p>
-                    <p><a href="#uc-003-step-1">Step 1: The user clicks the 'Add to Cart' button.</a></p>
-                    <p><a href="#uc-003-step-2">Step 2: The system adds the product to the user's cart.</a></p>
+                    <h3>Cart Management</h3>
+                    <p>The user adds and manages products in their cart.</p>
+                    <p>Actors:</p>
+                    <ul>
+                        <li>User</li>
+                    </ul>
+                    <p>Preconditions:</p>
+                    <p>The user has selected products to add to their cart.</p>
+                    <p>Main Flow:</p>
+                    <ul>
+                        <li>The user adds a product to their cart.</li>
+                        <li>The system updates the cart contents.</li>
+                        <li>The user removes a product from their cart.</li>
+                        <li>The system updates the cart contents.</li>
+                    </ul>
+                    <p>Alternate Flows:</p>
+                    <p></p>
+                    <p>Postconditions:</p>
+                    <p>The user has managed their cart contents.</p>
                 </li>
                 <li id="uc-004">
-                    <h2>Checkout Process</h2>
-                    <p>The user completes the checkout process on the E-Commerce Platform.</p>
-                    <p><a href="#uc-004-step-1">Step 1: The user clicks the 'Checkout' button.</a></p>
-                    <p><a href="#uc-004-step-2">Step 2: The system displays a summary of the user's cart.</a></p>
-                    <p><a href="#uc-004-step-3">Step 3: The user reviews and confirms their order.</a></p>
-                    <p><a href="#uc-004-step-4">Step 4: The system processes the payment.</a></p>
-                    <p><a href="#uc-004-step-5">Step 5: The system updates the user's order status.</a></p>
+                    <h3>Checkout and Payment</h3>
+                    <p>The user completes the checkout process and pays for their products.</p>
+                    <p>Actors:</p>
+                    <ul>
+                        <li>User</li>
+                    </ul>
+                    <p>Preconditions:</p>
+                    <p>The user has added products to their cart and has access to payment options.</p>
+                    <p>Main Flow:</p>
+                    <ul>
+                        <li>The user proceeds to checkout.</li>
+                        <li>The system displays payment options.</li>
+                        <li>The user selects a payment option.</li>
+                        <li>The system processes the payment.</li>
+                    </ul>
+                    <p>Alternate Flows:</p>
+                    <p></p>
+                    <p>Postconditions:</p>
+                    <p>The user has completed the checkout process and paid for their products.</p>
                 </li>
                 <li id="uc-005">
-                    <h2>Order Tracking</h2>
-                    <p>The user tracks their order on the E-Commerce Platform.</p>
-                    <p><a href="#uc-005-step-1">Step 1: The user enters their order number.</a></p>
-                    <p><a href="#uc-005-step-2">Step 2: The system displays the order status.</a></p>
-                    <p><a href="#uc-005-step-3">Step 3: The user views the order details.</a></p>
+                    <h3>Order Tracking and Management</h3>
+                    <p>The user tracks and manages their orders.</p>
+                    <p>Actors:</p>
+                    <ul>
+                        <li>User</li>
+                    </ul>
+                    <p>Preconditions:</p>
+                    <p>The user has placed an order.</p>
+                    <p>Main Flow:</p>
+                    <ul>
+                        <li>The user views their order history.</li>
+                        <li>The system displays order details.</li>
+                        <li>The user tracks the order status.</li>
+                        <li>The system displays the order status.</li>
+                    </ul>
+                    <p>Alternate Flows:</p>
+                    <p></p>
+                    <p>Postconditions:</p>
+                    <p>The user has tracked and managed their orders.</p>
                 </li>
             </ul>
         </section>
         <section id="non-functional-requirements">
             <h1>Non-Functional Requirements</h1>
             <ul>
-                <li>
-                    <h2>Security</h2>
-                    <p>All sensitive data must be encrypted at rest and in transit using industry-standard protocols.</p>
+                <li type="Security">
+                    All sensitive data must be encrypted at rest and in transit using industry-standard protocols.
                 </li>
-                <li>
-                    <h2>Performance</h2>
-                    <p>The system must respond to 95% of user queries in under 2 seconds.</p>
+                <li type="Performance">
+                    The system must respond to 95% of user queries in under 2 seconds.
                 </li>
             </ul>
         </section>
     </main>
     <footer>
         <p>&copy; 2023 ShopEasy</p>
+        <p>Designed by <a href="https://www.example.com">Example</a></p>
     </footer>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest/lucide.min.js"></script>
 </body>
 </html>
 ```
 
-And here is the CSS code in a separate file:
+And here is the CSS code to style the HTML document:
 
 ```css
-/* styles.css */
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
 }
 
 header {
     background-color: #333;
     color: #fff;
-    padding: 1rem;
+    padding: 1em;
     text-align: center;
 }
 
-nav ul {
+header nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -141,37 +219,31 @@ nav ul {
     justify-content: space-between;
 }
 
-nav ul li {
+header nav ul li {
     margin-right: 20px;
 }
 
-nav a {
+header nav a {
     color: #fff;
     text-decoration: none;
 }
 
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
 }
 
 section {
-    background-color: #f7f7f7;
-    padding: 1rem;
+    background-color: #fff;
+    padding: 1em;
     margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-h2 {
-    font-weight: bold;
-    font-size: 18px;
+h1, h2, h3 {
+    color: #333;
     margin-bottom: 10px;
 }
 
@@ -185,194 +257,74 @@ li {
     margin-bottom: 10px;
 }
 
-a {
-    text-decoration: none;
-    color: #337ab7;
+#use-cases ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-a:hover {
-    color: #23527c;
+#use-cases li {
+    margin-bottom: 20px;
+}
+
+#use-cases li h3 {
+    margin-top: 0;
+}
+
+#use-cases li p {
+    margin-bottom: 10px;
 }
 
 footer {
     background-color: #333;
     color: #fff;
-    padding: 1rem;
+    padding: 1em;
     text-align: center;
     clear: both;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
+footer p {
+    margin-bottom: 10px;
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #f0f0f0;
-}
-
-#toc {
-    position: sticky;
-    top: 0;
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-}
-
-#toc ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-#toc li {
-    margin-right: 20px;
-}
-
-#toc a {
+footer a {
     color: #fff;
     text-decoration: none;
 }
 
-#toc a:hover {
-    color: #23527c;
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+    }
+    section {
+        margin-bottom: 10px;
+    }
+    #use-cases ul {
+        flex-direction: column;
+    }
+    #use-cases li {
+        margin-bottom: 10px;
+    }
 }
 
-/* use-case steps */
-
-#uc-001-step-1 {
-    background-color: #f7f7f7;
-    padding: 1rem;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#uc-001-step-2 {
-    background-color: #f7f7f7;
-    padding: 1rem;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#uc-001-step-3 {
-    background-color: #f7f7f7;
-    padding: 1rem;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#uc-001-step-4 {
-    background-color: #f7f7f7;
-    padding: 1rem;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#uc-001-step-5 {
-    background-color: #f7f7f7;
-    padding: 1rem;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* use-case details */
-
-#uc-001-details {
-    background-color: #f7f7f7;
-    padding: 1rem;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#uc-001-details h2 {
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-#uc-001-details p {
-    margin-bottom: 10px;
-}
-
-/* non-functional requirements */
-
-#non-functional-requirements ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-#non-functional-requirements li {
-    margin-bottom: 10px;
-}
-
-#non-functional-requirements h2 {
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-#non-functional-requirements p {
-    margin-bottom: 10px;
-}
-
-/* toc styles */
-
-#toc ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-#toc li {
-    margin-right: 20px;
-}
-
-#toc a {
-    color: #337ab7;
-    text-decoration: none;
-}
-
-#toc a:hover {
-    color: #23527c;
+@media (max-width: 480px) {
+    main {
+        padding: 0.5em;
+    }
+    section {
+        margin-bottom: 5px;
+    }
+    #use-cases ul {
+        flex-direction: column;
+    }
+    #use-cases li {
+        margin-bottom: 5px;
+    }
 }
 ```
 
-And here is the JavaScript code in a separate file:
-
-```javascript
-// script.js
-
-// TOC functionality
-const tocLinks = document.querySelectorAll('#toc a');
-
-tocLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const id = link.getAttribute('href').slice(1);
-        const section = document.getElementById(id);
-        section.scrollIntoView({ behavior: 'smooth' });
-    });
-});
-```
-
-This HTML document includes a clean and professional structure, with a sticky table of contents at the top and use-case steps with details below. The CSS code styles the document with a modern and responsive design, and the JavaScript code adds functionality to the table of contents.
+Note that this is just one possible way to style the HTML document, and you may choose to use a different approach depending on your personal preferences and design requirements.

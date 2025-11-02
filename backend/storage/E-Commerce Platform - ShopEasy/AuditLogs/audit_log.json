@@ -44,5 +44,105 @@
       "size": 1943
     },
     "user": "system"
+  },
+  {
+    "timestamp": "2025-11-02T04:01:46.012234",
+    "action": "file_saved",
+    "details": {
+      "folder": "mockups",
+      "filename": "index.html",
+      "size": 4724
+    },
+    "user": "system"
+  },
+  {
+    "timestamp": "2025-11-02T04:01:46.012570",
+    "action": "file_saved",
+    "details": {
+      "folder": "case_studies",
+      "filename": "index.html",
+      "size": 3519
+    },
+    "user": "system"
+  },
+  {
+    "timestamp": "2025-11-02T04:01:46.013016",
+    "action": "file_saved",
+    "details": {
+      "folder": "case_studies",
+      "filename": "UC-001_mockup.html",
+      "size": 94
+    },
+    "user": "system"
+  },
+  {
+    "timestamp": "2025-11-02T04:01:46.013448",
+    "action": "file_saved",
+    "details": {
+      "folder": "case_studies",
+      "filename": "UC-002_mockup.html",
+      "size": 94
+    },
+    "user": "system"
+  },
+  {
+    "timestamp": "2025-11-02T04:01:46.014159",
+    "action": "file_saved",
+    "details": {
+      "folder": "case_studies",
+      "filename": "UC-003_mockup.html",
+      "size": 94
+    },
+    "user": "system"
+  },
+  {
+    "timestamp": "2025-11-02T04:01:46.014674",
+    "action": "file_saved",
+    "details": {
+      "folder": "case_studies",
+      "filename": "UC-004_mockup.html",
+      "size": 94
+    },
+    "user": "system"
+  },
+  {
+    "timestamp": "2025-11-02T04:01:46.015093",
+    "action": "file_saved",
+    "details": {
+      "folder": "case_studies",
+      "filename": "UC-005_mockup.html",
+      "size": 94
+    },
+    "user": "system"
+  },
+  {
+    "timestamp": "2025-11-02T04:02:00.230093",
+    "action": "file_saved",
+    "details": {
+      "folder": "synthetic_data",
+      "filename": "demo_data.json",
+      "size": 5036
+    },
+    "user": "system"
+  },
+  {
+    "timestamp": "2025-11-02T04:02:24.873915",
+    "action": "file_saved",
+    "details": {
+      "folder": "prd",
+      "filename": "PRD_v1.xml",
+      "size": 7788
+    },
+    "user": "system"
+  },
+  {
+    "timestamp": "2025-11-02T04:02:24.874322",
+    "action": "file_saved",
+    "details": {
+      "folder": "prd",
+      "filename": "PRD_v1.html",
+      "size": 10296
+    },
+    "user": "system"
   }
 ]
