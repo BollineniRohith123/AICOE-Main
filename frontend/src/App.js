@@ -1,13 +1,9 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeEnhanced from "@/pages/HomeEnhanced";
-import Home from "@/pages/Home";
 import TranscriptInputEnhanced from "@/pages/TranscriptInputEnhanced";
-import TranscriptInput from "@/pages/TranscriptInput";
-import ProcessingView from "@/pages/ProcessingView";
 import ProcessingViewEnhanced from "@/pages/ProcessingViewEnhanced";
 import Results from "@/pages/Results";
-import ResultsNew from "@/pages/ResultsNew";
 
 // AICOE Logo Component
 const AICOELogo = () => {
@@ -27,13 +23,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomeEnhanced />} />
-          <Route path="/home-old" element={<Home />} />
           <Route path="/input" element={<TranscriptInputEnhanced />} />
-          <Route path="/input-old" element={<TranscriptInput />} />
           <Route path="/processing" element={<ProcessingViewEnhanced />} />
-          <Route path="/processing-old" element={<ProcessingView />} />
-          <Route path="/results" element={<ResultsNew />} />
-          <Route path="/results-old" element={<Results />} />
+          <Route path="/results" element={<Results />} />
         </Routes>
         <AICOELogo />
       </BrowserRouter>
