@@ -141,7 +141,7 @@ class AICOEBackendTester:
         
         try:
             # Test WebSocket connection
-            async with websockets.connect(ws_endpoint, timeout=10) as websocket:
+            async with websockets.connect(ws_endpoint) as websocket:
                 print(f"Connected to WebSocket: {ws_endpoint}")
                 
                 # Test reconnect message
