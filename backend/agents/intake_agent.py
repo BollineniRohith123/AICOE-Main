@@ -1,7 +1,7 @@
 """
 Transcript Agent - Processes raw meeting transcripts into structured notes
 """
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 from .base_agent import BaseAgent, AgentConfig, AgentResult
 import json
 
