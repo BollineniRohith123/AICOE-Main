@@ -120,10 +120,18 @@ export const useWorkflowWebSocket = () => {
       setElapsedTime(0);
     }
 
-    // Create WebSocket URL (convert http to ws)
-    const wsUrl = API_BASE_URL.replace('http', 'ws') + `/api/ws/${workflowId}`;
+    // Create WebSocket URL (convert http to ws, https to wss)
+    let wsUrl;
+    if (API_BASE_URL.startsWith('https://')) {
+      wsUrl = API_BASE_URL.replace('https://', 'wss://') + `/api/ws/${workflowId}`;
+    } else if (API_BASE_URL.startsWith('http://')) {
+      wsUrl = API_BASE_URL.replace('http://', 'ws://') + `/api/ws/${workflowId}`;
+    } else {
+      wsUrl = 'ws://' + API_BASE_URL + `/api/ws/${workflowId}`;
+    }
 
     console.log('Connecting to WebSocket:', wsUrl);
+    console.log('API_BASE_URL:', API_BASE_URL);
 
     const ws = new WebSocket(wsUrl);
     wsRef.current = ws;
