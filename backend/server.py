@@ -15,8 +15,14 @@ import asyncio
 from datetime import datetime
 from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
+# Load environment variables from both backend/.env and repo root .env (if present)
+BASE_DIR = os.path.dirname(__file__)
+ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, os.pardir))
+
+# Backend .env
+load_dotenv(os.path.join(BASE_DIR, ".env"))
+# Root .env
+load_dotenv(os.path.join(ROOT_DIR, ".env"))
 
 # Global storage for workflow connections and state
 active_workflows = {}  # workflow_id -> {"ws": websocket, "data": workflow_data}
@@ -55,8 +61,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Initialize LLM client
-llm_client = LLMClient()
+# Initialize LLM client (fallback to mock if API key missing)
+if not os.getenv("OPENROUTER_API_KEY"):
+    print("WARNING: OPENROUTER_API_KEY not set. Using mock LLM client.")
+    from agents.llm_client_mock import LLMClient as MockLLMClient
+
+    llm_client = MockLLMClient()
+else:
+    llm_client = LLMClient()
 
 # Initialize agents
 orchestrator = OrchestratorAgent(llm_client)

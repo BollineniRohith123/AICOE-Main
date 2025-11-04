@@ -1,6 +1,6 @@
 """
 LLM Client using OpenAI SDK
-Supports Synthetic API with agent-specific models
+Configured for OpenRouter with agent-specific models from environment
 """
 
 import os
@@ -14,73 +14,59 @@ logger = logging.getLogger(__name__)
 
 class LLMClient:
     """
-    Wrapper around OpenAI SDK for LLM interactions via Synthetic API
-    Supports agent-specific model configuration
+    Wrapper around OpenAI SDK for LLM interactions via OpenRouter
+    Supports agent-specific model configuration via environment variables
     """
 
     def __init__(
         self,
         api_key: Optional[str] = None,
-        provider: str = "synthetic",
-        model: str = "hf:Qwen/Qwen3-Coder-480B-A35B-Instruct",
+        provider: str = "openrouter",
+        model: str = None,
     ):
-        self.api_key = (
-            api_key or os.getenv("SYNTHETIC_API_KEY") or os.getenv("OPENROUTER_API_KEY")
-        )
+        self.api_key = api_key or os.getenv("OPENROUTER_API_KEY")
         if not self.api_key:
             raise ValueError(
-                "API key not provided and SYNTHETIC_API_KEY or OPENROUTER_API_KEY not found in environment"
+                "API key not provided and OPENROUTER_API_KEY not found in environment"
             )
 
         self.provider = provider
-        self.model = model
+        # Default model is sourced from env, but can be overridden by parameter
+        self.model = model or os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")
         self.logger = logging.getLogger("llm_client")
 
-        # Initialize OpenAI client with Synthetic base URL
+        # Initialize OpenAI client with OpenRouter base URL
         self.client = AsyncOpenAI(
-            api_key=self.api_key, base_url="https://api.synthetic.new/openai/v1"
+            api_key=self.api_key,
+            base_url="https://openrouter.ai/api/v1",
         )
 
-        # Load agent-specific models from environment variables
+        # Load agent-specific models from environment variables (OpenRouter model ids)
         self.agent_models = {
-            "storage": os.getenv(
-                "STORAGE_AGENT_MODEL", "hf:Qwen/Qwen3-Coder-480B-A35B-Instruct"
-            ),
-            "transcript": os.getenv(
-                "TRANSCRIPT_AGENT_MODEL", "hf:Qwen/Qwen3-Coder-480B-A35B-Instruct"
-            ),
-            "researcher": os.getenv(
-                "RESEARCHER_AGENT_MODEL", "hf:Qwen/Qwen3-Coder-480B-A35B-Instruct"
-            ),
-            "requirements": os.getenv(
-                "REQUIREMENTS_AGENT_MODEL", "hf:Qwen/Qwen3-Coder-480B-A35B-Instruct"
-            ),
-            "knowledge_base": os.getenv(
-                "KNOWLEDGE_BASE_AGENT_MODEL", "hf:Qwen/Qwen3-Coder-480B-A35B-Instruct"
-            ),
-            "prd": os.getenv(
-                "PRD_AGENT_MODEL", "hf:Qwen/Qwen3-Coder-480B-A35B-Instruct"
-            ),
-            "mockup": os.getenv(
-                "MOCKUP_AGENT_MODEL", "hf:Qwen/Qwen3-Coder-480B-A35B-Instruct"
-            ),
-            "synthetic_data": os.getenv(
-                "SYNTHETIC_DATA_AGENT_MODEL", "hf:Qwen/Qwen3-Coder-480B-A35B-Instruct"
-            ),
-            "commercial_proposal": os.getenv(
-                "COMMERCIAL_PROPOSAL_AGENT_MODEL",
-                "hf:Qwen/Qwen3-Coder-480B-A35B-Instruct",
-            ),
-            "bom": os.getenv(
-                "BOM_AGENT_MODEL", "hf:Qwen/Qwen3-Coder-480B-A35B-Instruct"
-            ),
-            "architecture_diagram": os.getenv(
-                "ARCHITECTURE_DIAGRAM_AGENT_MODEL",
-                "hf:Qwen/Qwen3-Coder-480B-A35B-Instruct",
-            ),
-            "reviewer": os.getenv(
-                "REVIEWER_AGENT_MODEL", "hf:Qwen/Qwen3-Coder-480B-A35B-Instruct"
-            ),
+            # Core agents
+            "intake": os.getenv("INTAKE_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "researcher": os.getenv("RESEARCHER_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "blueprint": os.getenv("BLUEPRINT_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "prd": os.getenv("PRD_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "mockup": os.getenv("MOCKUP_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "data": os.getenv("DATA_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            # Note: Agent name normalization removes "agent" and lowercases without underscores.
+            # For KnowledgeBaseAgent, normalized key is "knowledgebase". Support both keys.
+            "knowledgebase": os.getenv("KNOWLEDGE_BASE_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "knowledge_base": os.getenv("KNOWLEDGE_BASE_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "reviewer": os.getenv("REVIEWER_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "storage": os.getenv("STORAGE_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "proposal": os.getenv("PROPOSAL_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "bom": os.getenv("BOM_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "architecture": os.getenv("ARCHITECTURE_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "casestudygallery": os.getenv("CASE_STUDY_GALLERY_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+
+            # Legacy/misc keys retained for compatibility
+            "requirements": os.getenv("REQUIREMENTS_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "synthetic_data": os.getenv("SYNTHETIC_DATA_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "commercial_proposal": os.getenv("COMMERCIAL_PROPOSAL_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "architecture_diagram": os.getenv("ARCHITECTURE_DIAGRAM_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
+            "transcript": os.getenv("TRANSCRIPT_AGENT_MODEL", os.getenv("OPENROUTER_MODEL_DEFAULT", "x-ai/grok-4-fast")),
         }
 
     async def send_message_async(
@@ -89,7 +75,7 @@ class LLMClient:
         system_message: str = "You are a helpful AI assistant.",
         session_id: Optional[str] = None,
         temperature: float = 0.7,
-        max_tokens: int = 4000,
+        max_tokens: int = None,
     ) -> str:
         """
         Send a message to the LLM and get response via OpenRouter
@@ -117,8 +103,10 @@ class LLMClient:
             self.logger.info(
                 f"🔵 API CALL START | Model: {self.provider}/{self.model} | Caller: {caller_info}"
             )
+            # Apply default token limit if not provided (can be overridden per call)
+            effective_max_tokens = max_tokens or int(os.getenv("OPENROUTER_MAX_TOKENS", "16000"))
             self.logger.info(
-                f"   Request: temp={temperature}, max_tokens={max_tokens}, msg_length={len(user_message)}"
+                f"   Request: temp={temperature}, max_tokens={effective_max_tokens}, msg_length={len(user_message)}"
             )
 
             # Create messages for OpenRouter API
@@ -139,12 +127,16 @@ class LLMClient:
                 f"🔵 API CALL START | Model: {self.provider}/{model_to_use} | Agent: {agent_name or 'default'}"
             )
 
-            # Call Synthetic API
+            # Call OpenRouter API with optional ranking headers
             response = await self.client.chat.completions.create(
                 model=model_to_use,
                 messages=messages,
                 temperature=temperature,
-                max_tokens=max_tokens,
+                max_tokens=effective_max_tokens,
+                extra_headers={
+                    "HTTP-Referer": os.getenv("OPENROUTER_HTTP_REFERER", "http://localhost"),
+                    "X-Title": os.getenv("OPENROUTER_X_TITLE", "AICOE Platform"),
+                },
             )
 
             # Extract response text
