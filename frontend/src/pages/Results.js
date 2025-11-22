@@ -3,51 +3,159 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Download, ChevronLeft, Eye, Code, FileText } from "lucide-react";
+import {
+  Download, ChevronLeft, Eye, Code, FileText, PlayCircle,
+  FolderOpen, FileCode, File, CheckCircle2, XCircle, Loader2
+} from "lucide-react";
 import axios from "axios";
 import { API_BASE_URL } from "@/const";
 
-// Simple Markdown renderer component
-const MarkdownRenderer = ({ content }) => {
+// Artifact Preview Component with iframe for HTML files
+const ArtifactPreview = ({ content, type, title }) => {
+  const [viewMode, setViewMode] = useState('preview');
+
+  if (type === 'html' || type === 'mockup') {
+    return (
+      <div className="h-full flex flex-col">
+        <div className="flex items-center justify-between p-4 border-b bg-gray-50">
+          <h3 className="font-semibold text-lg">{title}</h3>
+          <div className="flex gap-2">
+            <Button
+              size="sm"
+              variant={viewMode === 'preview' ? 'default' : 'outline'}
+              onClick={() => setViewMode('preview')}
+            >
+              <Eye className="w-4 h-4 mr-2" />
+              Preview
+            </Button>
+            <Button
+              size="sm"
+              variant={viewMode === 'code' ? 'default' : 'outline'}
+              onClick={() => setViewMode('code')}
+            >
+              <Code className="w-4 h-4 mr-2" />
+              Code
+            </Button>
+          </div>
+        </div>
+
+        <div className="flex-1 overflow-auto">
+          {viewMode === 'preview' ? (
+            <iframe
+              srcDoc={content}
+              className="w-full h-full border-0"
+              title={title}
+              sandbox="allow-scripts allow-same-origin"
+            />
+          ) : (
+            <pre className="p-4 text-sm bg-gray-900 text-green-400 overflow-auto h-full">
+              <code>{content}</code>
+            </pre>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  if (type === 'json') {
+    try {
+      const formatted = JSON.stringify(JSON.parse(content), null, 2);
+      return (
+        <div className="h-full flex flex-col">
+          <div className="p-4 border-b bg-gray-50">
+            <h3 className="font-semibold text-lg">{title}</h3>
+          </div>
+          <pre className="flex-1 p-4 text-sm bg-gray-900 text-green-400 overflow-auto">
+            <code>{formatted}</code>
+          </pre>
+        </div>
+      );
+    } catch (e) {
+      return <div className="p-4 text-red-500">Invalid JSON</div>;
+    }
+  }
+
   return (
-    <div 
-      className="prose prose-sm max-w-none dark:prose-invert"
-      dangerouslySetInnerHTML={{ __html: parseMarkdown(content) }}
-    />
+    <div className="h-full flex flex-col">
+      <div className="p-4 border-b bg-gray-50">
+        <h3 className="font-semibold text-lg">{title}</h3>
+      </div>
+      <div className="flex-1 p-4 overflow-auto">
+        <pre className="text-sm whitespace-pre-wrap">{content}</pre>
+      </div>
+    </div>
   );
 };
 
-// Basic markdown parser (simplified)
-const parseMarkdown = (markdown) => {
-  let html = markdown;
+// File Tree Component
+const FileTree = ({ files, onFileSelect, selectedFile }) => {
+  const [expanded, setExpanded] = useState({});
   
-  // Headers
-  html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-  html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
-  html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+  const toggleFolder = (path) => {
+    setExpanded(prev => ({ ...prev, [path]: !prev[path] }));
+  };
   
-  // Bold
-  html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
+  const renderTree = (items, level = 0) => {
+    return Object.entries(items).map(([name, value]) => {
+      const isFolder = typeof value === 'object' && !value.content;
+      const path = `${level}-${name}`;
+      const isExpanded = expanded[path];
+      const isSelected = selectedFile === value?.path;
+
+      return (
+        <div key={path} style={{ marginLeft: `${level * 16}px` }}>
+          <div
+            className={`flex items-center gap-2 p-2 rounded cursor-pointer hover:bg-gray-100 ${
+              isSelected ? 'bg-blue-100' : ''
+            }`}
+            onClick={() => {
+              if (isFolder) {
+                toggleFolder(path);
+              } else if (value.content) {
+                onFileSelect(value);
+              }
+            }}
+          >
+            {isFolder ? (
+              <>
+                <FolderOpen className="w-4 h-4 text-yellow-600" />
+                <span className="font-medium">{name}</span>
+                <span className="text-xs text-gray-500">
+                  {isExpanded ? '▼' : '▶'}
+                </span>
+              </>
+            ) : (
+              <>
+                {name.endsWith('.html') ? (
+                  <FileCode className="w-4 h-4 text-orange-500" />
+                ) : name.endsWith('.json') ? (
+                  <File className="w-4 h-4 text-blue-500" />
+                ) : (
+                  <FileText className="w-4 h-4 text-gray-500" />
+                )}
+                <span className="text-sm">{name}</span>
+              </>
+            )}
+          </div>
+          {isFolder && isExpanded && renderTree(value, level + 1)}
+        </div>
+      );
+    });
+  };
   
-  // Italic
-  html = html.replace(/\*(.*?)\*/gim, '<em>$1</em>');
-  
-  // Lists
-  html = html.replace(/^\* (.*$)/gim, '<li>$1</li>');
-  html = html.replace(/^\- (.*$)/gim, '<li>$1</li>');
-  
-  // Line breaks
-  html = html.replace(/\n/gim, '<br/>');
-  
-  return html;
+  return (
+    <div className="h-full overflow-auto p-2 bg-white border-r">
+      {renderTree(files)}
+    </div>
+  );
 };
 
 export default function Results() {
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
-  const [activeTab, setActiveTab] = useState("prd");
-  const [showMockupPreview, setShowMockupPreview] = useState(true);
   const [loading, setLoading] = useState(true);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [fileStructure, setFileStructure] = useState({});
 
   useEffect(() => {
     const stored = sessionStorage.getItem("lastResult");
@@ -55,6 +163,17 @@ export default function Results() {
       try {
         const data = JSON.parse(stored);
         setResult(data);
+
+        // Build file structure from results
+        const structure = buildFileStructure(data);
+        setFileStructure(structure);
+
+        // Select first HTML file by default
+        const firstHtml = findFirstHtmlFile(structure);
+        if (firstHtml) {
+          setSelectedFile(firstHtml);
+        }
+
         setLoading(false);
       } catch (error) {
         console.error("Failed to parse result:", error);
@@ -65,58 +184,143 @@ export default function Results() {
     }
   }, [navigate]);
 
-  const downloadFile = (content, filename, type) => {
-    const blob = new Blob([content], { type });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    window.URL.revokeObjectURL(url);
-    document.body.removeChild(a);
+  const buildFileStructure = (data) => {
+    const structure = {
+      "📁 Project Files": {}
+    };
+
+    const results = data.results || {};
+
+    // Add PRD documents
+    if (results.prd) {
+      structure["📁 Project Files"]["📄 PRD"] = {
+        "PRD_v1.html": {
+          content: typeof results.prd === 'string' ? results.prd : JSON.stringify(results.prd, null, 2),
+          type: 'html',
+          path: 'prd/PRD_v1.html'
+        }
+      };
+    }
+
+    // Add Mockups
+    if (results.mockup) {
+      const mockupFolder = {};
+      const mockupData = results.mockup;
+
+      if (mockupData.mockup_pages) {
+        Object.entries(mockupData.mockup_pages).forEach(([filename, content]) => {
+          mockupFolder[filename] = {
+            content,
+            type: 'html',
+            path: `mockup/${filename}`
+          };
+        });
+      }
+
+      structure["📁 Project Files"]["🎨 Mockups"] = mockupFolder;
+    }
+
+    // Add Requirements/Use Cases
+    if (results.requirements) {
+      structure["📁 Project Files"]["📋 Requirements"] = {
+        "requirements.json": {
+          content: JSON.stringify(results.requirements, null, 2),
+          type: 'json',
+          path: 'requirements/requirements.json'
+        }
+      };
+    }
+
+    // Add Commercial Proposal
+    if (results.commercial_proposal) {
+      structure["📁 Project Files"]["💼 Commercial Proposal"] = {
+        "proposal_v1.html": {
+          content: typeof results.commercial_proposal === 'string'
+            ? results.commercial_proposal
+            : JSON.stringify(results.commercial_proposal, null, 2),
+          type: 'html',
+          path: 'proposal/proposal_v1.html'
+        }
+      };
+    }
+
+    // Add BOM
+    if (results.bom) {
+      structure["📁 Project Files"]["📦 Bill of Materials"] = {
+        "bom_v1.html": {
+          content: typeof results.bom === 'string'
+            ? results.bom
+            : JSON.stringify(results.bom, null, 2),
+          type: 'html',
+          path: 'bom/bom_v1.html'
+        }
+      };
+    }
+
+    // Add Architecture
+    if (results.architecture_diagram) {
+      structure["📁 Project Files"]["🏗️ Architecture"] = {
+        "architecture_v1.html": {
+          content: typeof results.architecture_diagram === 'string'
+            ? results.architecture_diagram
+            : JSON.stringify(results.architecture_diagram, null, 2),
+          type: 'html',
+          path: 'architecture/architecture_v1.html'
+        }
+      };
+    }
+
+    // Add Research
+    if (results.researcher) {
+      structure["📁 Project Files"]["🔍 Research"] = {
+        "research.json": {
+          content: JSON.stringify(results.researcher, null, 2),
+          type: 'json',
+          path: 'research/research.json'
+        }
+      };
+    }
+
+    return structure;
   };
 
-  const downloadArtifact = async (projectId, artifactType, filename) => {
-    try {
-      const response = await axios.get(
-        `${API_BASE_URL}/api/download/${projectId}/${artifactType}`,
-        { responseType: 'blob' }
-      );
-      
-      const url = window.URL.createObjectURL(new Blob([response.data]));
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-      document.body.removeChild(a);
-    } catch (error) {
-      console.error("Download failed:", error);
-      alert("Failed to download file");
+  const findFirstHtmlFile = (structure, found = null) => {
+    for (const value of Object.values(structure)) {
+      if (value.content && value.type === 'html') {
+        return value;
+      }
+      if (typeof value === 'object' && !value.content) {
+        const result = findFirstHtmlFile(value, found);
+        if (result) return result;
+      }
     }
+    return found;
+  };
+
+  const downloadAllArtifacts = () => {
+    // Create a zip-like download of all artifacts
+    alert("Download all artifacts functionality will be implemented here");
   };
 
   if (loading || !result) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
+          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-primary" />
           <p className="text-muted-foreground">Loading results...</p>
         </div>
       </div>
     );
   }
 
-  const useCases = result.results?.requirements?.use_cases || [];
   const projectName = result.project_name || "Project";
   const projectId = result.project_id;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <header className="border-b border-border bg-card sticky top-0 z-40">
-        <div className="container py-4">
+      <header className="border-b bg-white shadow-sm z-50">
+        <div className="container py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <Button
@@ -129,11 +333,11 @@ export default function Results() {
                 Back
               </Button>
               <div>
-                <h1 className="text-2xl font-bold text-foreground">
-                  {projectName} - Interactive Use Cases
+                <h1 className="text-xl font-bold text-foreground">
+                  {projectName} - Playground
                 </h1>
                 <p className="text-xs text-muted-foreground">
-                  Status: {result.status} | Workflow: {result.workflow_id}
+                  Interactive artifact viewer and code playground
                 </p>
               </div>
             </div>
@@ -141,151 +345,87 @@ export default function Results() {
               <Button
                 size="sm"
                 variant="outline"
-                onClick={() => {
-                  if (projectId) {
-                    downloadArtifact(projectId, "prd", `${projectName}-PRD.md`);
-                  } else {
-                    downloadFile(prdContent, `${projectName}-PRD.md`, "text/markdown");
-                  }
-                }}
+                onClick={downloadAllArtifacts}
                 className="gap-2"
               >
                 <Download className="w-4 h-4" />
-                All Downloads
+                Download All
               </Button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Main Content - Use Cases Focused */}
-      <main className="container py-8">
-        {/* Success Message */}
-        {result.status === "success" && (
-          <div className="mb-6 p-4 bg-green-500 bg-opacity-10 border border-green-500 rounded-lg">
-            <p className="text-sm text-green-700 dark:text-green-400 font-medium">
-              ✅ All agents completed successfully! Your interactive use cases are ready.
-            </p>
-          </div>
-        )}
-
-        {/* Use Cases Display - Primary Focus */}
-        <div className="space-y-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Interactive Use Cases</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Explore your project requirements through interactive mockups. Each use case below represents a key workflow in your application.
-            </p>
-          </div>
-
-          {useCases.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {useCases.map((useCase, index) => (
-                <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
-                  <div className="space-y-6">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="text-2xl font-bold text-primary">{index + 1}</span>
-                      </div>
-                      <h3 className="text-2xl font-bold text-foreground mb-3">
-                        {useCase.title || `Use Case ${index + 1}`}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {useCase.description || "No description available"}
-                      </p>
-                    </div>
-
-                    {useCase.primaryActor && (
-                      <div className="flex items-center justify-center gap-2 bg-secondary/50 rounded-lg p-3">
-                        <span className="text-sm font-medium text-foreground">Primary Actor:</span>
-                        <span className="text-sm font-semibold text-primary">{useCase.primaryActor}</span>
-                      </div>
-                    )}
-
-                    <Button
-                      size="lg"
-                      className="w-full gap-3 text-lg py-6 hover:scale-105 transition-transform"
-                      onClick={() => {
-                        // Open the corresponding mockup in a new tab
-                        const mockupUrl = projectId
-                          ? `${API_BASE_URL}/api/download/${projectId}/mockup/use-case-${index + 1}.html`
-                          : "#"; // Fallback for demo
-                        if (mockupUrl !== "#") {
-                          window.open(mockupUrl, '_blank');
-                        } else {
-                          alert("Mockup preview only available for saved projects");
-                        }
-                      }}
-                    >
-                      <Eye className="w-5 h-5" />
-                      View Interactive Mockup
-                    </Button>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <Card className="p-12 text-center">
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto">
-                  <FileText className="w-8 h-8 text-muted-foreground" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground">No Use Cases Available</h3>
-                <p className="text-muted-foreground">Use cases will appear here once the analysis is complete.</p>
+      {/* Agent Status Bar */}
+      <div className="bg-white border-b py-2">
+        <div className="container">
+          <div className="flex items-center gap-4 overflow-x-auto">
+            <span className="text-sm font-medium text-gray-600 whitespace-nowrap">
+              Agents:
+            </span>
+            {result.stages && result.stages.map((stage, idx) => (
+              <div key={idx} className="flex items-center gap-2 whitespace-nowrap">
+                {stage.status === "completed" ? (
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                ) : stage.status === "failed" ? (
+                  <XCircle className="w-4 h-4 text-red-500" />
+                ) : (
+                  <Loader2 className="w-4 h-4 animate-spin text-blue-500" />
+                )}
+                <span className="text-sm capitalize">{stage.name}</span>
               </div>
-            </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Main Playground Area */}
+      <div className="flex-1 flex overflow-hidden">
+        {/* File Tree Sidebar */}
+        <div className="w-64 bg-white border-r flex flex-col">
+          <div className="p-3 border-b bg-gray-50">
+            <h2 className="font-semibold text-sm">Project Explorer</h2>
+          </div>
+          <FileTree
+            files={fileStructure}
+            onFileSelect={setSelectedFile}
+            selectedFile={selectedFile?.path}
+          />
+        </div>
+
+        {/* Preview Area */}
+        <div className="flex-1 bg-white">
+          {selectedFile ? (
+            <ArtifactPreview
+              content={selectedFile.content}
+              type={selectedFile.type}
+              title={selectedFile.path}
+            />
+          ) : (
+            <div className="h-full flex items-center justify-center text-gray-500">
+              <div className="text-center">
+                <PlayCircle className="w-16 h-16 mx-auto mb-4 text-gray-300" />
+                <p className="text-lg font-medium">Select a file to preview</p>
+                <p className="text-sm text-gray-400 mt-2">
+                  Choose a file from the project explorer
+                </p>
+              </div>
+            </div>
           )}
         </div>
+      </div>
 
-        {/* Agent Stages Summary - Moved to bottom */}
-        {result.stages && (
-          <Card className="mt-12 p-6">
-            <h3 className="text-lg font-semibold text-foreground mb-4">Agent Execution Summary</h3>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              {result.stages.map((stage, idx) => (
-                <div key={idx} className="flex items-center gap-3">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
-                    stage.status === "completed" ? "bg-green-500 text-white" :
-                    stage.status === "failed" ? "bg-red-500 text-white" :
-                    "bg-gray-300 text-gray-700"
-                  }`}>
-                    {stage.status === "completed" ? "✓" : stage.status === "failed" ? "✗" : "•"}
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm font-medium text-foreground capitalize">{stage.name}</p>
-                    {stage.duration && (
-                      <p className="text-xs text-muted-foreground">{stage.duration.toFixed(1)}s</p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Card>
-        )}
-
-        {/* Footer Info */}
-        <div className="mt-12 p-6 bg-secondary bg-opacity-50 rounded-lg border border-border">
-          <h3 className="font-semibold text-foreground mb-3">Next Steps</h3>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li className="flex gap-2">
-              <span className="text-primary font-bold">•</span>
-              <span>Explore each use case by clicking "View Interactive Mockup"</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-primary font-bold">•</span>
-              <span>Download all deliverables from the header download button</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-primary font-bold">•</span>
-              <span>Share mockups with stakeholders for immediate feedback</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-primary font-bold">•</span>
-              <span>Use the generated artifacts as the foundation for development</span>
-            </li>
-          </ul>
+      {/* Footer */}
+      <div className="bg-white border-t py-2">
+        <div className="container flex items-center justify-between text-xs text-gray-500">
+          <div>
+            Workflow ID: {result.workflow_id} | Status: {result.status}
+          </div>
+          <div>
+            {Object.keys(fileStructure).length} folders • {selectedFile ? 'File selected' : 'No file selected'}
+          </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
